@@ -1,7 +1,6 @@
 async function loadPartial(selector, url) {
   const el = document.querySelector(selector);
   if (!el) return;
-
   const res = await fetch(url);
   if (!res.ok) {
     el.innerHTML = `<!-- Failed to load: ${url} -->`;
@@ -11,6 +10,6 @@ async function loadPartial(selector, url) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadPartial("#site-header", "/partials/header.html");
-  loadPartial("#site-footer", "/partials/footer.html");
+  loadPartial("#header", "/partials/header.html");
+  loadPartial("#footer", "/partials/footer.html");
 });
