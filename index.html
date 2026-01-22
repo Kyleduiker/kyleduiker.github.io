@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duiker Properties | Calgary Real Estate</title>
+    
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="https://kyleduiker.github.io/duikerproperties-homepage/assets/css/header.css">
+    
     <style>
         * {
             margin: 0;
@@ -37,7 +41,7 @@
             text-align: center;
             color: white;
             padding: 2rem;
-            margin-top: 70px;
+            margin-top: 120px;
         }
 
         .hero-title {
@@ -415,7 +419,7 @@
 
         .communities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmin(280px, 1fr));
             gap: 1.5rem;
         }
 
@@ -661,12 +665,8 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
+            .hero {
+                margin-top: 90px;
             }
 
             .hero-title {
@@ -704,11 +704,17 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        @media (max-width: 480px) {
+            .hero {
+                margin-top: 80px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Header placeholder - loaded from header.html -->
-    <div id="header"></div>
+    <!-- Header Container -->
+    <div id="header-container"></div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -960,7 +966,19 @@
     <!-- Footer placeholder - loaded from footer.html -->
     <div id="footer"></div>
 
-    <script src="includes.js"></script>
+    <!-- Header JavaScript -->
+    <script src="https://kyleduiker.github.io/duikerproperties-homepage/assets/js/header.js"></script>
+    
+    <!-- Load Header HTML -->
+    <script>
+        fetch('https://kyleduiker.github.io/duikerproperties-homepage/partials/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
+
     <script>
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -973,31 +991,12 @@
             });
         });
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
-            } else {
-                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            }
-        });
-
-        // Hamburger menu (basic toggle for mobile)
-        const hamburger = document.querySelector('.hamburger');
-        hamburger.addEventListener('click', () => {
-            alert('Mobile menu would open here - implement as needed');
-        });
-
         // Search functionality
         const searchBarButton = document.getElementById('searchBarButton');
 
         searchBarButton.addEventListener('click', () => {
             // Redirect to your property search page
             window.location.href = 'https://www.duikerproperties.com/index.php?advanced=1&display=Calgary&areas%5B%5D=city%3Acalgary%3Aab&custombox=&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=4&types%5B%5D=5&types%5B%5D=6&types%5B%5D=8&types%5B%5D=11&types%5B%5D=12&types%5B%5D=20&types%5B%5D=31&beds=0&baths=0&min=0&max=100000000&rtype=map#rslt';
-            
-            // Option 2: Open in new tab (uncomment if you prefer this)
-            // window.open('https://www.duikerproperties.com/index.php?advanced=1&display=Calgary&areas%5B%5D=city%3Acalgary%3Aab&custombox=&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=4&types%5B%5D=5&types%5B%5D=6&types%5B%5D=8&types%5B%5D=11&types%5B%5D=12&types%5B%5D=20&types%5B%5D=31&beds=0&baths=0&min=0&max=100000000&rtype=map#rslt', '_blank');
         });
     </script>
 </body>
