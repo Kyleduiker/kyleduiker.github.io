@@ -975,6 +975,10 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-container').innerHTML = data;
+                // Initialize header after HTML is loaded
+                if (typeof window.initDuikerHeader === 'function') {
+                    window.initDuikerHeader();
+                }
             })
             .catch(error => console.error('Error loading header:', error));
     </script>
