@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahogany Real Estate | Homes for Sale in Mahogany Calgary | Duiker Properties</title>
+    <meta name="description" content="Explore luxury lakefront living in Mahogany, Calgary. Browse homes for sale, community amenities, schools, and lifestyle information with Duiker Properties.">
+    
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="https://kyleduiker.github.io/duikerproperties-homepage/assets/css/header.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --accent-color: #FF6633;
+            --dark-gray: #333;
+            --light-gray: #666;
+            --bg-light: #f9f9f9;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        /* Community Hero */
+        .community-hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1920') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            margin-top: 120px;
+            position: relative;
+        }
+
+
+
+        .community-hero-content {
+            max-width: 800px;
+        }
+
+        .community-name {
+            font-family: 'Georgia', serif;
+            font-size: 4.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .community-tagline {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .community-quick-stats {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .quick-stat {
+            text-align: center;
+        }
+
+        .quick-stat-value {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .quick-stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Overview Section */
+        .overview-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .overview-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .overview-content h2 {
+            font-family: 'Georgia', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .accent {
+            color: var(--accent-color);
+            font-style: italic;
+        }
+
+        .overview-text {
+            color: var(--light-gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .overview-highlights {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .overview-highlights h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlights-list {
+            list-style: none;
+        }
+
+        .highlights-list li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--light-gray);
+        }
+
+        .highlights-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Stats Grid */
+        .community-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .stat-box-label {
+            font-size: 0.85rem;
+            color: var(--light-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-box-value {
+            font-family: 'Georgia', serif;
+            font-size: 1.8rem;
+            color: var(--dark-gray);
+        }
+
+        /* Lifestyle Section */
+        .lifestyle-section {
+            padding: 5rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-family: 'Georgia', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--light-gray);
+            font-size: 1.1rem;
+        }
+
+        .lifestyle-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .lifestyle-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .lifestyle-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .lifestyle-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .lifestyle-card h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .lifestyle-card p {
+            color: var(--light-gray);
+            line-height: 1.8;
+        }
+
+        /* Property Types Section */
+        .properties-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .property-types-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .property-type-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .property-type-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .property-type-image {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .property-type-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .property-type-card:hover .property-type-image img {
+            transform: scale(1.1);
+        }
+
+        .property-type-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .property-type-title {
+            font-family: 'Georgia', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: white;
+            margin: 0;
+        }
+
+        .property-type-content {
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .property-type-description {
+            color: var(--light-gray);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #ff5522;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 102, 51, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .view-more-btn {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* Schools Section */
+        .schools-section {
+            padding: 5rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .schools-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .school-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .school-level {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.35rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .school-card h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .school-type {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .school-distance {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Amenities Section */
+        .amenities-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .amenities-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .amenities-category {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 10px;
+        }
+
+        .amenities-category h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+        }
+
+        .amenities-list {
+            list-style: none;
+        }
+
+        .amenities-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--light-gray);
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .amenities-list li:last-child {
+            border-bottom: none;
+        }
+
+        .amenities-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 5rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .map-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .map-wrapper {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            height: 500px;
+            position: relative;
+        }
+
+        .map-wrapper iframe {
+            border-radius: 10px;
+        }
+
+        .map-info {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .location-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .location-info h4 {
+            font-family: 'Georgia', serif;
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .location-info p {
+            color: var(--light-gray);
+            line-height: 1.6;
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .contact-title {
+            font-family: 'Georgia', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .contact-text {
+            max-width: 700px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #555;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .overview-container {
+                grid-template-columns: 1fr;
+            }
+
+            .amenities-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .community-hero {
+                height: 60vh;
+                margin-top: 90px;
+            }
+
+            .community-name {
+                font-size: 3rem;
+            }
+
+            .community-tagline {
+                font-size: 1.2rem;
+            }
+
+            .community-quick-stats {
+                gap: 2rem;
+            }
+
+            .overview-content h2,
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .contact-title {
+                font-size: 2rem;
+            }
+
+            .properties-grid,
+            .property-types-grid,
+            .lifestyle-grid,
+            .schools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .community-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .community-hero {
+                margin-top: 80px;
+            }
+
+            .community-name {
+                font-size: 2.5rem;
+            }
+
+            .quick-stat-value {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <!-- Community Hero -->
+    <section class="community-hero">
+        <div class="community-hero-content">
+            <h1 class="community-name">MAHOGANY</h1>
+            <p class="community-tagline">Calgary's Premier Lakefront Community</p>
+            <div class="community-quick-stats">
+                <div class="quick-stat">
+                    <div class="quick-stat-value">$650K</div>
+                    <div class="quick-stat-label">Avg Home Price</div>
+                </div>
+                <div class="quick-stat">
+                    <div class="quick-stat-value">3 Lakes</div>
+                    <div class="quick-stat-label">Private Beach Access</div>
+                </div>
+                <div class="quick-stat">
+                    <div class="quick-stat-value">20 Min</div>
+                    <div class="quick-stat-label">To Downtown</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview-section">
+        <div class="overview-container">
+            <div class="overview-content">
+                <h2>Discover <span class="accent">Mahogany</span></h2>
+                <p class="overview-text">
+                    Mahogany is Calgary's largest private lake community, offering an exceptional lakefront lifestyle 
+                    in Southeast Calgary. Spanning over 4,000 acres, this master-planned community features three 
+                    private beaches, extensive wetlands, and a vibrant year-round lifestyle centered around water, 
+                    nature, and community connection.
+                </p>
+                <p class="overview-text">
+                    Developed by Genstar Development Company, Mahogany combines the tranquility of lakeside living 
+                    with urban convenience. Residents enjoy exclusive access to white sand beaches, a resident-only 
+                    Beach Club, and miles of scenic pathways - all while being just minutes from major shopping, 
+                    dining, and entertainment at Seton Urban District and South Trail Crossing.
+                </p>
+                <p class="overview-text">
+                    Whether you're a young family seeking a tight-knit community, active retirees looking for year-round 
+                    recreation, or professionals wanting the perfect work-life balance, Mahogany offers a unique Calgary 
+                    lifestyle that brings resort living to your doorstep.
+                </p>
+
+                <div class="community-stats">
+                    <div class="stat-box">
+                        <div class="stat-box-label">Year Established</div>
+                        <div class="stat-box-value">2008</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-box-label">Population</div>
+                        <div class="stat-box-value">~12,000</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-box-label">Total Area</div>
+                        <div class="stat-box-value">4,000+ Acres</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-box-label">Property Types</div>
+                        <div class="stat-box-value">All Styles</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overview-highlights">
+                <h3>Why Choose Mahogany?</h3>
+                <ul class="highlights-list">
+                    <li>3 private beaches with white sand and crystal-clear water</li>
+                    <li>Exclusive Mahogany Beach Club for residents</li>
+                    <li>Over 30 kilometers of pathways and trails</li>
+                    <li>Year-round community events and activities</li>
+                    <li>Award-winning schools and childcare facilities</li>
+                    <li>Adjacent to Seton Urban District shopping & dining</li>
+                    <li>Quick access to Stoney Trail and Deerfoot Trail</li>
+                    <li>Diverse housing options from condos to estate homes</li>
+                    <li>Strong community association and resident engagement</li>
+                    <li>Proximity to South Health Campus hospital</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lifestyle Section -->
+    <section class="lifestyle-section">
+        <div class="section-header">
+            <h2>The Mahogany <span class="accent">Lifestyle</span></h2>
+            <p>Experience resort-style living every day in Southeast Calgary's most sought-after community</p>
+        </div>
+        <div class="lifestyle-grid">
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                </div>
+                <h3>Lakefront Living</h3>
+                <p>Three pristine freshwater lakes with private white sand beaches exclusively for Mahogany residents. 
+                   Enjoy swimming, kayaking, paddleboarding, and beach volleyball all summer long.</p>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M3 9h18M9 21V9"/>
+                    </svg>
+                </div>
+                <h3>Beach Club</h3>
+                <p>The exclusive Mahogany Beach Club features a restaurant, ice cream parlor, equipment rentals, 
+                   and event spaces. It's the heart of community life and summer fun.</p>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h3>Year-Round Events</h3>
+                <p>From summer beach parties and outdoor movies to winter festivals and skating, Mahogany's 
+                   community association hosts events that bring neighbors together throughout the year.</p>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                </div>
+                <h3>Prime Location</h3>
+                <p>Minutes from Seton Urban District, South Trail Crossing, and South Health Campus. Easy access 
+                   to Stoney Trail and Deerfoot Trail puts all of Calgary within reach.</p>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                </div>
+                <h3>Top Schools</h3>
+                <p>Mahogany is served by several excellent public and Catholic schools, with more being built 
+                   as the community grows. Perfect for families with children of all ages.</p>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </div>
+                <h3>Diverse Housing</h3>
+                <p>From luxury lakefront estates to affordable starter homes, townhouses, and condos, Mahogany 
+                   offers housing options for every stage of life and budget.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Types -->
+    <section class="properties-section">
+        <div class="section-header">
+            <h2>Homes for Sale in <span class="accent">Mahogany</span></h2>
+            <p>Explore the diverse range of housing options available in this lakefront community</p>
+        </div>
+        <div class="property-types-grid">
+            <div class="property-type-card">
+                <div class="property-type-image">
+                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800" alt="Detached Homes in Mahogany">
+                    <div class="property-type-overlay">
+                        <h3 class="property-type-title">Detached Homes</h3>
+                    </div>
+                </div>
+                <div class="property-type-content">
+                    <p class="property-type-description">
+                        Single-family homes offering privacy, space, and the freedom to customize your property. 
+                        Perfect for growing families and those seeking a traditional homeownership experience.
+                    </p>
+                    <a href="https://www.duikerproperties.com/areas/mahogany/ab?types%5B%5D=1" class="btn-secondary">VIEW DETACHED HOMES</a>
+                </div>
+            </div>
+
+            <div class="property-type-card">
+                <div class="property-type-image">
+                    <img src="https://images.unsplash.com/photo-1569042234477-ac6c6871235e?w=800" alt="Attached Homes in Mahogany">
+                    <div class="property-type-overlay">
+                        <h3 class="property-type-title">Attached Homes</h3>
+                    </div>
+                </div>
+                <div class="property-type-content">
+                    <p class="property-type-description">
+                        Townhomes and duplexes combining the benefits of home ownership with reduced maintenance. 
+                        An excellent choice for first-time buyers and those seeking a balanced lifestyle.
+                    </p>
+                    <a href="https://www.duikerproperties.com/areas/mahogany/ab?types%5B%5D=2" class="btn-secondary">VIEW ATTACHED HOMES</a>
+                </div>
+            </div>
+
+            <div class="property-type-card">
+                <div class="property-type-image">
+                    <img src="https://images.unsplash.com/photo-1515263487990-61b07816b324?w=800" alt="Condos in Mahogany">
+                    <div class="property-type-overlay">
+                        <h3 class="property-type-title">Condos & Apartments</h3>
+                    </div>
+                </div>
+                <div class="property-type-content">
+                    <p class="property-type-description">
+                        Low-maintenance condominium living ideal for busy professionals, downsizers, and investors. 
+                        Enjoy community amenities with minimal upkeep responsibilities.
+                    </p>
+                    <a href="https://www.duikerproperties.com/areas/mahogany/ab?types%5B%5D=3" class="btn-secondary">VIEW CONDOS</a>
+                </div>
+            </div>
+        </div>
+        <div class="view-more-btn">
+            <a href="https://www.duikerproperties.com/areas/mahogany/ab" class="btn-primary">VIEW ALL MAHOGANY LISTINGS</a>
+        </div>
+    </section>
+
+    <!-- Schools Section -->
+    <section class="schools-section">
+        <div class="section-header">
+            <h2>Schools & <span class="accent">Education</span></h2>
+            <p>Mahogany is served by excellent public and Catholic schools</p>
+        </div>
+        <div class="schools-grid">
+            <div class="school-card">
+                <span class="school-level">Elementary</span>
+                <h3>Mahogany School</h3>
+                <p class="school-type">Public (K-4) | Calgary Board of Education</p>
+                <p class="school-distance">📍 Walking distance within community</p>
+            </div>
+
+            <div class="school-card">
+                <span class="school-level">Elementary</span>
+                <h3>St. Isabella School</h3>
+                <p class="school-type">Catholic (K-6) | Calgary Catholic School District</p>
+                <p class="school-distance">📍 Within Mahogany community</p>
+            </div>
+
+            <div class="school-card">
+                <span class="school-level">Middle School</span>
+                <h3>Auburn Bay School</h3>
+                <p class="school-type">Public (5-9) | Calgary Board of Education</p>
+                <p class="school-distance">📍 5 minutes to Auburn Bay</p>
+            </div>
+
+            <div class="school-card">
+                <span class="school-level">Middle School</span>
+                <h3>St. Benedict School</h3>
+                <p class="school-type">Catholic (7-9) | Calgary Catholic School District</p>
+                <p class="school-distance">📍 5 minutes to Cranston</p>
+            </div>
+
+            <div class="school-card">
+                <span class="school-level">High School</span>
+                <h3>Father James Whelihan School</h3>
+                <p class="school-type">Catholic (10-12) | Calgary Catholic School District</p>
+                <p class="school-distance">📍 10 minutes to McKenzie Towne</p>
+            </div>
+
+            <div class="school-card">
+                <span class="school-level">High School</span>
+                <h3>Lord Beaverbrook High School</h3>
+                <p class="school-type">Public (10-12) | Calgary Board of Education</p>
+                <p class="school-distance">📍 15 minutes to Woodbine</p>
+            </div>
+
+            <div class="school-card">
+                <span class="school-level">University</span>
+                <h3>University of Calgary</h3>
+                <p class="school-type">Public Research University</p>
+                <p class="school-distance">📍 25 minutes to northwest Calgary</p>
+            </div>
+
+            <div class="school-card">
+                <span class="school-level">University</span>
+                <h3>Mount Royal University</h3>
+                <p class="school-type">Public Undergraduate University</p>
+                <p class="school-distance">📍 20 minutes to southwest Calgary</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="amenities-section">
+        <div class="section-header">
+            <h2>Community <span class="accent">Amenities</span></h2>
+            <p>Everything you need for the perfect lifestyle is right at your doorstep</p>
+        </div>
+        <div class="amenities-container">
+            <div class="amenities-category">
+                <h3>Recreation & Leisure</h3>
+                <ul class="amenities-list">
+                    <li>3 private freshwater lakes with beaches</li>
+                    <li>Mahogany Beach Club restaurant & facilities</li>
+                    <li>30+ km of pathways and trails</li>
+                    <li>Beach volleyball courts</li>
+                    <li>Outdoor fitness equipment stations</li>
+                    <li>Kayak and paddleboard rentals</li>
+                    <li>Ice skating on frozen lakes in winter</li>
+                    <li>Multiple playgrounds and parks</li>
+                    <li>Off-leash dog park</li>
+                </ul>
+            </div>
+
+            <div class="amenities-category">
+                <h3>Shopping & Dining</h3>
+                <ul class="amenities-list">
+                    <li>Seton Urban District (5 min) - Cineplex, restaurants, retail</li>
+                    <li>South Trail Crossing (10 min) - major shopping center</li>
+                    <li>Mahogany Market Square - local convenience</li>
+                    <li>Sobeys, Save-On-Foods, Co-op grocery stores nearby</li>
+                    <li>Numerous restaurants and cafes in Seton</li>
+                    <li>Medical clinics and pharmacies</li>
+                    <li>South Health Campus hospital (8 min)</li>
+                </ul>
+            </div>
+
+            <div class="amenities-category">
+                <h3>Transportation</h3>
+                <ul class="amenities-list">
+                    <li>Calgary Transit bus routes throughout community</li>
+                    <li>Seton BRT Station - rapid transit downtown</li>
+                    <li>5 minutes to Stoney Trail ring road</li>
+                    <li>10 minutes to Deerfoot Trail</li>
+                    <li>20 minutes to downtown Calgary</li>
+                    <li>25 minutes to Calgary International Airport</li>
+                    <li>Bike lanes and pathways throughout</li>
+                </ul>
+            </div>
+
+            <div class="amenities-category">
+                <h3>Community Services</h3>
+                <ul class="amenities-list">
+                    <li>Active Mahogany Community Association</li>
+                    <li>Year-round events and programming</li>
+                    <li>Multiple daycares and preschools</li>
+                    <li>Public library branch nearby</li>
+                    <li>Places of worship for various faiths</li>
+                    <li>Seton YMCA recreation center</li>
+                    <li>Trico Centre aquatic & fitness facility</li>
+                    <li>Calgary Public Library - Seton Branch</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="section-header">
+            <h2>Location & <span class="accent">Accessibility</span></h2>
+            <p>Mahogany's strategic location in Southeast Calgary offers the best of both worlds</p>
+        </div>
+        <div class="map-container">
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10066.047716590956!2d-113.9363209225133!3d50.895743081012085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1769182815335!5m2!1sen!2sca" 
+                    width="100%" 
+                    height="500" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Mahogany Calgary Map">
+                </iframe>
+            </div>
+            
+            <div class="map-info">
+                <div class="location-info">
+                    <h4>🏠 Community Boundaries</h4>
+                    <p>Mahogany is bounded by 194 Avenue SE to the north, Stoney Trail to the east, 
+                       and extends south into the picturesque lake districts.</p>
+                </div>
+                <div class="location-info">
+                    <h4>🚗 Commute Times</h4>
+                    <p>Downtown Calgary: 20 min | YYC Airport: 25 min | Deerfoot Trail: 10 min | 
+                       Stoney Trail: 5 min | Seton: 5 min</p>
+                </div>
+                <div class="location-info">
+                    <h4>🚌 Public Transit</h4>
+                    <p>Multiple Calgary Transit bus routes serve Mahogany, with easy connections to the 
+                       Seton BRT station for rapid transit to downtown.</p>
+                </div>
+                <div class="location-info">
+                    <h4>📍 Nearby Attractions</h4>
+                    <p>Fish Creek Provincial Park, Heritage Park, Spruce Meadows, CrossIron Mills, 
+                       and all of Calgary's amenities within easy reach.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <h2 class="contact-title">Ready to Call <span class="accent">Mahogany</span> Home?</h2>
+        <p class="contact-text">
+            As Southeast Calgary specialists, we know Mahogany inside and out. Let us help you find 
+            your perfect lakefront home in Calgary's most desirable community.
+        </p>
+        <a href="#contact" class="btn-primary">SCHEDULE A TOUR</a>
+    </section>
+
+    <!-- Footer placeholder -->
+    <div id="footer"></div>
+
+    <!-- Header JavaScript -->
+    <script src="https://kyleduiker.github.io/duikerproperties-homepage/assets/js/header.js"></script>
+    
+    <!-- Load Header HTML -->
+    <script>
+        fetch('https://kyleduiker.github.io/duikerproperties-homepage/partials/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                if (typeof window.initDuikerHeader === 'function') {
+                    window.initDuikerHeader();
+                }
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
