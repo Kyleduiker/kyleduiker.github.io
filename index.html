@@ -16,7 +16,7 @@
         }
 
         :root {
-            --accent-color: #FF6633;
+            --accent-color: #EA002A;
             --dark-gray: #333;
             --light-gray: #666;
             --bg-light: #f9f9f9;
@@ -223,9 +223,9 @@
         }
 
         .btn-primary:hover {
-            background: #ff5522;
+            background: #d00025;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 102, 51, 0.3);
+            box-shadow: 0 5px 15px rgba(234, 0, 42, 0.3);
         }
 
         .btn-secondary {
@@ -847,7 +847,7 @@
     <!-- Luxury Collection -->
     <section class="luxury-section" id="luxury">
         <h2 class="luxury-title">Luxury <span class="accent">Collection</span></h2>
-        <a href="#" class="btn-primary">VIEW ALL PROPERTIES</a>
+        <a href="https://www.duikerproperties.com/index.php?advanced=1&display=Calgary+AB&min=1000000&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=city%3Acalgary%3Aab&sortby=listings.visits+DESC&rtype=map" class="btn-primary">VIEW ALL PROPERTIES</a>
     </section>
 
     <!-- Communities Section -->
@@ -894,22 +894,22 @@
                 <h3 class="type-name">Residential</h3>
             </div>
         </div>
-        <div class="type-card">
-            <img src="https://images.unsplash.com/photo-1587473454-df06a8e8a38f?w=600" alt="Lakefront">
+        <div class="type-card" onclick="window.location.href='https://www.duikerproperties.com/index.php?advanced=1&display=Calgary&min=0&max=100000000&beds=0&baths=0&types%5B%5D=4&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=city%3Acalgary%3Aab&sortby=listings.visits+DESC&rtype=map'">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600" alt="Commercial">
             <div class="type-overlay">
-                <h3 class="type-name">Lakefront</h3>
+                <h3 class="type-name">Commercial</h3>
+            </div>
+        </div>
+        <div class="type-card" onclick="window.location.href='https://www.duikerproperties.com/index.php?advanced=1&display=&min=0&max=100000000&beds=0&baths=0&types%5B%5D=12&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&sortby=listings.visits+DESC&rtype=map&polygons%5B%5D=-109.95117187500001%2C48.922499263758255%2C-110.21484375%2C60.02095215374804%2C-119.88281250000001%2C59.977005492196%2C-120.05859375000001%2C53.54030739150022%2C-113.90625%2C48.864714761802794%2C-109.95117187500001%2C48.922499263758255'">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600" alt="Rural">
+            <div class="type-overlay">
+                <h3 class="type-name">Rural</h3>
             </div>
         </div>
         <div class="type-card">
-            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600" alt="New Developments">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600" alt="Property Management">
             <div class="type-overlay">
-                <h3 class="type-name">New Developments</h3>
-            </div>
-        </div>
-        <div class="type-card">
-            <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600" alt="Investment">
-            <div class="type-overlay">
-                <h3 class="type-name">Investment</h3>
+                <h3 class="type-name">Property Management</h3>
             </div>
         </div>
     </section>
@@ -1000,7 +1000,7 @@
 
         searchBarButton.addEventListener('click', () => {
             // Redirect to your property search page
-            window.location.href = 'https://www.duikerproperties.com/index.php?advanced=1&display=Calgary&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=city%3Acalgary%3Aab&sortby=listings.visits+DESC&rtype=map
+            window.location.href = 'https://www.duikerproperties.com/index.php?advanced=1&display=Calgary&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=city%3Acalgary%3Aab&sortby=listings.visits+DESC&rtype=map';
         });
     </script>
 </body>
