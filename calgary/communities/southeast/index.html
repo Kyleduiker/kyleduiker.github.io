@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="canonical" href="https://duikerproperties.com/communities/calgary-southeast/" />
+
+    <title>Southeast Calgary Real Estate | Communities & Homes for Sale | Duiker Properties</title>
+    <meta name="description" content="Explore Southeast Calgary's premier communities including Mahogany, Seton, Auburn Bay, Cranston, and Chestermere. Find your perfect home with local expertise from Duiker Properties.">
+    
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="https://kyleduiker.github.io/duikerproperties-homepage/assets/css/header.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --accent-color: #EA002A;
+            --dark-gray: #333;
+            --light-gray: #666;
+            --bg-light: #f9f9f9;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        /* Regional Hero */
+        .regional-hero {
+            height: 75vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1464146072230-91cabc968266?w=1920') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            margin-top: 120px;
+            position: relative;
+        }
+
+        .regional-hero-content {
+            max-width: 900px;
+        }
+
+        .regional-name {
+            font-family: 'Georgia', serif;
+            font-size: 5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+        }
+
+        .regional-tagline {
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .regional-quick-stats {
+            display: flex;
+            gap: 4rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .quick-stat {
+            text-align: center;
+        }
+
+        .quick-stat-value {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .quick-stat-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Overview Section */
+        .overview-section {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .overview-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .overview-content h2 {
+            font-family: 'Georgia', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .accent {
+            color: var(--accent-color);
+            font-style: italic;
+        }
+
+        .overview-text {
+            color: var(--light-gray);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .overview-highlights {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .overview-highlights h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlights-list {
+            list-style: none;
+        }
+
+        .highlights-list li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--light-gray);
+        }
+
+        .highlights-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-family: 'Georgia', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--light-gray);
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Featured Communities Section */
+        .communities-section {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .communities-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .community-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .community-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .community-image {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .community-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .community-card:hover .community-image img {
+            transform: scale(1.1);
+        }
+
+        .community-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent 50%, rgba(0,0,0,0.8));
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+        }
+
+        .community-title {
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+            font-weight: 300;
+            color: white;
+            margin: 0;
+        }
+
+        .community-content {
+            padding: 2rem;
+        }
+
+        .community-description {
+            color: var(--light-gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .community-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .community-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--light-gray);
+            font-size: 0.95rem;
+        }
+
+        .community-features li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .community-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+        }
+
+        .community-stat {
+            flex: 1;
+            text-align: center;
+        }
+
+        .community-stat-value {
+            font-family: 'Georgia', serif;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .community-stat-label {
+            font-size: 0.8rem;
+            color: var(--light-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background: #c80020;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(234, 0, 42, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Lifestyle Benefits Section */
+        .lifestyle-section {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .lifestyle-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .lifestyle-card {
+            background: var(--bg-light);
+            padding: 3rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .lifestyle-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .lifestyle-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+        }
+
+        .lifestyle-card h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .lifestyle-card p {
+            color: var(--light-gray);
+            line-height: 1.8;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .map-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .map-wrapper {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            height: 600px;
+            position: relative;
+        }
+
+        .map-wrapper iframe {
+            border-radius: 12px;
+        }
+
+        /* Market Insights Section */
+        .market-section {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .market-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .market-card {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .market-card h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .market-card p {
+            color: var(--light-gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .market-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .market-stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .market-stat-value {
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .market-stat-label {
+            font-size: 0.85rem;
+            color: var(--light-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .contact-title {
+            font-family: 'Georgia', serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-text {
+            max-width: 800px;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .overview-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .communities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .regional-hero {
+                height: 65vh;
+                margin-top: 90px;
+            }
+
+            .regional-name {
+                font-size: 3.5rem;
+            }
+
+            .regional-tagline {
+                font-size: 1.3rem;
+            }
+
+            .regional-quick-stats {
+                gap: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .contact-title {
+                font-size: 2.5rem;
+            }
+
+            .community-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .market-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .regional-hero {
+                margin-top: 80px;
+            }
+
+            .regional-name {
+                font-size: 2.8rem;
+            }
+
+            .quick-stat-value {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <!-- Regional Hero -->
+    <section class="regional-hero">
+        <div class="regional-hero-content">
+            <h1 class="regional-name">SOUTHEAST CALGARY</h1>
+            <p class="regional-tagline">Where Modern Living Meets Natural Beauty</p>
+            <div class="regional-quick-stats">
+                <div class="quick-stat">
+                    <div class="quick-stat-value">25+</div>
+                    <div class="quick-stat-label">Communities</div>
+                </div>
+                <div class="quick-stat">
+                    <div class="quick-stat-value">$500K+</div>
+                    <div class="quick-stat-label">Avg Home Price</div>
+                </div>
+                <div class="quick-stat">
+                    <div class="quick-stat-value">150K+</div>
+                    <div class="quick-stat-label">Residents</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview-section">
+        <div class="overview-container">
+            <div class="overview-content">
+                <h2>Your Southeast Calgary <span class="accent">Real Estate Specialist</span></h2>
+                <p class="overview-text">
+                    Southeast Calgary represents some of the city's fastest-growing and most desirable communities. 
+                    From the lakefront luxury of Mahogany to the urban convenience of Seton, and the family-friendly 
+                    neighborhoods of Auburn Bay and Cranston, this quadrant offers unparalleled lifestyle choices 
+                    for every homebuyer.
+                </p>
+                <p class="overview-text">
+                    As a dedicated Southeast Calgary real estate specialist, I bring deep local knowledge and expertise 
+                    to help you navigate this dynamic market. Whether you're a first-time buyer, growing family, 
+                    downsizing retiree, or investor, I understand the unique characteristics, amenities, and advantages 
+                    that each community offers.
+                </p>
+                <p class="overview-text">
+                    The Southeast quadrant has experienced remarkable growth over the past two decades, with master-planned 
+                    communities offering modern infrastructure, excellent schools, abundant recreation, and strong community 
+                    connections. With easy access to major transportation routes, proximity to employment centers, and a 
+                    perfect balance of urban amenities and natural spaces, Southeast Calgary continues to attract families 
+                    and professionals seeking quality of life.
+                </p>
+            </div>
+
+            <div class="overview-highlights">
+                <h3>Why Southeast Calgary?</h3>
+                <ul class="highlights-list">
+                    <li>Master-planned communities with modern amenities</li>
+                    <li>Private lake communities with beach access</li>
+                    <li>Excellent schools and childcare facilities</li>
+                    <li>Major shopping districts (Seton, South Trail)</li>
+                    <li>South Health Campus hospital</li>
+                    <li>Easy access to Stoney Trail & Deerfoot Trail</li>
+                    <li>20-25 minutes to downtown Calgary</li>
+                    <li>Proximity to Fish Creek Provincial Park</li>
+                    <li>Growing employment opportunities</li>
+                    <li>Strong community associations & events</li>
+                    <li>Diverse housing options for all budgets</li>
+                    <li>Excellent public transit connections</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Communities Section -->
+    <section class="communities-section">
+        <div class="section-header">
+            <h2>Featured <span class="accent">Communities</span></h2>
+            <p>Explore Southeast Calgary's most sought-after neighborhoods, each offering unique lifestyle advantages</p>
+        </div>
+        <div class="communities-grid">
+            <!-- Mahogany -->
+            <div class="community-card">
+                <div class="community-image">
+                    <img src="https://raw.githubusercontent.com/Kyleduiker/duikerproperties-homepage/main/photos/20260129_1428_Image%20Generation_simple_compose_01kg5tfwy0eqxvd17zfhexjgdk.png" alt="Mahogany Community">
+                    <div class="community-overlay">
+                        <h3 class="community-title">Mahogany</h3>
+                    </div>
+                </div>
+                <div class="community-content">
+                    <p class="community-description">
+                        Calgary's largest private lake community featuring three pristine beaches, the exclusive Beach Club, 
+                        and over 30km of pathways. Experience resort-style living every day.
+                    </p>
+                    <ul class="community-features">
+                        <li>3 private freshwater lakes with beaches</li>
+                        <li>Mahogany Beach Club restaurant & facilities</li>
+                        <li>Adjacent to Seton Urban District</li>
+                        <li>Award-winning schools within community</li>
+                    </ul>
+                    <div class="community-stats">
+                        <div class="community-stat">
+                            <div class="community-stat-value">$650K</div>
+                            <div class="community-stat-label">Avg Price</div>
+                        </div>
+                        <div class="community-stat">
+                            <div class="community-stat-value">2008</div>
+                            <div class="community-stat-label">Est.</div>
+                        </div>
+                    </div>
+                    <a href="https://duikerproperties.com/calgary/communities/southeast/mahogany/" class="btn-primary">EXPLORE MAHOGANY</a>
+                </div>
+            </div>
+
+            <!-- Seton -->
+            <div class="community-card">
+                <div class="community-image">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800" alt="Seton Community">
+                    <div class="community-overlay">
+                        <h3 class="community-title">Seton</h3>
+                    </div>
+                </div>
+                <div class="community-content">
+                    <p class="community-description">
+                        Calgary's premier urban village offering walkable mixed-use development with shopping, dining, 
+                        entertainment, and healthcare all within walking distance of your home.
+                    </p>
+                    <ul class="community-features">
+                        <li>Seton Urban District - retail & dining hub</li>
+                        <li>South Health Campus hospital access</li>
+                        <li>BRT rapid transit station</li>
+                        <li>High-density condos and townhomes</li>
+                    </ul>
+                    <div class="community-stats">
+                        <div class="community-stat">
+                            <div class="community-stat-value">$450K</div>
+                            <div class="community-stat-label">Avg Price</div>
+                        </div>
+                        <div class="community-stat">
+                            <div class="community-stat-value">2010</div>
+                            <div class="community-stat-label">Est.</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-primary">EXPLORE SETON</a>
+                </div>
+            </div>
+
+            <!-- Auburn Bay -->
+            <div class="community-card">
+                <div class="community-image">
+                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800" alt="Auburn Bay Community">
+                    <div class="community-overlay">
+                        <h3 class="community-title">Auburn Bay</h3>
+                    </div>
+                </div>
+                <div class="community-content">
+                    <p class="community-description">
+                        A vibrant lakefront community centered around a 43-acre recreational lake. Enjoy year-round 
+                        water activities, beaches, and strong family-oriented programming.
+                    </p>
+                    <ul class="community-features">
+                        <li>43-acre recreational lake with beaches</li>
+                        <li>Auburn House community center</li>
+                        <li>Excellent schools (K-9 on-site)</li>
+                        <li>Active community association</li>
+                    </ul>
+                    <div class="community-stats">
+                        <div class="community-stat">
+                            <div class="community-stat-value">$620K</div>
+                            <div class="community-stat-label">Avg Price</div>
+                        </div>
+                        <div class="community-stat">
+                            <div class="community-stat-value">2001</div>
+                            <div class="community-stat-label">Est.</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-primary">EXPLORE AUBURN BAY</a>
+                </div>
+            </div>
+
+            <!-- Cranston -->
+            <div class="community-card">
+                <div class="community-image">
+                    <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=800" alt="Cranston Community">
+                    <div class="community-overlay">
+                        <h3 class="community-title">Cranston</h3>
+                    </div>
+                </div>
+                <div class="community-content">
+                    <p class="community-description">
+                        One of Calgary's largest and most established lake communities featuring Cranston's Riverstone 
+                        amenity center, extensive pathways, and family-friendly atmosphere.
+                    </p>
+                    <ul class="community-features">
+                        <li>Riverstone amenity center & lake</li>
+                        <li>Multiple schools (K-12 nearby)</li>
+                        <li>Extensive pathway network</li>
+                        <li>Wide range of housing styles</li>
+                    </ul>
+                    <div class="community-stats">
+                        <div class="community-stat">
+                            <div class="community-stat-value">$610K</div>
+                            <div class="community-stat-label">Avg Price</div>
+                        </div>
+                        <div class="community-stat">
+                            <div class="community-stat-value">2003</div>
+                            <div class="community-stat-label">Est.</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-primary">EXPLORE CRANSTON</a>
+                </div>
+            </div>
+
+            <!-- McKenzie Towne -->
+            <div class="community-card">
+                <div class="community-image">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800" alt="McKenzie Towne">
+                    <div class="community-overlay">
+                        <h3 class="community-title">McKenzie Towne</h3>
+                    </div>
+                </div>
+                <div class="community-content">
+                    <p class="community-description">
+                        A mature, pedestrian-friendly community featuring High Street shopping district, traditional 
+                        architecture, and a strong sense of neighborhood character.
+                    </p>
+                    <ul class="community-features">
+                        <li>High Street retail & restaurant district</li>
+                        <li>Traditional town planning design</li>
+                        <li>Multiple schools and parks</li>
+                        <li>Well-established mature trees</li>
+                    </ul>
+                    <div class="community-stats">
+                        <div class="community-stat">
+                            <div class="community-stat-value">$560K</div>
+                            <div class="community-stat-label">Avg Price</div>
+                        </div>
+                        <div class="community-stat">
+                            <div class="community-stat-value">1995</div>
+                            <div class="community-stat-label">Est.</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-primary">EXPLORE MCKENZIE TOWNE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lifestyle Benefits -->
+    <section class="lifestyle-section">
+        <div class="section-header">
+            <h2>Southeast Calgary <span class="accent">Lifestyle</span></h2>
+            <p>Discover the advantages of calling Southeast Calgary home</p>
+        </div>
+        <div class="lifestyle-grid">
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                </div>
+                <h3>Lake Living</h3>
+                <p>Multiple private lake communities offer exclusive beach access, water sports, and resort-style amenities 
+                   right in your backyard. Experience vacation living year-round.</p>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <rect x="2" y="7" width="20" height="14" rx="2"/>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                    </svg>
+                </div>
+                <h3>Modern Communities</h3>
+                <p>Master-planned neighborhoods with contemporary infrastructure, walkable designs, extensive pathways, 
+                   and thoughtful green spaces that prioritize livability.</p>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                </div>
+                <h3>Top Schools</h3>
+                <p>Award-winning public and Catholic schools, with many communities featuring K-9 or K-12 education 
+                   within walking distance. Excellent childcare options available.</p>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M2 12h20"/>
+                    </svg>
+                </div>
+                <h3>Shopping & Dining</h3>
+                <p>Seton Urban District and South Trail Crossing offer world-class shopping, dining, and entertainment. 
+                   From boutiques to big-box stores, everything is close to home.</p>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M9 11l3 3L22 4"/>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                    </svg>
+                </div>
+                <h3>Healthcare Access</h3>
+                <p>South Health Campus provides comprehensive emergency and specialized care. Multiple medical clinics, 
+                   pharmacies, and health services throughout the quadrant.</p>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </div>
+                <h3>Housing Diversity</h3>
+                <p>From luxury lakefront estates to affordable condos, starter homes to executive properties. 
+                   Find the perfect home for your lifestyle and budget in Southeast Calgary.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Insights Section -->
+    <section class="market-section">
+        <div class="section-header">
+            <h2>Market <span class="accent">Insights</span></h2>
+            <p>Understanding Southeast Calgary's dynamic real estate market</p>
+        </div>
+        <div class="market-grid">
+            <div class="market-card">
+                <h3>Strong Growth</h3>
+                <p>Southeast Calgary has experienced consistent population and economic growth, with new communities 
+                   continuing to develop. This growth brings enhanced amenities, services, and property value appreciation.</p>
+                <div class="market-stats">
+                    <div class="market-stat">
+                        <div class="market-stat-value">15%+</div>
+                        <div class="market-stat-label">Population Growth (5yr)</div>
+                    </div>
+                    <div class="market-stat">
+                        <div class="market-stat-value">$2.5B+</div>
+                        <div class="market-stat-label">New Development</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="market-card">
+                <h3>Value Appreciation</h3>
+                <p>Southeast communities have shown strong property value appreciation, particularly lake communities. 
+                   Strategic location, amenities, and limited lakefront inventory drive sustained demand.</p>
+                <div class="market-stats">
+                    <div class="market-stat">
+                        <div class="market-stat-value">8-12%</div>
+                        <div class="market-stat-label">Annual Appreciation</div>
+                    </div>
+                    <div class="market-stat">
+                        <div class="market-stat-value">< 30</div>
+                        <div class="market-stat-label">Days on Market</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="market-card">
+                <h3>Investment Opportunity</h3>
+                <p>With continued infrastructure development, new schools, and commercial growth, Southeast Calgary 
+                   represents excellent long-term investment potential for both homeowners and investors.</p>
+                <div class="market-stats">
+                    <div class="market-stat">
+                        <div class="market-stat-value">3-5%</div>
+                        <div class="market-stat-label">Rental Yields</div>
+                    </div>
+                    <div class="market-stat">
+                        <div class="market-stat-value">High</div>
+                        <div class="market-stat-label">Rental Demand</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="section-header">
+            <h2>Explore <span class="accent">Southeast Calgary</span></h2>
+            <p>Strategic location with easy access to all of Calgary's amenities</p>
+        </div>
+        <div class="map-container">
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80435.64988743154!2d-113.97959433935547!3d50.93794107869531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53717197f85f1c9f%3A0x60267b6c6b7f3c6!2sSoutheast%20Calgary%2C%20Calgary%2C%20AB!5e0!3m2!1sen!2sca!4v1738454321234!5m2!1sen!2sca" 
+                    width="100%" 
+                    height="600" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Southeast Calgary Map">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <h2 class="contact-title">Find Your Dream Home in <span class="accent">Southeast Calgary</span></h2>
+        <p class="contact-text">
+            As your dedicated Southeast Calgary real estate specialist, I offer unparalleled local expertise, 
+            market knowledge, and personalized service. Let me help you discover the perfect community and 
+            home for your lifestyle.
+        </p>
+        <a href="https://www.duikerproperties.com/contact.php" class="btn-primary">GET IN TOUCH TODAY</a>
+    </section>
+
+    <!-- Footer placeholder -->
+    <div id="footer"></div>
+
+    <!-- Header JavaScript -->
+    <script src="https://kyleduiker.github.io/duikerproperties-homepage/assets/js/header.js"></script>
+    
+    <!-- Load Header HTML -->
+    <script>
+        fetch('https://kyleduiker.github.io/duikerproperties-homepage/partials/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                if (typeof window.initDuikerHeader === 'function') {
+                    window.initDuikerHeader();
+                }
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
