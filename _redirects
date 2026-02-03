@@ -1,16 +1,4 @@
 # ================================
-# BoldTrail routes → WWW
-# ================================
-
-/index.php*    https://www.duikerproperties.com/index.php:splat   301!
-/listings*     https://www.duikerproperties.com/listings:splat    301!
-/search*       https://www.duikerproperties.com/search:splat      301!
-/contact*      https://www.duikerproperties.com/contact:splat     301!
-/sold*         https://www.duikerproperties.com/sold:splat        301!
-/showagent*    https://www.duikerproperties.com/showagent:splat   301!
-/agents*       https://www.duikerproperties.com/agents:splat      301!
-
-# ================================
 # EVERYTHING ELSE → Netlify
 # ================================
 
