@@ -1,4 +1,4 @@
-/* Header Styles */
+/* Header Styles - Updated with consistent fonts */
 .header {
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
@@ -8,6 +8,7 @@
     right: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
 }
 
 .header-content {
@@ -91,7 +92,8 @@
     text-decoration: none;
     color: #fff;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
     transition: color 0.3s ease;
     white-space: nowrap;
 }
@@ -121,7 +123,8 @@
 
 .logo-text {
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 300;
+    font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
     color: #fff;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -130,6 +133,7 @@
 
 .logo-subtext {
     font-size: 11px;
+    font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
     color: rgba(255, 255, 255, 0.8);
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -151,7 +155,8 @@
     text-decoration: none;
     color: #fff;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
     transition: color 0.3s ease;
 }
 
@@ -164,6 +169,7 @@
     color: #7fb4e8;
     font-size: 16px;
     font-weight: 600;
+    font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
     transition: opacity 0.3s ease;
 }
 
@@ -236,7 +242,8 @@
     text-decoration: none;
     color: #fff;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
     background: none;
     border: none;
     width: 100%;
@@ -279,6 +286,8 @@
     text-decoration: none;
     color: #fff;
     font-size: 18px;
+    font-weight: 400;
+    font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
     transition: color 0.3s ease;
 }
 
