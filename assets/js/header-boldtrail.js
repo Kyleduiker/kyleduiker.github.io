@@ -2,6 +2,36 @@
 (function() {
     'use strict';
     
+    // Hide Bold Trail's default header
+    function hideBoldTrailHeader() {
+        const style = document.createElement('style');
+        style.textContent = `
+            #header { display: none !important; }
+            body { padding-top: 0 !important; margin-top: 0 !important; }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Load header HTML from GitHub
+    async function loadHeader() {
+        try {
+            const response = await fetch('https://cdn.jsdelivr.net/gh/Kyleduiker/duikerproperties-homepage@main/partials/header.html');
+            const html = await response.text();
+            
+            // Insert header at the beginning of body
+            document.body.insertAdjacentHTML('afterbegin', html);
+            
+            // Initialize header functionality
+            if (typeof window.initDuikerHeader === 'function') {
+                window.initDuikerHeader();
+            } else {
+                initHeaderFunctionality();
+            }
+        } catch (error) {
+            console.error('Failed to load header:', error);
+        }
+    }
+    
     // Header Menu Functionality
     function initHeaderFunctionality() {
         const menuToggle = document.getElementById('menuToggle');
@@ -65,6 +95,39 @@
             });
         });
         
+        // Desktop mega menu functionality
+        document.querySelectorAll('.mega-menu-trigger').forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                
+                // Close all mega menus
+                document.querySelectorAll('.mega-menu-trigger').forEach(t => {
+                    t.setAttribute('aria-expanded', 'false');
+                });
+                
+                // Toggle current one
+                if (!isExpanded) {
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
+            
+            // Hover functionality for desktop
+            const parentLi = trigger.closest('li');
+            if (parentLi) {
+                parentLi.addEventListener('mouseenter', function() {
+                    document.querySelectorAll('.mega-menu-trigger').forEach(t => {
+                        t.setAttribute('aria-expanded', 'false');
+                    });
+                    trigger.setAttribute('aria-expanded', 'true');
+                });
+                
+                parentLi.addEventListener('mouseleave', function() {
+                    trigger.setAttribute('aria-expanded', 'false');
+                });
+            }
+        });
+        
         // Close menu on ESC key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
@@ -93,8 +156,14 @@
     
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initHeaderFunctionality);
+        document.addEventListener('DOMContentLoaded', init);
     } else {
-        initHeaderFunctionality();
+        init();
+    }
+    
+    function init() {
+        hideBoldTrailHeader();
+        loadHeader();
     }
 })();
+
