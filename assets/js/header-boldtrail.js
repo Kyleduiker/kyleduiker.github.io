@@ -16,6 +16,14 @@
             // Insert header at the beginning of body
             document.body.insertAdjacentHTML('afterbegin', html);
             
+            // Remove Bold Trail's problematic transparent classes
+            document.body.classList.remove('header-transparent');
+            document.querySelectorAll('.header-transparent').forEach(el => {
+                if (el.classList.contains('header')) {
+                    el.classList.remove('header-transparent');
+                }
+            });
+            
             // Initialize header functionality
             initHeaderFunctionality();
             console.log('Duiker Header initialized successfully');
