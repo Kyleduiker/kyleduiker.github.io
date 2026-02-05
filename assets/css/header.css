@@ -16,20 +16,41 @@ body {
     display: none !important;
 }
 
-/* Header Styles - Updated with consistent fonts */
+/* Header Styles - Force black background over Bold Trail's transparent header */
 .header,
 header.header,
-.header-transparent {
+.header-transparent,
+.header.header-transparent,
+body .header,
+body .header-transparent,
+body.header-transparent .header,
+#duiker-custom-header-root .header,
+[class*="header"] {
     background: #000 !important;
     background-color: #000 !important;
     background-image: none !important;
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+
+/* Override any transparent backgrounds on body that affect header */
+body.header-transparent,
+body.cover-pull-top.header-transparent,
+body.front.header-transparent {
+    background-color: transparent;
+}
+
+body.header-transparent .header,
+body.cover-pull-top.header-transparent .header,
+body.front.header-transparent .header {
+    background: #000 !important;
+    background-color: #000 !important;
+    background-image: none !important;
 }
 
 .header-content {
