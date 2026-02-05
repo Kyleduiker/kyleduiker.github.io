@@ -17,8 +17,12 @@ body {
 }
 
 /* Header Styles - Updated with consistent fonts */
-.header {
-    background: #000;
+.header,
+header.header,
+.header-transparent {
+    background: #000 !important;
+    background-color: #000 !important;
+    background-image: none !important;
     position: fixed;
     top: 0;
     left: 0;
