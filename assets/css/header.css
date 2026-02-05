@@ -1,3 +1,66 @@
+/* Hide Bold Trail's default header on ALL pages */
+div#header,
+#header.home,
+#quick-search,
+.page-wrapper > #header,
+#fixed-header-spacer {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Force black background on body and html to eliminate white corners */
+html,
+body {
+    background-color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Target the page wrapper and force it down, with white background for content */
+.page-wrapper {
+    background-color: #ffffff !important;
+    margin-top: 0 !important;
+    padding-top: 80px !important;
+}
+
+/* CRITICAL: Override the .header background color */
+.header {
+    background-color: #000000 !important;
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+}
+
+/* Make header FIXED/STICKY on all pages */
+.header-transparent {
+    display: block !important;
+    visibility: visible !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+    background-color: #000000 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+/* Target the specific header-content div and all header elements */
+.header-transparent .container,
+.header-transparent nav,
+.header-transparent .header-content,
+div.header-content {
+    background-color: #000000 !important;
+}
+
+/* Force black background on the header wrapper */
+.header .header-content {
+    background-color: #000000 !important;
+}
+
 /* Utility Classes */
 .duiker-hidden {
     display: none !important;
