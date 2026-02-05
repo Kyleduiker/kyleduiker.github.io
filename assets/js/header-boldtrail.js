@@ -161,7 +161,7 @@
             homeRoot.innerHTML = bodyContent;
             
             // Load homepage styles
-            loadHomepageStyles(doc);
+            loadHomepageStyles();
             
             // Initialize homepage scripts
             initHomepageScripts();
@@ -173,15 +173,12 @@
         }
     }
     
-    // Extract and load homepage styles
-    function loadHomepageStyles(doc) {
-        const styles = doc.querySelectorAll('style');
-        styles.forEach(styleEl => {
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = 'data:text/css;base64,' + btoa(styleEl.textContent);
-            document.head.appendChild(link);
-        });
+    // Load homepage styles from external CSS file
+    function loadHomepageStyles() {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://cdn.jsdelivr.net/gh/Kyleduiker/duikerproperties-homepage@main/assets/css/homepage-styles.css?v=20260206';
+        document.head.appendChild(link);
     }
     
     // Homepage-specific scripts
