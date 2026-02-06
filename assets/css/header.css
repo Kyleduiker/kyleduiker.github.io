@@ -1,256 +1,123 @@
-body {
-  background: lime !important;
-}
-/* ===== TEMP DISABLED (testing) =====
-#header,
-div#header,
-.site-header,
-.kv-header,
-#quick-search,
-#fixed-header-spacer,
-.page-wrapper > #header {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-}
-===== END TEMP DISABLED ===== */
-
 /* =========================================================
-   Duiker Custom Header (SAFE for BoldTrail)
-   Styles ONLY our injected header/menu:
-   #dp-header and #dp-mobile-shell
+   header.css  —  SWITCH 2 (KEEP BOLDTRAIL HEADER)
+   Goal:
+   - Keep BoldTrail header (do NOT hide it)
+   - Make header black, text white
+   - Keep the rest of the page white
+   Notes:
+   - Safe selectors only (no #dp-header / injected header)
+   - Avoids global black backgrounds that “crash” pages
    ========================================================= */
 
-/* 2) IMPORTANT: Page background should be WHITE (not black) */
-html,
-body {
+
+/* ---------- 0) Reset any test styling (like lime) ---------- */
+html, body {
   background: #ffffff !important;
   background-color: #ffffff !important;
-  margin: 0 !important;
-  padding: 0 !important;
 }
 
-/* 3) Give the page room for the fixed header */
-body {
-  padding-top: 120px !important; /* desktop header height */
-}
 
-/* If BoldTrail uses a wrapper, keep it white too */
+/* ---------- 1) Ensure common wrappers stay white ---------- */
 .page-wrapper,
 #page-wrapper,
 .main-wrapper,
 #app,
-#root {
+#root,
+.content,
+#content,
+.main,
+#main,
+.container-fluid,
+.container,
+.body,
+#body {
   background: #ffffff !important;
   background-color: #ffffff !important;
 }
 
-/* 4) Our header: fixed + black */
-#dp-header {
-  background: #000 !important;
-  background-color: #000 !important;
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  width: 100% !important;
-  z-index: 999999 !important;
-  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+
+/* ---------- 2) BoldTrail header: force BLACK background ---------- */
+/* These are common BoldTrail / kvCORE header selectors */
+#header,
+div#header,
+.site-header,
+.kv-header,
+header.site-header,
+header#header {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 
-/* Header layout */
-#dp-header .header-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 120px;
-  position: relative;
+
+/* ---------- 3) Header text + nav links: WHITE ---------- */
+#header,
+#header * ,
+div#header,
+div#header * ,
+.site-header,
+.site-header * ,
+.kv-header,
+.kv-header * {
+  color: #ffffff !important;
 }
 
-/* Left Section */
-#dp-header .header-left {
-  display: flex;
-  align-items: center;
-  gap: 30px;
+
+/* ---------- 4) Links + hover color (your light blue) ---------- */
+#header a,
+div#header a,
+.site-header a,
+.kv-header a {
+  color: #ffffff !important;
+  text-decoration: none !important;
 }
 
-/* Hamburger */
-#dp-header .menu-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  position: relative;
-  width: 40px;
-  height: 40px;
-  justify-content: center;
-  align-items: center;
+#header a:hover,
+div#header a:hover,
+.site-header a:hover,
+.kv-header a:hover {
+  color: #7fb4e8 !important;
 }
 
-#dp-header .menu-toggle span {
-  display: block;
-  width: 28px;
-  height: 2px;
-  background: #fff;
-  transition: all 0.3s ease;
-  position: absolute;
+
+/* ---------- 5) Buttons / icons inside header ---------- */
+#header button,
+div#header button,
+.site-header button,
+.kv-header button,
+#header i,
+div#header i,
+.site-header i,
+.kv-header i,
+#header svg,
+div#header svg,
+.site-header svg,
+.kv-header svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
 }
 
-#dp-header .menu-toggle span:nth-child(1) { top: 11px; }
-#dp-header .menu-toggle span:nth-child(2) { top: 19px; }
-#dp-header .menu-toggle span:nth-child(3) { top: 27px; }
 
-#dp-header .menu-toggle.active span:nth-child(1) {
-  top: 19px;
-  transform: rotate(45deg);
-}
-#dp-header .menu-toggle.active span:nth-child(2) { opacity: 0; }
-#dp-header .menu-toggle.active span:nth-child(3) {
-  top: 19px;
-  transform: rotate(-45deg);
+/* ---------- 6) Header dropdown menus (if they exist) ---------- */
+#header .dropdown-menu,
+div#header .dropdown-menu,
+.site-header .dropdown-menu,
+.kv-header .dropdown-menu {
+  background: #000000 !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
 }
 
-/* Quick links */
-#dp-header .quick-links {
-  display: flex;
-  gap: 25px;
+#header .dropdown-menu a,
+div#header .dropdown-menu a,
+.site-header .dropdown-menu a,
+.kv-header .dropdown-menu a {
+  color: #ffffff !important;
 }
 
-#dp-header .quick-links a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 400;
-  transition: color 0.3s ease;
-  white-space: nowrap;
-}
 
-#dp-header .quick-links a:hover { color: #7fb4e8; }
-
-/* Center logo */
-#dp-header .header-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-#dp-header .main-logo {
-  height: 100px;
-  width: auto;
-}
-
-/* Right section */
-#dp-header .header-right {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-
-#dp-header .contact-link {
-  text-decoration: none;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 400;
-}
-
-#dp-header .contact-link:hover { color: #7fb4e8; }
-
-#dp-header .phone-link {
-  text-decoration: none;
-  color: #7fb4e8;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-/* 5) Mobile menu overlay */
-#dp-mobile-shell .mobile-menu {
-  position: fixed;
-  top: 120px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(10px);
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-  overflow: auto;
-  z-index: 999998;
-}
-
-#dp-mobile-shell .mobile-menu.active {
-  transform: translateX(0);
-}
-
-#dp-mobile-shell .mobile-menu-wrapper {
-  display: flex;
-  min-height: 100%;
-  padding: 40px 30px;
-  gap: 80px;
-  position: relative;
-}
-
-#dp-mobile-shell ul { list-style: none; margin: 0; padding: 0; }
-
-#dp-mobile-shell .main-menu-column { flex-shrink: 0; min-width: 220px; }
-
-#dp-mobile-shell .main-menu-column > ul > li,
-#dp-mobile-shell .submenu-column > ul > li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-#dp-mobile-shell a,
-#dp-mobile-shell button {
-  display: block;
-  padding: 20px 0;
-  text-decoration: none;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 400;
-  background: none;
-  border: none;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-}
-
-#dp-mobile-shell a:hover,
-#dp-mobile-shell button:hover { color: #7fb4e8; }
-
-#dp-mobile-shell .submenu-column {
-  position: absolute;
-  left: 330px;
-  min-width: 200px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-20px);
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-}
-
-#dp-mobile-shell .submenu-column.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(0);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  #dp-header .quick-links { display: none; }
-  #dp-header .contact-link { display: none; }
-  #dp-header .main-logo { height: 70px; }
-  #dp-header .header-content { min-height: 90px; padding: 10px 20px; }
-  body { padding-top: 90px !important; }
-  #dp-mobile-shell .mobile-menu { top: 90px; }
-}
-
-@media (max-width: 480px) {
-  #dp-header .header-content { min-height: 80px; padding: 10px 15px; }
-  #dp-header .main-logo { height: 50px; }
-  body { padding-top: 80px !important; }
-  #dp-mobile-shell .mobile-menu { top: 80px; }
+/* ---------- 7) Ensure body text (outside header) stays normal ---------- */
+/* This prevents accidental “everything becomes white text” issues */
+body {
+  color: inherit;
 }
