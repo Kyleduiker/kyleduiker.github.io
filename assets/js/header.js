@@ -12,7 +12,7 @@
     header.innerHTML = `
       <div class="header-content">
         <div class="header-left">
-          <button class="menu-toggle" id="dpMenuToggle" aria-label="Menu">
+          <button class="menu-toggle" id="dpMenuToggle" aria-label="Menu" type="button">
             <span></span><span></span><span></span>
           </button>
           <nav class="quick-links">
@@ -24,9 +24,9 @@
         <div class="header-center">
           <a href="/" aria-label="Home">
             <img class="main-logo"
-     src="https://raw.githubusercontent.com/Kyleduiker/duikerproperties-homepage/main/photos/brand/Powered%20by%20(1000%20x%20400%20px)%20(1).png"
-     alt="Duiker Properties">
-        </a>
+              src="https://raw.githubusercontent.com/Kyleduiker/duikerproperties-homepage/main/photos/brand/Powered%20by%20(1000%20x%20400%20px)%20(1).png"
+              alt="Duiker Properties" />
+          </a>
         </div>
 
         <div class="header-right">
@@ -40,7 +40,7 @@
     const shell = document.createElement("div");
     shell.id = "dp-mobile-shell";
     shell.innerHTML = `
-      <div class="mobile-menu" id="dpMobileMenu">
+      <div class="mobile-menu" id="dpMobileMenu" aria-hidden="true">
         <div class="mobile-menu-wrapper">
           <div class="main-menu-column">
             <ul>
@@ -61,13 +61,37 @@
     document.body.insertAdjacentElement("afterbegin", shell);
     document.body.insertAdjacentElement("afterbegin", header);
 
-    // Toggle behaviour
+    // Toggle behaviour (with safety checks)
     const toggle = document.getElementById("dpMenuToggle");
     const menu = document.getElementById("dpMobileMenu");
 
-    toggle.addEventListener("click", () => {
+    if (!toggle || !menu) {
+      console.log("[DP Header] Missing toggle or menu", { toggle, menu });
+      return;
+    }
+
+    toggle.addEventListener("click", (e) => {
+      e.preventDefault();
       toggle.classList.toggle("active");
       menu.classList.toggle("active");
+      menu.setAttribute("aria-hidden", menu.classList.contains("active") ? "false" : "true");
+    });
+
+    // Close menu when clicking a link
+    menu.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (!link) return;
+      toggle.classList.remove("active");
+      menu.classList.remove("active");
+      menu.setAttribute("aria-hidden", "true");
+    });
+
+    // ESC closes menu
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      toggle.classList.remove("active");
+      menu.classList.remove("active");
+      menu.setAttribute("aria-hidden", "true");
     });
   }
 
