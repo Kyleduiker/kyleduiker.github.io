@@ -1,73 +1,93 @@
 /* =========================================================
    Duiker Custom Header (SAFE for BoldTrail)
-   Only targets: #dp-header and #dp-mobile-shell
-   Loads Raleway + forces black header on ALL pages
+   Only targets:
+   - #dp-header
+   - #dp-mobile-shell
+   Also patches common BoldTrail "white band" wrappers
    ========================================================= */
 
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
-
-:root {
-  --dp-header-height-desktop: 120px;
-  --dp-header-height-tablet: 90px;
-  --dp-header-height-mobile: 80px;
+/* --- Basic safety + font --- */
+#dp-header,
+#dp-header * ,
+#dp-mobile-shell,
+#dp-mobile-shell * {
+  box-sizing: border-box;
+  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
 }
 
-/* --- Hide BoldTrail default header bits (leave the rest alone) --- */
+/* --- Keep BoldTrail header hidden (if any remnants exist) --- */
 #header,
-div#header,
 .site-header,
 .kv-header,
-#fixed-header-spacer,
 #quick-search,
-.page-wrapper > #header {
+#fixed-header-spacer {
   display: none !important;
   visibility: hidden !important;
   height: 0 !important;
 }
 
-/* --- Push page content below our fixed header --- */
-body {
-  padding-top: var(--dp-header-height-desktop) !important;
+/* --- FIX: White band / white banner behind header on subpages --- */
+/* These are common BoldTrail wrappers that can show white around/behind content */
+html, body {
+  background: #000 !important;
 }
 
-/* =========================================================
-   HEADER (dp-header)
-   ========================================================= */
+.page-wrapper,
+#page-wrapper,
+#main,
+#main-content,
+#content,
+.content,
+.content-wrapper,
+#app,
+#vue-app,
+.cover,
+.cover-wrap,
+.cover-pull-top,
+.hero,
+.hero-wrap,
+.header-transparent,
+.header-spacer,
+#sticky-header-spacer {
+  background: #000 !important;
+  background-color: #000 !important;
+  background-image: none !important;
+}
 
+/* Give the site content room below the fixed header */
+body {
+  padding-top: 120px !important; /* desktop header height */
+  margin: 0 !important;
+}
+
+/* If BoldTrail applies padding/margin on wrappers, neutralize */
+.page-wrapper,
+#page-wrapper {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* --- FIXED HEADER BAR --- */
 #dp-header {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
-
   z-index: 999999 !important;
-
   background: #000 !important;
-  background-color: #000 !important;
-  background-image: none !important;
-
-  font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* Force black on anything inside header */
-#dp-header,
-#dp-header * {
-  box-sizing: border-box;
-}
-
+/* Layout */
 #dp-header .header-content {
   max-width: 1400px;
   margin: 0 auto;
   padding: 15px 20px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  min-height: var(--dp-header-height-desktop);
+  min-height: 120px;
   position: relative;
-
-  background: #000 !important;
 }
 
 /* Left */
@@ -82,22 +102,14 @@ body {
   border: none;
   cursor: pointer;
   padding: 10px;
-
   display: flex;
   flex-direction: column;
   gap: 6px;
-
   position: relative;
   width: 40px;
   height: 40px;
   justify-content: center;
   align-items: center;
-
-  transition: opacity 0.2s ease;
-}
-
-#dp-header .menu-toggle:hover {
-  opacity: 0.75;
 }
 
 #dp-header .menu-toggle span {
@@ -105,7 +117,7 @@ body {
   width: 28px;
   height: 2px;
   background: #fff;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
   position: absolute;
 }
 
@@ -113,17 +125,9 @@ body {
 #dp-header .menu-toggle span:nth-child(2) { top: 19px; }
 #dp-header .menu-toggle span:nth-child(3) { top: 27px; }
 
-#dp-header .menu-toggle.active span:nth-child(1) {
-  top: 19px;
-  transform: rotate(45deg);
-}
-#dp-header .menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-#dp-header .menu-toggle.active span:nth-child(3) {
-  top: 19px;
-  transform: rotate(-45deg);
-}
+#dp-header .menu-toggle.active span:nth-child(1) { top: 19px; transform: rotate(45deg); }
+#dp-header .menu-toggle.active span:nth-child(2) { opacity: 0; }
+#dp-header .menu-toggle.active span:nth-child(3) { top: 19px; transform: rotate(-45deg); }
 
 #dp-header .quick-links {
   display: flex;
@@ -132,16 +136,13 @@ body {
 
 #dp-header .quick-links a {
   text-decoration: none;
-  color: #fff !important;
+  color: #fff;
   font-size: 15px;
   font-weight: 400;
   white-space: nowrap;
-  transition: color 0.2s ease;
+  transition: opacity 0.2s ease;
 }
-
-#dp-header .quick-links a:hover {
-  color: #7fb4e8 !important;
-}
+#dp-header .quick-links a:hover { opacity: 0.75; }
 
 /* Center logo */
 #dp-header .header-center {
@@ -150,18 +151,8 @@ body {
   transform: translateX(-50%);
 }
 
-#dp-header .logo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-
-#dp-header .main-logo {
-  height: 100px;
-  width: auto;
-  display: block;
-}
+#dp-header .logo-container { display: flex; align-items: center; }
+#dp-header .main-logo { height: 70px; width: auto; display:block; }
 
 /* Right */
 #dp-header .header-right {
@@ -172,53 +163,38 @@ body {
 
 #dp-header .contact-link {
   text-decoration: none;
-  color: #fff !important;
+  color: #fff;
   font-size: 15px;
   font-weight: 400;
-  transition: color 0.2s ease;
+  transition: opacity 0.2s ease;
 }
-
-#dp-header .contact-link:hover {
-  color: #7fb4e8 !important;
-}
+#dp-header .contact-link:hover { opacity: 0.75; }
 
 #dp-header .phone-link {
   text-decoration: none;
-  color: #7fb4e8 !important;
+  color: #7fb4e8;
   font-size: 16px;
   font-weight: 600;
   transition: opacity 0.2s ease;
 }
+#dp-header .phone-link:hover { opacity: 0.75; }
 
-#dp-header .phone-link:hover {
-  opacity: 0.8;
-}
-
-/* =========================================================
-   MOBILE MENU (dp-mobile-shell)
-   ========================================================= */
-
+/* --- MOBILE MENU --- */
 #dp-mobile-shell .mobile-menu {
   position: fixed;
-  top: var(--dp-header-height-desktop);
+  top: 120px;
   left: 0;
   right: 0;
   bottom: 0;
-
-  background: rgba(0, 0, 0, 0.95);
+  background: rgba(0,0,0,0.95);
   backdrop-filter: blur(10px);
-
   transform: translateX(-100%);
-  transition: transform 0.25s ease;
-
-  overflow-x: auto;
-  overflow-y: auto;
+  transition: transform 0.3s ease;
+  overflow: auto;
   z-index: 999998;
 }
 
-#dp-mobile-shell .mobile-menu.active {
-  transform: translateX(0);
-}
+#dp-mobile-shell .mobile-menu.active { transform: translateX(0); }
 
 #dp-mobile-shell .mobile-menu-wrapper {
   display: flex;
@@ -228,19 +204,12 @@ body {
   position: relative;
 }
 
-#dp-mobile-shell ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+#dp-mobile-shell .mobile-menu ul { list-style: none; margin: 0; padding: 0; }
 
-#dp-mobile-shell .main-menu-column {
-  flex-shrink: 0;
-  min-width: 220px;
-}
+#dp-mobile-shell .main-menu-column { flex-shrink: 0; min-width: 220px; }
 
 #dp-mobile-shell .main-menu-column > ul > li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 #dp-mobile-shell .main-menu-column a,
@@ -248,22 +217,14 @@ body {
   display: block;
   padding: 20px 0;
   text-decoration: none;
-  color: #fff !important;
+  color: #fff;
   font-size: 18px;
   font-weight: 400;
-
   background: none;
   border: none;
   width: 100%;
   text-align: left;
   cursor: pointer;
-
-  transition: color 0.2s ease;
-}
-
-#dp-mobile-shell .main-menu-column a:hover,
-#dp-mobile-shell .main-menu-column button:hover {
-  color: #7fb4e8 !important;
 }
 
 #dp-mobile-shell .menu-item-with-submenu {
@@ -272,27 +233,16 @@ body {
   align-items: center;
 }
 
-#dp-mobile-shell .submenu-toggle {
-  font-size: 24px;
-  color: rgba(255, 255, 255, 0.7);
-  transition: transform 0.2s ease;
-  line-height: 1;
-  font-weight: 300;
-}
-
-#dp-mobile-shell .submenu-toggle.active {
-  transform: rotate(45deg);
-}
+#dp-mobile-shell .submenu-toggle { font-size: 24px; opacity: 0.7; }
 
 #dp-mobile-shell .submenu-column {
   position: absolute;
   left: 330px;
   min-width: 200px;
-
   opacity: 0;
   visibility: hidden;
   transform: translateX(-20px);
-  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
 #dp-mobile-shell .submenu-column.active {
@@ -302,60 +252,31 @@ body {
 }
 
 #dp-mobile-shell .submenu-column > ul > li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 #dp-mobile-shell .submenu-column a {
   display: block;
   padding: 20px 0;
   text-decoration: none;
-  color: #fff !important;
+  color: #fff;
   font-size: 18px;
   font-weight: 400;
-  transition: color 0.2s ease;
 }
 
-#dp-mobile-shell .submenu-column a:hover {
-  color: #7fb4e8 !important;
-}
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
+/* --- Responsive --- */
 @media (max-width: 768px) {
-  body { padding-top: var(--dp-header-height-tablet) !important; }
-
+  body { padding-top: 90px !important; }
   #dp-header .quick-links { display: none; }
   #dp-header .contact-link { display: none; }
-
-  #dp-header .header-content {
-    min-height: var(--dp-header-height-tablet);
-    padding: 10px 20px;
-  }
-
-  #dp-header .main-logo { height: 70px; }
-
-  #dp-mobile-shell .mobile-menu { top: var(--dp-header-height-tablet); }
-  #dp-mobile-shell .mobile-menu-wrapper { gap: 50px; }
+  #dp-header .header-content { min-height: 90px; padding: 10px 20px; }
+  #dp-header .main-logo { height: 55px; }
+  #dp-mobile-shell .mobile-menu { top: 90px; }
 }
 
 @media (max-width: 480px) {
-  body { padding-top: var(--dp-header-height-mobile) !important; }
-
-  #dp-header .header-content {
-    min-height: var(--dp-header-height-mobile);
-    padding: 10px 15px;
-  }
-
-  #dp-header .main-logo { height: 50px; }
-
-  #dp-mobile-shell .mobile-menu { top: var(--dp-header-height-mobile); }
-  #dp-mobile-shell .mobile-menu-wrapper {
-    padding: 30px 20px;
-    gap: 40px;
-  }
-
-  #dp-mobile-shell .main-menu-column { min-width: 180px; }
-  #dp-mobile-shell .submenu-column { min-width: 160px; }
+  body { padding-top: 80px !important; }
+  #dp-header .header-content { min-height: 80px; padding: 10px 15px; }
+  #dp-header .main-logo { height: 45px; }
+  #dp-mobile-shell .mobile-menu { top: 80px; }
 }
