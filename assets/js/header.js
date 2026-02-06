@@ -1,78 +1,78 @@
-// Header Menu Functionality
-window.initDuikerHeader = function() {
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
+(function () {
+  function inject() {
+    // Prevent double-inject
+    if (document.getElementById("dp-header")) return;
 
-    if (!menuToggle || !mobileMenu) {
-        console.error('Header elements not found');
-        return;
-    }
+    // Mark body so CSS can safely hide BoldTrail header
+    document.body.classList.add("has-dp-header");
 
-    // Menu Toggle
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
+    // Build header HTML
+    const header = document.createElement("header");
+    header.id = "dp-header";
+    header.innerHTML = `
+      <div class="header-content">
+        <div class="header-left">
+          <button class="menu-toggle" id="dpMenuToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+          <nav class="quick-links">
+            <a href="/featured-properties">Featured Properties</a>
+            <a href="/calgary">Calgary Communities</a>
+          </nav>
+        </div>
+
+        <div class="header-center">
+          <a href="/" aria-label="Home">
+            <img class="main-logo" src="https://www.duikerproperties.com/wp-content/uploads/2026/02/duiker-logo.png" alt="Duiker Properties">
+          </a>
+        </div>
+
+        <div class="header-right">
+          <a class="contact-link" href="/contact">Contact Us</a>
+          <a class="phone-link" href="tel:4037973384">(403) 797-3384</a>
+        </div>
+      </div>
+    `;
+
+    // Mobile shell
+    const shell = document.createElement("div");
+    shell.id = "dp-mobile-shell";
+    shell.innerHTML = `
+      <div class="mobile-menu" id="dpMobileMenu">
+        <div class="mobile-menu-wrapper">
+          <div class="main-menu-column">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/search">Search</a></li>
+              <li><a href="/calgary">Calgary Communities</a></li>
+              <li><a href="/surroundingarea">Surrounding Areas</a></li>
+              <li><a href="/buyers">Buyers</a></li>
+              <li><a href="/sellers">Sellers</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Insert at very top of body
+    document.body.insertAdjacentElement("afterbegin", shell);
+    document.body.insertAdjacentElement("afterbegin", header);
+
+    // Toggle behaviour
+    const toggle = document.getElementById("dpMenuToggle");
+    const menu = document.getElementById("dpMobileMenu");
+
+    toggle.addEventListener("click", () => {
+      toggle.classList.toggle("active");
+      menu.classList.toggle("active");
     });
+  }
 
-    // Close menu when clicking outside
-    mobileMenu.addEventListener('click', (e) => {
-        if (e.target === mobileMenu) {
-            closeMenu();
-        }
-    });
-
-    // Submenu Toggle
-    document.querySelectorAll('.menu-item-with-submenu').forEach(button => {
-        button.addEventListener('click', function() {
-            const submenuId = this.getAttribute('data-submenu');
-            const submenuColumn = document.getElementById('submenu-' + submenuId);
-            const toggle = this.querySelector('.submenu-toggle');
-            
-            if (!submenuColumn) return;
-            
-            // Get the position of the clicked button
-            const buttonRect = this.getBoundingClientRect();
-            const menuRect = mobileMenu.getBoundingClientRect();
-            const topPosition = buttonRect.top - menuRect.top;
-            
-            // Close all other submenus
-            document.querySelectorAll('.submenu-column').forEach(col => {
-                if (col !== submenuColumn) {
-                    col.classList.remove('active');
-                }
-            });
-            document.querySelectorAll('.submenu-toggle').forEach(t => {
-                if (t !== toggle) {
-                    t.classList.remove('active');
-                }
-            });
-            
-            // Position and toggle current submenu
-            if (!submenuColumn.classList.contains('active')) {
-                submenuColumn.style.top = topPosition + 'px';
-                submenuColumn.classList.add('active');
-                toggle.classList.add('active');
-            } else {
-                submenuColumn.classList.remove('active');
-                toggle.classList.remove('active');
-            }
-        });
-    });
-
-    // Close menu on ESC key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-            closeMenu();
-        }
-    });
-
-    // Helper function to close menu
-    function closeMenu() {
-        menuToggle.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        document.querySelectorAll('.submenu-column').forEach(col => col.classList.remove('active'));
-        document.querySelectorAll('.submenu-toggle').forEach(toggle => toggle.classList.remove('active'));
-    }
-
-    console.log('Duiker Header initialized successfully');
-};
+  // Run when ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", inject);
+  } else {
+    inject();
+  }
+})();
