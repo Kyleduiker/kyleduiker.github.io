@@ -1,10 +1,4 @@
-/* =========================================================
-   Duiker Custom Header (SAFE for BoldTrail)
-   Styles ONLY our injected header/menu:
-   #dp-header and #dp-mobile-shell
-   ========================================================= */
-
-/* 1) Hide BoldTrail default header (leave the rest of site alone) */
+/* ===== TEMP DISABLED (testing) =====
 #header,
 div#header,
 .site-header,
@@ -16,6 +10,13 @@ div#header,
   visibility: hidden !important;
   height: 0 !important;
 }
+===== END TEMP DISABLED ===== */
+
+/* =========================================================
+   Duiker Custom Header (SAFE for BoldTrail)
+   Styles ONLY our injected header/menu:
+   #dp-header and #dp-mobile-shell
+   ========================================================= */
 
 /* 2) IMPORTANT: Page background should be WHITE (not black) */
 html,
