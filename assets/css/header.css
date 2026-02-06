@@ -1,4 +1,60 @@
 /* =========================================================
+   BoldTrail Subpage "Banner / Hero" background to BLACK
+   This targets the listing/search header strip (not your DP header)
+   ========================================================= */
+
+/* Keep your custom header black no matter what */
+#dp-header {
+  background: #000 !important;
+}
+
+/* These are common BoldTrail hero/header wrappers on subpages */
+.cover,
+.cover-pull-top,
+.header-cover,
+.page-hero,
+.hero,
+.hero-wrap,
+.hero-wrapper,
+.kv-hero,
+.kv-hero-wrapper,
+.kv-cover,
+.kv-cover-wrapper,
+.kv-banner,
+.banner,
+.banner-wrapper,
+.search-banner,
+.results-banner,
+#banner,
+#hero,
+#cover {
+  background: #000 !important;
+  background-color: #000 !important;
+  background-image: none !important;
+}
+
+/* If BoldTrail uses a dark gradient overlay, kill it */
+.cover::before,
+.cover::after,
+.hero::before,
+.hero::after,
+.banner::before,
+.banner::after,
+.kv-hero::before,
+.kv-hero::after {
+  background: #000 !important;
+  opacity: 1 !important;
+}
+
+/* Sometimes the "results header" is a container with a background image */
+.cover [style*="background"],
+.hero [style*="background"],
+.banner [style*="background"],
+.kv-hero [style*="background"] {
+  background: #000 !important;
+  background-image: none !important;
+}
+/* =========================================================
    Duiker Custom Header (SAFE for BoldTrail)
    Only targets:
    - #dp-header
