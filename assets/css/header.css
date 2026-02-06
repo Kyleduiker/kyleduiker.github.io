@@ -1,19 +1,18 @@
 /* =========================================
    Duiker Custom Header (SAFE for BoldTrail)
-   Only styles elements inside:
-   #dp-header and #dp-mobile-shell
+   Only affects injected header + mobile menu
 ========================================= */
 
 #dp-header,
-#dp-header * ,
+#dp-header *,
 #dp-mobile-shell,
 #dp-mobile-shell * {
   box-sizing: border-box;
 }
 
-/* Fixed header */
+/* ---------------- HEADER ---------------- */
 #dp-header {
-  background-color: #000 !important;
+  background: #000 !important;
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
@@ -21,4 +20,151 @@
   width: 100% !important;
   z-index: 999999 !important;
   font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+
+#dp-header .header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 120px;
+  position: relative;
+}
+
+/* Left */
+#dp-header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Hamburger */
+#dp-header .menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+#dp-header .menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+#dp-header .menu-toggle span:nth-child(1) { top: 11px; }
+#dp-header .menu-toggle span:nth-child(2) { top: 19px; }
+#dp-header .menu-toggle span:nth-child(3) { top: 27px; }
+
+#dp-header .menu-toggle.active span:nth-child(1) {
+  top: 19px;
+  transform: rotate(45deg);
+}
+#dp-header .menu-toggle.active span:nth-child(2) { opacity: 0; }
+#dp-header .menu-toggle.active span:nth-child(3) {
+  top: 19px;
+  transform: rotate(-45deg);
+}
+
+/* Links */
+#dp-header .quick-links {
+  display: flex;
+  gap: 25px;
+}
+
+#dp-header .quick-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+#dp-header .quick-links a:hover { color: #7fb4e8; }
+
+/* Center logo */
+#dp-header .header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#dp-header .main-logo {
+  height: 100px;
+  width: auto;
+}
+
+/* Right */
+#dp-header .header-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+#dp-header .contact-link { color: #fff; text-decoration: none; }
+#dp-header .phone-link { color: #7fb4e8; text-decoration: none; font-weight: 600; }
+
+/* ---------------- MOBILE MENU ---------------- */
+#dp-mobile-shell .mobile-menu {
+  position: fixed;
+  top: 120px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.95);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  overflow: auto;
+  z-index: 999998;
+}
+
+#dp-mobile-shell .mobile-menu.active {
+  transform: translateX(0);
+}
+
+#dp-mobile-shell .mobile-menu-wrapper {
+  display: flex;
+  min-height: 100%;
+  padding: 40px 30px;
+  gap: 80px;
+}
+
+#dp-mobile-shell ul { list-style: none; margin: 0; padding: 0; }
+
+#dp-mobile-shell a,
+#dp-mobile-shell button {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  background: none;
+  border: none;
+  display: block;
+  padding: 20px 0;
+  cursor: pointer;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 768px) {
+  #dp-header .quick-links { display: none; }
+  #dp-header .main-logo { height: 70px; }
+  #dp-header .header-content { min-height: 90px; }
+  #dp-mobile-shell .mobile-menu { top: 90px; }
+}
+
+@media (max-width: 480px) {
+  #dp-header .main-logo { height: 50px; }
+  #dp-header .header-content { min-height: 80px; }
+  #dp-mobile-shell .mobile-menu { top: 80px; }
 }
