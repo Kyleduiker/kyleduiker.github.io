@@ -23,8 +23,10 @@
 
         <div class="header-center">
           <a href="/" aria-label="Home">
-            <img class="main-logo" src="https://www.duikerproperties.com/wp-content/uploads/2026/02/duiker-logo.png" alt="Duiker Properties">
-          </a>
+            <img class="main-logo"
+     src="https://raw.githubusercontent.com/Kyleduiker/duikerproperties-homepage/main/photos/brand/Powered%20by%20(1000%20x%20400%20px)%20(1).png"
+     alt="Duiker Properties">
+        </a>
         </div>
 
         <div class="header-right">
