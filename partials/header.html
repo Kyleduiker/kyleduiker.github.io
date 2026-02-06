@@ -1,136 +1,149 @@
-<!-- Header Component - Include this on all pages -->
-<header id="dp-header" class="header">
- <div class="header-content">
-        <!-- Left Section -->
-        <div class="header-left">
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="quick-links">
-                <a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Featured Properties</a>
-                <a href="https://duikerproperties.com/communities/calgary">Calgary Communities</a>
-            </div>
-        </div>
+<!-- ===== Duiker Header Wrapper (CSS scope root) ===== -->
+<div id="dp-header">
 
-        <!-- Center Logo -->
-        <div class="header-center">
-            <a href="https://duikerproperties.com/" class="logo-container">
-                <img src="https://guide.duikerproperties.com/photos/brand/Powered%20by%20(1000%20x%20400%20px)%20(1).png"
-                     alt="Duiker Properties - Royal LePage Solutions" 
-                     class="main-logo">
-            </a>
-        </div>
+  <!-- Header Component -->
+  <header class="header">
+    <div class="header-content">
 
-        <!-- Right Section -->
-        <div class="header-right">
-            <a href="https://duikerproperties.com/contact" class="contact-link">Contact Us</a>
-            <a href="tel:4037973384" class="phone-link">(403) 797-3384</a>
+      <!-- Left Section -->
+      <div class="header-left">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="quick-links">
+          <a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Featured Properties</a>
+          <a href="https://duikerproperties.com/communities/calgary">Calgary Communities</a>
         </div>
+      </div>
+
+      <!-- Center Logo -->
+      <div class="header-center">
+        <a href="https://duikerproperties.com/" class="logo-container">
+          <img
+            src="https://guide.duikerproperties.com/photos/brand/Powered%20by%20(1000%20x%20400%20px)%20(1).png"
+            alt="Duiker Properties - Royal LePage Solutions"
+            class="main-logo"
+          >
+        </a>
+      </div>
+
+      <!-- Right Section -->
+      <div class="header-right">
+        <a href="https://duikerproperties.com/contact" class="contact-link">Contact Us</a>
+        <a href="tel:4037973384" class="phone-link">(403) 797-3384</a>
+      </div>
+
     </div>
-</header>
+  </header>
 
-<!-- Mobile Menu -->
+</div>
+
+
+<!-- ===== Mobile Menu Wrapper (CSS scope root) ===== -->
 <div id="dp-mobile-shell">
   <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu-wrapper">
-        <!-- Main Menu Column -->
-        <div class="main-menu-column">
-            <ul>
-                <li><a href="https://duikerproperties.com/">Home</a></li>
-                <li><a href="https://duikerproperties.com/about">About Kyle</a></li>
-                
-                <li>
-                    <button class="menu-item-with-submenu" data-submenu="search">
-                        <span>Search</span>
-                        <span class="submenu-toggle">+</span>
-                    </button>
-                </li>
-                
-                <li>
-                    <button class="menu-item-with-submenu" data-submenu="calgary-communities">
-                        <span>Calgary Communities</span>
-                        <span class="submenu-toggle">+</span>
-                    </button>
-                </li>
-                
-                <li>
-                    <button class="menu-item-with-submenu" data-submenu="surrounding-areas">
-                        <span>Surrounding Areas</span>
-                        <span class="submenu-toggle">+</span>
-                    </button>
-                </li>
-                
-                <li>
-                    <button class="menu-item-with-submenu" data-submenu="buyers">
-                        <span>Buyers</span>
-                        <span class="submenu-toggle">+</span>
-                    </button>
-                </li>
-                
-                <li>
-                    <button class="menu-item-with-submenu" data-submenu="sellers">
-                        <span>Sellers</span>
-                        <span class="submenu-toggle">+</span>
-                    </button>
-                </li>
-                
-                <li><a href="https://duikerproperties.com/blog">Blog & Market Updates</a></li>
-                <li><a href="https://duikerproperties.com/testimonials">Testimonials</a></li>
-                <li><a href="https://duikerproperties.com/contact">Contact</a></li>
-            </ul>
-        </div>
 
-        <!-- Submenu Column - Search -->
-        <div class="submenu-column" id="submenu-search">
-            <ul>
-                <li><a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Active Listings</a></li>
-                <li><a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Featured Properties</a></li>
-            </ul>
-        </div>
+      <!-- Main Menu Column -->
+      <div class="main-menu-column">
+        <ul>
+          <li><a href="https://duikerproperties.com/">Home</a></li>
+          <li><a href="https://duikerproperties.com/about">About Kyle</a></li>
 
-        <!-- Submenu Column - Calgary Communities -->
-        <div class="submenu-column" id="submenu-calgary-communities">
-            <ul>
-                 <li><a href="https://duikerproperties.com/communities/calgary-northeast">Northeast Calgary</a></li>
-                <li><a href="https://duikerproperties.com/communities/calgary-northwest">Northwest Calgary</a></li>
-                <li><a href="https://duikerproperties.com/communities/calgary-southwest">Southwest Calgary</a></li>
-                <li><a href="https://duikerproperties.com/communities/calgary-southeast">Southeast Calgary</a></li>
-                <li><a href="https://duikerproperties.com/communities/calgary-southeast">City Center Calgary</a></li>
-                <li><a href="https://duikerproperties.com/communities/calgary-southeast">Calgary</a></li>
-            </ul>
-        </div>
+          <li>
+            <button class="menu-item-with-submenu" data-submenu="search" type="button">
+              <span>Search</span>
+              <span class="submenu-toggle">+</span>
+            </button>
+          </li>
 
-        <!-- Submenu Column - Surrounding Areas -->
-        <div class="submenu-column" id="submenu-surrounding-areas">
-            <ul>
-                <li><a href="https://duikerproperties.com/communities/chestermere">Chestermere</a></li>
-                <li><a href="https://duikerproperties.com/communities/airdrie">Airdrie</a></li>
-                <li><a href="https://duikerproperties.com/communities/cochrane">Cochrane</a></li>
-                <li><a href="https://duikerproperties.com/communities/okotoks">Okotoks</a></li>
-            </ul>
-        </div>
+          <li>
+            <button class="menu-item-with-submenu" data-submenu="calgary-communities" type="button">
+              <span>Calgary Communities</span>
+              <span class="submenu-toggle">+</span>
+            </button>
+          </li>
 
-        <!-- Submenu Column - Buyers -->
-        <div class="submenu-column" id="submenu-buyers">
-            <ul>
-                <li><a href="https://duikerproperties.com/buyers/guide">Buyer's Guide</a></li>
-                <li><a href="https://duikerproperties.com/buyers/process">Buying Process</a></li>
-                <li><a href="https://duikerproperties.com/buyers/first-time">First-Time Buyers</a></li>
-                <li><a href="https://duikerproperties.com/buyers/financing">Financing Options</a></li>
-            </ul>
-        </div>
+          <li>
+            <button class="menu-item-with-submenu" data-submenu="surrounding-areas" type="button">
+              <span>Surrounding Areas</span>
+              <span class="submenu-toggle">+</span>
+            </button>
+          </li>
 
-        <!-- Submenu Column - Sellers -->
-        <div class="submenu-column" id="submenu-sellers">
-            <ul>
-                <li><a href="https://duikerproperties.com/sellers/guide">Seller's Guide</a></li>
-                <li><a href="https://duikerproperties.com/sellers/valuation">Home Valuation</a></li>
-                <li><a href="https://duikerproperties.com/sellers/preparation">Prepare Your Home</a></li>
-                <li><a href="https://duikerproperties.com/sellers/marketing">Marketing Strategy</a></li>
-            </ul>
-        </div>
+          <li>
+            <button class="menu-item-with-submenu" data-submenu="buyers" type="button">
+              <span>Buyers</span>
+              <span class="submenu-toggle">+</span>
+            </button>
+          </li>
+
+          <li>
+            <button class="menu-item-with-submenu" data-submenu="sellers" type="button">
+              <span>Sellers</span>
+              <span class="submenu-toggle">+</span>
+            </button>
+          </li>
+
+          <li><a href="https://duikerproperties.com/blog">Blog & Market Updates</a></li>
+          <li><a href="https://duikerproperties.com/testimonials">Testimonials</a></li>
+          <li><a href="https://duikerproperties.com/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Submenu Column - Search -->
+      <div class="submenu-column" id="submenu-search">
+        <ul>
+          <li><a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Active Listings</a></li>
+          <li><a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Featured Properties</a></li>
+        </ul>
+      </div>
+
+      <!-- Submenu Column - Calgary Communities -->
+      <div class="submenu-column" id="submenu-calgary-communities">
+        <ul>
+          <li><a href="https://duikerproperties.com/communities/calgary-northeast">Northeast Calgary</a></li>
+          <li><a href="https://duikerproperties.com/communities/calgary-northwest">Northwest Calgary</a></li>
+          <li><a href="https://duikerproperties.com/communities/calgary-southwest">Southwest Calgary</a></li>
+          <li><a href="https://duikerproperties.com/communities/calgary-southeast">Southeast Calgary</a></li>
+          <li><a href="https://duikerproperties.com/communities/calgary-southeast">City Center Calgary</a></li>
+          <li><a href="https://duikerproperties.com/communities/calgary-southeast">Calgary</a></li>
+        </ul>
+      </div>
+
+      <!-- Submenu Column - Surrounding Areas -->
+      <div class="submenu-column" id="submenu-surrounding-areas">
+        <ul>
+          <li><a href="https://duikerproperties.com/communities/chestermere">Chestermere</a></li>
+          <li><a href="https://duikerproperties.com/communities/airdrie">Airdrie</a></li>
+          <li><a href="https://duikerproperties.com/communities/cochrane">Cochrane</a></li>
+          <li><a href="https://duikerproperties.com/communities/okotoks">Okotoks</a></li>
+        </ul>
+      </div>
+
+      <!-- Submenu Column - Buyers -->
+      <div class="submenu-column" id="submenu-buyers">
+        <ul>
+          <li><a href="https://duikerproperties.com/buyers/guide">Buyer's Guide</a></li>
+          <li><a href="https://duikerproperties.com/buyers/process">Buying Process</a></li>
+          <li><a href="https://duikerproperties.com/buyers/first-time">First-Time Buyers</a></li>
+          <li><a href="https://duikerproperties.com/buyers/financing">Financing Options</a></li>
+        </ul>
+      </div>
+
+      <!-- Submenu Column - Sellers -->
+      <div class="submenu-column" id="submenu-sellers">
+        <ul>
+          <li><a href="https://duikerproperties.com/sellers/guide">Seller's Guide</a></li>
+          <li><a href="https://duikerproperties.com/sellers/valuation">Home Valuation</a></li>
+          <li><a href="https://duikerproperties.com/sellers/preparation">Prepare Your Home</a></li>
+          <li><a href="https://duikerproperties.com/sellers/marketing">Marketing Strategy</a></li>
+        </ul>
+      </div>
+
     </div>
-</div>
+  </div>
 </div>
