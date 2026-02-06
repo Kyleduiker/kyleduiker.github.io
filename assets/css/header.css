@@ -1,123 +1,213 @@
 /* =========================================================
-   header.css  —  SWITCH 2 (KEEP BOLDTRAIL HEADER)
-   Goal:
-   - Keep BoldTrail header (do NOT hide it)
-   - Make header black, text white
-   - Keep the rest of the page white
-   Notes:
-   - Safe selectors only (no #dp-header / injected header)
-   - Avoids global black backgrounds that “crash” pages
+   Duiker Custom Header (SAFE MODE)
+   - Will NOT hide BoldTrail header unless body has class: has-dp-header
+   - Keeps page background normal
    ========================================================= */
 
-
-/* ---------- 0) Reset any test styling (like lime) ---------- */
-html, body {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
+:root{
+  --dp-black:#000;
+  --dp-white:#fff;
+  --dp-accent:#7fb4e8;
+  --dp-header-h:120px;
+  --dp-header-h-mobile:90px;
+  --dp-header-h-small:80px;
 }
 
-
-/* ---------- 1) Ensure common wrappers stay white ---------- */
-.page-wrapper,
-#page-wrapper,
-.main-wrapper,
-#app,
-#root,
-.content,
-#content,
-.main,
-#main,
-.container-fluid,
-.container,
-.body,
-#body {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
+/* 0) Don’t change the whole site colors */
+html, body{
+  background:#fff !important;
+  background-color:#fff !important;
+  margin:0 !important;
+  padding:0 !important;
 }
 
-
-/* ---------- 2) BoldTrail header: force BLACK background ---------- */
-/* These are common BoldTrail / kvCORE header selectors */
-#header,
-div#header,
-.site-header,
-.kv-header,
-header.site-header,
-header#header {
-  background: #000000 !important;
-  background-color: #000000 !important;
-  border-bottom: none !important;
-  box-shadow: none !important;
+/* 1) ONLY hide BoldTrail header AFTER our header is injected */
+body.has-dp-header #header,
+body.has-dp-header div#header,
+body.has-dp-header .site-header,
+body.has-dp-header .kv-header,
+body.has-dp-header #quick-search,
+body.has-dp-header #fixed-header-spacer,
+body.has-dp-header .page-wrapper > #header{
+  display:none !important;
+  visibility:hidden !important;
+  height:0 !important;
 }
 
-
-/* ---------- 3) Header text + nav links: WHITE ---------- */
-#header,
-#header * ,
-div#header,
-div#header * ,
-.site-header,
-.site-header * ,
-.kv-header,
-.kv-header * {
-  color: #ffffff !important;
+/* 2) Add space for our fixed header only after it exists */
+body.has-dp-header{
+  padding-top:var(--dp-header-h) !important;
 }
 
-
-/* ---------- 4) Links + hover color (your light blue) ---------- */
-#header a,
-div#header a,
-.site-header a,
-.kv-header a {
-  color: #ffffff !important;
-  text-decoration: none !important;
+/* 3) Header container */
+#dp-header{
+  background:var(--dp-black) !important;
+  color:var(--dp-white) !important;
+  position:fixed !important;
+  top:0 !important;
+  left:0 !important;
+  right:0 !important;
+  width:100% !important;
+  z-index:999999 !important;
+  font-family:'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
 }
 
-#header a:hover,
-div#header a:hover,
-.site-header a:hover,
-.kv-header a:hover {
-  color: #7fb4e8 !important;
+#dp-header .header-content{
+  max-width:1400px;
+  margin:0 auto;
+  padding:15px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:var(--dp-header-h);
+  position:relative;
 }
 
-
-/* ---------- 5) Buttons / icons inside header ---------- */
-#header button,
-div#header button,
-.site-header button,
-.kv-header button,
-#header i,
-div#header i,
-.site-header i,
-.kv-header i,
-#header svg,
-div#header svg,
-.site-header svg,
-.kv-header svg {
-  color: #ffffff !important;
-  fill: #ffffff !important;
+/* Left */
+#dp-header .header-left{
+  display:flex;
+  align-items:center;
+  gap:30px;
 }
 
-
-/* ---------- 6) Header dropdown menus (if they exist) ---------- */
-#header .dropdown-menu,
-div#header .dropdown-menu,
-.site-header .dropdown-menu,
-.kv-header .dropdown-menu {
-  background: #000000 !important;
-  border: 1px solid rgba(255,255,255,0.12) !important;
+/* Hamburger */
+#dp-header .menu-toggle{
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  position:relative;
+  width:40px;
+  height:40px;
+  justify-content:center;
+  align-items:center;
 }
 
-#header .dropdown-menu a,
-div#header .dropdown-menu a,
-.site-header .dropdown-menu a,
-.kv-header .dropdown-menu a {
-  color: #ffffff !important;
+#dp-header .menu-toggle span{
+  display:block;
+  width:28px;
+  height:2px;
+  background:var(--dp-white);
+  transition:all .25s ease;
+  position:absolute;
 }
 
+#dp-header .menu-toggle span:nth-child(1){ top:11px; }
+#dp-header .menu-toggle span:nth-child(2){ top:19px; }
+#dp-header .menu-toggle span:nth-child(3){ top:27px; }
 
-/* ---------- 7) Ensure body text (outside header) stays normal ---------- */
-/* This prevents accidental “everything becomes white text” issues */
-body {
-  color: inherit;
+#dp-header .menu-toggle.active span:nth-child(1){
+  top:19px; transform:rotate(45deg);
+}
+#dp-header .menu-toggle.active span:nth-child(2){ opacity:0; }
+#dp-header .menu-toggle.active span:nth-child(3){
+  top:19px; transform:rotate(-45deg);
+}
+
+/* Quick links */
+#dp-header .quick-links{
+  display:flex;
+  gap:25px;
+}
+#dp-header .quick-links a{
+  text-decoration:none;
+  color:var(--dp-white);
+  font-size:15px;
+  font-weight:400;
+  white-space:nowrap;
+}
+#dp-header .quick-links a:hover{ color:var(--dp-accent); }
+
+/* Center logo */
+#dp-header .header-center{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+}
+#dp-header .main-logo{
+  height:100px;
+  width:auto;
+}
+
+/* Right */
+#dp-header .header-right{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+#dp-header .contact-link{
+  text-decoration:none;
+  color:var(--dp-white);
+  font-size:15px;
+  font-weight:400;
+}
+#dp-header .contact-link:hover{ color:var(--dp-accent); }
+
+#dp-header .phone-link{
+  text-decoration:none;
+  color:var(--dp-accent);
+  font-size:16px;
+  font-weight:600;
+}
+
+/* 4) Mobile menu shell */
+#dp-mobile-shell .mobile-menu{
+  position:fixed;
+  top:var(--dp-header-h);
+  left:0; right:0; bottom:0;
+  background:rgba(0,0,0,.95);
+  backdrop-filter:blur(10px);
+  transform:translateX(-100%);
+  transition:transform .25s ease;
+  overflow:auto;
+  z-index:999998;
+}
+#dp-mobile-shell .mobile-menu.active{ transform:translateX(0); }
+
+#dp-mobile-shell .mobile-menu-wrapper{
+  display:flex;
+  min-height:100%;
+  padding:40px 30px;
+  gap:80px;
+  position:relative;
+}
+
+#dp-mobile-shell ul{ list-style:none; margin:0; padding:0; }
+
+#dp-mobile-shell a,
+#dp-mobile-shell button{
+  display:block;
+  padding:20px 0;
+  text-decoration:none;
+  color:#fff;
+  font-size:18px;
+  font-weight:400;
+  background:none;
+  border:none;
+  width:100%;
+  text-align:left;
+  cursor:pointer;
+}
+
+#dp-mobile-shell a:hover,
+#dp-mobile-shell button:hover{ color:var(--dp-accent); }
+
+/* Responsive */
+@media (max-width:768px){
+  :root{ --dp-header-h:90px; }
+  #dp-header .quick-links{ display:none; }
+  #dp-header .contact-link{ display:none; }
+  #dp-header .main-logo{ height:70px; }
+  #dp-header .header-content{ min-height:90px; padding:10px 20px; }
+  #dp-mobile-shell .mobile-menu{ top:90px; }
+}
+
+@media (max-width:480px){
+  :root{ --dp-header-h:80px; }
+  #dp-header .header-content{ min-height:80px; padding:10px 15px; }
+  #dp-header .main-logo{ height:50px; }
+  #dp-mobile-shell .mobile-menu{ top:80px; }
 }
