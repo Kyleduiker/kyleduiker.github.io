@@ -1,8 +1,8 @@
-console.log("DP HEADER JS LOADED v1012 - FIXED");
+console.log("DP HEADER JS LOADED v1013 - TWO COLUMN MENU");
 
 (function () {
   const LOGO_URL =
-    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=1012";
+    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=1013";
 
   function buildHeaderHTML() {
     return `
@@ -45,12 +45,6 @@ console.log("DP HEADER JS LOADED v1012 - FIXED");
                   <span>Search</span>
                   <span class="submenu-toggle">+</span>
                 </button>
-                <div class="submenu-column" id="submenu-search">
-                  <ul>
-                    <li><a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Active Listings</a></li>
-                    <li><a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Featured Properties</a></li>
-                  </ul>
-                </div>
               </li>
 
               <li>
@@ -58,15 +52,6 @@ console.log("DP HEADER JS LOADED v1012 - FIXED");
                   <span>Calgary Communities</span>
                   <span class="submenu-toggle">+</span>
                 </button>
-                <div class="submenu-column" id="submenu-calgary-communities">
-                  <ul>
-                    <li><a href="https://duikerproperties.com/communities/calgary-northeast">Northeast Calgary</a></li>
-                    <li><a href="https://duikerproperties.com/communities/calgary-northwest">Northwest Calgary</a></li>
-                    <li><a href="https://duikerproperties.com/communities/calgary-southwest">Southwest Calgary</a></li>
-                    <li><a href="https://duikerproperties.com/communities/calgary-southeast">Southeast Calgary</a></li>
-                    <li><a href="https://duikerproperties.com/communities/calgary">Calgary</a></li>
-                  </ul>
-                </div>
               </li>
 
               <li>
@@ -74,14 +59,6 @@ console.log("DP HEADER JS LOADED v1012 - FIXED");
                   <span>Surrounding Areas</span>
                   <span class="submenu-toggle">+</span>
                 </button>
-                <div class="submenu-column" id="submenu-surrounding-areas">
-                  <ul>
-                    <li><a href="https://duikerproperties.com/communities/chestermere">Chestermere</a></li>
-                    <li><a href="https://duikerproperties.com/communities/airdrie">Airdrie</a></li>
-                    <li><a href="https://duikerproperties.com/communities/cochrane">Cochrane</a></li>
-                    <li><a href="https://duikerproperties.com/communities/okotoks">Okotoks</a></li>
-                  </ul>
-                </div>
               </li>
 
               <li>
@@ -89,14 +66,6 @@ console.log("DP HEADER JS LOADED v1012 - FIXED");
                   <span>Buyers</span>
                   <span class="submenu-toggle">+</span>
                 </button>
-                <div class="submenu-column" id="submenu-buyers">
-                  <ul>
-                    <li><a href="https://duikerproperties.com/buyers/guide">Buyer's Guide</a></li>
-                    <li><a href="https://duikerproperties.com/buyers/process">Buying Process</a></li>
-                    <li><a href="https://duikerproperties.com/buyers/first-time">First-Time Buyers</a></li>
-                    <li><a href="https://duikerproperties.com/buyers/financing">Financing Options</a></li>
-                  </ul>
-                </div>
               </li>
 
               <li>
@@ -104,20 +73,63 @@ console.log("DP HEADER JS LOADED v1012 - FIXED");
                   <span>Sellers</span>
                   <span class="submenu-toggle">+</span>
                 </button>
-                <div class="submenu-column" id="submenu-sellers">
-                  <ul>
-                    <li><a href="https://duikerproperties.com/sellers/guide">Seller's Guide</a></li>
-                    <li><a href="https://duikerproperties.com/sellers/valuation">Home Valuation</a></li>
-                    <li><a href="https://duikerproperties.com/sellers/preparation">Prepare Your Home</a></li>
-                    <li><a href="https://duikerproperties.com/sellers/marketing">Marketing Strategy</a></li>
-                  </ul>
-                </div>
               </li>
 
               <li><a href="https://duikerproperties.com/blog">Blog & Market Updates</a></li>
               <li><a href="https://duikerproperties.com/testimonials">Testimonials</a></li>
               <li><a href="https://duikerproperties.com/contact">Contact</a></li>
             </ul>
+          </div>
+
+          <div class="submenu-columns-container">
+            <!-- Submenu Column - Search -->
+            <div class="submenu-column" id="submenu-search">
+              <ul>
+                <li><a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Active Listings</a></li>
+                <li><a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Featured Properties</a></li>
+              </ul>
+            </div>
+
+            <!-- Submenu Column - Calgary Communities -->
+            <div class="submenu-column" id="submenu-calgary-communities">
+              <ul>
+                <li><a href="https://duikerproperties.com/communities/calgary-northeast">Northeast Calgary</a></li>
+                <li><a href="https://duikerproperties.com/communities/calgary-northwest">Northwest Calgary</a></li>
+                <li><a href="https://duikerproperties.com/communities/calgary-southwest">Southwest Calgary</a></li>
+                <li><a href="https://duikerproperties.com/communities/calgary-southeast">Southeast Calgary</a></li>
+                <li><a href="https://duikerproperties.com/communities/calgary">Calgary</a></li>
+              </ul>
+            </div>
+
+            <!-- Submenu Column - Surrounding Areas -->
+            <div class="submenu-column" id="submenu-surrounding-areas">
+              <ul>
+                <li><a href="https://duikerproperties.com/communities/chestermere">Chestermere</a></li>
+                <li><a href="https://duikerproperties.com/communities/airdrie">Airdrie</a></li>
+                <li><a href="https://duikerproperties.com/communities/cochrane">Cochrane</a></li>
+                <li><a href="https://duikerproperties.com/communities/okotoks">Okotoks</a></li>
+              </ul>
+            </div>
+
+            <!-- Submenu Column - Buyers -->
+            <div class="submenu-column" id="submenu-buyers">
+              <ul>
+                <li><a href="https://duikerproperties.com/buyers/guide">Buyer's Guide</a></li>
+                <li><a href="https://duikerproperties.com/buyers/process">Buying Process</a></li>
+                <li><a href="https://duikerproperties.com/buyers/first-time">First-Time Buyers</a></li>
+                <li><a href="https://duikerproperties.com/buyers/financing">Financing Options</a></li>
+              </ul>
+            </div>
+
+            <!-- Submenu Column - Sellers -->
+            <div class="submenu-column" id="submenu-sellers">
+              <ul>
+                <li><a href="https://duikerproperties.com/sellers/guide">Seller's Guide</a></li>
+                <li><a href="https://duikerproperties.com/sellers/valuation">Home Valuation</a></li>
+                <li><a href="https://duikerproperties.com/sellers/preparation">Prepare Your Home</a></li>
+                <li><a href="https://duikerproperties.com/sellers/marketing">Marketing Strategy</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -260,7 +272,7 @@ console.log("DP HEADER JS LOADED v1012 - FIXED");
       logo.addEventListener("load", () => console.log("[DP Header] Logo loaded successfully"));
     }
 
-    console.log("[DP Header] Injected + bound OK - v1012");
+    console.log("[DP Header] Injected + bound OK - v1013");
   }
 
   function run() {
