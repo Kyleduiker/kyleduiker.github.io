@@ -1,33 +1,26 @@
-console.log("DP HEADER JS LOADED v1100");
-
-/* ======================================================
-   Duiker Persistent Header Injector
-   - Survives BoldTrail / Vue DOM re-renders
-   - Uses event delegation (no dead click handlers)
-   - Auto-repairs header + mobile menu
-   ====================================================== */
+console.log("DP HEADER JS LOADED v1200");
 
 (function () {
   const LOGO_URL =
-    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=1100";
+    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20(1000%20x%20400%20px)%20(1).png";
 
-  /* ---------- BUILD HTML ---------- */
-
-  function headerHTML() {
-    return `
+  function buildHeader() {
+    const header = document.createElement("header");
+    header.id = "dp-header";
+    header.innerHTML = `
       <div class="header-content">
         <div class="header-left">
-          <button class="menu-toggle" id="dpMenuToggle" aria-label="Menu" type="button">
+          <button class="menu-toggle" id="dpMenuToggle" type="button" aria-label="Menu">
             <span></span><span></span><span></span>
           </button>
-          <nav class="quick-links">
+          <nav class="quick-links" aria-label="Quick links">
             <a href="/featured-properties">Featured Properties</a>
             <a href="/calgary">Calgary Communities</a>
           </nav>
         </div>
 
         <div class="header-center">
-          <a href="/">
+          <a href="/" aria-label="Home">
             <img class="main-logo" src="${LOGO_URL}" alt="Duiker Properties">
           </a>
         </div>
@@ -38,123 +31,124 @@ console.log("DP HEADER JS LOADED v1100");
         </div>
       </div>
     `;
+    return header;
   }
 
-  function mobileHTML() {
-    return `
-      <div class="mobile-menu" id="dpMobileMenu">
+  function buildMobileShell() {
+    const shell = document.createElement("div");
+    shell.id = "dp-mobile-shell";
+    shell.innerHTML = `
+      <div class="mobile-menu" id="dpMobileMenu" aria-hidden="true">
         <div class="mobile-menu-wrapper">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/search">Search</a></li>
-            <li><a href="/calgary">Calgary Communities</a></li>
-            <li><a href="/surroundingarea">Surrounding Areas</a></li>
-            <li><a href="/buyers">Buyers</a></li>
-            <li><a href="/sellers">Sellers</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
+          <div class="main-menu-column">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/search">Search</a></li>
+              <li><a href="/calgary">Calgary Communities</a></li>
+              <li><a href="/surroundingarea">Surrounding Areas</a></li>
+              <li><a href="/buyers">Buyers</a></li>
+              <li><a href="/sellers">Sellers</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     `;
+    return shell;
   }
 
-  /* ---------- ENSURE HEADER EXISTS ---------- */
+  function ensureInjected() {
+    // If BoldTrail re-renders, we re-inject once.
+    if (!document.body) return;
 
-  function ensureHeader() {
     document.body.classList.add("has-dp-header");
 
-    let header = document.getElementById("dp-header");
-
-    if (!header) {
-      header = document.createElement("header");
-      header.id = "dp-header";
-      header.innerHTML = headerHTML();
-      document.body.prepend(header);
-      console.log("[DP] Header created");
-    }
-
     if (!document.getElementById("dp-mobile-shell")) {
-      const shell = document.createElement("div");
-      shell.id = "dp-mobile-shell";
-      shell.innerHTML = mobileHTML();
-      document.body.prepend(shell);
-      console.log("[DP] Mobile shell created");
+      document.body.insertAdjacentElement("afterbegin", buildMobileShell());
+      console.log("[DP] mobile shell injected");
+    }
+
+    if (!document.getElementById("dp-header")) {
+      document.body.insertAdjacentElement("afterbegin", buildHeader());
+      console.log("[DP] header injected");
     }
   }
 
-  /* ---------- MENU STATE ---------- */
-
-  function openMenu() {
-    const toggle = document.getElementById("dpMenuToggle");
-    const menu = document.getElementById("dpMobileMenu");
-    if (!toggle || !menu) return;
-
-    toggle.classList.add("active");
-    menu.classList.add("active");
-    document.documentElement.classList.add("dp-menu-open");
-  }
-
-  function closeMenu() {
-    const toggle = document.getElementById("dpMenuToggle");
-    const menu = document.getElementById("dpMobileMenu");
-    if (!toggle || !menu) return;
-
-    toggle.classList.remove("active");
-    menu.classList.remove("active");
-    document.documentElement.classList.remove("dp-menu-open");
-  }
-
-  /* ---------- EVENT DELEGATION ---------- */
-
-  function bindGlobalClicks() {
-    if (window.__dpClicksBound) return;
-    window.__dpClicksBound = true;
+  function bind() {
+    // Bind only once
+    if (window.__dpBoundV1200) return;
+    window.__dpBoundV1200 = true;
 
     document.addEventListener("click", (e) => {
       const toggle = e.target.closest("#dpMenuToggle");
-      const insideMenu = e.target.closest("#dpMobileMenu");
+      const menu = document.getElementById("dpMobileMenu");
+      const header = document.getElementById("dp-header");
 
+      // If BoldTrail wiped it, re-inject on demand
+      if (!menu || !header) {
+        ensureInjected();
+      }
+
+      const menuNow = document.getElementById("dpMobileMenu");
+      const toggleNow = document.getElementById("dpMenuToggle");
+
+      if (!menuNow || !toggleNow) return;
+
+      // Toggle click
       if (toggle) {
         e.preventDefault();
-        const menu = document.getElementById("dpMobileMenu");
-        menu?.classList.contains("active") ? closeMenu() : openMenu();
+        e.stopPropagation();
+        const isOpen = menuNow.classList.contains("active");
+        if (isOpen) {
+          toggleNow.classList.remove("active");
+          menuNow.classList.remove("active");
+          menuNow.setAttribute("aria-hidden", "true");
+        } else {
+          toggleNow.classList.add("active");
+          menuNow.classList.add("active");
+          menuNow.setAttribute("aria-hidden", "false");
+        }
         return;
       }
 
-      if (!insideMenu) closeMenu();
+      // Click a menu link closes (but allows navigation)
+      const menuLink = e.target.closest("#dpMobileMenu a");
+      if (menuLink) {
+        toggleNow.classList.remove("active");
+        menuNow.classList.remove("active");
+        menuNow.setAttribute("aria-hidden", "true");
+        return;
+      }
+
+      // Click outside closes
+      const clickedInsideMenu = e.target.closest("#dpMobileMenu");
+      if (!clickedInsideMenu && menuNow.classList.contains("active")) {
+        toggleNow.classList.remove("active");
+        menuNow.classList.remove("active");
+        menuNow.setAttribute("aria-hidden", "true");
+      }
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMenu();
+      if (e.key !== "Escape") return;
+      const menu = document.getElementById("dpMobileMenu");
+      const toggle = document.getElementById("dpMenuToggle");
+      if (!menu || !toggle) return;
+      toggle.classList.remove("active");
+      menu.classList.remove("active");
+      menu.setAttribute("aria-hidden", "true");
     });
 
-    console.log("[DP] Global click delegation bound");
+    console.log("[DP] listeners bound v1200");
   }
-
-  /* ---------- WATCH FOR BOLDTRAIL DOM REPLACEMENT ---------- */
-
-  function watchDOM() {
-    const observer = new MutationObserver(() => {
-      if (!document.getElementById("dp-header")) {
-        console.log("[DP] Header lost → restoring");
-        ensureHeader();
-      }
-      if (!document.getElementById("dpMobileMenu")) {
-        console.log("[DP] Mobile menu lost → restoring");
-        ensureHeader();
-      }
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-  }
-
-  /* ---------- INIT ---------- */
 
   function init() {
-    ensureHeader();
-    bindGlobalClicks();
-    watchDOM();
-    console.log("[DP] Persistent header running");
+    ensureInjected();
+    bind();
+
+    // If BoldTrail/Vue swaps DOM after load, patch again once.
+    window.addEventListener("load", () => setTimeout(ensureInjected, 500));
+    window.addEventListener("load", () => setTimeout(ensureInjected, 1500));
   }
 
   if (document.readyState === "loading") {
