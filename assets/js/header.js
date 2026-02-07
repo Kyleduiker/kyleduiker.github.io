@@ -1,16 +1,14 @@
-console.log("DP HEADER JS LOADED v1200");
+console.log("DP HEADER JS LOADED v1001");
 
 (function () {
   const LOGO_URL =
-    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20(1000%20x%20400%20px)%20(1).png";
+    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=1002";
 
-  function buildHeader() {
-    const header = document.createElement("header");
-    header.id = "dp-header";
-    header.innerHTML = `
+  function buildHeaderHTML() {
+    return `
       <div class="header-content">
         <div class="header-left">
-          <button class="menu-toggle" id="dpMenuToggle" type="button" aria-label="Menu">
+          <button class="menu-toggle" id="dpMenuToggle" aria-label="Menu" type="button">
             <span></span><span></span><span></span>
           </button>
           <nav class="quick-links" aria-label="Quick links">
@@ -31,13 +29,10 @@ console.log("DP HEADER JS LOADED v1200");
         </div>
       </div>
     `;
-    return header;
   }
 
-  function buildMobileShell() {
-    const shell = document.createElement("div");
-    shell.id = "dp-mobile-shell";
-    shell.innerHTML = `
+  function buildMobileShellHTML() {
+    return `
       <div class="mobile-menu" id="dpMobileMenu" aria-hidden="true">
         <div class="mobile-menu-wrapper">
           <div class="main-menu-column">
@@ -54,106 +49,121 @@ console.log("DP HEADER JS LOADED v1200");
         </div>
       </div>
     `;
-    return shell;
   }
 
   function ensureInjected() {
-    // If BoldTrail re-renders, we re-inject once.
-    if (!document.body) return;
-
+    // Mark body so CSS can safely hide BoldTrail header
     document.body.classList.add("has-dp-header");
 
-    if (!document.getElementById("dp-mobile-shell")) {
-      document.body.insertAdjacentElement("afterbegin", buildMobileShell());
-      console.log("[DP] mobile shell injected");
+    // 1) Ensure header exists
+    let header = document.getElementById("dp-header");
+    if (!header) {
+      header = document.createElement("header");
+      header.id = "dp-header";
+      header.innerHTML = buildHeaderHTML();
+      document.body.insertAdjacentElement("afterbegin", header);
+      console.log("[DP Header] Header created");
+    } else if (!header.querySelector("#dpMenuToggle")) {
+      // header exists but is empty/broken
+      header.innerHTML = buildHeaderHTML();
+      console.log("[DP Header] Header repaired");
     }
 
-    if (!document.getElementById("dp-header")) {
-      document.body.insertAdjacentElement("afterbegin", buildHeader());
-      console.log("[DP] header injected");
+    // 2) Ensure mobile shell exists
+    let shell = document.getElementById("dp-mobile-shell");
+    if (!shell) {
+      shell = document.createElement("div");
+      shell.id = "dp-mobile-shell";
+      shell.innerHTML = buildMobileShellHTML();
+      document.body.insertAdjacentElement("afterbegin", shell);
+      console.log("[DP Header] Mobile shell created");
     }
-  }
 
-  function bind() {
-    // Bind only once
-    if (window.__dpBoundV1200) return;
-    window.__dpBoundV1200 = true;
+    // 3) Ensure mobile menu exists inside shell
+    let menu = document.getElementById("dpMobileMenu");
+    if (!menu) {
+      shell.innerHTML = buildMobileShellHTML();
+      menu = document.getElementById("dpMobileMenu");
+      console.log("[DP Header] Mobile menu repaired");
+    }
 
-    document.addEventListener("click", (e) => {
-      const toggle = e.target.closest("#dpMenuToggle");
-      const menu = document.getElementById("dpMobileMenu");
-      const header = document.getElementById("dp-header");
+    // 4) Wire up click handlers (only once)
+    const toggle = document.getElementById("dpMenuToggle");
+    menu = document.getElementById("dpMobileMenu");
 
-      // If BoldTrail wiped it, re-inject on demand
-      if (!menu || !header) {
-        ensureInjected();
-      }
+    if (!toggle || !menu) {
+      console.log("[DP Header] Still missing toggle/menu after inject", { toggle, menu });
+      return;
+    }
 
-      const menuNow = document.getElementById("dpMobileMenu");
-      const toggleNow = document.getElementById("dpMenuToggle");
+    if (toggle.dataset.dpBound === "1") {
+      // already bound
+      return;
+    }
+    toggle.dataset.dpBound = "1";
 
-      if (!menuNow || !toggleNow) return;
+    const openMenu = () => {
+      toggle.classList.add("active");
+      menu.classList.add("active");
+      menu.setAttribute("aria-hidden", "false");
+    };
 
-      // Toggle click
-      if (toggle) {
-        e.preventDefault();
-        e.stopPropagation();
-        const isOpen = menuNow.classList.contains("active");
-        if (isOpen) {
-          toggleNow.classList.remove("active");
-          menuNow.classList.remove("active");
-          menuNow.setAttribute("aria-hidden", "true");
-        } else {
-          toggleNow.classList.add("active");
-          menuNow.classList.add("active");
-          menuNow.setAttribute("aria-hidden", "false");
-        }
-        return;
-      }
-
-      // Click a menu link closes (but allows navigation)
-      const menuLink = e.target.closest("#dpMobileMenu a");
-      if (menuLink) {
-        toggleNow.classList.remove("active");
-        menuNow.classList.remove("active");
-        menuNow.setAttribute("aria-hidden", "true");
-        return;
-      }
-
-      // Click outside closes
-      const clickedInsideMenu = e.target.closest("#dpMobileMenu");
-      if (!clickedInsideMenu && menuNow.classList.contains("active")) {
-        toggleNow.classList.remove("active");
-        menuNow.classList.remove("active");
-        menuNow.setAttribute("aria-hidden", "true");
-      }
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key !== "Escape") return;
-      const menu = document.getElementById("dpMobileMenu");
-      const toggle = document.getElementById("dpMenuToggle");
-      if (!menu || !toggle) return;
+    const closeMenu = () => {
       toggle.classList.remove("active");
       menu.classList.remove("active");
       menu.setAttribute("aria-hidden", "true");
+    };
+
+    toggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpen = menu.classList.contains("active");
+      isOpen ? closeMenu() : openMenu();
     });
 
-    console.log("[DP] listeners bound v1200");
+    // click outside closes
+    document.addEventListener("click", (e) => {
+      if (!menu.classList.contains("active")) return;
+      const clickedInsideMenu = menu.contains(e.target);
+      const clickedToggle = toggle.contains(e.target);
+      if (!clickedInsideMenu && !clickedToggle) closeMenu();
+    });
+
+    // link click closes
+    menu.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (!link) return;
+      closeMenu();
+    });
+
+    // ESC closes
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      closeMenu();
+    });
+
+    // Logo debug
+    const logo = header.querySelector(".main-logo");
+    if (logo && !logo.dataset.dpLogoBound) {
+      logo.dataset.dpLogoBound = "1";
+      logo.addEventListener("error", () => console.log("[DP Header] Logo failed:", logo.src));
+      logo.addEventListener("load", () => console.log("[DP Header] Logo loaded"));
+    }
+
+    console.log("[DP Header] Injected + bound OK");
   }
 
-  function init() {
+  function run() {
     ensureInjected();
-    bind();
-
-    // If BoldTrail/Vue swaps DOM after load, patch again once.
-    window.addEventListener("load", () => setTimeout(ensureInjected, 500));
-    window.addEventListener("load", () => setTimeout(ensureInjected, 1500));
+    // Retry a couple times in case BoldTrail re-renders the DOM
+    setTimeout(ensureInjected, 500);
+    setTimeout(ensureInjected, 1500);
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
+    document.addEventListener("DOMContentLoaded", run);
+    window.addEventListener("load", run);
   } else {
-    init();
+    run();
   }
 })();
