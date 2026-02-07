@@ -1,7 +1,8 @@
 /* =========================================================
    Duiker Custom Header (SAFE MODE)
    - Will NOT hide BoldTrail header unless body has class: has-dp-header
-   - Keeps page background normal
+   - Keeps page background normal (white)
+   - Includes Step 4 layer/click safety (z-index + pointer-events)
    ========================================================= */
 
 :root{
@@ -13,7 +14,7 @@
   --dp-header-h-small:80px;
 }
 
-/* 0) Don’t change the whole site colors */
+/* 0) Keep site normal */
 html, body{
   background:#fff !important;
   background-color:#fff !important;
@@ -49,8 +50,33 @@ body.has-dp-header{
   right:0 !important;
   width:100% !important;
   z-index:999999 !important;
+  pointer-events:auto !important;
   font-family:'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
 }
+
+/* ===== Step 4: layer/click safety ===== */
+#dp-header *{
+  pointer-events:auto !important;
+}
+
+#dp-mobile-shell{
+  z-index:999998 !important;
+  pointer-events:auto !important;
+}
+#dp-mobile-shell *{
+  pointer-events:auto !important;
+}
+
+/* Kill invisible BoldTrail overlays that can block clicks */
+body.has-dp-header #fixed-header-spacer,
+body.has-dp-header .header-spacer,
+body.has-dp-header .sticky-spacer,
+body.has-dp-header .kv-sticky-spacer{
+  position:static !important;
+  z-index:0 !important;
+  height:0 !important;
+}
+/* ===== end Step 4 ===== */
 
 #dp-header .header-content{
   max-width:1400px;
@@ -100,11 +126,15 @@ body.has-dp-header{
 #dp-header .menu-toggle span:nth-child(3){ top:27px; }
 
 #dp-header .menu-toggle.active span:nth-child(1){
-  top:19px; transform:rotate(45deg);
+  top:19px;
+  transform:rotate(45deg);
 }
-#dp-header .menu-toggle.active span:nth-child(2){ opacity:0; }
+#dp-header .menu-toggle.active span:nth-child(2){
+  opacity:0;
+}
 #dp-header .menu-toggle.active span:nth-child(3){
-  top:19px; transform:rotate(-45deg);
+  top:19px;
+  transform:rotate(-45deg);
 }
 
 /* Quick links */
@@ -119,7 +149,9 @@ body.has-dp-header{
   font-weight:400;
   white-space:nowrap;
 }
-#dp-header .quick-links a:hover{ color:var(--dp-accent); }
+#dp-header .quick-links a:hover{
+  color:var(--dp-accent);
+}
 
 /* Center logo */
 #dp-header .header-center{
@@ -144,7 +176,9 @@ body.has-dp-header{
   font-size:15px;
   font-weight:400;
 }
-#dp-header .contact-link:hover{ color:var(--dp-accent); }
+#dp-header .contact-link:hover{
+  color:var(--dp-accent);
+}
 
 #dp-header .phone-link{
   text-decoration:none;
@@ -153,19 +187,27 @@ body.has-dp-header{
   font-weight:600;
 }
 
-/* 4) Mobile menu shell */
+/* 5) Mobile menu shell */
 #dp-mobile-shell .mobile-menu{
   position:fixed;
   top:var(--dp-header-h);
-  left:0; right:0; bottom:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100vw;
+  height:calc(100vh - var(--dp-header-h));
   background:rgba(0,0,0,.95);
   backdrop-filter:blur(10px);
-  transform:translateX(-100%);
+  transform:translate3d(-100%,0,0);
   transition:transform .25s ease;
   overflow:auto;
-  z-index:999998;
+  z-index:999998 !important;
+  display:block !important;
 }
-#dp-mobile-shell .mobile-menu.active{ transform:translateX(0); }
+
+#dp-mobile-shell .mobile-menu.active{
+  transform:translate3d(0,0,0);
+}
 
 #dp-mobile-shell .mobile-menu-wrapper{
   display:flex;
@@ -175,7 +217,11 @@ body.has-dp-header{
   position:relative;
 }
 
-#dp-mobile-shell ul{ list-style:none; margin:0; padding:0; }
+#dp-mobile-shell ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
 
 #dp-mobile-shell a,
 #dp-mobile-shell button{
@@ -193,7 +239,9 @@ body.has-dp-header{
 }
 
 #dp-mobile-shell a:hover,
-#dp-mobile-shell button:hover{ color:var(--dp-accent); }
+#dp-mobile-shell button:hover{
+  color:var(--dp-accent);
+}
 
 /* Responsive */
 @media (max-width:768px){
@@ -201,13 +249,25 @@ body.has-dp-header{
   #dp-header .quick-links{ display:none; }
   #dp-header .contact-link{ display:none; }
   #dp-header .main-logo{ height:70px; }
-  #dp-header .header-content{ min-height:90px; padding:10px 20px; }
-  #dp-mobile-shell .mobile-menu{ top:90px; }
+  #dp-header .header-content{
+    min-height:90px;
+    padding:10px 20px;
+  }
+  #dp-mobile-shell .mobile-menu{
+    top:90px;
+    height:calc(100vh - 90px);
+  }
 }
 
 @media (max-width:480px){
   :root{ --dp-header-h:80px; }
-  #dp-header .header-content{ min-height:80px; padding:10px 15px; }
+  #dp-header .header-content{
+    min-height:80px;
+    padding:10px 15px;
+  }
   #dp-header .main-logo{ height:50px; }
-  #dp-mobile-shell .mobile-menu{ top:80px; }
+  #dp-mobile-shell .mobile-menu{
+    top:80px;
+    height:calc(100vh - 80px);
+  }
 }
