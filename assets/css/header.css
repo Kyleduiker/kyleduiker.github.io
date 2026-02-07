@@ -1,8 +1,9 @@
 /* =========================================================
-   Duiker Custom Header (SAFE MODE) - FIXED v1013
+   Duiker Custom Header (SAFE MODE) - FIXED v1014
    - Two-column mobile menu layout (left: main menu, right: submenus)
    - Submenus appear in right column when clicked
-   - Will NOT hide BoldTrail header unless body has class: has-dp-header
+   - Active menu items highlighted in accent color
+   - Improved spacing and alignment to match guide.duikerproperties.com
    ========================================================= */
 
 :root{
@@ -242,6 +243,7 @@ body.has-dp-header .kv-sticky-spacer{
   gap:60px;
   position:relative;
   flex-direction: row;
+  align-items: flex-start;
 }
 
 #dp-mobile-shell .main-menu-column{
@@ -252,6 +254,7 @@ body.has-dp-header .kv-sticky-spacer{
 #dp-mobile-shell .submenu-columns-container{
   flex: 1;
   position: relative;
+  min-height: 400px;
 }
 
 #dp-mobile-shell ul{
@@ -308,16 +311,22 @@ body.has-dp-header .kv-sticky-spacer{
   border:none !important;
   outline:none !important;
   box-shadow:none !important;
+  position: relative;
 }
 
 #dp-mobile-shell .submenu-toggle{
   font-size: 24px;
   transition: transform 0.2s ease;
   font-weight: 300;
+  margin-left: 10px;
 }
 
 #dp-mobile-shell .menu-item-with-submenu.active .submenu-toggle{
   transform: rotate(45deg);
+}
+
+#dp-mobile-shell .menu-item-with-submenu.active{
+  color: var(--dp-accent);
 }
 
 #dp-mobile-shell .submenu-column{
@@ -331,6 +340,7 @@ body.has-dp-header .kv-sticky-spacer{
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
   opacity: 0;
   transition: opacity 0.2s ease;
@@ -356,13 +366,22 @@ body.has-dp-header .kv-sticky-spacer{
   background: transparent !important;
 }
 
+#dp-mobile-shell .submenu-column li:first-child{
+  padding-top: 0;
+}
+
 #dp-mobile-shell .submenu-column a{
-  font-size: 16px;
-  padding: 15px 0 !important;
-  color: rgba(255,255,255,0.7);
-  font-weight: 300;
+  font-size: 18px;
+  padding: 20px 0 !important;
+  color: rgba(255,255,255,0.8);
+  font-weight: 400;
   border: none !important;
   outline: none !important;
+}
+
+#dp-mobile-shell .submenu-column a:hover{
+  color: var(--dp-accent);
+  padding-left: 10px !important;
 }
 
 /* Responsive: keep header spacing correct */
