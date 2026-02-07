@@ -45,11 +45,9 @@
             text-align: center;
             color: white;
             padding: 2rem;
-            margin-top: 120px;
+            margin-top: 0;
             position: relative;
         }
-
-
 
         .community-hero-content {
             max-width: 800px;
@@ -623,7 +621,6 @@
         @media (max-width: 768px) {
             .community-hero {
                 height: 60vh;
-                margin-top: 90px;
             }
 
             .community-name {
@@ -660,10 +657,6 @@
         }
 
         @media (max-width: 480px) {
-            .community-hero {
-                margin-top: 80px;
-            }
-
             .community-name {
                 font-size: 2.5rem;
             }
@@ -1082,7 +1075,7 @@
             As Southeast Calgary specialists, we know Mahogany inside and out. Let us help you find 
             your perfect lakefront home in Calgary's most desirable community.
         </p>
-        <a href="#contact" class="btn-primary">SCHEDULE A TOUR</a>
+        <a href="https://duikerproperties.com/contact" class="btn-primary">SCHEDULE A TOUR</a>
     </section>
 
     <!-- Footer placeholder -->
@@ -1090,19 +1083,6 @@
 
     <!-- Header JavaScript -->
     <script src="https://kyleduiker.github.io/duikerproperties-homepage/assets/js/header.js"></script>
-    
-    <!-- Load Header HTML -->
-    <script>
-        fetch('https://kyleduiker.github.io/duikerproperties-homepage/partials/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-                if (typeof window.initDuikerHeader === 'function') {
-                    window.initDuikerHeader();
-                }
-            })
-            .catch(error => console.error('Error loading header:', error));
-    </script>
 
     <script>
         // Smooth scroll
