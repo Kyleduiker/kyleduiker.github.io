@@ -1,8 +1,8 @@
-console.log("DP HEADER JS LOADED v1014 - TWO COLUMN MENU");
+console.log("DP HEADER JS LOADED v1015 - DYNAMIC SUBMENU POSITIONING");
 
 (function () {
   const LOGO_URL =
-    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=1014";
+    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=1015";
 
   function buildHeaderHTML() {
     return `
@@ -212,6 +212,8 @@ console.log("DP HEADER JS LOADED v1014 - TWO COLUMN MENU");
 
     // Submenu toggles
     const submenuButtons = menu.querySelectorAll('.menu-item-with-submenu');
+    const submenuContainer = menu.querySelector('.submenu-columns-container');
+    
     submenuButtons.forEach(button => {
       if (button.dataset.dpSubmenuBound === "1") return;
       button.dataset.dpSubmenuBound = "1";
@@ -237,8 +239,24 @@ console.log("DP HEADER JS LOADED v1014 - TWO COLUMN MENU");
           });
           
           // Toggle this submenu and button
-          submenu.classList.toggle('active');
-          button.classList.toggle('active');
+          if (!isOpen) {
+            // Calculate position to align with button
+            const buttonRect = button.getBoundingClientRect();
+            const containerRect = submenuContainer.getBoundingClientRect();
+            const offsetTop = buttonRect.top - containerRect.top;
+            
+            // Position submenu to align with button
+            submenu.style.position = 'absolute';
+            submenu.style.top = `${offsetTop}px`;
+            submenu.style.left = '0';
+            submenu.style.right = '0';
+            
+            submenu.classList.add('active');
+            button.classList.add('active');
+          } else {
+            submenu.classList.remove('active');
+            button.classList.remove('active');
+          }
         }
       });
     });
@@ -272,7 +290,7 @@ console.log("DP HEADER JS LOADED v1014 - TWO COLUMN MENU");
       logo.addEventListener("load", () => console.log("[DP Header] Logo loaded successfully"));
     }
 
-    console.log("[DP Header] Injected + bound OK - v1014");
+    console.log("[DP Header] Injected + bound OK - v1015");
   }
 
   function run() {
