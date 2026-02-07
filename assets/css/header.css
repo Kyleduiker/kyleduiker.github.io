@@ -1,9 +1,8 @@
 /* =========================================================
-   Duiker Custom Header (SAFE MODE) - FIXED v1014
-   - Two-column mobile menu layout (left: main menu, right: submenus)
-   - Submenus appear in right column when clicked
-   - Active menu items highlighted in accent color
-   - Improved spacing and alignment to match guide.duikerproperties.com
+   Duiker Custom Header (SAFE MODE) - FIXED v1015
+   - Two-column mobile menu with dynamic submenu positioning
+   - Submenus align with clicked menu item, not top of container
+   - Matches guide.duikerproperties.com layout exactly
    ========================================================= */
 
 :root{
@@ -329,6 +328,10 @@ body.has-dp-header .kv-sticky-spacer{
   color: var(--dp-accent);
 }
 
+#dp-mobile-shell .submenu-columns-container{
+  position: relative;
+}
+
 #dp-mobile-shell .submenu-column{
   display: none;
   padding: 0 !important;
@@ -337,11 +340,6 @@ body.has-dp-header .kv-sticky-spacer{
   outline: none !important;
   box-shadow: none !important;
   background: transparent !important;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
   opacity: 0;
   transition: opacity 0.2s ease;
 }
