@@ -1,8 +1,8 @@
-console.log("DP HEADER JS LOADED v1010 - FIXED");
+console.log("DP HEADER JS LOADED v1011 - FIXED");
 
 (function () {
   const LOGO_URL =
-    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=1010";
+    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=1011";
 
   function buildHeaderHTML() {
     return `
@@ -214,14 +214,19 @@ console.log("DP HEADER JS LOADED v1010 - FIXED");
         if (submenu) {
           const isOpen = submenu.classList.contains('active');
           
-          // Close all other submenus
+          // Close all other submenus and remove active from other buttons
           const allSubmenus = menu.querySelectorAll('.submenu-column');
+          const allButtons = menu.querySelectorAll('.menu-item-with-submenu');
           allSubmenus.forEach(sub => {
             if (sub !== submenu) sub.classList.remove('active');
           });
+          allButtons.forEach(btn => {
+            if (btn !== button) btn.classList.remove('active');
+          });
           
-          // Toggle this submenu
+          // Toggle this submenu and button
           submenu.classList.toggle('active');
+          button.classList.toggle('active');
         }
       });
     });
@@ -255,7 +260,7 @@ console.log("DP HEADER JS LOADED v1010 - FIXED");
       logo.addEventListener("load", () => console.log("[DP Header] Logo loaded successfully"));
     }
 
-    console.log("[DP Header] Injected + bound OK - v1010");
+    console.log("[DP Header] Injected + bound OK - v1011");
   }
 
   function run() {
