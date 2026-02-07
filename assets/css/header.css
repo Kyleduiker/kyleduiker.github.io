@@ -1,8 +1,7 @@
 /* =========================================================
-   Duiker Custom Header (SAFE MODE) - FIXED v1012
-   - Green debug outline REMOVED
-   - Mobile menu styling improved to match guide.duikerproperties.com
-   - Removed ALL borders/outlines/boxes from submenu items
+   Duiker Custom Header (SAFE MODE) - FIXED v1013
+   - Two-column mobile menu layout (left: main menu, right: submenus)
+   - Submenus appear in right column when clicked
    - Will NOT hide BoldTrail header unless body has class: has-dp-header
    ========================================================= */
 
@@ -240,8 +239,19 @@ body.has-dp-header .kv-sticky-spacer{
   display:flex;
   min-height:100%;
   padding:40px 30px;
-  gap:80px;
+  gap:60px;
   position:relative;
+  flex-direction: row;
+}
+
+#dp-mobile-shell .main-menu-column{
+  flex: 0 0 auto;
+  min-width: 200px;
+}
+
+#dp-mobile-shell .submenu-columns-container{
+  flex: 1;
+  position: relative;
 }
 
 #dp-mobile-shell ul{
@@ -290,7 +300,7 @@ body.has-dp-header .kv-sticky-spacer{
   border:none !important;
 }
 
-/* Submenu styling */
+/* Submenu styling - appears in right column */
 #dp-mobile-shell .menu-item-with-submenu{
   display: flex;
   justify-content: space-between;
@@ -318,10 +328,17 @@ body.has-dp-header .kv-sticky-spacer{
   outline: none !important;
   box-shadow: none !important;
   background: transparent !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
 #dp-mobile-shell .submenu-column.active{
   display: block;
+  opacity: 1;
 }
 
 #dp-mobile-shell .submenu-column ul{
@@ -341,7 +358,7 @@ body.has-dp-header .kv-sticky-spacer{
 
 #dp-mobile-shell .submenu-column a{
   font-size: 16px;
-  padding: 15px 0 15px 20px !important;
+  padding: 15px 0 !important;
   color: rgba(255,255,255,0.7);
   font-weight: 300;
   border: none !important;
@@ -367,9 +384,13 @@ body.has-dp-header .kv-sticky-spacer{
   }
 
   #dp-mobile-shell .mobile-menu-wrapper{
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row;
+    gap: 40px;
     padding: 30px 20px;
+  }
+
+  #dp-mobile-shell .main-menu-column{
+    min-width: 180px;
   }
 }
 
