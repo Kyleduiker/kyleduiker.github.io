@@ -9,7 +9,8 @@ console.log("DP HEADER JS LOADED v1000");
 
     // ✅ Use the SAME domain as your CSS/JS to avoid GitHub raw issues
     const LOGO_URL =
-      "https://guide.duikerproperties.com/photos/brand/Powered%20by%20(1000%20x%20400%20px)%20(1).png";
+  "https://cdn.jsdelivr.net/gh/Kyleduiker/duikerproperties-homepage@main/photos/brand/Powered%20by%20(1000%20x%20400%20px)%20(1).png";
+
 
     // Build header HTML
     const header = document.createElement("header");
