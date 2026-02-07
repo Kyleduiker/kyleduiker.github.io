@@ -1,7 +1,8 @@
 /* =========================================================
-   Duiker Custom Header (SAFE MODE) - FIXED v1011
+   Duiker Custom Header (SAFE MODE) - FIXED v1012
    - Green debug outline REMOVED
    - Mobile menu styling improved to match guide.duikerproperties.com
+   - Removed ALL borders/outlines/boxes from submenu items
    - Will NOT hide BoldTrail header unless body has class: has-dp-header
    ========================================================= */
 
@@ -251,6 +252,13 @@ body.has-dp-header .kv-sticky-spacer{
 
 #dp-mobile-shell li{
   border-bottom: 1px solid rgba(255,255,255,0.1);
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#dp-mobile-shell .main-menu-column > ul > li{
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 #dp-mobile-shell a,
@@ -262,7 +270,9 @@ body.has-dp-header .kv-sticky-spacer{
   font-size:18px;
   font-weight:400;
   background:none;
-  border:none;
+  border:none !important;
+  outline:none !important;
+  box-shadow:none !important;
   width:100%;
   text-align:left;
   cursor:pointer;
@@ -274,11 +284,20 @@ body.has-dp-header .kv-sticky-spacer{
   padding-left: 10px;
 }
 
+#dp-mobile-shell a:focus,
+#dp-mobile-shell button:focus{
+  outline:none !important;
+  border:none !important;
+}
+
 /* Submenu styling */
 #dp-mobile-shell .menu-item-with-submenu{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border:none !important;
+  outline:none !important;
+  box-shadow:none !important;
 }
 
 #dp-mobile-shell .submenu-toggle{
@@ -293,8 +312,12 @@ body.has-dp-header .kv-sticky-spacer{
 
 #dp-mobile-shell .submenu-column{
   display: none;
-  padding-left: 0;
-  margin-left: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
 }
 
 #dp-mobile-shell .submenu-column.active{
@@ -302,18 +325,27 @@ body.has-dp-header .kv-sticky-spacer{
 }
 
 #dp-mobile-shell .submenu-column ul{
-  margin-top: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
 }
 
 #dp-mobile-shell .submenu-column li{
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border: none !important;
+  border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
 }
 
 #dp-mobile-shell .submenu-column a{
   font-size: 16px;
-  padding: 15px 0 15px 20px;
+  padding: 15px 0 15px 20px !important;
   color: rgba(255,255,255,0.7);
   font-weight: 300;
+  border: none !important;
+  outline: none !important;
 }
 
 /* Responsive: keep header spacing correct */
