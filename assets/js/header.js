@@ -1,3 +1,4 @@
+console.log("HEADER.JS FILE HIT", new Date().toISOString());
 console.log("DP HEADER JS LOADED v1000");
 (function () {
   function inject() {
