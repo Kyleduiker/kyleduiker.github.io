@@ -1,8 +1,8 @@
-console.log("DP HEADER JS LOADED v1001");
+console.log("DP HEADER JS LOADED v1010 - FIXED");
 
 (function () {
   const LOGO_URL =
-    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=1002";
+    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=1010";
 
   function buildHeaderHTML() {
     return `
@@ -12,19 +12,19 @@ console.log("DP HEADER JS LOADED v1001");
             <span></span><span></span><span></span>
           </button>
           <nav class="quick-links" aria-label="Quick links">
-            <a href="/featured-properties">Featured Properties</a>
-            <a href="/calgary">Calgary Communities</a>
+            <a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Featured Properties</a>
+            <a href="https://duikerproperties.com/communities/calgary">Calgary Communities</a>
           </nav>
         </div>
 
         <div class="header-center">
-          <a href="/" aria-label="Home">
+          <a href="https://duikerproperties.com/" aria-label="Home">
             <img class="main-logo" src="${LOGO_URL}" alt="Duiker Properties">
           </a>
         </div>
 
         <div class="header-right">
-          <a class="contact-link" href="/contact">Contact Us</a>
+          <a class="contact-link" href="https://duikerproperties.com/contact">Contact Us</a>
           <a class="phone-link" href="tel:4037973384">(403) 797-3384</a>
         </div>
       </div>
@@ -37,13 +37,86 @@ console.log("DP HEADER JS LOADED v1001");
         <div class="mobile-menu-wrapper">
           <div class="main-menu-column">
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/search">Search</a></li>
-              <li><a href="/calgary">Calgary Communities</a></li>
-              <li><a href="/surroundingarea">Surrounding Areas</a></li>
-              <li><a href="/buyers">Buyers</a></li>
-              <li><a href="/sellers">Sellers</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li><a href="https://duikerproperties.com/">Home</a></li>
+              <li><a href="https://duikerproperties.com/about">About Kyle</a></li>
+              
+              <li>
+                <button class="menu-item-with-submenu" data-submenu="search" type="button">
+                  <span>Search</span>
+                  <span class="submenu-toggle">+</span>
+                </button>
+                <div class="submenu-column" id="submenu-search">
+                  <ul>
+                    <li><a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Active Listings</a></li>
+                    <li><a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Featured Properties</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <button class="menu-item-with-submenu" data-submenu="calgary-communities" type="button">
+                  <span>Calgary Communities</span>
+                  <span class="submenu-toggle">+</span>
+                </button>
+                <div class="submenu-column" id="submenu-calgary-communities">
+                  <ul>
+                    <li><a href="https://duikerproperties.com/communities/calgary-northeast">Northeast Calgary</a></li>
+                    <li><a href="https://duikerproperties.com/communities/calgary-northwest">Northwest Calgary</a></li>
+                    <li><a href="https://duikerproperties.com/communities/calgary-southwest">Southwest Calgary</a></li>
+                    <li><a href="https://duikerproperties.com/communities/calgary-southeast">Southeast Calgary</a></li>
+                    <li><a href="https://duikerproperties.com/communities/calgary">Calgary</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <button class="menu-item-with-submenu" data-submenu="surrounding-areas" type="button">
+                  <span>Surrounding Areas</span>
+                  <span class="submenu-toggle">+</span>
+                </button>
+                <div class="submenu-column" id="submenu-surrounding-areas">
+                  <ul>
+                    <li><a href="https://duikerproperties.com/communities/chestermere">Chestermere</a></li>
+                    <li><a href="https://duikerproperties.com/communities/airdrie">Airdrie</a></li>
+                    <li><a href="https://duikerproperties.com/communities/cochrane">Cochrane</a></li>
+                    <li><a href="https://duikerproperties.com/communities/okotoks">Okotoks</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <button class="menu-item-with-submenu" data-submenu="buyers" type="button">
+                  <span>Buyers</span>
+                  <span class="submenu-toggle">+</span>
+                </button>
+                <div class="submenu-column" id="submenu-buyers">
+                  <ul>
+                    <li><a href="https://duikerproperties.com/buyers/guide">Buyer's Guide</a></li>
+                    <li><a href="https://duikerproperties.com/buyers/process">Buying Process</a></li>
+                    <li><a href="https://duikerproperties.com/buyers/first-time">First-Time Buyers</a></li>
+                    <li><a href="https://duikerproperties.com/buyers/financing">Financing Options</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <button class="menu-item-with-submenu" data-submenu="sellers" type="button">
+                  <span>Sellers</span>
+                  <span class="submenu-toggle">+</span>
+                </button>
+                <div class="submenu-column" id="submenu-sellers">
+                  <ul>
+                    <li><a href="https://duikerproperties.com/sellers/guide">Seller's Guide</a></li>
+                    <li><a href="https://duikerproperties.com/sellers/valuation">Home Valuation</a></li>
+                    <li><a href="https://duikerproperties.com/sellers/preparation">Prepare Your Home</a></li>
+                    <li><a href="https://duikerproperties.com/sellers/marketing">Marketing Strategy</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li><a href="https://duikerproperties.com/blog">Blog & Market Updates</a></li>
+              <li><a href="https://duikerproperties.com/testimonials">Testimonials</a></li>
+              <li><a href="https://duikerproperties.com/contact">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -64,7 +137,6 @@ console.log("DP HEADER JS LOADED v1001");
       document.body.insertAdjacentElement("afterbegin", header);
       console.log("[DP Header] Header created");
     } else if (!header.querySelector("#dpMenuToggle")) {
-      // header exists but is empty/broken
       header.innerHTML = buildHeaderHTML();
       console.log("[DP Header] Header repaired");
     }
@@ -97,7 +169,6 @@ console.log("DP HEADER JS LOADED v1001");
     }
 
     if (toggle.dataset.dpBound === "1") {
-      // already bound
       return;
     }
     toggle.dataset.dpBound = "1";
@@ -106,12 +177,18 @@ console.log("DP HEADER JS LOADED v1001");
       toggle.classList.add("active");
       menu.classList.add("active");
       menu.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = 'hidden';
     };
 
     const closeMenu = () => {
       toggle.classList.remove("active");
       menu.classList.remove("active");
       menu.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = '';
+      
+      // Close all submenus
+      const allSubmenus = menu.querySelectorAll('.submenu-column');
+      allSubmenus.forEach(sub => sub.classList.remove('active'));
     };
 
     toggle.addEventListener("click", (e) => {
@@ -121,7 +198,35 @@ console.log("DP HEADER JS LOADED v1001");
       isOpen ? closeMenu() : openMenu();
     });
 
-    // click outside closes
+    // Submenu toggles
+    const submenuButtons = menu.querySelectorAll('.menu-item-with-submenu');
+    submenuButtons.forEach(button => {
+      if (button.dataset.dpSubmenuBound === "1") return;
+      button.dataset.dpSubmenuBound = "1";
+
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const submenuId = button.getAttribute('data-submenu');
+        const submenu = document.getElementById(`submenu-${submenuId}`);
+        
+        if (submenu) {
+          const isOpen = submenu.classList.contains('active');
+          
+          // Close all other submenus
+          const allSubmenus = menu.querySelectorAll('.submenu-column');
+          allSubmenus.forEach(sub => {
+            if (sub !== submenu) sub.classList.remove('active');
+          });
+          
+          // Toggle this submenu
+          submenu.classList.toggle('active');
+        }
+      });
+    });
+
+    // Click outside closes
     document.addEventListener("click", (e) => {
       if (!menu.classList.contains("active")) return;
       const clickedInsideMenu = menu.contains(e.target);
@@ -129,7 +234,7 @@ console.log("DP HEADER JS LOADED v1001");
       if (!clickedInsideMenu && !clickedToggle) closeMenu();
     });
 
-    // link click closes
+    // Link click closes
     menu.addEventListener("click", (e) => {
       const link = e.target.closest("a");
       if (!link) return;
@@ -139,7 +244,7 @@ console.log("DP HEADER JS LOADED v1001");
     // ESC closes
     document.addEventListener("keydown", (e) => {
       if (e.key !== "Escape") return;
-      closeMenu();
+      if (menu.classList.contains("active")) closeMenu();
     });
 
     // Logo debug
@@ -147,15 +252,14 @@ console.log("DP HEADER JS LOADED v1001");
     if (logo && !logo.dataset.dpLogoBound) {
       logo.dataset.dpLogoBound = "1";
       logo.addEventListener("error", () => console.log("[DP Header] Logo failed:", logo.src));
-      logo.addEventListener("load", () => console.log("[DP Header] Logo loaded"));
+      logo.addEventListener("load", () => console.log("[DP Header] Logo loaded successfully"));
     }
 
-    console.log("[DP Header] Injected + bound OK");
+    console.log("[DP Header] Injected + bound OK - v1010");
   }
 
   function run() {
     ensureInjected();
-    // Retry a couple times in case BoldTrail re-renders the DOM
     setTimeout(ensureInjected, 500);
     setTimeout(ensureInjected, 1500);
   }
