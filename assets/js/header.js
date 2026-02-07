@@ -1,8 +1,8 @@
-console.log("DP HEADER JS LOADED v1018 - SYSTEM FONTS");
+console.log("DP HEADER JS LOADED v1019 - NO HAMBURGER BORDER");
 
 (function () {
   const LOGO_URL =
-    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=1018";
+    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=1019";
 
   function buildHeaderHTML() {
     return `
@@ -290,7 +290,7 @@ console.log("DP HEADER JS LOADED v1018 - SYSTEM FONTS");
       logo.addEventListener("load", () => console.log("[DP Header] Logo loaded successfully"));
     }
 
-    console.log("[DP Header] Injected + bound OK - v1018");
+    console.log("[DP Header] Injected + bound OK - v1019");
   }
 
   function run() {
