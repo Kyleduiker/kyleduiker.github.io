@@ -1,3 +1,4 @@
+console.log("DP HEADER JS LOADED v1000");
 (function () {
   function inject() {
     // Prevent double-inject
