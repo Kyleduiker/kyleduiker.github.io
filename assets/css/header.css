@@ -1,8 +1,9 @@
 /* =========================================================
-   Duiker Custom Header (SAFE MODE) - FIXED v1015
-   - Two-column mobile menu with dynamic submenu positioning
-   - Submenus align with clicked menu item, not top of container
-   - Matches guide.duikerproperties.com layout exactly
+   Duiker Custom Header (SAFE MODE) - FIXED v1016
+   - Consistent Raleway font family throughout
+   - Added letter-spacing for better readability
+   - Matched font weights and sizes exactly between sites
+   - Dynamic submenu positioning maintained
    ========================================================= */
 
 :root{
@@ -160,6 +161,7 @@ body.has-dp-header .kv-sticky-spacer{
   font-weight:400;
   white-space:nowrap;
   transition: color 0.2s ease;
+  letter-spacing: 0.3px;
 }
 #dp-header .quick-links a:hover{
   color:var(--dp-accent);
@@ -194,6 +196,7 @@ body.has-dp-header .kv-sticky-spacer{
   font-size:15px;
   font-weight:400;
   transition: color 0.2s ease;
+  letter-spacing: 0.3px;
 }
 #dp-header .contact-link:hover{
   color:var(--dp-accent);
@@ -204,6 +207,7 @@ body.has-dp-header .kv-sticky-spacer{
   font-size:16px;
   font-weight:600;
   transition: color 0.2s ease;
+  letter-spacing: 0.3px;
 }
 #dp-header .phone-link:hover{
   color:var(--dp-white);
@@ -281,6 +285,7 @@ body.has-dp-header .kv-sticky-spacer{
   color:#fff;
   font-size:18px;
   font-weight:400;
+  font-family:'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
   background:none;
   border:none !important;
   outline:none !important;
@@ -289,6 +294,7 @@ body.has-dp-header .kv-sticky-spacer{
   text-align:left;
   cursor:pointer;
   transition: color 0.2s ease, padding-left 0.2s ease;
+  letter-spacing: 0.3px;
 }
 #dp-mobile-shell a:hover,
 #dp-mobile-shell button:hover{
@@ -318,6 +324,7 @@ body.has-dp-header .kv-sticky-spacer{
   transition: transform 0.2s ease;
   font-weight: 300;
   margin-left: 10px;
+  font-family:'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
 }
 
 #dp-mobile-shell .menu-item-with-submenu.active .submenu-toggle{
@@ -371,10 +378,12 @@ body.has-dp-header .kv-sticky-spacer{
 #dp-mobile-shell .submenu-column a{
   font-size: 18px;
   padding: 20px 0 !important;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.85);
   font-weight: 400;
+  font-family:'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
   border: none !important;
   outline: none !important;
+  letter-spacing: 0.3px;
 }
 
 #dp-mobile-shell .submenu-column a:hover{
