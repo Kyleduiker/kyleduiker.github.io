@@ -1,8 +1,8 @@
-console.log("DP HEADER JS LOADED v1015 - DYNAMIC SUBMENU POSITIONING");
+console.log("DP HEADER JS LOADED v1016 - FONT CONSISTENCY");
 
 (function () {
   const LOGO_URL =
-    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=1015";
+    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=1016";
 
   function buildHeaderHTML() {
     return `
@@ -290,7 +290,7 @@ console.log("DP HEADER JS LOADED v1015 - DYNAMIC SUBMENU POSITIONING");
       logo.addEventListener("load", () => console.log("[DP Header] Logo loaded successfully"));
     }
 
-    console.log("[DP Header] Injected + bound OK - v1015");
+    console.log("[DP Header] Injected + bound OK - v1016");
   }
 
   function run() {
