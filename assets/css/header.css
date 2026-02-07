@@ -1,7 +1,7 @@
 /* =========================================================
-   Duiker Custom Header (SAFE MODE) - FIXED
+   Duiker Custom Header (SAFE MODE) - FIXED v1011
    - Green debug outline REMOVED
-   - Mobile menu styling improved
+   - Mobile menu styling improved to match guide.duikerproperties.com
    - Will NOT hide BoldTrail header unless body has class: has-dp-header
    ========================================================= */
 
@@ -284,25 +284,36 @@ body.has-dp-header .kv-sticky-spacer{
 #dp-mobile-shell .submenu-toggle{
   font-size: 24px;
   transition: transform 0.2s ease;
+  font-weight: 300;
 }
 
-#dp-mobile-shell .menu-item-with-submenu:hover .submenu-toggle{
-  transform: rotate(90deg);
+#dp-mobile-shell .menu-item-with-submenu.active .submenu-toggle{
+  transform: rotate(45deg);
 }
 
 #dp-mobile-shell .submenu-column{
   display: none;
-  margin-left: 20px;
+  padding-left: 0;
+  margin-left: 0;
 }
 
 #dp-mobile-shell .submenu-column.active{
   display: block;
 }
 
+#dp-mobile-shell .submenu-column ul{
+  margin-top: 0;
+}
+
+#dp-mobile-shell .submenu-column li{
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
 #dp-mobile-shell .submenu-column a{
   font-size: 16px;
-  padding: 15px 0;
-  color: rgba(255,255,255,0.8);
+  padding: 15px 0 15px 20px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 300;
 }
 
 /* Responsive: keep header spacing correct */
