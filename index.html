@@ -9,16 +9,31 @@
     <title>Get Started | Duiker Properties | Calgary Real Estate</title>
     
     <style>
-        /* Header Styles */
+        /* ===== UPDATED HEADER STYLES - MATCHES DUIKERPROPERTIES.COM v1019 ===== */
+        
+        /* CSS Variables */
+        :root {
+            --dp-black: #000;
+            --dp-white: #fff;
+            --dp-accent: #7fb4e8;
+            --dp-header-h: 120px;
+            --dp-header-h-mobile: 90px;
+            --dp-header-h-small: 80px;
+        }
+
+        /* Header Container */
         .header {
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: var(--dp-black) !important;
+            color: var(--dp-white) !important;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            z-index: 999999 !important;
+            pointer-events: auto !important;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
         .header-content {
@@ -28,253 +43,375 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            min-height: 120px;
+            min-height: var(--dp-header-h);
+            position: relative;
         }
 
+        /* Left Section */
         .header-left {
             display: flex;
             align-items: center;
             gap: 30px;
         }
 
+        /* Hamburger - NO BORDER */
         .menu-toggle {
-            background: none;
-            border: none;
+            background: none !important;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
             cursor: pointer;
             padding: 10px;
             display: flex;
             flex-direction: column;
             gap: 6px;
-            transition: all 0.3s ease;
             position: relative;
             width: 40px;
             height: 40px;
             justify-content: center;
             align-items: center;
+            transition: transform 0.3s ease;
         }
 
         .menu-toggle:hover {
-            opacity: 0.7;
+            transform: scale(1.1);
+            background: none !important;
+            border: none !important;
+        }
+
+        .menu-toggle:focus {
+            outline: none !important;
+            border: none !important;
+            box-shadow: none !important;
         }
 
         .menu-toggle span {
             display: block;
             width: 28px;
-            height: 2px;
-            background: #fff;
-            transition: all 0.3s ease;
+            height: 3px;
+            background: var(--dp-white);
+            transition: all .25s ease;
             position: absolute;
+            border-radius: 2px;
         }
 
-        .menu-toggle span:nth-child(1) {
-            top: 11px;
-        }
-
-        .menu-toggle span:nth-child(2) {
-            top: 19px;
-        }
-
-        .menu-toggle span:nth-child(3) {
-            top: 27px;
-        }
+        .menu-toggle span:nth-child(1) { top: 11px; }
+        .menu-toggle span:nth-child(2) { top: 19px; }
+        .menu-toggle span:nth-child(3) { top: 27px; }
 
         .menu-toggle.active span:nth-child(1) {
             top: 19px;
             transform: rotate(45deg);
         }
-
         .menu-toggle.active span:nth-child(2) {
             opacity: 0;
         }
-
         .menu-toggle.active span:nth-child(3) {
             top: 19px;
             transform: rotate(-45deg);
         }
 
+        /* Quick Links */
         .quick-links {
             display: flex;
             gap: 25px;
         }
-
         .quick-links a {
             text-decoration: none;
-            color: #fff;
+            color: var(--dp-white);
             font-size: 15px;
             font-weight: 500;
-            transition: color 0.3s ease;
             white-space: nowrap;
+            transition: color 0.2s ease;
+            letter-spacing: 0.5px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-
         .quick-links a:hover {
-            color: #7fb4e8;
+            color: var(--dp-accent);
         }
 
+        /* Center Logo */
         .header-center {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
         }
-
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2px;
-        }
-
         .main-logo {
             height: 100px;
             width: auto;
+            display: block;
+            transition: transform 0.2s ease;
+        }
+        .main-logo:hover {
+            transform: scale(1.02);
         }
 
+        /* Right Section */
         .header-right {
             display: flex;
             align-items: center;
             gap: 25px;
         }
-
         .contact-link {
             text-decoration: none;
-            color: #fff;
+            color: var(--dp-white);
             font-size: 15px;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: color 0.2s ease;
+            letter-spacing: 0.5px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-
         .contact-link:hover {
-            color: #7fb4e8;
+            color: var(--dp-accent);
         }
-
         .phone-link {
             text-decoration: none;
-            color: #7fb4e8;
+            color: var(--dp-accent);
             font-size: 16px;
-            font-weight: 600;
-            transition: opacity 0.3s ease;
+            font-weight: 700;
+            transition: color 0.2s ease;
+            letter-spacing: 0.5px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-
         .phone-link:hover {
-            opacity: 0.8;
+            color: var(--dp-white);
         }
 
+        /* Mobile Menu */
         .mobile-menu {
             position: fixed;
-            top: 120px;
+            top: var(--dp-header-h);
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.95);
+            width: 100vw;
+            height: calc(100vh - var(--dp-header-h));
+            background: rgba(0,0,0,.98);
             backdrop-filter: blur(10px);
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            overflow-x: auto;
-            overflow-y: auto;
-            z-index: 999;
+            transform: translate3d(-100%,0,0);
+            transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: auto;
+            z-index: 999998 !important;
+            display: block !important;
+            pointer-events: auto !important;
         }
-
         .mobile-menu.active {
-            transform: translateX(0);
+            transform: translate3d(0,0,0);
         }
 
         .mobile-menu-wrapper {
             display: flex;
             min-height: 100%;
             padding: 40px 30px;
-            gap: 80px;
+            gap: 60px;
             position: relative;
+            flex-direction: row;
+            align-items: flex-start;
         }
 
         .main-menu-column {
-            flex-shrink: 0;
-            min-width: 220px;
-        }
-
-        .submenu-column {
-            position: absolute;
-            left: 330px;
-            flex-shrink: 0;
+            flex: 0 0 auto;
             min-width: 200px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateX(-20px);
-            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, top 0.3s ease;
         }
 
-        .submenu-column.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(0);
+        .submenu-columns-container {
+            flex: 1;
+            position: relative;
+            min-height: 400px;
         }
 
         .mobile-menu ul {
             list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mobile-menu li {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
         }
 
         .main-menu-column > ul > li {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        .main-menu-column a,
-        .main-menu-column button {
+        .mobile-menu a,
+        .mobile-menu button {
             display: block;
             padding: 20px 0;
             text-decoration: none;
             color: #fff;
             font-size: 18px;
             font-weight: 500;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: none;
-            border: none;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
             width: 100%;
             text-align: left;
             cursor: pointer;
-            transition: color 0.3s ease;
+            transition: color 0.2s ease, padding-left 0.2s ease;
+            letter-spacing: 0.5px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .mobile-menu a:hover,
+        .mobile-menu button:hover {
+            color: var(--dp-accent);
+            padding-left: 10px;
         }
 
-        .main-menu-column a:hover,
-        .main-menu-column button:hover {
-            color: #7fb4e8;
+        .mobile-menu a:focus,
+        .mobile-menu button:focus {
+            outline: none !important;
+            border: none !important;
         }
 
+        /* Submenu Styling */
         .menu-item-with-submenu {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            position: relative;
         }
 
         .submenu-toggle {
             font-size: 24px;
-            color: rgba(255, 255, 255, 0.7);
-            transition: transform 0.3s ease;
-            line-height: 1;
+            transition: transform 0.2s ease;
             font-weight: 300;
+            margin-left: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
 
-        .submenu-toggle.active {
+        .menu-item-with-submenu.active .submenu-toggle {
             transform: rotate(45deg);
         }
 
-        .submenu-column > ul > li {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        .menu-item-with-submenu.active {
+            color: var(--dp-accent);
+        }
+
+        .submenu-column {
+            display: none;
+            padding: 0 !important;
+            margin: 0 !important;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .submenu-column.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .submenu-column ul {
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            outline: none !important;
+        }
+
+        .submenu-column li {
+            border: none !important;
+            border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+            outline: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+        }
+
+        .submenu-column li:first-child {
+            padding-top: 0;
         }
 
         .submenu-column a {
-            display: block;
-            padding: 20px 0;
-            text-decoration: none;
-            color: #fff;
             font-size: 18px;
-            transition: color 0.3s ease;
+            padding: 20px 0 !important;
+            color: rgba(255,255,255,0.85);
+            font-weight: 500;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            border: none !important;
+            outline: none !important;
+            letter-spacing: 0.5px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .submenu-column a:hover {
-            color: #7fb4e8;
+            color: var(--dp-accent);
+            padding-left: 10px !important;
         }
 
+        /* Responsive */
+        @media (max-width:768px) {
+            .quick-links { display:none; }
+            .contact-link { display:none; }
+            .main-logo { height:70px; }
+
+            .header-content {
+                min-height: var(--dp-header-h-mobile);
+                padding: 10px 20px;
+            }
+
+            .mobile-menu {
+                top: var(--dp-header-h-mobile);
+                height: calc(100vh - var(--dp-header-h-mobile));
+            }
+
+            .mobile-menu-wrapper {
+                flex-direction: row;
+                gap: 40px;
+                padding: 30px 20px;
+            }
+
+            .main-menu-column {
+                min-width: 180px;
+            }
+        }
+
+        @media (max-width:480px) {
+            .header-content {
+                min-height: var(--dp-header-h-small);
+                padding: 10px 15px;
+            }
+            .main-logo { height:50px; }
+            .phone-link { font-size:14px; }
+
+            .mobile-menu {
+                top: var(--dp-header-h-small);
+                height: calc(100vh - var(--dp-header-h-small));
+            }
+
+            .mobile-menu a,
+            .mobile-menu button {
+                font-size: 16px;
+                padding: 15px 0;
+            }
+        }
+
+        /* ===== REST OF ORIGINAL STYLES ===== */
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
         }
 
         :root {
@@ -282,12 +419,6 @@
             --dark-gray: #333;
             --light-gray: #666;
             --bg-light: #f9f9f9;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: var(--dark-gray);
-            line-height: 1.6;
         }
 
         .hero {
@@ -915,35 +1046,6 @@
         }
 
         @media (max-width: 768px) {
-            .quick-links {
-                display: none;
-            }
-
-            .header-right {
-                gap: 15px;
-            }
-
-            .contact-link {
-                display: none;
-            }
-
-            .main-logo {
-                height: 70px;
-            }
-
-            .header-content {
-                min-height: 90px;
-                padding: 10px 20px;
-            }
-
-            .mobile-menu {
-                top: 90px;
-            }
-
-            .phone-link {
-                font-size: 14px;
-            }
-
             .mobile-menu-wrapper {
                 gap: 50px;
             }
@@ -989,19 +1091,6 @@
         }
 
         @media (max-width: 480px) {
-            .header-content {
-                min-height: 80px;
-                padding: 10px 15px;
-            }
-
-            .mobile-menu {
-                top: 80px;
-            }
-
-            .main-logo {
-                height: 50px;
-            }
-
             .mobile-menu-wrapper {
                 padding: 30px 20px;
                 gap: 40px;
@@ -1009,10 +1098,6 @@
 
             .main-menu-column {
                 min-width: 180px;
-            }
-
-            .submenu-column {
-                min-width: 160px;
             }
 
             .hero {
@@ -1061,35 +1146,35 @@
                     <li><a href="https://duikerproperties.com/about">About Kyle</a></li>
                     
                     <li>
-                        <button class="menu-item-with-submenu" data-submenu="search">
+                        <button class="menu-item-with-submenu" data-submenu="search" type="button">
                             <span>Search</span>
                             <span class="submenu-toggle">+</span>
                         </button>
                     </li>
                     
                     <li>
-                        <button class="menu-item-with-submenu" data-submenu="calgary-communities">
+                        <button class="menu-item-with-submenu" data-submenu="calgary-communities" type="button">
                             <span>Calgary Communities</span>
                             <span class="submenu-toggle">+</span>
                         </button>
                     </li>
                     
                     <li>
-                        <button class="menu-item-with-submenu" data-submenu="surrounding-areas">
+                        <button class="menu-item-with-submenu" data-submenu="surrounding-areas" type="button">
                             <span>Surrounding Areas</span>
                             <span class="submenu-toggle">+</span>
                         </button>
                     </li>
                     
                     <li>
-                        <button class="menu-item-with-submenu" data-submenu="buyers">
+                        <button class="menu-item-with-submenu" data-submenu="buyers" type="button">
                             <span>Buyers</span>
                             <span class="submenu-toggle">+</span>
                         </button>
                     </li>
                     
                     <li>
-                        <button class="menu-item-with-submenu" data-submenu="sellers">
+                        <button class="menu-item-with-submenu" data-submenu="sellers" type="button">
                             <span>Sellers</span>
                             <span class="submenu-toggle">+</span>
                         </button>
@@ -1101,49 +1186,51 @@
                 </ul>
             </div>
 
-            <div class="submenu-column" id="submenu-search">
-                <ul>
-                    <li><a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Active Listings</a></li>
-                    <li><a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Featured Properties</a></li>
-                </ul>
-            </div>
+            <div class="submenu-columns-container">
+                <div class="submenu-column" id="submenu-search">
+                    <ul>
+                        <li><a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Active Listings</a></li>
+                        <li><a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Featured Properties</a></li>
+                    </ul>
+                </div>
 
-            <div class="submenu-column" id="submenu-calgary-communities">
-                <ul>
-                    <li><a href="https://duikerproperties.com/communities/calgary-northeast">Northeast Calgary</a></li>
-                    <li><a href="https://duikerproperties.com/communities/calgary-northwest">Northwest Calgary</a></li>
-                    <li><a href="https://duikerproperties.com/communities/calgary-southwest">Southwest Calgary</a></li>
-                    <li><a href="https://duikerproperties.com/communities/calgary-southeast">Southeast Calgary</a></li>
-                    <li><a href="https://duikerproperties.com/communities/calgary-center">City Center Calgary</a></li>
-                    <li><a href="https://duikerproperties.com/communities/calgary">Calgary</a></li>
-                </ul>
-            </div>
+                <div class="submenu-column" id="submenu-calgary-communities">
+                    <ul>
+                        <li><a href="https://duikerproperties.com/communities/calgary-northeast">Northeast Calgary</a></li>
+                        <li><a href="https://duikerproperties.com/communities/calgary-northwest">Northwest Calgary</a></li>
+                        <li><a href="https://duikerproperties.com/communities/calgary-southwest">Southwest Calgary</a></li>
+                        <li><a href="https://duikerproperties.com/communities/calgary-southeast">Southeast Calgary</a></li>
+                        <li><a href="https://duikerproperties.com/communities/calgary-center">City Center Calgary</a></li>
+                        <li><a href="https://duikerproperties.com/communities/calgary">Calgary</a></li>
+                    </ul>
+                </div>
 
-            <div class="submenu-column" id="submenu-surrounding-areas">
-                <ul>
-                    <li><a href="https://duikerproperties.com/communities/chestermere">Chestermere</a></li>
-                    <li><a href="https://duikerproperties.com/communities/airdrie">Airdrie</a></li>
-                    <li><a href="https://duikerproperties.com/communities/cochrane">Cochrane</a></li>
-                    <li><a href="https://duikerproperties.com/communities/okotoks">Okotoks</a></li>
-                </ul>
-            </div>
+                <div class="submenu-column" id="submenu-surrounding-areas">
+                    <ul>
+                        <li><a href="https://duikerproperties.com/communities/chestermere">Chestermere</a></li>
+                        <li><a href="https://duikerproperties.com/communities/airdrie">Airdrie</a></li>
+                        <li><a href="https://duikerproperties.com/communities/cochrane">Cochrane</a></li>
+                        <li><a href="https://duikerproperties.com/communities/okotoks">Okotoks</a></li>
+                    </ul>
+                </div>
 
-            <div class="submenu-column" id="submenu-buyers">
-                <ul>
-                    <li><a href="https://duikerproperties.com/buyers/guide">Buyer's Guide</a></li>
-                    <li><a href="https://duikerproperties.com/buyers/process">Buying Process</a></li>
-                    <li><a href="https://duikerproperties.com/buyers/first-time">First-Time Buyers</a></li>
-                    <li><a href="https://duikerproperties.com/buyers/financing">Financing Options</a></li>
-                </ul>
-            </div>
+                <div class="submenu-column" id="submenu-buyers">
+                    <ul>
+                        <li><a href="https://duikerproperties.com/buyers/guide">Buyer's Guide</a></li>
+                        <li><a href="https://duikerproperties.com/buyers/process">Buying Process</a></li>
+                        <li><a href="https://duikerproperties.com/buyers/first-time">First-Time Buyers</a></li>
+                        <li><a href="https://duikerproperties.com/buyers/financing">Financing Options</a></li>
+                    </ul>
+                </div>
 
-            <div class="submenu-column" id="submenu-sellers">
-                <ul>
-                    <li><a href="https://duikerproperties.com/sellers/guide">Seller's Guide</a></li>
-                    <li><a href="https://duikerproperties.com/sellers/valuation">Home Valuation</a></li>
-                    <li><a href="https://duikerproperties.com/sellers/preparation">Prepare Your Home</a></li>
-                    <li><a href="https://duikerproperties.com/sellers/marketing">Marketing Strategy</a></li>
-                </ul>
+                <div class="submenu-column" id="submenu-sellers">
+                    <ul>
+                        <li><a href="https://duikerproperties.com/sellers/guide">Seller's Guide</a></li>
+                        <li><a href="https://duikerproperties.com/sellers/valuation">Home Valuation</a></li>
+                        <li><a href="https://duikerproperties.com/sellers/preparation">Prepare Your Home</a></li>
+                        <li><a href="https://duikerproperties.com/sellers/marketing">Marketing Strategy</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -1427,59 +1514,82 @@
     </footer>
 
     <script>
+        console.log("DP Header v1019 - System Fonts, No Hamburger Border");
+
         // Header Menu Functionality
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
+        const submenuContainer = document.querySelector('.submenu-columns-container');
         
         // Menu Toggle
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             mobileMenu.classList.toggle('active');
+            if (mobileMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
         
         // Close menu when clicking outside
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target === mobileMenu) {
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.classList.contains('active')) return;
+            const clickedInsideMenu = mobileMenu.contains(e.target);
+            const clickedToggle = menuToggle.contains(e.target);
+            if (!clickedInsideMenu && !clickedToggle) {
                 closeMenu();
             }
         });
         
-        // Submenu Toggle
+        // Submenu Toggle with dynamic positioning
         document.querySelectorAll('.menu-item-with-submenu').forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
                 const submenuId = this.getAttribute('data-submenu');
-                const submenuColumn = document.getElementById('submenu-' + submenuId);
-                const toggle = this.querySelector('.submenu-toggle');
+                const submenu = document.getElementById('submenu-' + submenuId);
                 
-                if (!submenuColumn) return;
+                if (!submenu) return;
                 
-                // Get the position of the clicked button
-                const buttonRect = this.getBoundingClientRect();
-                const menuRect = mobileMenu.getBoundingClientRect();
-                const topPosition = buttonRect.top - menuRect.top;
+                const isOpen = submenu.classList.contains('active');
                 
-                // Close all other submenus
+                // Close all other submenus and remove active from other buttons
                 document.querySelectorAll('.submenu-column').forEach(col => {
-                    if (col !== submenuColumn) {
-                        col.classList.remove('active');
-                    }
+                    if (col !== submenu) col.classList.remove('active');
                 });
-                document.querySelectorAll('.submenu-toggle').forEach(t => {
-                    if (t !== toggle) {
-                        t.classList.remove('active');
-                    }
+                document.querySelectorAll('.menu-item-with-submenu').forEach(btn => {
+                    if (btn !== button) btn.classList.remove('active');
                 });
                 
-                // Position and toggle current submenu
-                if (!submenuColumn.classList.contains('active')) {
-                    submenuColumn.style.top = topPosition + 'px';
-                    submenuColumn.classList.add('active');
-                    toggle.classList.add('active');
+                // Toggle this submenu and button
+                if (!isOpen) {
+                    // Calculate position to align with button
+                    const buttonRect = button.getBoundingClientRect();
+                    const containerRect = submenuContainer.getBoundingClientRect();
+                    const offsetTop = buttonRect.top - containerRect.top;
+                    
+                    // Position submenu to align with button
+                    submenu.style.position = 'absolute';
+                    submenu.style.top = `${offsetTop}px`;
+                    submenu.style.left = '0';
+                    submenu.style.right = '0';
+                    
+                    submenu.classList.add('active');
+                    button.classList.add('active');
                 } else {
-                    submenuColumn.classList.remove('active');
-                    toggle.classList.remove('active');
+                    submenu.classList.remove('active');
+                    button.classList.remove('active');
                 }
             });
+        });
+        
+        // Link click closes menu
+        mobileMenu.addEventListener('click', (e) => {
+            const link = e.target.closest('a');
+            if (!link) return;
+            closeMenu();
         });
         
         // Close menu on ESC key
@@ -1493,8 +1603,9 @@
         function closeMenu() {
             menuToggle.classList.remove('active');
             mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
             document.querySelectorAll('.submenu-column').forEach(col => col.classList.remove('active'));
-            document.querySelectorAll('.submenu-toggle').forEach(toggle => toggle.classList.remove('active'));
+            document.querySelectorAll('.menu-item-with-submenu').forEach(btn => btn.classList.remove('active'));
         }
 
         // Smooth scroll
