@@ -1,3 +1,4 @@
+#dp-header { outline: 6px solid lime !important; }
 /* =========================================================
    Duiker Custom Header (SAFE MODE)
    - Will NOT hide BoldTrail header unless body has class: has-dp-header
