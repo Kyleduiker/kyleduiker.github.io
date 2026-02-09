@@ -38,7 +38,7 @@ console.log("DP HEADER JS LOADED v1019 - NO HAMBURGER BORDER");
           <div class="main-menu-column">
             <ul>
               <li><a href="https://duikerproperties.com/">Home</a></li>
-              <li><a href="https://duikerproperties.com/about">About Kyle</a></li>
+              <li><a href="https://guide.duikerproperties.com/about/">About Kyle</a></li>
               
               <li>
                 <button class="menu-item-with-submenu" data-submenu="search" type="button">
@@ -75,7 +75,7 @@ console.log("DP HEADER JS LOADED v1019 - NO HAMBURGER BORDER");
                 </button>
               </li>
 
-              <li><a href="https://duikerproperties.com/blog">Blog & Market Updates</a></li>
+              <li><a href="https://guide.duikerproperties.com/blog">Blog & Market Updates</a></li>
               <li><a href="https://duikerproperties.com/testimonials">Testimonials</a></li>
               <li><a href="https://duikerproperties.com/contact">Contact</a></li>
             </ul>
@@ -97,7 +97,9 @@ console.log("DP HEADER JS LOADED v1019 - NO HAMBURGER BORDER");
                 <li><a href="https://duikerproperties.com/communities/calgary-northwest">Northwest Calgary</a></li>
                 <li><a href="https://duikerproperties.com/communities/calgary-southwest">Southwest Calgary</a></li>
                 <li><a href="https://duikerproperties.com/communities/calgary-southeast">Southeast Calgary</a></li>
-                <li><a href="https://duikerproperties.com/communities/calgary">Calgary</a></li>
+                <li><a href="https://duikerproperties.com/communities/calgary-citycenter">City Center Calgary</a></li>
+                <li><a href="https://duikerproperties.com/communities/calgary-southeast">Calgary</a></li>
+                <li><a href="https://guide.duikerproperties.com/calgary-lake-communities">Calgary Lake Communities</a></li>          
               </ul>
             </div>
 
