@@ -93,13 +93,15 @@ console.log("DP HEADER JS LOADED v1019 - NO HAMBURGER BORDER");
             <!-- Submenu Column - Calgary Communities -->
             <div class="submenu-column" id="submenu-calgary-communities">
               <ul>
-                <li><a href="https://duikerproperties.com/communities/calgary-northeast">Northeast Calgary</a></li>
-                <li><a href="https://duikerproperties.com/communities/calgary-northwest">Northwest Calgary</a></li>
-                <li><a href="https://duikerproperties.com/communities/calgary-southwest">Southwest Calgary</a></li>
-                <li><a href="https://duikerproperties.com/communities/calgary-southeast">Southeast Calgary</a></li>
-                <li><a href="https://duikerproperties.com/communities/calgary-citycenter">City Center Calgary</a></li>
-                <li><a href="https://duikerproperties.com/communities/calgary-southeast">Calgary</a></li>
-                <li><a href="https://guide.duikerproperties.com/calgary-lake-communities">Calgary Lake Communities</a></li>          
+                <li><a href="https://duikerproperties.com/communities/calgary-northeast">Calgary</a></li>
+                <li><a href="https://duikerproperties.com/communities/calgary-northwest">Calgary City Center</a></li>
+                <li><a href="https://duikerproperties.com/communities/calgary-southwest">Calgary East</a></li>
+                <li><a href="https://duikerproperties.com/communities/calgary-southeast">Calgary West</a></li>
+                <li><a href="https://duikerproperties.com/communities/calgary-citycenter">Calgary North</a></li>
+                <li><a href="https://duikerproperties.com/communities/calgary-southeast">Calgary North East</a></li>
+                <li><a href="https://guide.duikerproperties.com/communities/calgary-lake-communities">Calgary North West</a></li>
+                <li><a href="https://guide.duikerproperties.com/communities/calgary-lake-communities">Calgary South</a></li>
+                <li><a href="https://guide.duikerproperties.com/communities/calgary-lake-communities">Calgary South East</a></li>          
               </ul>
             </div>
 
