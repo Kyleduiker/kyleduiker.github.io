@@ -29,6 +29,13 @@
             background: #000;
         }
 
+        /* Header Container Fix */
+        #header-container {
+            position: relative;
+            z-index: 1000;
+            width: 100%;
+        }
+
         /* Coming Soon Section */
         .coming-soon-container {
             min-height: 100vh;
@@ -38,6 +45,7 @@
             align-items: center;
             text-align: center;
             padding: 2rem;
+            padding-top: calc(2rem + 80px); /* Space for header */
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                         url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920') center/cover fixed;
             position: relative;
@@ -155,6 +163,10 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .coming-soon-container {
+                padding-top: calc(2rem + 70px); /* Adjust for mobile header */
+            }
+
             .coming-soon-title {
                 font-size: 2.5rem;
             }
@@ -179,6 +191,10 @@
         }
 
         @media (max-width: 480px) {
+            .coming-soon-container {
+                padding-top: calc(1.5rem + 60px); /* Further adjust for small mobile */
+            }
+
             .coming-soon-title {
                 font-size: 2rem;
                 letter-spacing: 2px;
