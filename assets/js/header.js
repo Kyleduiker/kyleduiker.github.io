@@ -13,7 +13,7 @@ console.log("DP HEADER JS LOADED v1019 - NO HAMBURGER BORDER");
           </button>
           <nav class="quick-links" aria-label="Quick links">
             <a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Featured Properties</a>
-            <a href="https://duikerproperties.com/communities/calgary">Calgary Communities</a>
+            <a href="https://guide.duikerproperties.com/calgary">Calgary Communities</a>
           </nav>
         </div>
 
