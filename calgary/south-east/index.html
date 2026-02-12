@@ -1,2 +1,992 @@
-<h1>South Calgary Communities</h1>
-<p>This page will list all communities located in South East Calgary.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="canonical" href="https://guide.duikerproperties.com/calgary/south-east/" />
+
+    
+    <title>South East Calgary Real Estate | Homes for Sale in SE Calgary | Duiker Properties</title>
+    <meta name="description" content="Explore South East Calgary real estate - Mahogany, Auburn Bay, Seton, Cranston and more. New lakefront communities with modern amenities near South Health Campus.">
+    
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="https://kyleduiker.github.io/duikerproperties-homepage/assets/css/header.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --accent-color: #EA002A;
+            --dark-gray: #333;
+            --light-gray: #666;
+            --bg-light: #f9f9f9;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        /* Quadrant Hero */
+        .quadrant-hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            margin-top: 0;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .quadrant-name {
+            font-family: 'Georgia', serif;
+            font-size: 4.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+        }
+
+        .quadrant-tagline {
+            font-size: 1.6rem;
+            font-style: italic;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: var(--bg-light);
+            padding: 1rem 2rem;
+        }
+
+        .breadcrumb-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-color);
+        }
+
+        .breadcrumb span {
+            color: var(--light-gray);
+            margin: 0 0.5rem;
+        }
+
+        /* Overview Section */
+        .overview-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .overview-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .overview-content h2 {
+            font-family: 'Georgia', serif;
+            font-size: 2.8rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .accent {
+            color: var(--accent-color);
+            font-style: italic;
+        }
+
+        .overview-text {
+            color: var(--light-gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .overview-highlights {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .overview-highlights h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.6rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlights-list {
+            list-style: none;
+        }
+
+        .highlights-list li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--light-gray);
+        }
+
+        .highlights-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Stats Grid */
+        .quadrant-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .stat-box-label {
+            font-size: 0.85rem;
+            color: var(--light-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-box-value {
+            font-family: 'Georgia', serif;
+            font-size: 1.8rem;
+            color: var(--dark-gray);
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-family: 'Georgia', serif;
+            font-size: 2.8rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--light-gray);
+            font-size: 1.15rem;
+        }
+
+        /* Communities Section */
+        .communities-section {
+            padding: 5rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .communities-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .community-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-decoration: none;
+            color: var(--dark-gray);
+            display: block;
+        }
+
+        .community-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .community-image {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .community-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .community-card:hover .community-image img {
+            transform: scale(1.1);
+        }
+
+        .community-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .community-name {
+            font-family: 'Georgia', serif;
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: white;
+            margin: 0;
+        }
+
+        .community-content {
+            padding: 2rem;
+        }
+
+        .community-description {
+            color: var(--light-gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .community-features {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .feature-tag {
+            background: var(--bg-light);
+            padding: 0.35rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--light-gray);
+            font-weight: 600;
+        }
+
+        .community-price {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Lifestyle Section */
+        .lifestyle-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .lifestyle-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .lifestyle-card {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .lifestyle-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .lifestyle-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .lifestyle-card h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .lifestyle-card p {
+            color: var(--light-gray);
+            line-height: 1.8;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 5rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .map-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .map-wrapper {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            height: 500px;
+        }
+
+        .map-wrapper iframe {
+            border-radius: 10px;
+        }
+
+        /* Buttons */
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #c80020;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(234, 0, 42, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-3 {
+            margin-top: 3rem;
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            height: 50vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .contact-title {
+            font-family: 'Georgia', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .contact-text {
+            max-width: 700px;
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #555;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .overview-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .quadrant-hero {
+                height: 60vh;
+            }
+
+            .quadrant-name {
+                font-size: 3rem;
+            }
+
+            .quadrant-tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .overview-content h2,
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .contact-title {
+                font-size: 2rem;
+            }
+
+            .quadrant-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .communities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quadrant-name {
+                font-size: 2.5rem;
+            }
+
+            .hero-stat-value {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="https://guide.duikerproperties.com/calgary/">Calgary</a>
+            <span>/</span>
+            <span>South East Calgary</span>
+        </div>
+    </div>
+
+    <!-- Quadrant Hero -->
+    <section class="quadrant-hero">
+        <div class="hero-content">
+            <h1 class="quadrant-name">SOUTH EAST CALGARY</h1>
+            <p class="quadrant-tagline">Calgary's Newest & Most Dynamic Quadrant</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value">$615K</div>
+                    <div class="hero-stat-label">Avg Home Price</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">50+</div>
+                    <div class="hero-stat-label">Communities</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">3 Lakes</div>
+                    <div class="hero-stat-label">Private Beaches</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">15 Min</div>
+                    <div class="hero-stat-label">To Downtown</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview-section">
+        <div class="overview-container">
+            <div class="overview-content">
+                <h2>Discover <span class="accent">South East Calgary</span></h2>
+                <p class="overview-text">
+                    South East Calgary represents the pinnacle of modern Calgary living, showcasing the city's most exciting growth and development over the past two decades. This dynamic quadrant seamlessly blends master-planned communities with innovative urban design, creating neighborhoods that prioritize both lifestyle amenities and practical convenience. From the prestigious lakefront communities of Mahogany and Auburn Bay to the groundbreaking Seton Urban District, Southeast Calgary offers an unparalleled living experience that attracts young families, professionals, and retirees alike.
+                </p>
+                <p class="overview-text">
+                    The quadrant's crown jewels are its three private lake communities—Mahogany, Auburn Bay, and Chaparral—each featuring exclusive beaches, water recreation, and resort-style living that's unique in Calgary. Beyond the lakes, Southeast Calgary boasts exceptional infrastructure including the South Health Campus hospital, state-of-the-art schools, extensive pathway networks, and shopping districts like Seton and South Trail Crossing. The area's strategic location provides quick access to Stoney Trail and Deerfoot Trail, making commutes to downtown, the airport, or other quadrants remarkably efficient.
+                </p>
+                <p class="overview-text">
+                    What truly sets Southeast Calgary apart is its forward-thinking approach to community building. Neighborhoods here are thoughtfully designed with interconnected pathways, abundant green spaces, community centers, and mixed-use developments that encourage walkability and neighbor connections. With some of Calgary's newest homes featuring modern architecture, energy-efficient design, and contemporary floor plans, Southeast Calgary appeals to buyers seeking the latest in residential innovation. Whether you're drawn to lakefront luxury, urban convenience in Seton, or family-friendly master-planned communities like Cranston and McKenzie Towne, Southeast Calgary delivers the complete package for modern Alberta living.
+                </p>
+
+                <div class="quadrant-stats">
+                    <div class="stat-box">
+                        <div class="stat-box-label">Major Development Era</div>
+                        <div class="stat-box-value">2000-Present</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-box-label">Population</div>
+                        <div class="stat-box-value">~200,000</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-box-label">Property Types</div>
+                        <div class="stat-box-value">All Styles</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-box-label">Price Range</div>
+                        <div class="stat-box-value">$325K-$2M+</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overview-highlights">
+                <h3>Why Choose Southeast Calgary?</h3>
+                <ul class="highlights-list">
+                    <li>Three private lake communities with beaches</li>
+                    <li>Seton - Calgary's first Urban District</li>
+                    <li>South Health Campus hospital</li>
+                    <li>Newest master-planned communities in Calgary</li>
+                    <li>Award-winning schools and childcare</li>
+                    <li>Extensive pathway and trail networks</li>
+                    <li>Quick access to Stoney Trail & Deerfoot</li>
+                    <li>South Trail Crossing shopping center</li>
+                    <li>15-20 minutes to downtown Calgary</li>
+                    <li>Modern architecture and energy-efficient homes</li>
+                    <li>Strong community associations and events</li>
+                    <li>Fish Creek Provincial Park nearby</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Communities -->
+    <section class="communities-section">
+        <div class="section-header">
+            <h2>Featured <span class="accent">SE Calgary</span> Communities</h2>
+            <p>Explore the best neighborhoods South East Calgary has to offer</p>
+        </div>
+        <div class="communities-grid">
+            <a href="https://duikerproperties.com/communities/mahogany/" class="community-card">
+                <div class="community-image">
+                    <img src="https://raw.githubusercontent.com/Kyleduiker/duikerproperties-homepage/main/photos/20260129_1428_Image%20Generation_simple_compose_01kg5tfwy0eqxvd17zfhexjgdk.png" alt="Mahogany Calgary">
+                    <div class="community-overlay">
+                        <h3 class="community-name">Mahogany</h3>
+                    </div>
+                </div>
+                <div class="community-content">
+                    <p class="community-description">
+                        Calgary's largest private lake community featuring three pristine beaches, white sand, year-round Beach Club, and resort-style living across 4,000+ acres of master-planned excellence.
+                    </p>
+                    <div class="community-features">
+                        <span class="feature-tag">Lakefront</span>
+                        <span class="feature-tag">Beach Club</span>
+                        <span class="feature-tag">New Development</span>
+                    </div>
+                    <span class="community-price">Avg: $650,000</span>
+                </div>
+            </a>
+
+            <a href="https://duikerproperties.com/communities/auburn-bay/" class="community-card">
+                <div class="community-image">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800" alt="Auburn Bay Calgary">
+                    <div class="community-overlay">
+                        <h3 class="community-name">Auburn Bay</h3>
+                    </div>
+                </div>
+                <div class="community-content">
+                    <p class="community-description">
+                        Master-planned lakeside community with private 43-acre lake, sandy beach, resident clubhouse, and extensive pathway network. Family-friendly with excellent schools and parks.
+                    </p>
+                    <div class="community-features">
+                        <span class="feature-tag">Lakefront</span>
+                        <span class="feature-tag">Family-Friendly</span>
+                        <span class="feature-tag">Established</span>
+                    </div>
+                    <span class="community-price">Avg: $625,000</span>
+                </div>
+            </a>
+
+            <a href="https://duikerproperties.com/communities/seton/" class="community-card">
+                <div class="community-image">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800" alt="Seton Calgary">
+                    <div class="community-overlay">
+                        <h3 class="community-name">Seton</h3>
+                    </div>
+                </div>
+                <div class="community-content">
+                    <p class="community-description">
+                        Calgary's first Urban District combining residential, retail, entertainment, and healthcare. Walk to shops, restaurants, cinema, YMCA, and South Health Campus hospital.
+                    </p>
+                    <div class="community-features">
+                        <span class="feature-tag">Urban District</span>
+                        <span class="feature-tag">Walkable</span>
+                        <span class="feature-tag">Transit</span>
+                    </div>
+                    <span class="community-price">Avg: $575,000</span>
+                </div>
+            </a>
+
+            <a href="https://duikerproperties.com/communities/cranston/" class="community-card">
+                <div class="community-image">
+                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800" alt="Cranston Calgary">
+                    <div class="community-overlay">
+                        <h3 class="community-name">Cranston</h3>
+                    </div>
+                </div>
+                <div class="community-content">
+                    <p class="community-description">
+                        One of Calgary's largest master-planned communities spanning 1,200+ acres. Features Cranston Market, Cranston Ridge, and Cranston's Riverstone with diverse housing and amenities.
+                    </p>
+                    <div class="community-features">
+                        <span class="feature-tag">Master-Planned</span>
+                        <span class="feature-tag">Large Community</span>
+                        <span class="feature-tag">Active</span>
+                    </div>
+                    <span class="community-price">Avg: $595,000</span>
+                </div>
+            </a>
+
+            <a href="https://duikerproperties.com/communities/mckenzie-towne/" class="community-card">
+                <div class="community-image">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800" alt="McKenzie Towne Calgary">
+                    <div class="community-overlay">
+                        <h3 class="community-name">McKenzie Towne</h3>
+                    </div>
+                </div>
+                <div class="community-content">
+                    <p class="community-description">
+                        Charming village-inspired community with a high street featuring shops, restaurants, and services. Tree-lined streets, parks, and strong sense of community make it family favorite.
+                    </p>
+                    <div class="community-features">
+                        <span class="feature-tag">Village Centre</span>
+                        <span class="feature-tag">Established</span>
+                        <span class="feature-tag">Walkable</span>
+                    </div>
+                    <span class="community-price">Avg: $610,000</span>
+                </div>
+            </a>
+
+            <a href="https://duikerproperties.com/communities/chaparral/" class="community-card">
+                <div class="community-image">
+                    <img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=800" alt="Chaparral Calgary">
+                    <div class="community-overlay">
+                        <h3 class="community-name">Chaparral</h3>
+                    </div>
+                </div>
+                <div class="community-content">
+                    <p class="community-description">
+                        Mature lake community with established trees, private beach access on 20-acre Lake Chaparral, and valley pathways. Excellent schools and strong community spirit.
+                    </p>
+                    <div class="community-features">
+                        <span class="feature-tag">Lakefront</span>
+                        <span class="feature-tag">Mature Trees</span>
+                        <span class="feature-tag">Established</span>
+                    </div>
+                    <span class="community-price">Avg: $665,000</span>
+                </div>
+            </a>
+
+            <a href="https://duikerproperties.com/communities/legacy/" class="community-card">
+                <div class="community-image">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="Legacy Calgary">
+                    <div class="community-overlay">
+                        <h3 class="community-name">Legacy</h3>
+                    </div>
+                </div>
+                <div class="community-content">
+                    <p class="community-description">
+                        Modern new community with contemporary architecture, connected pathways, parks, and close proximity to Seton Urban District. Features diverse housing from townhomes to estates.
+                    </p>
+                    <div class="community-features">
+                        <span class="feature-tag">New Community</span>
+                        <span class="feature-tag">Modern Design</span>
+                        <span class="feature-tag">Growing</span>
+                    </div>
+                    <span class="community-price">Avg: $590,000</span>
+                </div>
+            </a>
+
+            <a href="https://duikerproperties.com/communities/copperfield/" class="community-card">
+                <div class="community-image">
+                    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800" alt="Copperfield Calgary">
+                    <div class="community-overlay">
+                        <h3 class="community-name">Copperfield</h3>
+                    </div>
+                </div>
+                <div class="community-content">
+                    <p class="community-description">
+                        Large established community offering diverse housing options, extensive green spaces, schools, shopping, and strong neighborhood connections. Excellent value in SE Calgary.
+                    </p>
+                    <div class="community-features">
+                        <span class="feature-tag">Established</span>
+                        <span class="feature-tag">Value</span>
+                        <span class="feature-tag">Family-Friendly</span>
+                    </div>
+                    <span class="community-price">Avg: $555,000</span>
+                </div>
+            </a>
+
+            <a href="https://duikerproperties.com/communities/new-brighton/" class="community-card">
+                <div class="community-image">
+                    <img src="https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=800" alt="New Brighton Calgary">
+                    <div class="community-overlay">
+                        <h3 class="community-name">New Brighton</h3>
+                    </div>
+                </div>
+                <div class="community-content">
+                    <p class="community-description">
+                        Charming coastal-themed community with Brighton Beach recreation area, gazebos, wetlands, and traditional architecture. Close to 130th Avenue shopping corridor.
+                    </p>
+                    <div class="community-features">
+                        <span class="feature-tag">Beach Area</span>
+                        <span class="feature-tag">Unique Theme</span>
+                        <span class="feature-tag">Established</span>
+                    </div>
+                    <span class="community-price">Avg: $580,000</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="text-center mt-3">
+            <a href="https://www.duikerproperties.com/index.php?advanced=1&display=Calgary+South+East&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=quadrant%3Asouth+east%3Aab&sortby=listings.visits+DESC&rtype=grid" class="btn-primary">VIEW ALL SE CALGARY LISTINGS</a>
+        </div>
+    </section>
+
+    <!-- Lifestyle Section -->
+    <section class="lifestyle-section">
+        <div class="section-header">
+            <h2>The SE Calgary <span class="accent">Lifestyle</span></h2>
+            <p>Experience modern living with unbeatable amenities and convenience</p>
+        </div>
+        <div class="lifestyle-grid">
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                </div>
+                <h3>Lakefront Living</h3>
+                <p>Access to three private lake communities—Mahogany, Auburn Bay, and Chaparral—offering exclusive beaches, water sports, and year-round recreation that's unmatched in Calgary.</p>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </div>
+                <h3>Modern Homes</h3>
+                <p>Southeast Calgary features Calgary's newest housing stock with contemporary architecture, open floor plans, energy-efficient design, and smart home technology throughout.</p>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h3>Urban Convenience</h3>
+                <p>Seton Urban District brings big-city amenities to your doorstep—Cineplex, restaurants, YMCA, retail, and South Health Campus hospital all within walking distance.</p>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                </div>
+                <h3>Top Schools</h3>
+                <p>Exceptional educational options including brand-new schools, French immersion programs, Catholic and public systems, plus easy access to post-secondary institutions.</p>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                </div>
+                <h3>Prime Location</h3>
+                <p>Strategic access to Stoney Trail and Deerfoot Trail means 15 minutes to downtown, 20 minutes to the airport, and easy connection to all Calgary quadrants.</p>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="lifestyle-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M3 9h18M9 21V9"/>
+                    </svg>
+                </div>
+                <h3>Master Planning</h3>
+                <p>Thoughtfully designed communities featuring interconnected pathways, abundant parks, community centers, and mixed-use developments that encourage active lifestyles.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="section-header">
+            <h2>Explore <span class="accent">SE Calgary</span></h2>
+            <p>Discover the communities and amenities throughout South East Calgary</p>
+        </div>
+        <div class="map-container">
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80428.48883270765!2d-113.95673764897949!3d50.92547857344628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5371701c1e1f46c1%3A0x2e23f8b4de9f9c6!2sSouth%20East%20Calgary%2C%20Calgary%2C%20AB!5e0!3m2!1sen!2sca!4v1738794256789!5m2!1sen!2sca" 
+                    width="100%" 
+                    height="500" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="South East Calgary Map">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <h2 class="contact-title">Ready to Explore <span class="accent">SE Calgary</span>?</h2>
+        <p class="contact-text">
+            As Southeast Calgary specialists, we know every community, school, and amenity in the quadrant. Let us help you find your perfect home in Calgary's most dynamic area.
+        </p>
+        <a href="https://duikerproperties.com/contact" class="btn-primary">CONNECT WITH US TODAY</a>
+    </section>
+
+    <!-- Footer placeholder -->
+    <div id="footer"></div>
+
+    <!-- Header JavaScript -->
+    <script src="https://kyleduiker.github.io/duikerproperties-homepage/assets/js/header.js"></script>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
