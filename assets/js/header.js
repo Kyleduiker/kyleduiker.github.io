@@ -1,8 +1,9 @@
-console.log("DP HEADER JS LOADED v1019 - NO HAMBURGER BORDER");
+console.log("DP HEADER JS LOADED v1020 - SMOOTH LOAD");
 
 (function () {
+  const VERSION = "1020";
   const LOGO_URL =
-    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=1019";
+    "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=" + VERSION;
 
   function buildHeaderHTML() {
     return `
@@ -39,7 +40,7 @@ console.log("DP HEADER JS LOADED v1019 - NO HAMBURGER BORDER");
             <ul>
               <li><a href="https://duikerproperties.com/">Home</a></li>
               <li><a href="https://guide.duikerproperties.com/about/">About Kyle</a></li>
-              
+
               <li>
                 <button class="menu-item-with-submenu" data-submenu="search" type="button">
                   <span>Search</span>
@@ -101,7 +102,7 @@ console.log("DP HEADER JS LOADED v1019 - NO HAMBURGER BORDER");
                 <li><a href="https://duikerproperties.com/communities/calgary-southeast">Calgary North East</a></li>
                 <li><a href="https://guide.duikerproperties.com/communities/calgary-lake-communities">Calgary North West</a></li>
                 <li><a href="https://guide.duikerproperties.com/communities/calgary-lake-communities">Calgary South</a></li>
-                <li><a href="https://guide.duikerproperties.com/communities/calgary-lake-communities">Calgary South East</a></li>          
+                <li><a href="https://guide.duikerproperties.com/communities/calgary-lake-communities">Calgary South East</a></li>
               </ul>
             </div>
 
@@ -141,160 +142,156 @@ console.log("DP HEADER JS LOADED v1019 - NO HAMBURGER BORDER");
   }
 
   function ensureInjected() {
-    // Mark body so CSS can safely hide BoldTrail header
+    // Let CSS hide BoldTrail header ASAP
     document.body.classList.add("has-dp-header");
 
-    // 1) Ensure header exists
+    // If we've stabilized, don't do extra work (prevents micro-jumps)
+    if (document.body.classList.contains("dp-header-ready")) {
+      document.documentElement.classList.add("dp-ready");
+      return;
+    }
+
+    // 1) Header
     let header = document.getElementById("dp-header");
     if (!header) {
       header = document.createElement("header");
       header.id = "dp-header";
       header.innerHTML = buildHeaderHTML();
       document.body.insertAdjacentElement("afterbegin", header);
-      console.log("[DP Header] Header created");
     } else if (!header.querySelector("#dpMenuToggle")) {
       header.innerHTML = buildHeaderHTML();
-      console.log("[DP Header] Header repaired");
     }
 
-    // 2) Ensure mobile shell exists
+    // 2) Mobile shell AFTER header
     let shell = document.getElementById("dp-mobile-shell");
     if (!shell) {
       shell = document.createElement("div");
       shell.id = "dp-mobile-shell";
       shell.innerHTML = buildMobileShellHTML();
-      document.body.insertAdjacentElement("afterbegin", shell);
-      console.log("[DP Header] Mobile shell created");
+      header.insertAdjacentElement("afterend", shell);
     }
 
-    // 3) Ensure mobile menu exists inside shell
+    // 3) Menu reference
     let menu = document.getElementById("dpMobileMenu");
     if (!menu) {
       shell.innerHTML = buildMobileShellHTML();
       menu = document.getElementById("dpMobileMenu");
-      console.log("[DP Header] Mobile menu repaired");
     }
 
-    // 4) Wire up click handlers (only once)
     const toggle = document.getElementById("dpMenuToggle");
-    menu = document.getElementById("dpMobileMenu");
+    if (!toggle || !menu) return;
 
-    if (!toggle || !menu) {
-      console.log("[DP Header] Still missing toggle/menu after inject", { toggle, menu });
-      return;
-    }
+    // Bind toggle once
+    if (toggle.dataset.dpBound !== "1") {
+      toggle.dataset.dpBound = "1";
 
-    if (toggle.dataset.dpBound === "1") {
-      return;
-    }
-    toggle.dataset.dpBound = "1";
+      const openMenu = () => {
+        toggle.classList.add("active");
+        menu.classList.add("active");
+        menu.setAttribute("aria-hidden", "false");
+        document.body.classList.add("dp-menu-open");
+      };
 
-    const openMenu = () => {
-      toggle.classList.add("active");
-      menu.classList.add("active");
-      menu.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = 'hidden';
-    };
+      const closeMenu = () => {
+        toggle.classList.remove("active");
+        menu.classList.remove("active");
+        menu.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("dp-menu-open");
 
-    const closeMenu = () => {
-      toggle.classList.remove("active");
-      menu.classList.remove("active");
-      menu.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = '';
-      
-      // Close all submenus
-      const allSubmenus = menu.querySelectorAll('.submenu-column');
-      allSubmenus.forEach(sub => sub.classList.remove('active'));
-    };
+        menu.querySelectorAll(".submenu-column").forEach((sub) => sub.classList.remove("active"));
+        menu.querySelectorAll(".menu-item-with-submenu").forEach((btn) => btn.classList.remove("active"));
+      };
 
-    toggle.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const isOpen = menu.classList.contains("active");
-      isOpen ? closeMenu() : openMenu();
-    });
-
-    // Submenu toggles
-    const submenuButtons = menu.querySelectorAll('.menu-item-with-submenu');
-    const submenuContainer = menu.querySelector('.submenu-columns-container');
-    
-    submenuButtons.forEach(button => {
-      if (button.dataset.dpSubmenuBound === "1") return;
-      button.dataset.dpSubmenuBound = "1";
-
-      button.addEventListener('click', (e) => {
+      toggle.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
-        
-        const submenuId = button.getAttribute('data-submenu');
-        const submenu = document.getElementById(`submenu-${submenuId}`);
-        
-        if (submenu) {
-          const isOpen = submenu.classList.contains('active');
-          
-          // Close all other submenus and remove active from other buttons
-          const allSubmenus = menu.querySelectorAll('.submenu-column');
-          const allButtons = menu.querySelectorAll('.menu-item-with-submenu');
-          allSubmenus.forEach(sub => {
-            if (sub !== submenu) sub.classList.remove('active');
-          });
-          allButtons.forEach(btn => {
-            if (btn !== button) btn.classList.remove('active');
-          });
-          
-          // Toggle this submenu and button
-          if (!isOpen) {
-            // Calculate position to align with button
-            const buttonRect = button.getBoundingClientRect();
-            const containerRect = submenuContainer.getBoundingClientRect();
-            const offsetTop = buttonRect.top - containerRect.top;
-            
-            // Position submenu to align with button
-            submenu.style.position = 'absolute';
-            submenu.style.top = `${offsetTop}px`;
-            submenu.style.left = '0';
-            submenu.style.right = '0';
-            
-            submenu.classList.add('active');
-            button.classList.add('active');
-          } else {
-            submenu.classList.remove('active');
-            button.classList.remove('active');
-          }
-        }
+        menu.classList.contains("active") ? closeMenu() : openMenu();
       });
-    });
 
-    // Click outside closes
-    document.addEventListener("click", (e) => {
-      if (!menu.classList.contains("active")) return;
-      const clickedInsideMenu = menu.contains(e.target);
-      const clickedToggle = toggle.contains(e.target);
-      if (!clickedInsideMenu && !clickedToggle) closeMenu();
-    });
+      // Submenu toggles
+      menu.querySelectorAll(".menu-item-with-submenu").forEach((button) => {
+        if (button.dataset.dpSubmenuBound === "1") return;
+        button.dataset.dpSubmenuBound = "1";
 
-    // Link click closes
-    menu.addEventListener("click", (e) => {
-      const link = e.target.closest("a");
-      if (!link) return;
-      closeMenu();
-    });
+        button.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
 
-    // ESC closes
-    document.addEventListener("keydown", (e) => {
-      if (e.key !== "Escape") return;
-      if (menu.classList.contains("active")) closeMenu();
-    });
+          const submenuId = button.getAttribute("data-submenu");
+          const submenu = document.getElementById(`submenu-${submenuId}`);
+          if (!submenu) return;
 
-    // Logo debug
-    const logo = header.querySelector(".main-logo");
-    if (logo && !logo.dataset.dpLogoBound) {
-      logo.dataset.dpLogoBound = "1";
-      logo.addEventListener("error", () => console.log("[DP Header] Logo failed:", logo.src));
-      logo.addEventListener("load", () => console.log("[DP Header] Logo loaded successfully"));
+          const isOpen = submenu.classList.contains("active");
+
+          // Close others
+          menu.querySelectorAll(".submenu-column").forEach((sub) => {
+            if (sub !== submenu) sub.classList.remove("active");
+          });
+          menu.querySelectorAll(".menu-item-with-submenu").forEach((btn) => {
+            if (btn !== button) btn.classList.remove("active");
+          });
+
+          // Toggle this one
+          if (!isOpen) {
+            submenu.classList.add("active");
+            button.classList.add("active");
+          } else {
+            submenu.classList.remove("active");
+            button.classList.remove("active");
+          }
+        });
+      });
+
+      // Global listeners ONCE (prevents stacking)
+      if (document.documentElement.dataset.dpGlobalBound !== "1") {
+        document.documentElement.dataset.dpGlobalBound = "1";
+
+        document.addEventListener("click", (e) => {
+          if (!menu.classList.contains("active")) return;
+          const clickedInsideMenu = menu.contains(e.target);
+          const clickedToggle = toggle.contains(e.target);
+          if (!clickedInsideMenu && !clickedToggle) {
+            toggle.classList.remove("active");
+            menu.classList.remove("active");
+            menu.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("dp-menu-open");
+            menu.querySelectorAll(".submenu-column").forEach((sub) => sub.classList.remove("active"));
+            menu.querySelectorAll(".menu-item-with-submenu").forEach((btn) => btn.classList.remove("active"));
+          }
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key !== "Escape") return;
+          if (!menu.classList.contains("active")) return;
+          toggle.classList.remove("active");
+          menu.classList.remove("active");
+          menu.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("dp-menu-open");
+          menu.querySelectorAll(".submenu-column").forEach((sub) => sub.classList.remove("active"));
+          menu.querySelectorAll(".menu-item-with-submenu").forEach((btn) => btn.classList.remove("active"));
+        });
+      }
+
+      // Link click closes
+      menu.addEventListener("click", (e) => {
+        const link = e.target.closest("a");
+        if (!link) return;
+        toggle.classList.remove("active");
+        menu.classList.remove("active");
+        menu.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("dp-menu-open");
+        menu.querySelectorAll(".submenu-column").forEach((sub) => sub.classList.remove("active"));
+        menu.querySelectorAll(".menu-item-with-submenu").forEach((btn) => btn.classList.remove("active"));
+      });
     }
 
-    console.log("[DP Header] Injected + bound OK - v1019");
+    // Mark stable + show page
+    requestAnimationFrame(() => {
+      document.body.classList.add("dp-header-ready");
+      document.documentElement.classList.add("dp-ready");
+    });
+
+    console.log("[DP Header] Injected + bound OK - v" + VERSION);
   }
 
   function run() {
