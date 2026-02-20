@@ -3,252 +3,874 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon | Duiker Properties</title>
-    <meta name="description" content="This page is coming soon. Explore Calgary real estate with Duiker Properties.">
-    
-    <!-- Header CSS -->
+    <title>About Kyle Duiker | Calgary Real Estate Broker | Duiker Properties</title>
+    <meta name="description" content="Kyle Duiker is a Calgary real estate Broker with over a decade of experience. Licensed since 2010, Broker since 2021 — combining strong negotiation skills with clear communication.">
+
+    <!-- Duiker Properties Header -->
     <link rel="stylesheet" href="https://kyleduiker.github.io/duikerproperties-homepage/assets/css/header.css">
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --accent-color: #EA002A;
-            --dark-gray: #333;
-            --light-gray: #666;
+            --red:      #EA002A;
+            --blue:     #003DA5;
+            --gold:     #C5A572;
+            --gold-lt:  #ddc89a;
+            --dark:     #0d0d0d;
+            --off-white:#f5f2ed;
+            --cream:    #faf8f4;
+            --text:     #1a1a1a;
+            --muted:    #777;
+            --border:   #e5e0d8;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: var(--dark-gray);
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--text);
             line-height: 1.6;
-            background: #000;
         }
 
-        /* Header Container Fix */
         #header-container {
             position: relative;
             z-index: 1000;
             width: 100%;
         }
 
-        /* Coming Soon Section */
-        .coming-soon-container {
-            min-height: 100vh;
+        /* ─── HERO ─── */
+        .hero {
+            background: var(--dark);
+            color: white;
+            min-height: 88vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: stretch;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px; /* header height */
+        }
+
+        /* Subtle diagonal texture */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(
+                    -55deg,
+                    transparent,
+                    transparent 60px,
+                    rgba(255,255,255,0.015) 60px,
+                    rgba(255,255,255,0.015) 61px
+                );
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 5rem 5rem 5rem 6rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
+        }
+
+        .hero-eyebrow {
+            display: flex;
             align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.75rem;
+            animation: fadeUp 0.7s ease both;
+        }
+
+        .eyebrow-line {
+            width: 40px; height: 1px;
+            background: var(--gold);
+        }
+
+        .eyebrow-text {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .hero-headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-weight: 300;
+            line-height: 1.15;
+            color: white;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.7s 0.1s ease both;
+            opacity: 0;
+        }
+
+        .hero-headline em {
+            font-style: italic;
+            color: var(--gold-lt);
+        }
+
+        .hero-subhead {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.75;
+            max-width: 420px;
+            margin-bottom: 2.5rem;
+            animation: fadeUp 0.7s 0.2s ease both;
+            opacity: 0;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            animation: fadeUp 0.7s 0.3s ease both;
+            opacity: 0;
+        }
+
+        .stat {
+            border-left: 2px solid var(--gold);
+            padding-left: 1rem;
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: white;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+            margin-top: 0.25rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeUp 0.7s 0.4s ease both;
+            opacity: 0;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--red);
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 20px rgba(234,0,42,0.3);
+        }
+
+        .btn-primary:hover {
+            background: #c80020;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(234,0,42,0.45);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.25s ease;
+        }
+
+        .btn-outline:hover {
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Hero image side */
+        .hero-image-side {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            filter: grayscale(20%);
+        }
+
+        /* Gradient overlay on image */
+        .hero-image-side::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, var(--dark) 0%, transparent 30%),
+                        linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%);
+        }
+
+        /* Red accent bar */
+        .hero-image-side::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; height: 4px;
+            background: linear-gradient(to right, var(--red), var(--blue));
+            z-index: 3;
+        }
+
+        /* ─── BROKER BADGE ─── */
+        .broker-badge {
+            position: absolute;
+            bottom: 3rem; right: 3rem;
+            z-index: 4;
+            background: rgba(13,13,13,0.9);
+            border: 1px solid rgba(197,165,114,0.3);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 0.7s 0.5s ease both;
+            opacity: 0;
+        }
+
+        .broker-badge-title {
+            font-size: 0.65rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+        }
+
+        .broker-badge-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: white;
+            font-weight: 400;
+        }
+
+        .broker-badge-role {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 0.2rem;
+        }
+
+        /* ─── SECTION BASE ─── */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-eyebrow .eyebrow-line { background: var(--gold); }
+        .section-eyebrow .eyebrow-text {
+            color: var(--gold);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 300;
+            line-height: 1.2;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .section-title em { font-style: italic; color: var(--red); }
+
+        /* ─── APPROACH SECTION ─── */
+        .approach-section {
+            background: white;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .approach-body p {
+            color: #444;
+            line-height: 1.85;
+            font-size: 0.97rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .trait-list {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .trait {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.85rem 1rem;
+            background: var(--cream);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text);
+            transition: border-color 0.2s ease;
+        }
+
+        .trait:hover { border-color: var(--gold); }
+
+        .trait-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--red);
+            flex-shrink: 0;
+        }
+
+        /* ─── TIMELINE ─── */
+        .timeline-side { padding-top: 0.5rem; }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 6px; bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, var(--red), var(--blue), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.45rem; top: 6px;
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: var(--red);
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--red);
+        }
+
+        .timeline-year {
+            font-size: 0.68rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.88rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        /* ─── DARK BAND ─── */
+        .dark-band {
+            background: var(--dark);
+            color: white;
+            padding: 5rem 0;
+        }
+
+        .dark-band .section-title { color: white; }
+
+        .dark-band .section-eyebrow .eyebrow-text { color: var(--gold); }
+        .dark-band .section-eyebrow .eyebrow-line { background: var(--gold); }
+
+        .dark-band-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .dark-band p {
+            color: rgba(255,255,255,0.65);
+            line-height: 1.85;
+            font-size: 0.97rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .tool-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: 1.25rem;
+            transition: all 0.25s ease;
+        }
+
+        .tool-card:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(197,165,114,0.3);
+        }
+
+        .tool-icon {
+            width: 36px; height: 36px;
+            border-radius: 8px;
+            background: rgba(234,0,42,0.15);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .tool-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+
+        .tool-desc {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.4);
+            line-height: 1.5;
+        }
+
+        /* ─── SHORT BIO SECTION ─── */
+        .bio-section {
+            background: var(--off-white);
+        }
+
+        .bio-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem 3.5rem;
+            max-width: 760px;
+            margin: 0 auto;
             text-align: center;
-            padding: 2rem;
-            padding-top: calc(2rem + 80px); /* Space for header */
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920') center/cover fixed;
             position: relative;
         }
 
-        .coming-soon-content {
-            max-width: 800px;
-            color: white;
-            animation: fadeIn 1s ease-in;
+        .bio-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--red), var(--blue));
+            border-radius: 16px 16px 0 0;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .coming-soon-icon {
-            width: 100px;
-            height: 100px;
-            background: var(--accent-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(234, 0, 42, 0.7);
-            }
-            50% {
-                transform: scale(1.05);
-                box-shadow: 0 0 0 20px rgba(234, 0, 42, 0);
-            }
-        }
-
-        .coming-soon-title {
-            font-family: 'Georgia', serif;
-            font-size: 4rem;
-            font-weight: 300;
+        .bio-quote-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            color: var(--border);
+            line-height: 0.5;
             margin-bottom: 1.5rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
         }
 
-        .coming-soon-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
+        .bio-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
             font-style: italic;
-        }
-
-        .coming-soon-text {
-            font-size: 1.1rem;
+            color: var(--text);
             line-height: 1.8;
-            margin-bottom: 3rem;
-            opacity: 0.85;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 2rem;
         }
 
-        .btn-home {
-            display: inline-block;
-            padding: 1.2rem 3rem;
-            background: var(--accent-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(234, 0, 42, 0.3);
-        }
-
-        .btn-home:hover {
-            background: #c80020;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(234, 0, 42, 0.5);
-        }
-
-        .social-links {
-            margin-top: 3rem;
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-        }
-
-        .social-link {
-            color: white;
-            text-decoration: none;
-            font-size: 0.95rem;
-            opacity: 0.8;
-            transition: all 0.3s ease;
+        .bio-attribution {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: center;
+            gap: 1rem;
         }
 
-        .social-link:hover {
+        .bio-attr-line { width: 40px; height: 1px; background: var(--border); }
+
+        .bio-attr-name {
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        /* ─── CTA SECTION ─── */
+        .cta-section {
+            background: var(--blue);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 300;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section h2 em { font-style: italic; color: var(--gold-lt); }
+
+        .cta-section p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+            max-width: 520px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.75;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-section .btn-primary {
+            background: var(--red);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .cta-section .btn-outline {
+            border-color: rgba(255,255,255,0.25);
+        }
+
+        /* Placeholder for photo */
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .photo-placeholder-text {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .photo-placeholder-icon {
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            border: 1px dashed rgba(255,255,255,0.15);
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .hero-content {
+                padding: 3rem 2rem 3rem 2rem;
+            }
+
+            .hero-image-side {
+                height: 400px;
+            }
+
+            .broker-badge {
+                bottom: 1.5rem; right: 1.5rem;
+            }
+
+            .approach-grid,
+            .dark-band-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .trait-list { grid-template-columns: 1fr; }
+
+            .bio-card { padding: 2rem 1.5rem; }
+        }
+
+        @media (max-width: 600px) {
+            .hero-stats { gap: 1.5rem; }
+            .tools-grid { grid-template-columns: 1fr; }
+            .hero-cta { flex-direction: column; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Scroll-reveal via JS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
             opacity: 1;
-            color: var(--accent-color);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .coming-soon-container {
-                padding-top: calc(2rem + 70px); /* Adjust for mobile header */
-            }
-
-            .coming-soon-title {
-                font-size: 2.5rem;
-            }
-
-            .coming-soon-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .coming-soon-text {
-                font-size: 1rem;
-            }
-
-            .btn-home {
-                padding: 1rem 2rem;
-                font-size: 0.9rem;
-            }
-
-            .social-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .coming-soon-container {
-                padding-top: calc(1.5rem + 60px); /* Further adjust for small mobile */
-            }
-
-            .coming-soon-title {
-                font-size: 2rem;
-                letter-spacing: 2px;
-            }
-
-            .coming-soon-icon {
-                width: 80px;
-                height: 80px;
-            }
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Header Container -->
+
+    <!-- Duiker Properties Header -->
     <div id="header-container"></div>
 
-    <!-- Coming Soon Section -->
-    <section class="coming-soon-container">
-        <div class="coming-soon-content">
-            <div class="coming-soon-icon">
-                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <polyline points="12 6 12 12 16 14"/>
-                </svg>
+    <!-- ── HERO ── -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <div class="eyebrow-line"></div>
+                <span class="eyebrow-text">About Kyle Duiker</span>
             </div>
 
-            <h1 class="coming-soon-title">Coming Soon</h1>
-            <p class="coming-soon-subtitle">We're Working on Something Special</p>
-            <p class="coming-soon-text">
-                This page is currently under construction. We're creating an exceptional experience 
-                for you. In the meantime, explore our featured properties and Calgary communities.
+            <h1 class="hero-headline">
+                Why hire a REALTOR®<br>when you can hire<br><em>a Broker?</em>
+            </h1>
+
+            <p class="hero-subhead">
+                Buying or selling a home is one of the most important financial decisions you'll make. Working with a licensed real estate Broker means deeper experience, stronger negotiation skills, and a higher level of oversight — at every step.
             </p>
 
-            <a href="https://duikerproperties.com" class="btn-home">Return to Home</a>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years in Real Estate</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">2021</div>
+                    <div class="stat-label">Licensed Broker</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">YYC</div>
+                    <div class="stat-label">Calgary Based</div>
+                </div>
+            </div>
 
-            <div class="social-links">
-                <a href="https://duikerproperties.com/contact" class="social-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                        <polyline points="22,6 12,13 2,6"/>
-                    </svg>
-                    Contact Us
-                </a>
-                <a href="tel:4037973384" class="social-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                    </svg>
+            <div class="hero-cta">
+                <a href="https://duikerproperties.com/contact" class="btn-primary">Get In Touch</a>
+                <a href="https://duikerproperties.com" class="btn-outline">View Listings</a>
+            </div>
+        </div>
+
+        <div class="hero-image-side">
+            <!-- Replace with your actual photo -->
+            <img 
+                src="https://raw.githubusercontent.com/Kyleduiker/duikerproperties-homepage/main/assets/images/kyle-profile.jpg"
+                alt="Kyle Duiker, Calgary Real Estate Broker"
+                onerror="this.parentElement.innerHTML = '<div class=\'photo-placeholder\'><div class=\'photo-placeholder-icon\'><svg width=\'28\' height=\'28\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'rgba(255,255,255,0.3)\' stroke-width=\'1.5\'><path d=\'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2\'/><circle cx=\'12\' cy=\'7\' r=\'4\'/></svg></div><span class=\'photo-placeholder-text\'>Add Your Photo Here</span></div>'"
+            >
+
+            <div class="broker-badge">
+                <div class="broker-badge-title">Royal LePage Solutions</div>
+                <div class="broker-badge-name">Kyle Duiker</div>
+                <div class="broker-badge-role">Broker Delegate · Training Coordinator</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── APPROACH ── -->
+    <section class="section approach-section">
+        <div class="container">
+            <div class="approach-grid">
+                <div class="approach-body reveal">
+                    <div class="section-eyebrow">
+                        <div class="eyebrow-line"></div>
+                        <span class="eyebrow-text">My Approach</span>
+                    </div>
+                    <h2 class="section-title">A clear, strategic approach to <em>real estate</em></h2>
+                    <p>My focus is simple: help clients make confident decisions with clear information and a well-thought-out plan.</p>
+                    <p>Whether you're buying your first home, selling a property, or planning your next move, I believe real estate should feel structured, transparent, and manageable — not overwhelming.</p>
+                    <p>As a Broker, my role extends beyond individual transactions. I regularly work with contracts, negotiations, and training, which keeps me deeply involved in the details that protect my clients' interests.</p>
+
+                    <div class="trait-list">
+                        <div class="trait"><div class="trait-dot"></div>Professional &amp; Calm</div>
+                        <div class="trait"><div class="trait-dot"></div>Clear &amp; Easy to Understand</div>
+                        <div class="trait"><div class="trait-dot"></div>Organized &amp; Detail-Driven</div>
+                        <div class="trait"><div class="trait-dot"></div>Supportive Start to Finish</div>
+                    </div>
+                </div>
+
+                <div class="timeline-side reveal">
+                    <div class="section-eyebrow">
+                        <div class="eyebrow-line"></div>
+                        <span class="eyebrow-text">Background</span>
+                    </div>
+                    <h2 class="section-title">Experience you can <em>rely on</em></h2>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2010</div>
+                            <div class="timeline-title">Licensed REALTOR®</div>
+                            <div class="timeline-desc">Began his real estate career in Calgary, building a client base across the city's diverse neighbourhoods and price points.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2021</div>
+                            <div class="timeline-title">Earned Broker's License</div>
+                            <div class="timeline-desc">Achieved broker designation — a higher level of licensing that requires additional education, experience, and accountability.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">Present</div>
+                            <div class="timeline-title">Broker Delegate &amp; Training Coordinator</div>
+                            <div class="timeline-desc">Works directly with clients while training and guiding other REALTORS® at Royal LePage Solutions — a dual perspective that benefits every transaction.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── DARK BAND — Tools & Systems ── -->
+    <section class="dark-band">
+        <div class="container">
+            <div class="dark-band-grid">
+                <div class="reveal">
+                    <div class="section-eyebrow">
+                        <div class="eyebrow-line"></div>
+                        <span class="eyebrow-text">Modern Tools</span>
+                    </div>
+                    <h2 class="section-title">Behind-the-scenes structure so you can <em>focus on the big picture</em></h2>
+                    <p>I use modern tools and systems to ensure every step of the process is handled efficiently, from marketing and communication to timelines and follow-ups.</p>
+                    <p>This behind-the-scenes structure allows clients to focus on the big picture while knowing the details are being looked after.</p>
+                    <p>Based in Calgary, I work with clients across a wide range of price points and neighbourhoods. My goal isn't a one-time transaction — it's building long-term relationships by providing reliable advice and consistent service at every stage.</p>
+                </div>
+
+                <div class="tools-grid reveal">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EA002A" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        </div>
+                        <div class="tool-title">Contracts &amp; Negotiations</div>
+                        <div class="tool-desc">Deep experience navigating complex deals and protecting client interests.</div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C5A572" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1.04 3.42 2 2 0 0 1 3 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div class="tool-title">Clear Communication</div>
+                        <div class="tool-desc">Consistent updates and fast responses throughout every transaction.</div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#003DA5" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        </div>
+                        <div class="tool-title">Modern Marketing</div>
+                        <div class="tool-desc">Professional listings, targeted reach, and digital tools that get homes seen.</div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EA002A" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <div class="tool-title">Timeline Management</div>
+                        <div class="tool-desc">Every deadline tracked and every step organized so nothing falls through the cracks.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SHORT BIO ── -->
+    <section class="section bio-section">
+        <div class="container">
+            <div class="bio-card reveal">
+                <div class="bio-quote-mark">"</div>
+                <p class="bio-text">
+                    Kyle Duiker is a Calgary real estate Broker with over a decade of experience helping clients buy and sell homes. Licensed since 2010 and a Broker since 2021, Kyle brings a calm, strategic approach to real estate — combining strong negotiation skills with clear communication and modern tools. His focus is on making every transaction structured, transparent, and stress-free.
+                </p>
+                <div class="bio-attribution">
+                    <div class="bio-attr-line"></div>
+                    <span class="bio-attr-name">Kyle Duiker · Royal LePage Solutions</span>
+                    <div class="bio-attr-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-section">
+        <div class="container reveal">
+            <h2>Let's get <em>started</em></h2>
+            <p>
+                If you're thinking about buying or selling a home in Calgary, reach out anytime. I'm always happy to talk through options, answer questions, and help you take the next step with confidence.
+            </p>
+            <div class="cta-buttons">
+                <a href="https://duikerproperties.com/contact" class="btn-primary">Start a Conversation</a>
+                <a href="tel:4037973384" class="btn-outline">
+                    <svg style="display:inline;vertical-align:middle;margin-right:6px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1.04 3.42 2 2 0 0 1 3 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                     (403) 797-3384
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Header JavaScript -->
+    <!-- Header JS -->
     <script src="https://kyleduiker.github.io/duikerproperties-homepage/assets/js/header.js"></script>
+
+    <!-- Scroll Reveal -->
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transitionDelay = (i * 0.05) + 's';
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        reveals.forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
