@@ -1,2 +1,534 @@
-<h1>South Calgary Communities</h1>
-<p>This page will list all communities located in North West Calgary.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calgary NW Real Estate | Northwest Calgary | Duiker Properties</title>
+    <meta name="description" content="Calgary NW real estate — universities, parks, mature communities, and family-friendly living. Kyle Duiker, Royal LePage Solutions.">
+
+    <!-- Duiker Properties Header -->
+    <link rel="stylesheet" href="https://kyleduiker.github.io/duikerproperties-homepage/assets/css/header.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --red:      #EA002A;
+            --blue:     #003DA5;
+            --gold:     #C5A572;
+            --gold-lt:  #ddc89a;
+            --dark:     #0d0d0d;
+            --off-white:#f5f2ed;
+            --cream:    #faf8f4;
+            --text:     #1a1a1a;
+            --muted:    #777;
+            --border:   #e5e0d8;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        #header-container {
+            position: relative;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        /* HERO */
+        .hero {
+            background: var(--dark);
+            color: white;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+            text-align: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(-55deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--red), var(--blue));
+        }
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 780px;
+            padding: 4rem 2rem;
+        }
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.75rem;
+        }
+        .eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
+        .eyebrow-text {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 500;
+        }
+        .hero-headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+            font-weight: 300;
+            line-height: 1.1;
+            color: white;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.7s 0.1s ease both;
+        }
+        .hero-headline em { font-style: italic; color: var(--gold-lt); }
+        .hero-subhead {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.8;
+            max-width: 580px;
+            margin: 0 auto 2.5rem;
+            animation: fadeUp 0.7s 0.2s ease both;
+        }
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 0.7s 0.3s ease both;
+        }
+
+        /* BUTTONS */
+        .btn-primary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--red);
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 20px rgba(234,0,42,0.3);
+        }
+        .btn-primary:hover {
+            background: #c80020;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(234,0,42,0.45);
+        }
+        .btn-outline {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.25s ease;
+        }
+        .btn-outline:hover {
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.05);
+            transform: translateY(-2px);
+        }
+
+        /* SECTIONS */
+        .section { padding: 5rem 0; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 2rem; }
+
+        .section-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .section-eyebrow-centered { justify-content: center; }
+        .section-eyebrow .eyebrow-line { background: var(--gold); }
+        .section-eyebrow .eyebrow-text {
+            color: var(--gold);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 300;
+            line-height: 1.2;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+        .section-title em { font-style: italic; color: var(--red); }
+
+        /* ABOUT SECTION */
+        .about-section { background: white; }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+        .about-body p {
+            color: #444;
+            line-height: 1.85;
+            font-size: 0.97rem;
+            margin-bottom: 1.25rem;
+        }
+        .feature-list {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+        .feature-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--red);
+            flex-shrink: 0;
+        }
+        .highlight-card {
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+        }
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--red), var(--blue));
+            border-radius: 16px 16px 0 0;
+        }
+        .highlight-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 1.25rem;
+            color: var(--text);
+        }
+        .highlight-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+        .highlight-card ul li {
+            font-size: 0.88rem;
+            color: #555;
+            padding-left: 1rem;
+            position: relative;
+            line-height: 1.6;
+        }
+        .highlight-card ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-size: 0.8rem;
+        }
+
+        /* QUADRANT LINKS SECTION */
+        .links-section { background: var(--off-white); }
+        .links-header { text-align: center; margin-bottom: 3rem; }
+        .links-header .section-eyebrow { justify-content: center; }
+        .quadrant-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        .quadrant-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem 1.25rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .quadrant-card:hover {
+            border-color: var(--red);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        .quadrant-card.hub {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, #fff 0%, var(--cream) 100%);
+        }
+        .quadrant-card.hub:hover { border-color: var(--red); }
+        .quadrant-card-label {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        .quadrant-card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .quadrant-card-arrow {
+            font-size: 0.8rem;
+            color: var(--red);
+            margin-top: 0.25rem;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: var(--blue);
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(-55deg, transparent, transparent 60px, rgba(255,255,255,0.02) 60px, rgba(255,255,255,0.02) 61px);
+            pointer-events: none;
+        }
+        .cta-section .container { position: relative; z-index: 1; }
+        .cta-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 300;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .cta-section h2 em { font-style: italic; color: var(--gold-lt); }
+        .cta-section p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+            max-width: 520px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.75;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .cta-section .btn-primary { background: var(--red); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        .cta-section .btn-outline { border-color: rgba(255,255,255,0.25); }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .quadrant-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .hero-cta, .cta-buttons { flex-direction: column; align-items: center; }
+            .quadrant-grid { grid-template-columns: 1fr; }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Duiker Properties Header -->
+    <div id="header-container"></div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-eyebrow">
+                <div class="eyebrow-line"></div>
+                <span class="eyebrow-text">Calgary Northwest</span>
+                <div class="eyebrow-line"></div>
+            </div>
+            <h1 class="hero-headline">
+                Parks, Schools &<br><em>Calgary NW</em>
+            </h1>
+            <p class="hero-subhead">
+                Calgary's Northwest quadrant blends established mature neighbourhoods with newer suburban growth — all anchored by strong school options, Nose Hill Park, and the University of Calgary.
+            </p>
+            <div class="hero-cta">
+                <a href="https://www.duikerproperties.com/idx" class="btn-primary">Browse Homes</a>
+                <a href="https://duikerproperties.com/contact" class="btn-outline">Talk to Kyle</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-body reveal">
+                    <div class="section-eyebrow">
+                        <div class="eyebrow-line"></div>
+                        <span class="eyebrow-text">Calgary NW</span>
+                    </div>
+                    <h2 class="section-title">Academic Roots, <em>Natural Surroundings</em></h2>
+                    <p>Northwest Calgary is anchored by the University of Calgary and Foothills Medical Centre, making it a hub for students, medical professionals, and families who value proximity to some of the city's best institutions.</p>
+                    <p>The quadrant ranges from established inner-city communities like Capitol Hill and Hillhurst to newer northwest suburbs, offering a wide spectrum of home styles and price points.</p>
+                    <div class="feature-list">
+                        <div class="feature-item"><div class="feature-dot"></div>University of Calgary and Foothills Medical Centre nearby</div>
+                        <div class="feature-item"><div class="feature-dot"></div>Extensive Bow River pathway and Nose Hill access</div>
+                        <div class="feature-item"><div class="feature-dot"></div>Strong school catchments throughout</div>
+                        <div class="feature-item"><div class="feature-dot"></div>Mix of older character homes and new construction</div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div class="highlight-card">
+                        <h3>Neighbourhoods to Know</h3>
+                        <ul>
+                    <li>Tuscany — family-friendly, great mountain views</li>
+                    <li>Royal Oak — established, amenity-rich NW suburb</li>
+                    <li>Hawkwood — mature trees, strong community character</li>
+                    <li>Varsity — university proximity, solid resale value</li>
+                    <li>Kincora — newer development, community amenities</li>
+                    <li>Dalhousie — established, transit-connected, CTrain access</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUADRANT LINKS SECTION -->
+    <section class="section links-section">
+        <div class="container">
+            <div class="links-header reveal">
+                <div class="section-eyebrow section-eyebrow-centered">
+                    <div class="eyebrow-line"></div>
+                    <span class="eyebrow-text">Explore Other Areas</span>
+                    <div class="eyebrow-line"></div>
+                </div>
+                <h2 class="section-title" style="text-align:center;">Browse Calgary <em>By Quadrant</em></h2>
+            </div>
+            <div class="quadrant-grid reveal">
+
+                <a href="/calgary/" class="quadrant-card hub">
+                    <span class="quadrant-card-label">All Calgary</span>
+                    <span class="quadrant-card-title">Calgary</span>
+                    <span class="quadrant-card-arrow">Explore →</span>
+                </a>
+                <a href="/calgary/city-center/" class="quadrant-card">
+                    <span class="quadrant-card-label">Quadrant</span>
+                    <span class="quadrant-card-title">City Centre</span>
+                    <span class="quadrant-card-arrow">Explore →</span>
+                </a>
+                <a href="/calgary/east/" class="quadrant-card">
+                    <span class="quadrant-card-label">Quadrant</span>
+                    <span class="quadrant-card-title">East</span>
+                    <span class="quadrant-card-arrow">Explore →</span>
+                </a>
+                <a href="/calgary/west/" class="quadrant-card">
+                    <span class="quadrant-card-label">Quadrant</span>
+                    <span class="quadrant-card-title">West</span>
+                    <span class="quadrant-card-arrow">Explore →</span>
+                </a>
+                <a href="/calgary/north/" class="quadrant-card">
+                    <span class="quadrant-card-label">Quadrant</span>
+                    <span class="quadrant-card-title">North</span>
+                    <span class="quadrant-card-arrow">Explore →</span>
+                </a>
+                <a href="/calgary/north-east/" class="quadrant-card">
+                    <span class="quadrant-card-label">Quadrant</span>
+                    <span class="quadrant-card-title">Northeast</span>
+                    <span class="quadrant-card-arrow">Explore →</span>
+                </a>
+                <a href="/calgary/south/" class="quadrant-card">
+                    <span class="quadrant-card-label">Quadrant</span>
+                    <span class="quadrant-card-title">South</span>
+                    <span class="quadrant-card-arrow">Explore →</span>
+                </a>
+                <a href="/calgary/southeast/" class="quadrant-card">
+                    <span class="quadrant-card-label">Quadrant</span>
+                    <span class="quadrant-card-title">Southeast</span>
+                    <span class="quadrant-card-arrow">Explore →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container reveal">
+            <h2>Find Your Home in <em>Calgary NW</em></h2>
+            <p>From inner-city character homes to northwest suburbs, I can help you navigate NW Calgary's diverse market with confidence.</p>
+            <div class="cta-buttons">
+                <a href="https://www.duikerproperties.com/idx" class="btn-primary">Browse Homes</a>
+                <a href="tel:4037973384" class="btn-outline">
+                    <svg style="display:inline;vertical-align:middle;margin-right:6px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1.04 3.42 2 2 0 0 1 3 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    (403) 797-3384
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Header JS -->
+    
+    <script src="https://kyleduiker.github.io/duikerproperties-homepage/assets/js/header.js"></script>
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transitionDelay = (i * 0.05) + 's';
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
