@@ -3,1124 +3,534 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calgary Real Estate | All Quadrants | Duiker Properties</title>
+    <meta name="description" content="Explore Calgary real estate by quadrant. Kyle Duiker, Broker at Royal LePage Solutions, helps you find the right neighbourhood — city centre, east, west, north, northwest, northeast, south, or southeast.">
 
-    <link rel="canonical" href="https://duikerproperties.com/calgary/" />
-
-    
-    <title>Calgary Real Estate | Homes for Sale in Calgary | Duiker Properties</title>
-    <meta name="description" content="Explore Calgary real estate with Duiker Properties. Browse homes for sale across all Calgary quadrants - Northwest, Northeast, Southwest, Southeast, and more.">
-    
-    <!-- Header CSS -->
+    <!-- Duiker Properties Header -->
     <link rel="stylesheet" href="https://kyleduiker.github.io/duikerproperties-homepage/assets/css/header.css">
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --accent-color: #EA002A;
-            --dark-gray: #333;
-            --light-gray: #666;
-            --bg-light: #f9f9f9;
-            --city-centre: #B695C0;
-            --north-east: #FFB5B5;
-            --east: #C5E1A5;
-            --north-west: #FFB5B5;
-            --south: #DEB887;
-            --south-east: #F9E79F;
-            --west: #FFD7A5;
-            --north: #B3D9FF;
+            --red:      #EA002A;
+            --blue:     #003DA5;
+            --gold:     #C5A572;
+            --gold-lt:  #ddc89a;
+            --dark:     #0d0d0d;
+            --off-white:#f5f2ed;
+            --cream:    #faf8f4;
+            --text:     #1a1a1a;
+            --muted:    #777;
+            --border:   #e5e0d8;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: var(--dark-gray);
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--text);
             line-height: 1.6;
         }
 
-        /* Calgary Hero */
-        .calgary-hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('https://images.unsplash.com/photo-1519659528534-7fd733a832a0?w=1920') center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+        #header-container {
+            position: relative;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        /* HERO */
+        .hero {
+            background: var(--dark);
             color: white;
-            padding: 2rem;
-            margin-top: 0;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 900px;
-        }
-
-        .city-name {
-            font-family: 'Georgia', serif;
-            font-size: 5rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
-            letter-spacing: 3px;
-        }
-
-        .city-tagline {
-            font-size: 1.8rem;
-            font-style: italic;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 3rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .hero-stat {
-            text-align: center;
-        }
-
-        .hero-stat-value {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--accent-color);
-            margin-bottom: 0.25rem;
-        }
-
-        .hero-stat-label {
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Overview Section */
-        .overview-section {
-            padding: 5rem 2rem;
-            background: white;
-        }
-
-        .overview-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .overview-content h2 {
-            font-family: 'Georgia', serif;
-            font-size: 2.8rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-        }
-
-        .accent {
-            color: var(--accent-color);
-            font-style: italic;
-        }
-
-        .overview-text {
-            color: var(--light-gray);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-        }
-
-        .overview-highlights {
-            background: var(--bg-light);
-            padding: 2.5rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--accent-color);
-        }
-
-        .overview-highlights h3 {
-            font-family: 'Georgia', serif;
-            font-size: 1.6rem;
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-        }
-
-        .highlights-list {
-            list-style: none;
-        }
-
-        .highlights-list li {
-            padding: 0.75rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--light-gray);
-        }
-
-        .highlights-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-
-        /* City Stats Grid */
-        .city-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .stat-box {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border: 1px solid #e0e0e0;
-        }
-
-        .stat-box-label {
-            font-size: 0.85rem;
-            color: var(--light-gray);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-box-value {
-            font-family: 'Georgia', serif;
-            font-size: 1.8rem;
-            color: var(--dark-gray);
-        }
-
-        /* Interactive Map Section */
-        .map-section {
-            padding: 5rem 2rem;
-            background: var(--bg-light);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .section-header h2 {
-            font-family: 'Georgia', serif;
-            font-size: 2.8rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            color: var(--light-gray);
-            font-size: 1.15rem;
-        }
-
-        .map-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .interactive-map {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-
-        .google-map-wrapper {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            height: 600px;
-        }
-
-        .google-map-wrapper iframe {
-            border-radius: 10px;
-        }
-
-        /* Quadrant Cards */
-        .quadrants-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .quadrant-card {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            cursor: pointer;
-            border-top: 4px solid;
-            text-decoration: none;
-            color: var(--dark-gray);
-            display: block;
-        }
-
-        .quadrant-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .quadrant-card.city-centre { border-top-color: var(--city-centre); }
-        .quadrant-card.north { border-top-color: var(--north); }
-        .quadrant-card.north-east { border-top-color: var(--north-east); }
-        .quadrant-card.east { border-top-color: var(--east); }
-        .quadrant-card.south-east { border-top-color: var(--south-east); }
-        .quadrant-card.south { border-top-color: var(--south); }
-        .quadrant-card.west { border-top-color: var(--west); }
-        .quadrant-card.north-west { border-top-color: var(--north-west); }
-
-        .quadrant-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            min-height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-
-        .city-centre .quadrant-icon { background: var(--city-centre); }
-        .north .quadrant-icon { background: var(--north); }
-        .north-east .quadrant-icon { background: var(--north-east); }
-        .east .quadrant-icon { background: var(--east); }
-        .south-east .quadrant-icon { background: var(--south-east); }
-        .south .quadrant-icon { background: var(--south); }
-        .west .quadrant-icon { background: var(--west); }
-        .north-west .quadrant-icon { background: var(--north-west); }
-
-        .quadrant-card h3 {
-            font-family: 'Georgia', serif;
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
-        }
-
-        .quadrant-card p {
-            color: var(--light-gray);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .quadrant-communities {
-            font-size: 0.85rem;
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-
-        /* Lifestyle Benefits Section */
-        .lifestyle-section {
-            padding: 5rem 2rem;
-            background: white;
-        }
-
-        .lifestyle-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .lifestyle-card {
-            background: var(--bg-light);
-            padding: 2.5rem;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-
-        .lifestyle-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .lifestyle-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--accent-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .lifestyle-card h3 {
-            font-family: 'Georgia', serif;
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
-        }
-
-        .lifestyle-card p {
-            color: var(--light-gray);
-            line-height: 1.8;
-        }
-
-        /* Market Overview Section */
-        .market-section {
-            padding: 5rem 2rem;
-            background: var(--bg-light);
-        }
-
-        .market-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .market-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .market-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-
-        .market-card h3 {
-            font-family: 'Georgia', serif;
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-            color: var(--dark-gray);
-        }
-
-        .market-stat {
-            display: flex;
-            justify-content: space-between;
-            padding: 1rem 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .market-stat:last-child {
-            border-bottom: none;
-        }
-
-        .market-stat-label {
-            color: var(--light-gray);
-            font-size: 0.95rem;
-        }
-
-        .market-stat-value {
-            font-weight: 600;
-            color: var(--dark-gray);
-            font-size: 1rem;
-        }
-
-        /* Popular Communities Section */
-        .communities-section {
-            padding: 5rem 2rem;
-            background: white;
-        }
-
-        .communities-showcase {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .community-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-            text-decoration: none;
-            color: var(--dark-gray);
-            display: block;
-        }
-
-        .community-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .community-image {
             position: relative;
-            width: 100%;
-            height: 200px;
             overflow: hidden;
+            padding-top: 80px;
+            text-align: center;
         }
-
-        .community-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .community-card:hover .community-image img {
-            transform: scale(1.1);
-        }
-
-        .community-overlay {
+        .hero::before {
+            content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            background: repeating-linear-gradient(-55deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--red), var(--blue));
+        }
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 780px;
+            padding: 4rem 2rem;
+        }
+        .hero-eyebrow {
             display: flex;
-            align-items: flex-end;
-            padding: 1.5rem;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.75rem;
         }
-
-        .community-name {
-            font-family: 'Georgia', serif;
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: white;
-            margin: 0;
-        }
-
-        .community-content {
-            padding: 2rem;
-        }
-
-        .community-description {
-            color: var(--light-gray);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .community-price {
-            color: var(--accent-color);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        /* Buttons */
-        .btn-primary, .btn-secondary {
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            font-weight: 600;
+        .eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
+        .eyebrow-text {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
+            color: var(--gold);
+            font-weight: 500;
         }
-
-        .btn-primary {
-            background: var(--accent-color);
+        .hero-headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+            font-weight: 300;
+            line-height: 1.1;
             color: white;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.7s 0.1s ease both;
+        }
+        .hero-headline em { font-style: italic; color: var(--gold-lt); }
+        .hero-subhead {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.8;
+            max-width: 580px;
+            margin: 0 auto 2.5rem;
+            animation: fadeUp 0.7s 0.2s ease both;
+        }
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 0.7s 0.3s ease both;
         }
 
+        /* BUTTONS */
+        .btn-primary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--red);
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 20px rgba(234,0,42,0.3);
+        }
         .btn-primary:hover {
             background: #c80020;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(234, 0, 42, 0.3);
+            box-shadow: 0 8px 30px rgba(234,0,42,0.45);
         }
-
-        .btn-secondary {
+        .btn-outline {
+            display: inline-block;
+            padding: 1rem 2.5rem;
             background: transparent;
-            border: 2px solid var(--accent-color);
-            color: var(--accent-color);
-        }
-
-        .btn-secondary:hover {
-            background: var(--accent-color);
             color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.25s ease;
+        }
+        .btn-outline:hover {
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.05);
+            transform: translateY(-2px);
         }
 
-        .text-center {
-            text-align: center;
-        }
+        /* SECTIONS */
+        .section { padding: 5rem 0; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 2rem; }
 
-        .mt-3 {
-            margin-top: 3rem;
-        }
-
-        /* Contact CTA */
-        .contact-cta {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                        url('https://images.unsplash.com/photo-1601305258374-3cba8e47e3e4?w=1920') center/cover;
+        .section-eyebrow {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            color: white;
-            padding: 2rem;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
         }
-
-        .contact-title {
-            font-family: 'Georgia', serif;
-            font-size: 3rem;
+        .section-eyebrow-centered { justify-content: center; }
+        .section-eyebrow .eyebrow-line { background: var(--gold); }
+        .section-eyebrow .eyebrow-text {
+            color: var(--gold);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 300;
+            line-height: 1.2;
+            color: var(--text);
             margin-bottom: 1rem;
         }
+        .section-title em { font-style: italic; color: var(--red); }
 
-        .contact-text {
-            max-width: 700px;
-            font-size: 1.15rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark-gray);
-            color: white;
-            padding: 4rem 2rem 2rem;
-        }
-
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
+        /* ABOUT SECTION */
+        .about-section { background: white; }
+        .about-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
         }
-
-        .footer-section h3 {
-            font-family: 'Georgia', serif;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
+        .about-body p {
+            color: #444;
+            line-height: 1.85;
+            font-size: 0.97rem;
+            margin-bottom: 1.25rem;
         }
-
-        .footer-links {
+        .feature-list {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+        .feature-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--red);
+            flex-shrink: 0;
+        }
+        .highlight-card {
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+        }
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--red), var(--blue));
+            border-radius: 16px 16px 0 0;
+        }
+        .highlight-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 1.25rem;
+            color: var(--text);
+        }
+        .highlight-card ul {
             list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+        .highlight-card ul li {
+            font-size: 0.88rem;
+            color: #555;
+            padding-left: 1rem;
+            position: relative;
+            line-height: 1.6;
+        }
+        .highlight-card ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-size: 0.8rem;
         }
 
-        .footer-links li {
-            margin-bottom: 0.8rem;
+        /* QUADRANT LINKS SECTION */
+        .links-section { background: var(--off-white); }
+        .links-header { text-align: center; margin-bottom: 3rem; }
+        .links-header .section-eyebrow { justify-content: center; }
+        .quadrant-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
         }
-
-        .footer-links a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-color);
-        }
-
-        .footer-bottom {
+        .quadrant-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem 1.25rem;
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #555;
-            color: #999;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .quadrant-card:hover {
+            border-color: var(--red);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        .quadrant-card.hub {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, #fff 0%, var(--cream) 100%);
+        }
+        .quadrant-card.hub:hover { border-color: var(--red); }
+        .quadrant-card-label {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        .quadrant-card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .quadrant-card-arrow {
+            font-size: 0.8rem;
+            color: var(--red);
+            margin-top: 0.25rem;
         }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .overview-container {
-                grid-template-columns: 1fr;
-            }
+        /* CTA SECTION */
+        .cta-section {
+            background: var(--blue);
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(-55deg, transparent, transparent 60px, rgba(255,255,255,0.02) 60px, rgba(255,255,255,0.02) 61px);
+            pointer-events: none;
+        }
+        .cta-section .container { position: relative; z-index: 1; }
+        .cta-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 300;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .cta-section h2 em { font-style: italic; color: var(--gold-lt); }
+        .cta-section p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+            max-width: 520px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.75;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .cta-section .btn-primary { background: var(--red); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        .cta-section .btn-outline { border-color: rgba(255,255,255,0.25); }
 
-            .quadrants-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .quadrant-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .hero-cta, .cta-buttons { flex-direction: column; align-items: center; }
+            .quadrant-grid { grid-template-columns: 1fr; }
         }
 
-        @media (max-width: 768px) {
-            .calgary-hero {
-                height: 70vh;
-            }
-
-            .city-name {
-                font-size: 3.5rem;
-            }
-
-            .city-tagline {
-                font-size: 1.3rem;
-            }
-
-            .hero-stats {
-                gap: 2rem;
-            }
-
-            .overview-content h2,
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-
-            .contact-title {
-                font-size: 2rem;
-            }
-
-            .city-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .quadrants-grid {
-                grid-template-columns: 1fr;
-            }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        @media (max-width: 480px) {
-            .city-name {
-                font-size: 2.5rem;
-            }
-
-            .hero-stat-value {
-                font-size: 2rem;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Header Container -->
+
+    <!-- Duiker Properties Header -->
     <div id="header-container"></div>
 
-    <!-- Calgary Hero -->
-    <section class="calgary-hero">
-        <div class="hero-content">
-            <h1 class="city-name">CALGARY</h1>
-            <p class="city-tagline">Where the Mountains Meet Opportunity</p>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="hero-stat-value">1.6M+</div>
-                    <div class="hero-stat-label">Population</div>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-eyebrow">
+                <div class="eyebrow-line"></div>
+                <span class="eyebrow-text">Calgary Real Estate</span>
+                <div class="eyebrow-line"></div>
+            </div>
+            <h1 class="hero-headline">
+                Find Your Place in<br><em>Calgary</em>
+            </h1>
+            <p class="hero-subhead">
+                Calgary is one of Canada's most dynamic cities — a place where urban energy meets open sky. Whether you're drawn to a downtown condo, a family home in the south, or a lakeside community in the southeast, I'll help you find the right fit.
+            </p>
+            <div class="hero-cta">
+                <a href="https://www.duikerproperties.com/idx" class="btn-primary">Browse Homes</a>
+                <a href="https://duikerproperties.com/contact" class="btn-outline">Talk to Kyle</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-body reveal">
+                    <div class="section-eyebrow">
+                        <div class="eyebrow-line"></div>
+                        <span class="eyebrow-text">About Calgary</span>
+                    </div>
+                    <h2 class="section-title">A City of Neighbourhoods</h2>
+                    <p>Calgary is divided into distinct quadrants — each with its own character, amenity mix, and price range. Understanding which quadrant aligns with your lifestyle is the first step toward finding the right home.</p>
+                    <p>As a Broker specializing in Southeast Calgary with deep roots across the city, I help buyers and sellers navigate every part of Calgary with clarity and confidence.</p>
+                    <div class="feature-list">
+                        <div class="feature-item"><div class="feature-dot"></div>Diverse communities across all price points</div>
+                        <div class="feature-item"><div class="feature-dot"></div>Strong infrastructure and amenity growth</div>
+                        <div class="feature-item"><div class="feature-dot"></div>Easy access to the Rocky Mountains</div>
+                        <div class="feature-item"><div class="feature-dot"></div>Thriving job market and growing population</div>
+                    </div>
                 </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-value">$575K</div>
-                    <div class="hero-stat-label">Avg Home Price</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-value">200+</div>
-                    <div class="hero-stat-label">Communities</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-value">333 Days</div>
-                    <div class="hero-stat-label">Sunshine/Year</div>
+                <div class="reveal">
+                    <div class="highlight-card">
+                        <h3>Explore by Quadrant</h3>
+                        <ul>
+                    <li>City Centre — urban living, walkable districts</li>
+                    <li>East — established value, diverse communities</li>
+                    <li>West — foothills access, mature neighbourhoods</li>
+                    <li>North — new development, family communities</li>
+                    <li>NE — multicultural vibrancy, transit access</li>
+                    <li>NW — universities, parks, mature trees</li>
+                    <li>South — top schools, established suburbs</li>
+                    <li>SE — lake communities, new builds, Seton</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Overview Section -->
-    <section class="overview-section">
-        <div class="overview-container">
-            <div class="overview-content">
-                <h2>Welcome to <span class="accent">Calgary</span></h2>
-                <p class="overview-text">
-                    Calgary stands as one of Canada's most dynamic and prosperous cities, perfectly positioned at the foothills of the Rocky Mountains. As Alberta's largest city and a global energy hub, Calgary offers an exceptional quality of life that seamlessly blends urban sophistication with access to world-class outdoor recreation. The city's remarkable transformation from a frontier outpost to a modern metropolis showcases its entrepreneurial spirit and forward-thinking vision.
-                </p>
-                <p class="overview-text">
-                    Home to over 1.6 million residents across more than 200 distinct neighborhoods, Calgary presents an incredibly diverse real estate landscape. From the historic charm of inner-city communities like Inglewood and Kensington to the master-planned lakefront luxury of Mahogany and Auburn Bay, Calgary's neighborhoods offer something for every lifestyle and budget. The city's quadrant system—divided into Northwest, Northeast, Southeast, Southwest, and a vibrant City Centre—makes navigation intuitive while each area maintains its own distinct character and appeal.
-                </p>
-                <p class="overview-text">
-                    Calgary's real estate market reflects the city's economic strength and continued growth. With a thriving economy anchored by energy, technology, finance, and transportation sectors, the city attracts professionals and families from across Canada and around the world. Excellent schools, extensive park systems including Fish Creek Provincial Park and Nose Hill Park, world-class healthcare facilities, and a rich cultural scene featuring the Calgary Stampede, vibrant arts districts, and professional sports teams make Calgary an exceptional place to call home. Whether you're seeking a downtown condominium with mountain views, a family home in an established community, or a luxury estate in one of Calgary's prestigious neighborhoods, you'll find your perfect property in this remarkable city.
-                </p>
-
-                <div class="city-stats">
-                    <div class="stat-box">
-                        <div class="stat-box-label">City Established</div>
-                        <div class="stat-box-value">1884</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-box-label">Total Area</div>
-                        <div class="stat-box-value">825 km²</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-box-label">Elevation</div>
-                        <div class="stat-box-value">1,045m</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-box-label">Major Sectors</div>
-                        <div class="stat-box-value">Energy & Tech</div>
-                    </div>
+    <!-- QUADRANT LINKS SECTION -->
+    <section class="section links-section">
+        <div class="container">
+            <div class="links-header reveal">
+                <div class="section-eyebrow section-eyebrow-centered">
+                    <div class="eyebrow-line"></div>
+                    <span class="eyebrow-text">Browse by Area</span>
+                    <div class="eyebrow-line"></div>
                 </div>
+                <h2 class="section-title" style="text-align:center;">Explore Calgary <em>Quadrant by Quadrant</em></h2>
             </div>
+            <div class="quadrant-grid reveal">
 
-            <div class="overview-highlights">
-                <h3>Why Choose Calgary?</h3>
-                <ul class="highlights-list">
-                    <li>No provincial sales tax in Alberta</li>
-                    <li>Highest household income in Canada</li>
-                    <li>1 hour from Banff National Park & world-class skiing</li>
-                    <li>333 days of sunshine annually</li>
-                    <li>Top-ranked public and private schools</li>
-                    <li>Extensive pathway and bike trail network (1,000+ km)</li>
-                    <li>Major international airport with global connections</li>
-                    <li>Thriving arts, culture, and entertainment scene</li>
-                    <li>Professional sports: Flames (NHL), Stampeders (CFL), Roughnecks (NLL)</li>
-                    <li>Low unemployment and strong job market</li>
-                    <li>World-famous Calgary Stampede - "The Greatest Outdoor Show on Earth"</li>
-                    <li>Diverse and welcoming multicultural community</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Map Section -->
-    <section class="map-section">
-        <div class="section-header">
-            <h2>Explore Calgary by <span class="accent">Quadrant</span></h2>
-            <p>Calgary is divided into distinct quadrants, each offering unique neighborhoods, amenities, and lifestyles. Discover which area is perfect for you.</p>
-        </div>
-        <div class="map-container">
-            <div class="interactive-map">
-                <div class="google-map-wrapper">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d320154.79334582264!2d-114.3139963837456!3d51.02777494068779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537170039f843fd5%3A0x266d3bb1b652b63a!2sCalgary%2C%20AB!5e0!3m2!1sen!2sca!4v1738792156847!5m2!1sen!2sca" 
-                        width="100%" 
-                        height="600" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Interactive Calgary Map">
-                    </iframe>
-                </div>
-            </div>
-
-            <div class="quadrants-grid">
-                <a href="https://guide.duikerproperties.com/calgary/city-centre/" class="quadrant-card city-centre">
-                    <div class="quadrant-icon">🏙️</div>
-                    <h3>City Centre</h3>
-                    <p>Experience urban living at its finest in Calgary's vibrant downtown core. From the Beltline to East Village, enjoy walkable streets, diverse dining, arts & culture, and stunning high-rise living.</p>
-                    <span class="quadrant-communities">Downtown, Beltline, East Village, Eau Claire & more</span>
+                <a href="/calgary/city-center/" class="quadrant-card">
+                    <span class="quadrant-card-label">Quadrant</span>
+                    <span class="quadrant-card-title">City Centre</span>
+                    <span class="quadrant-card-arrow">Explore →</span>
                 </a>
-
-                <a href="https://guide.duikerproperties.com/calgary/north/" class="quadrant-card north">
-                    <div class="quadrant-icon">⛰️</div>
-                    <h3>North Calgary</h3>
-                    <p>Discover established and new communities in Calgary's north. Close to the airport, Cross Iron Mills, and major employment centers with excellent access to Deerfoot Trail.</p>
-                    <span class="quadrant-communities">Beddington, Thorncliffe, Huntington Hills & more</span>
+                <a href="/calgary/east/" class="quadrant-card">
+                    <span class="quadrant-card-label">Quadrant</span>
+                    <span class="quadrant-card-title">East</span>
+                    <span class="quadrant-card-arrow">Explore →</span>
                 </a>
-
-                <a href="https://guide.duikerproperties.com/calgary/north-west/" class="quadrant-card north-west">
-                    <div class="quadrant-icon">🏔️</div>
-                    <h3>Northwest Calgary</h3>
-                    <p>Home to the University of Calgary, prestigious communities, and family-friendly neighborhoods. Enjoy proximity to Nose Hill Park, Crowfoot Crossing, and quick mountain access.</p>
-                    <span class="quadrant-communities">Tuscany, Arbour Lake, Royal Oak, Varsity & more</span>
+                <a href="/calgary/west/" class="quadrant-card">
+                    <span class="quadrant-card-label">Quadrant</span>
+                    <span class="quadrant-card-title">West</span>
+                    <span class="quadrant-card-arrow">Explore →</span>
                 </a>
-
-                <a href="https://guide.duikerproperties.com/calgary/north-east/" class="quadrant-card north-east">
-                    <div class="quadrant-icon">✈️</div>
-                    <h3>Northeast Calgary</h3>
-                    <p>Diverse and growing communities near Calgary International Airport. Features new developments, established neighborhoods, and excellent shopping at Marlborough Mall and Sunridge.</p>
-                    <span class="quadrant-communities">Cityscape, Skyview Ranch, Martindale & more</span>
+                <a href="/calgary/north/" class="quadrant-card">
+                    <span class="quadrant-card-label">Quadrant</span>
+                    <span class="quadrant-card-title">North</span>
+                    <span class="quadrant-card-arrow">Explore →</span>
                 </a>
-
-                <a href="https://guide.duikerproperties.com/calgary/east/" class="quadrant-card east">
-                    <div class="quadrant-icon">🌆</div>
-                    <h3>East Calgary</h3>
-                    <p>Historic and evolving communities with strong cultural diversity. Close to downtown with excellent transit access and growing amenities along 17th Avenue SE.</p>
-                    <span class="quadrant-communities">Forest Lawn, Dover, Erin Woods & more</span>
+                <a href="/calgary/north-east/" class="quadrant-card">
+                    <span class="quadrant-card-label">Quadrant</span>
+                    <span class="quadrant-card-title">Northeast</span>
+                    <span class="quadrant-card-arrow">Explore →</span>
                 </a>
-
-                <a href="https://guide.duikerproperties.com/calgary/south-east/" class="quadrant-card south-east">
-                    <div class="quadrant-icon">🏖️</div>
-                    <h3>Southeast Calgary</h3>
-                    <p>Calgary's newest and most dynamic quadrant featuring lakefront communities, modern amenities, and master-planned neighborhoods. Close to Seton and South Health Campus.</p>
-                    <span class="quadrant-communities">Mahogany, Auburn Bay, Seton, Cranston & more</span>
+                <a href="/calgary/north-west/" class="quadrant-card">
+                    <span class="quadrant-card-label">Quadrant</span>
+                    <span class="quadrant-card-title">Northwest</span>
+                    <span class="quadrant-card-arrow">Explore →</span>
                 </a>
-
-                <a href="https://guide.duikerproperties.com/calgary/south/" class="quadrant-card south">
-                    <div class="quadrant-icon">🏡</div>
-                    <h3>South Calgary</h3>
-                    <p>Established communities with character, tree-lined streets, and proximity to Fish Creek Park. Features excellent schools, Chinook Centre, and classic Calgary neighborhoods.</p>
-                    <span class="quadrant-communities">Altadore, Marda Loop, Woodbine & more</span>
+                <a href="/calgary/south/" class="quadrant-card">
+                    <span class="quadrant-card-label">Quadrant</span>
+                    <span class="quadrant-card-title">South</span>
+                    <span class="quadrant-card-arrow">Explore →</span>
                 </a>
-
-                <a href="https://guide.duikerproperties.com/calgary/west/" class="quadrant-card west">
-                    <div class="quadrant-icon">🌲</div>
-                    <h3>West Calgary</h3>
-                    <p>Mountainside living with upscale communities and stunning views. Features Springbank Hill, Aspen Woods, and quick access to the Rocky Mountains via Highway 1.</p>
-                    <span class="quadrant-communities">Aspen Woods, Springbank Hill, Cougar Ridge & more</span>
+                <a href="/calgary/southeast/" class="quadrant-card">
+                    <span class="quadrant-card-label">Quadrant</span>
+                    <span class="quadrant-card-title">Southeast</span>
+                    <span class="quadrant-card-arrow">Explore →</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Lifestyle Benefits Section -->
-    <section class="lifestyle-section">
-        <div class="section-header">
-            <h2>The Calgary <span class="accent">Lifestyle</span></h2>
-            <p>Discover what makes Calgary one of Canada's most livable cities</p>
-        </div>
-        <div class="lifestyle-grid">
-            <div class="lifestyle-card">
-                <div class="lifestyle-icon">
-                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                        <circle cx="12" cy="10" r="3"/>
-                    </svg>
-                </div>
-                <h3>Prime Location</h3>
-                <p>Perfectly situated at the junction of the prairies and Rocky Mountains, Calgary offers urban amenities with unparalleled access to outdoor adventure. World-class skiing, hiking, and mountain recreation are just one hour away.</p>
-            </div>
-
-            <div class="lifestyle-card">
-                <div class="lifestyle-icon">
-                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                    </svg>
-                </div>
-                <h3>Economic Opportunity</h3>
-                <p>As Canada's energy capital and a growing tech hub, Calgary boasts the highest average household income in the country. With no provincial sales tax and a thriving job market, your money goes further here.</p>
-            </div>
-
-            <div class="lifestyle-card">
-                <div class="lifestyle-icon">
-                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                    </svg>
-                </div>
-                <h3>Education Excellence</h3>
-                <p>Calgary offers outstanding educational opportunities from elementary through post-secondary. Top-ranked public schools, excellent private academies, and the prestigious University of Calgary ensure world-class education.</p>
-            </div>
-
-            <div class="lifestyle-card">
-                <div class="lifestyle-icon">
-                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                        <circle cx="9" cy="7" r="4"/>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                    </svg>
-                </div>
-                <h3>Community Spirit</h3>
-                <p>Calgarians are known for their friendly, welcoming nature and strong community connections. From neighborhood associations to the world-famous Calgary Stampede, community engagement is part of the city's DNA.</p>
-            </div>
-
-            <div class="lifestyle-card">
-                <div class="lifestyle-icon">
-                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <polyline points="12 6 12 12 16 14"/>
-                    </svg>
-                </div>
-                <h3>Year-Round Recreation</h3>
-                <p>With over 1,000 km of pathways, numerous parks including Fish Creek Provincial Park, golf courses, and nearby mountain resorts, Calgary offers unlimited outdoor activities in every season.</p>
-            </div>
-
-            <div class="lifestyle-card">
-                <div class="lifestyle-icon">
-                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/>
-                        <path d="M3 9h18M9 21V9"/>
-                    </svg>
-                </div>
-                <h3>Arts & Culture</h3>
-                <p>From the National Music Centre and Glenbow Museum to Theatre Calgary and a thriving culinary scene, Calgary's cultural landscape rivals any major city. The annual Calgary Stampede draws over a million visitors worldwide.</p>
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container reveal">
+            <h2>Ready to Explore <em>Calgary?</em></h2>
+            <p>Whether you're buying, selling, or just starting to explore, I'm here to help you navigate Calgary's real estate market with confidence.</p>
+            <div class="cta-buttons">
+                <a href="https://www.duikerproperties.com/idx" class="btn-primary">Browse Homes</a>
+                <a href="tel:4037973384" class="btn-outline">
+                    <svg style="display:inline;vertical-align:middle;margin-right:6px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1.04 3.42 2 2 0 0 1 3 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    (403) 797-3384
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Market Overview Section -->
-    <section class="market-section">
-        <div class="section-header">
-            <h2>Calgary <span class="accent">Real Estate Market</span></h2>
-            <p>Understanding Calgary's diverse and dynamic housing market</p>
-        </div>
-        <div class="market-container">
-            <div class="market-grid">
-                <div class="market-card">
-                    <h3>Detached Homes</h3>
-                    <div class="market-stat">
-                        <span class="market-stat-label">Average Price</span>
-                        <span class="market-stat-value">$685,000</span>
-                    </div>
-                    <div class="market-stat">
-                        <span class="market-stat-label">Price Range</span>
-                        <span class="market-stat-value">$400K - $5M+</span>
-                    </div>
-                    <div class="market-stat">
-                        <span class="market-stat-label">Most Popular Areas</span>
-                        <span class="market-stat-value">SE, NW, SW</span>
-                    </div>
-                    <div class="market-stat">
-                        <span class="market-stat-label">Avg Days on Market</span>
-                        <span class="market-stat-value">22 days</span>
-                    </div>
-                </div>
-
-                <div class="market-card">
-                    <h3>Attached Homes</h3>
-                    <div class="market-stat">
-                        <span class="market-stat-label">Average Price</span>
-                        <span class="market-stat-value">$425,000</span>
-                    </div>
-                    <div class="market-stat">
-                        <span class="market-stat-label">Price Range</span>
-                        <span class="market-stat-value">$275K - $900K</span>
-                    </div>
-                    <div class="market-stat">
-                        <span class="market-stat-label">Most Popular Areas</span>
-                        <span class="market-stat-value">SE, NE, SW</span>
-                    </div>
-                    <div class="market-stat">
-                        <span class="market-stat-label">Avg Days on Market</span>
-                        <span class="market-stat-value">18 days</span>
-                    </div>
-                </div>
-
-                <div class="market-card">
-                    <h3>Condominiums</h3>
-                    <div class="market-stat">
-                        <span class="market-stat-label">Average Price</span>
-                        <span class="market-stat-value">$315,000</span>
-                    </div>
-                    <div class="market-stat">
-                        <span class="market-stat-label">Price Range</span>
-                        <span class="market-stat-value">$175K - $1.5M</span>
-                    </div>
-                    <div class="market-stat">
-                        <span class="market-stat-label">Most Popular Areas</span>
-                        <span class="market-stat-value">Downtown, Beltline</span>
-                    </div>
-                    <div class="market-stat">
-                        <span class="market-stat-label">Avg Days on Market</span>
-                        <span class="market-stat-value">25 days</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-3">
-                <a href="https://www.duikerproperties.com/index.php" class="btn-primary">VIEW ALL CALGARY LISTINGS</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Popular Communities Showcase -->
-    <section class="communities-section">
-        <div class="section-header">
-            <h2>Featured Calgary <span class="accent">Communities</span></h2>
-            <p>Explore some of Calgary's most sought-after neighborhoods</p>
-        </div>
-        <div class="communities-showcase">
-            <a href="https://duikerproperties.com/communities/mahogany/" class="community-card">
-                <div class="community-image">
-                    <img src="https://raw.githubusercontent.com/Kyleduiker/duikerproperties-homepage/main/photos/20260129_1428_Image%20Generation_simple_compose_01kg5tfwy0eqxvd17zfhexjgdk.png" alt="Mahogany Calgary">
-                    <div class="community-overlay">
-                        <h3 class="community-name">Mahogany</h3>
-                    </div>
-                </div>
-                <div class="community-content">
-                    <p class="community-description">Calgary's premier lakefront community with 3 private beaches, white sand, and year-round resort-style living in Southeast Calgary.</p>
-                    <span class="community-price">Avg: $650,000</span>
-                </div>
-            </a>
-
-            <a href="https://duikerproperties.com/communities/auburn-bay/" class="community-card">
-                <div class="community-image">
-                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800" alt="Auburn Bay Calgary">
-                    <div class="community-overlay">
-                        <h3 class="community-name">Auburn Bay</h3>
-                    </div>
-                </div>
-                <div class="community-content">
-                    <p class="community-description">Master-planned lakeside living with private beach club, scenic pathways, and exceptional amenities in Southeast Calgary.</p>
-                    <span class="community-price">Avg: $625,000</span>
-                </div>
-            </a>
-
-            <a href="https://duikerproperties.com/communities/seton/" class="community-card">
-                <div class="community-image">
-                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800" alt="Seton Calgary">
-                    <div class="community-overlay">
-                        <h3 class="community-name">Seton</h3>
-                    </div>
-                </div>
-                <div class="community-content">
-                    <p class="community-description">Calgary's first Urban District featuring shopping, dining, entertainment, and the South Health Campus in one walkable community.</p>
-                    <span class="community-price">Avg: $575,000</span>
-                </div>
-            </a>
-
-            <a href="https://duikerproperties.com/communities/cranston/" class="community-card">
-                <div class="community-image">
-                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800" alt="Cranston Calgary">
-                    <div class="community-overlay">
-                        <h3 class="community-name">Cranston</h3>
-                    </div>
-                </div>
-                <div class="community-content">
-                    <p class="community-description">One of Calgary's largest master-planned communities offering diverse housing, parks, pathways, and excellent schools.</p>
-                    <span class="community-price">Avg: $595,000</span>
-                </div>
-            </a>
-
-            <a href="https://duikerproperties.com/communities/tuscany/" class="community-card">
-                <div class="community-image">
-                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800" alt="Tuscany Calgary">
-                    <div class="community-overlay">
-                        <h3 class="community-name">Tuscany</h3>
-                    </div>
-                </div>
-                <div class="community-content">
-                    <p class="community-description">Prestigious Northwest community with stunning mountain views, LRT access, and resort-style clubhouse amenities.</p>
-                    <span class="community-price">Avg: $715,000</span>
-                </div>
-            </a>
-
-            <a href="https://duikerproperties.com/communities/arbour-lake/" class="community-card">
-                <div class="community-image">
-                    <img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=800" alt="Arbour Lake Calgary">
-                    <div class="community-overlay">
-                        <h3 class="community-name">Arbour Lake</h3>
-                    </div>
-                </div>
-                <div class="community-content">
-                    <p class="community-description">Established Northwest gem featuring a private lake with beach, sailing, fishing, and strong family-oriented community spirit.</p>
-                    <span class="community-price">Avg: $680,000</span>
-                </div>
-            </a>
-        </div>
-
-        <div class="text-center mt-3">
-            <a href="https://www.duikerproperties.com/communities/" class="btn-secondary">EXPLORE ALL COMMUNITIES</a>
-        </div>
-    </section>
-
-    <!-- Contact CTA -->
-    <section class="contact-cta">
-        <h2 class="contact-title">Ready to Call <span class="accent">Calgary</span> Home?</h2>
-        <p class="contact-text">
-            As Calgary real estate specialists with deep knowledge of every quadrant and community, we're here to help you find your perfect home in this exceptional city. Let's start your Calgary journey today.
-        </p>
-        <a href="https://duikerproperties.com/contact" class="btn-primary">CONNECT WITH US</a>
-    </section>
-
-    <!-- Footer placeholder -->
-    <div id="footer"></div>
-
-    <!-- Header JavaScript -->
+    <!-- Header JS -->
+    
     <script src="https://kyleduiker.github.io/duikerproperties-homepage/assets/js/header.js"></script>
-
     <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transitionDelay = (i * 0.05) + 's';
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
             });
-        });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
