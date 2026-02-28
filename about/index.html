@@ -898,24 +898,22 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: #1a1a1a;
-        padding: 10px 24px;
+        background-color: #111111;
+        padding: 11px 24px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-wrap: wrap;
         gap: 8px;
         z-index: 99999;
         box-sizing: border-box;
-        font-family: Arial, sans-serif;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         font-size: 13px;
-        color: #cccccc;
+        color: #aaaaaa;
       }
 
       #duiker-footer-bar a {
-        color: #cccccc;
+        color: #aaaaaa;
         text-decoration: none;
-        margin: 0 6px;
         transition: color 0.2s;
       }
 
@@ -926,13 +924,17 @@
       #duiker-footer-links {
         display: flex;
         align-items: center;
-        flex-wrap: wrap;
-        gap: 4px;
+      }
+
+      #duiker-footer-links span,
+      #duiker-footer-links a {
+        font-size: 13px;
+        color: #aaaaaa;
       }
 
       #duiker-footer-links .separator {
-        color: #555;
-        margin: 0 2px;
+        color: #444;
+        margin: 0 10px;
       }
 
       #google_translate_element {
@@ -940,27 +942,41 @@
         align-items: center;
       }
 
+      /* Match Bold Trail button style exactly */
       .goog-te-gadget {
-        font-family: Arial, sans-serif !important;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
         font-size: 13px !important;
-        color: #cccccc !important;
+        color: #aaaaaa !important;
+        white-space: nowrap !important;
       }
 
       .goog-te-gadget-simple {
         background-color: #ffffff !important;
-        border: 1px solid #ccc !important;
-        border-radius: 4px !important;
-        padding: 4px 8px !important;
+        border: 1px solid #cccccc !important;
+        border-radius: 2px !important;
+        padding: 5px 10px !important;
         font-size: 13px !important;
+        cursor: pointer !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+      }
+
+      .goog-te-gadget-simple .goog-te-menu-value {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+        font-size: 13px !important;
+        color: #333333 !important;
+        vertical-align: middle !important;
       }
 
       .goog-te-gadget-simple .goog-te-menu-value span {
-        color: #333 !important;
+        color: #333333 !important;
+        font-size: 13px !important;
       }
 
       /* Push page content up so footer doesn't overlap */
       body {
-        padding-bottom: 52px !important;
+        padding-bottom: 50px !important;
       }
     </style>
 
