@@ -1,7 +1,7 @@
-console.log("DP HEADER JS LOADED v1021 - SMOOTH LOAD");
+console.log("DP HEADER JS LOADED v1023 - SMOOTH LOAD");
 
 (function () {
-  const VERSION = "1021";
+  const VERSION = "1023";
   const LOGO_URL =
     "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=" + VERSION;
 
@@ -44,20 +44,6 @@ console.log("DP HEADER JS LOADED v1021 - SMOOTH LOAD");
               <li>
                 <button class="menu-item-with-submenu" data-submenu="search" type="button">
                   <span>Search</span>
-                  <span class="submenu-toggle">+</span>
-                </button>
-              </li>
-
-              <li>
-                <button class="menu-item-with-submenu" data-submenu="calgary-communities" type="button">
-                  <span>Calgary Communities</span>
-                  <span class="submenu-toggle">+</span>
-                </button>
-              </li>
-
-              <li>
-                <button class="menu-item-with-submenu" data-submenu="surrounding-areas" type="button">
-                  <span>Surrounding Areas</span>
                   <span class="submenu-toggle">+</span>
                 </button>
               </li>
