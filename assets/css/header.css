@@ -1,8 +1,10 @@
 /* =========================================================
-   Duiker Custom Header (SAFE MODE) - v1020
+   Duiker Custom Header (SAFE MODE) - v1021
    - Smooth load compatible (dp-header-ready + dp-ready)
    - Removed border/background from hamburger menu button
    - Clean hamburger icon with no box/outline
+   - Added Resources tab, removed Buyers/Sellers tabs
+   - Search submenu has Calgary Communities & Surrounding Areas links
    ========================================================= */
 
 :root{
@@ -41,8 +43,7 @@ body.has-dp-header .page-wrapper > #header{
   height:0 !important;
 }
 
-/* 2) Add space for our fixed header ONLY when stable/ready
-   (prevents jump when has-dp-header is added late by JS) */
+/* 2) Add space for our fixed header ONLY when stable/ready */
 body.dp-header-ready{
   padding-top:var(--dp-header-h) !important;
 }
@@ -56,7 +57,7 @@ body.dp-header-ready{
   left:0 !important;
   right:0 !important;
   width:100% !important;
-  z-index:9999 !important; /* high but safer than 999999 for modals */
+  z-index:9999 !important;
   pointer-events:auto !important;
   font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   box-shadow:0 2px 8px rgba(0,0,0,0.15);
@@ -390,6 +391,30 @@ body.has-dp-header .kv-sticky-spacer{
   letter-spacing:0.5px;
 }
 #dp-mobile-shell .submenu-column a:hover{
+  color:var(--dp-accent);
+  padding-left:10px !important;
+}
+
+/* Submenu link buttons (e.g. Calgary Communities › inside Search submenu) */
+#dp-mobile-shell .submenu-link-btn{
+  font-size:18px;
+  padding:20px 0 !important;
+  color:rgba(255,255,255,0.85);
+  font-weight:500;
+  border:none !important;
+  outline:none !important;
+  letter-spacing:0.5px;
+  background:none !important;
+  box-shadow:none !important;
+  width:100%;
+  text-align:left;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  transition:color 0.2s ease, padding-left 0.2s ease;
+}
+#dp-mobile-shell .submenu-link-btn:hover{
   color:var(--dp-accent);
   padding-left:10px !important;
 }
