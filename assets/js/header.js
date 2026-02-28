@@ -1,7 +1,7 @@
-console.log("DP HEADER JS LOADED v1024 - SMOOTH LOAD");
+console.log("DP HEADER JS LOADED v1025 - SMOOTH LOAD");
 
 (function () {
-  const VERSION = "1024";
+  const VERSION = "1025";
   const LOGO_URL =
     "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=" + VERSION;
 
@@ -75,15 +75,15 @@ console.log("DP HEADER JS LOADED v1024 - SMOOTH LOAD");
             <!-- Submenu Column - Calgary Communities -->
             <div class="submenu-column" id="submenu-calgary-communities">
               <ul>
-                <li><a href="https://duikerproperties.com/communities/calgary-northeast">Calgary</a></li>
-                <li><a href="https://duikerproperties.com/communities/calgary-northwest">Calgary City Center</a></li>
-                <li><a href="https://duikerproperties.com/communities/calgary-southwest">Calgary East</a></li>
-                <li><a href="https://duikerproperties.com/communities/calgary-southeast">Calgary West</a></li>
-                <li><a href="https://duikerproperties.com/communities/calgary-citycenter">Calgary North</a></li>
-                <li><a href="https://duikerproperties.com/communities/calgary-southeast">Calgary North East</a></li>
-                <li><a href="https://guide.duikerproperties.com/communities/calgary-lake-communities">Calgary North West</a></li>
-                <li><a href="https://guide.duikerproperties.com/communities/calgary-lake-communities">Calgary South</a></li>
-                <li><a href="https://guide.duikerproperties.com/communities/calgary-lake-communities">Calgary South East</a></li>
+                <li><a href="https://guide.duikerproperties.com/calgary/">Calgary</a></li>
+                <li><a href="https://guide.duikerproperties.com/calgary/city-center/">Calgary City Center</a></li>
+                <li><a href="https://guide.duikerproperties.com/calgary/east/">Calgary East</a></li>
+                <li><a href="https://guide.duikerproperties.com/calgary/west/">Calgary West</a></li>
+                <li><a href="https://guide.duikerproperties.com/calgary/north/">Calgary North</a></li>
+                <li><a href="https://guide.duikerproperties.com/calgary/north-east/">Calgary North East</a></li>
+                <li><a href="https://guide.duikerproperties.com/calgary/north-west/">Calgary North West</a></li>
+                <li><a href="https://guide.duikerproperties.com/calgary/south/">Calgary South</a></li>
+                <li><a href="https://guide.duikerproperties.com/calgary/south-east/">Calgary South East</a></li>
               </ul>
             </div>
 
