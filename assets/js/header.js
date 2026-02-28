@@ -1,7 +1,7 @@
-console.log("DP HEADER JS LOADED v1023 - SMOOTH LOAD");
+console.log("DP HEADER JS LOADED v1024 - SMOOTH LOAD");
 
 (function () {
-  const VERSION = "1023";
+  const VERSION = "1024";
   const LOGO_URL =
     "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=" + VERSION;
 
