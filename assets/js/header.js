@@ -1,7 +1,7 @@
-console.log("DP HEADER JS LOADED v1020 - SMOOTH LOAD");
+console.log("DP HEADER JS LOADED v1021 - SMOOTH LOAD");
 
 (function () {
-  const VERSION = "1020";
+  const VERSION = "1021";
   const LOGO_URL =
     "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=" + VERSION;
 
@@ -13,8 +13,8 @@ console.log("DP HEADER JS LOADED v1020 - SMOOTH LOAD");
             <span></span><span></span><span></span>
           </button>
           <nav class="quick-links" aria-label="Quick links">
-            <a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Featured Properties</a>
-            <a href="https://guide.duikerproperties.com/calgary">Calgary Communities</a>
+            <a href="#" onclick="history.back(); return false;">Back</a>
+            <a href="https://duikerproperties.com/">Home</a>
           </nav>
         </div>
 
@@ -63,15 +63,8 @@ console.log("DP HEADER JS LOADED v1020 - SMOOTH LOAD");
               </li>
 
               <li>
-                <button class="menu-item-with-submenu" data-submenu="buyers" type="button">
-                  <span>Buyers</span>
-                  <span class="submenu-toggle">+</span>
-                </button>
-              </li>
-
-              <li>
-                <button class="menu-item-with-submenu" data-submenu="sellers" type="button">
-                  <span>Sellers</span>
+                <button class="menu-item-with-submenu" data-submenu="resources" type="button">
+                  <span>Resources</span>
                   <span class="submenu-toggle">+</span>
                 </button>
               </li>
@@ -87,7 +80,9 @@ console.log("DP HEADER JS LOADED v1020 - SMOOTH LOAD");
             <div class="submenu-column" id="submenu-search">
               <ul>
                 <li><a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Active Listings</a></li>
-                <li><a href="https://www.duikerproperties.com/index.php?showagent=1#rslt">Featured Properties</a></li>
+                <li><a href="https://www.duikerproperties.com/index.php?showagent=1&rtype=list#rslt">Featured Properties</a></li>
+                <li><button class="submenu-link-btn" data-open-submenu="calgary-communities" type="button">Calgary Communities ›</button></li>
+                <li><button class="submenu-link-btn" data-open-submenu="surrounding-areas" type="button">Surrounding Areas ›</button></li>
               </ul>
             </div>
 
@@ -116,23 +111,13 @@ console.log("DP HEADER JS LOADED v1020 - SMOOTH LOAD");
               </ul>
             </div>
 
-            <!-- Submenu Column - Buyers -->
-            <div class="submenu-column" id="submenu-buyers">
+            <!-- Submenu Column - Resources -->
+            <div class="submenu-column" id="submenu-resources">
               <ul>
                 <li><a href="https://duikerproperties.com/buyers/guide">Buyer's Guide</a></li>
-                <li><a href="https://duikerproperties.com/buyers/process">Buying Process</a></li>
-                <li><a href="https://duikerproperties.com/buyers/first-time">First-Time Buyers</a></li>
-                <li><a href="https://duikerproperties.com/buyers/financing">Financing Options</a></li>
-              </ul>
-            </div>
-
-            <!-- Submenu Column - Sellers -->
-            <div class="submenu-column" id="submenu-sellers">
-              <ul>
                 <li><a href="https://duikerproperties.com/sellers/guide">Seller's Guide</a></li>
-                <li><a href="https://duikerproperties.com/sellers/valuation">Home Valuation</a></li>
-                <li><a href="https://duikerproperties.com/sellers/preparation">Prepare Your Home</a></li>
-                <li><a href="https://duikerproperties.com/sellers/marketing">Marketing Strategy</a></li>
+                <li><a href="https://duikerproperties.com/resources/mortgages">Mortgages</a></li>
+                <li><a href="https://duikerproperties.com/resources/deposits">Deposits</a></li>
               </ul>
             </div>
           </div>
@@ -141,11 +126,37 @@ console.log("DP HEADER JS LOADED v1020 - SMOOTH LOAD");
     `;
   }
 
+  function bindSubmenuLinkBtns(menu, mainMenuButtons) {
+    // These are the "Calgary Communities ›" and "Surrounding Areas ›" buttons inside the Search submenu
+    menu.querySelectorAll(".submenu-link-btn").forEach((btn) => {
+      if (btn.dataset.dpLinkBound === "1") return;
+      btn.dataset.dpLinkBound = "1";
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const targetId = btn.getAttribute("data-open-submenu");
+        const targetSubmenu = document.getElementById(`submenu-${targetId}`);
+        if (!targetSubmenu) return;
+
+        // Close all submenus & deactivate all main buttons
+        menu.querySelectorAll(".submenu-column").forEach((sub) => sub.classList.remove("active"));
+        menu.querySelectorAll(".menu-item-with-submenu").forEach((b) => b.classList.remove("active"));
+
+        // Activate the target submenu
+        targetSubmenu.classList.add("active");
+
+        // Highlight the matching main menu button
+        const matchingBtn = menu.querySelector(`.menu-item-with-submenu[data-submenu="${targetId}"]`);
+        if (matchingBtn) matchingBtn.classList.add("active");
+      });
+    });
+  }
+
   function ensureInjected() {
-    // Let CSS hide BoldTrail header ASAP
     document.body.classList.add("has-dp-header");
 
-    // If we've stabilized, don't do extra work (prevents micro-jumps)
     if (document.body.classList.contains("dp-header-ready")) {
       document.documentElement.classList.add("dp-ready");
       return;
@@ -197,7 +208,6 @@ console.log("DP HEADER JS LOADED v1020 - SMOOTH LOAD");
         menu.classList.remove("active");
         menu.setAttribute("aria-hidden", "true");
         document.body.classList.remove("dp-menu-open");
-
         menu.querySelectorAll(".submenu-column").forEach((sub) => sub.classList.remove("active"));
         menu.querySelectorAll(".menu-item-with-submenu").forEach((btn) => btn.classList.remove("active"));
       };
@@ -208,7 +218,7 @@ console.log("DP HEADER JS LOADED v1020 - SMOOTH LOAD");
         menu.classList.contains("active") ? closeMenu() : openMenu();
       });
 
-      // Submenu toggles
+      // Main submenu toggles
       menu.querySelectorAll(".menu-item-with-submenu").forEach((button) => {
         if (button.dataset.dpSubmenuBound === "1") return;
         button.dataset.dpSubmenuBound = "1";
@@ -223,7 +233,6 @@ console.log("DP HEADER JS LOADED v1020 - SMOOTH LOAD");
 
           const isOpen = submenu.classList.contains("active");
 
-          // Close others
           menu.querySelectorAll(".submenu-column").forEach((sub) => {
             if (sub !== submenu) sub.classList.remove("active");
           });
@@ -231,7 +240,6 @@ console.log("DP HEADER JS LOADED v1020 - SMOOTH LOAD");
             if (btn !== button) btn.classList.remove("active");
           });
 
-          // Toggle this one
           if (!isOpen) {
             submenu.classList.add("active");
             button.classList.add("active");
@@ -242,7 +250,10 @@ console.log("DP HEADER JS LOADED v1020 - SMOOTH LOAD");
         });
       });
 
-      // Global listeners ONCE (prevents stacking)
+      // Bind the submenu link buttons (Calgary Communities › / Surrounding Areas › inside Search)
+      bindSubmenuLinkBtns(menu);
+
+      // Global listeners ONCE
       if (document.documentElement.dataset.dpGlobalBound !== "1") {
         document.documentElement.dataset.dpGlobalBound = "1";
 
@@ -272,7 +283,7 @@ console.log("DP HEADER JS LOADED v1020 - SMOOTH LOAD");
         });
       }
 
-      // Link click closes
+      // Link click closes menu
       menu.addEventListener("click", (e) => {
         const link = e.target.closest("a");
         if (!link) return;
