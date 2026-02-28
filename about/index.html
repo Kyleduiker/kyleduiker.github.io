@@ -883,7 +883,9 @@
       function googleTranslateElementInit() {
         new google.translate.TranslateElement({
           pageLanguage: 'en',
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+          includedLanguages: 'zh-CN,zh-TW,fil,fr,de,hi,it,ja,ko,pt,pa,ru,es,tr',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false
         }, 'google_translate_element');
       }
     </script>
