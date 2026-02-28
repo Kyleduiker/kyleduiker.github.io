@@ -873,5 +873,108 @@
 
         reveals.forEach(el => observer.observe(el));
     </script>
+
+    <!-- ============================================================
+         GOOGLE TRANSLATE FOOTER BAR
+         ============================================================ -->
+
+    <!-- Google Translate Init -->
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+      }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Footer Bar Styles -->
+    <style>
+      #duiker-footer-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
+        z-index: 99999;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        font-size: 13px;
+        color: #cccccc;
+      }
+
+      #duiker-footer-bar a {
+        color: #cccccc;
+        text-decoration: none;
+        margin: 0 6px;
+        transition: color 0.2s;
+      }
+
+      #duiker-footer-bar a:hover {
+        color: #ffffff;
+      }
+
+      #duiker-footer-links {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      #duiker-footer-links .separator {
+        color: #555;
+        margin: 0 2px;
+      }
+
+      #google_translate_element {
+        display: flex;
+        align-items: center;
+      }
+
+      .goog-te-gadget {
+        font-family: Arial, sans-serif !important;
+        font-size: 13px !important;
+        color: #cccccc !important;
+      }
+
+      .goog-te-gadget-simple {
+        background-color: #ffffff !important;
+        border: 1px solid #ccc !important;
+        border-radius: 4px !important;
+        padding: 4px 8px !important;
+        font-size: 13px !important;
+      }
+
+      .goog-te-gadget-simple .goog-te-menu-value span {
+        color: #333 !important;
+      }
+
+      /* Push page content up so footer doesn't overlap */
+      body {
+        padding-bottom: 52px !important;
+      }
+    </style>
+
+    <!-- Footer Bar HTML -->
+    <div id="duiker-footer-bar">
+      <div id="duiker-footer-links">
+        <span>© 2026 Duiker Properties</span>
+        <span class="separator">&nbsp;/&nbsp;</span>
+        <a href="https://www.duikerproperties.com/terms.php" target="_blank">Terms of Use</a>
+        <span class="separator">&nbsp;/&nbsp;</span>
+        <a href="https://www.duikerproperties.com/privacy.php" target="_blank">Privacy Policy</a>
+        <span class="separator">&nbsp;/&nbsp;</span>
+        <a href="https://www.duikerproperties.com/accessibility.php" target="_blank">Accessibility</a>
+      </div>
+      <div id="google_translate_element"></div>
+    </div>
+
 </body>
 </html>
