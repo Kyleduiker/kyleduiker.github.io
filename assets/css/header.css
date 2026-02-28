@@ -1,5 +1,5 @@
 /* =========================================================
-   Duiker Custom Header (SAFE MODE) - v1023
+   Duiker Custom Header (SAFE MODE) - v1024
    - Smooth load compatible (dp-header-ready + dp-ready)
    - Removed border/background from hamburger menu button
    - Clean hamburger icon with no box/outline
@@ -246,8 +246,8 @@ body.has-dp-header .kv-sticky-spacer{
   max-width:520px;
   min-width:280px;
   height:calc(100vh - var(--dp-header-h));
-  background:rgba(0,0,0,.85);
-  backdrop-filter:blur(4px);
+  background:rgba(0,0,0,1);
+  backdrop-filter:none;
   border-right:1px solid rgba(255,255,255,0.08);
   box-shadow:4px 0 24px rgba(0,0,0,0.4);
 
@@ -318,7 +318,7 @@ body.has-dp-header .kv-sticky-spacer{
   width:100%;
   text-align:left;
   cursor:pointer;
-  transition:color 0.2s ease, padding-left 0.2s ease;
+  transition:color 0.2s ease;
   letter-spacing:0.5px;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -327,7 +327,6 @@ body.has-dp-header .kv-sticky-spacer{
 #dp-mobile-shell a:hover,
 #dp-mobile-shell button:hover{
   color:var(--dp-accent);
-  padding-left:10px;
 }
 
 #dp-mobile-shell a:focus,
@@ -395,7 +394,6 @@ body.has-dp-header .kv-sticky-spacer{
 }
 #dp-mobile-shell .submenu-column a:hover{
   color:var(--dp-accent);
-  padding-left:10px !important;
 }
 
 /* Submenu link buttons (e.g. Calgary Communities › inside Search submenu) */
@@ -415,11 +413,10 @@ body.has-dp-header .kv-sticky-spacer{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  transition:color 0.2s ease, padding-left 0.2s ease;
+  transition:color 0.2s ease;
 }
 #dp-mobile-shell .submenu-link-btn:hover{
   color:var(--dp-accent);
-  padding-left:10px !important;
 }
 
 /* Responsive */
