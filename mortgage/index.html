@@ -1,1 +1,1658 @@
-Mortgage options coming soon 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alberta Mortgage Guide | Calgary Real Estate Broker | Duiker Properties</title>
+    <meta name="description" content="Your complete Alberta mortgage guide — down payments, CMHC insurance, the stress test, first-time buyer programs, fixed vs variable rates, and more. From Kyle Duiker, Calgary Broker.">
+
+    <!-- Duiker Properties Header -->
+    <link rel="stylesheet" href="https://kyleduiker.github.io/duikerproperties-homepage/assets/css/header.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --red:      #EA002A;
+            --blue:     #003DA5;
+            --gold:     #C5A572;
+            --gold-lt:  #ddc89a;
+            --dark:     #0d0d0d;
+            --off-white:#f5f2ed;
+            --cream:    #faf8f4;
+            --text:     #1a1a1a;
+            --muted:    #777;
+            --border:   #e5e0d8;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        #header-container {
+            position: relative;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            background: var(--dark);
+            color: white;
+            min-height: 88vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: stretch;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                -55deg,
+                transparent,
+                transparent 60px,
+                rgba(255,255,255,0.015) 60px,
+                rgba(255,255,255,0.015) 61px
+            );
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 5rem 5rem 5rem 6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.75rem;
+            animation: fadeUp 0.7s ease both;
+        }
+
+        .eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
+
+        .eyebrow-text {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .hero-headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-weight: 300;
+            line-height: 1.15;
+            color: white;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.7s 0.1s ease both;
+            opacity: 0;
+        }
+
+        .hero-headline em { font-style: italic; color: var(--gold-lt); }
+
+        .hero-subhead {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.75;
+            max-width: 420px;
+            margin-bottom: 2.5rem;
+            animation: fadeUp 0.7s 0.2s ease both;
+            opacity: 0;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            animation: fadeUp 0.7s 0.3s ease both;
+            opacity: 0;
+        }
+
+        .stat {
+            border-left: 2px solid var(--gold);
+            padding-left: 1rem;
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: white;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+            margin-top: 0.25rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeUp 0.7s 0.4s ease both;
+            opacity: 0;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--red);
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 20px rgba(234,0,42,0.3);
+        }
+
+        .btn-primary:hover {
+            background: #c80020;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(234,0,42,0.45);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.25s ease;
+        }
+
+        .btn-outline:hover {
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.05);
+            transform: translateY(-2px);
+        }
+
+        .hero-image-side {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            filter: grayscale(20%);
+        }
+
+        .hero-image-side::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, var(--dark) 0%, transparent 30%),
+                        linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%);
+        }
+
+        .hero-image-side::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; height: 4px;
+            background: linear-gradient(to right, var(--red), var(--blue));
+            z-index: 3;
+        }
+
+        /* Alberta advantage badge */
+        .hero-badge {
+            position: absolute;
+            bottom: 3rem; right: 3rem;
+            z-index: 4;
+            background: rgba(13,13,13,0.9);
+            border: 1px solid rgba(197,165,114,0.3);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 0.7s 0.5s ease both;
+            opacity: 0;
+        }
+
+        .hero-badge-title {
+            font-size: 0.65rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+        }
+
+        .hero-badge-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: white;
+            font-weight: 400;
+        }
+
+        .hero-badge-role {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 0.2rem;
+        }
+
+        /* ─── SECTION BASE ─── */
+        .section { padding: 5rem 0; }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-eyebrow .eyebrow-line { background: var(--gold); }
+        .section-eyebrow .eyebrow-text {
+            color: var(--gold);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 300;
+            line-height: 1.2;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .section-title em { font-style: italic; color: var(--red); }
+
+        /* ─── DOWN PAYMENT TABLE SECTION ─── */
+        .approach-section { background: white; }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .approach-body p {
+            color: #444;
+            line-height: 1.85;
+            font-size: 0.97rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .dp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            font-size: 0.88rem;
+        }
+
+        .dp-table th {
+            background: var(--dark);
+            color: var(--gold);
+            text-align: left;
+            padding: 0.85rem 1rem;
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .dp-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .dp-table tr:last-child td { border-bottom: none; }
+        .dp-table tr:nth-child(even) td { background: var(--cream); }
+
+        .dp-table td:first-child { font-weight: 600; }
+
+        .dp-badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-red { background: rgba(234,0,42,0.1); color: var(--red); }
+        .badge-green { background: rgba(0,139,69,0.1); color: #008b45; }
+
+        /* CMHC table side */
+        .cmhc-side { padding-top: 0.5rem; }
+
+        .cmhc-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            margin-top: 1rem;
+        }
+
+        .cmhc-table th {
+            background: var(--blue);
+            color: white;
+            text-align: left;
+            padding: 0.85rem 1rem;
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .cmhc-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cmhc-table tr:last-child td { border-bottom: none; }
+        .cmhc-table tr:nth-child(even) td { background: var(--cream); }
+
+        .cmhc-note {
+            font-size: 0.82rem;
+            color: var(--muted);
+            margin-top: 1rem;
+            padding: 1rem;
+            background: var(--cream);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 6px 6px 0;
+        }
+
+        /* ─── DARK BAND — Stress Test + Fixed vs Variable ─── */
+        .dark-band {
+            background: var(--dark);
+            color: white;
+            padding: 5rem 0;
+        }
+
+        .dark-band .section-title { color: white; }
+        .dark-band .section-eyebrow .eyebrow-text { color: var(--gold); }
+        .dark-band .section-eyebrow .eyebrow-line { background: var(--gold); }
+
+        .dark-band-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .dark-band p {
+            color: rgba(255,255,255,0.65);
+            line-height: 1.85;
+            font-size: 0.97rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .stress-steps {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .stress-step {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: 1.25rem;
+        }
+
+        .step-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--gold);
+            line-height: 1;
+            min-width: 2rem;
+        }
+
+        .step-body { flex: 1; }
+
+        .step-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.3rem;
+        }
+
+        .step-desc {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.6;
+        }
+
+        /* Rate comparison cards */
+        .rate-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .rate-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.25s ease;
+        }
+
+        .rate-card:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(197,165,114,0.3);
+        }
+
+        .rate-card-label {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .rate-card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .rate-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .rate-card ul li {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.55);
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .rate-card ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 0.75rem;
+        }
+
+        /* ─── PROGRAMS SECTION ─── */
+        .programs-section { background: var(--off-white); }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .program-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--red), var(--blue));
+        }
+
+        .program-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        }
+
+        .program-icon {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            background: rgba(234,0,42,0.08);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .program-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .program-amount {
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .program-desc {
+            font-size: 0.88rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        /* Alberta advantage banner */
+        .ab-advantage {
+            margin-top: 3rem;
+            background: linear-gradient(135deg, var(--blue) 0%, #002a7a 100%);
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .ab-advantage-icon {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            color: var(--gold-lt);
+            font-style: italic;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .ab-advantage-body h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .ab-advantage-body p {
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+        }
+
+        /* ─── CALCULATOR SECTION ─── */
+        .calc-section { background: white; padding: 5rem 0; }
+
+        .calc-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .calc-intro p {
+            color: #444;
+            line-height: 1.85;
+            font-size: 0.97rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .calc-disclaimer {
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: var(--cream);
+            border-left: 3px solid var(--border);
+            border-radius: 0 6px 6px 0;
+            line-height: 1.6;
+        }
+
+        /* Calculator UI */
+        .calc-card {
+            background: var(--dark);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calc-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--red), var(--blue));
+        }
+
+        .calc-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 1.75rem;
+        }
+
+        .calc-field { margin-bottom: 1.25rem; }
+
+        .calc-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 0.5rem;
+        }
+
+        .calc-label span {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            letter-spacing: 0;
+            text-transform: none;
+            color: var(--gold);
+        }
+
+        .calc-input {
+            width: 100%;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 8px;
+            padding: 0.85rem 1rem;
+            color: white;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .calc-input:focus { border-color: var(--gold); }
+
+        .calc-slider {
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 4px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 2px;
+            outline: none;
+            margin-top: 0.75rem;
+        }
+
+        .calc-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px; height: 18px;
+            border-radius: 50%;
+            background: var(--gold);
+            cursor: pointer;
+        }
+
+        .calc-select {
+            width: 100%;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 8px;
+            padding: 0.85rem 1rem;
+            color: white;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .calc-select option { background: #1a1a1a; }
+
+        .calc-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+            margin: 1.5rem 0;
+        }
+
+        .calc-results {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .calc-result {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .calc-result-label {
+            font-size: 0.68rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 0.4rem;
+        }
+
+        .calc-result-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: white;
+            line-height: 1;
+        }
+
+        .calc-result-value.highlight { color: var(--gold); }
+
+        .calc-result-sub {
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.3);
+            margin-top: 0.25rem;
+        }
+
+        .calc-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--red);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            margin-top: 1.5rem;
+        }
+
+        .calc-btn:hover {
+            background: #c80020;
+            transform: translateY(-1px);
+        }
+
+        /* CMHC warning in calc */
+        .cmhc-warning {
+            margin-top: 1rem;
+            padding: 0.85rem 1rem;
+            background: rgba(234,0,42,0.1);
+            border: 1px solid rgba(234,0,42,0.2);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+            display: none;
+        }
+
+        .cmhc-warning.visible { display: block; }
+
+        .cmhc-warning strong { color: var(--gold); }
+
+        /* ─── PRE-APPROVAL SECTION ─── */
+        .preapproval-section { background: var(--off-white); }
+
+        .pa-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .pa-body p {
+            color: #444;
+            line-height: 1.85;
+            font-size: 0.97rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .pa-checklist {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .pa-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+            padding: 0.85rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.88rem;
+            color: var(--text);
+            transition: border-color 0.2s;
+        }
+
+        .pa-item:hover { border-color: var(--gold); }
+
+        .pa-check {
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            background: rgba(0,61,165,0.08);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* Renewal/Refi section */
+        .refi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .refi-card {
+            padding: 1.75rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.25s ease;
+        }
+
+        .refi-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+
+        .refi-card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .refi-card-desc {
+            font-size: 0.88rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        /* ─── BIO QUOTE SECTION ─── */
+        .bio-section { background: var(--cream); }
+
+        .bio-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem 3.5rem;
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .bio-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--red), var(--blue));
+            border-radius: 16px 16px 0 0;
+        }
+
+        .bio-quote-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            color: var(--border);
+            line-height: 0.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .bio-attribution {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .bio-attr-line { width: 40px; height: 1px; background: var(--border); }
+
+        .bio-attr-name {
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        /* ─── CTA SECTION ─── */
+        .cta-section {
+            background: var(--blue);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 300;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section h2 em { font-style: italic; color: var(--gold-lt); }
+
+        .cta-section p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+            max-width: 520px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.75;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-section .btn-primary {
+            background: var(--red);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .cta-section .btn-outline {
+            border-color: rgba(255,255,255,0.25);
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; min-height: auto; }
+            .hero-content { padding: 3rem 2rem; }
+            .hero-image-side { height: 350px; }
+            .hero-badge { bottom: 1.5rem; right: 1.5rem; }
+            .approach-grid, .dark-band-grid, .pa-grid, .calc-wrapper { grid-template-columns: 1fr; gap: 3rem; }
+            .programs-grid { grid-template-columns: 1fr 1fr; }
+            .rate-cards { grid-template-columns: 1fr; }
+            .ab-advantage { flex-direction: column; gap: 1.5rem; padding: 2rem; }
+            .bio-card { padding: 2rem 1.5rem; }
+        }
+
+        @media (max-width: 600px) {
+            .hero-stats { gap: 1.5rem; }
+            .hero-cta { flex-direction: column; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .programs-grid { grid-template-columns: 1fr; }
+            .refi-grid { grid-template-columns: 1fr; }
+            .calc-results { grid-template-columns: 1fr; }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <div class="eyebrow-line"></div>
+                <span class="eyebrow-text">Alberta Mortgage Guide</span>
+            </div>
+
+            <h1 class="hero-headline">
+                Everything you need to<br>know about getting a<br><em>mortgage in Alberta</em>
+            </h1>
+
+            <p class="hero-subhead">
+                From down payments and CMHC insurance to the stress test and first-time buyer programs — your complete guide to Alberta's mortgage market, explained clearly by a Calgary Broker.
+            </p>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">5%</div>
+                    <div class="stat-label">Min. Down Payment</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$0</div>
+                    <div class="stat-label">Land Transfer Tax</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">30yr</div>
+                    <div class="stat-label">Max Amortization</div>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="#calculator" class="btn-primary">Try the Calculator</a>
+                <a href="https://duikerproperties.com/contact" class="btn-outline">Talk to a Broker</a>
+            </div>
+        </div>
+
+        <div class="hero-image-side">
+            <img
+                src="https://raw.githubusercontent.com/Kyleduiker/duikerproperties-homepage/main/photos/brand/2026Awards-51.jpg"
+                alt="Kyle Duiker — Calgary Real Estate Broker"
+                style="object-position: 20% 20%;"
+                onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#0f3460)';"
+            >
+            <div class="hero-badge">
+                <div class="hero-badge-title">Royal LePage Solutions</div>
+                <div class="hero-badge-name">Kyle Duiker</div>
+                <div class="hero-badge-role">Broker Delegate · Calgary, AB</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── DOWN PAYMENT + CMHC ── -->
+    <section class="section approach-section">
+        <div class="container">
+            <div class="approach-grid">
+                <div class="approach-body reveal">
+                    <div class="section-eyebrow">
+                        <div class="eyebrow-line"></div>
+                        <span class="eyebrow-text">Down Payments</span>
+                    </div>
+                    <h2 class="section-title">How much do you need <em>upfront?</em></h2>
+                    <p>Your minimum down payment in Canada depends on the purchase price of the home. Alberta follows federal rules — and has one major advantage: no provincial land transfer tax, saving buyers thousands compared to other provinces.</p>
+                    <p>Putting down 20% or more means no CMHC insurance is required — giving you more options and typically lower effective borrowing costs.</p>
+
+                    <table class="dp-table">
+                        <thead>
+                            <tr>
+                                <th>Purchase Price</th>
+                                <th>Min. Down Payment</th>
+                                <th>CMHC Required?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Under $500,000</td>
+                                <td>5%</td>
+                                <td><span class="dp-badge badge-red">Yes</span></td>
+                            </tr>
+                            <tr>
+                                <td>$500K – $999,999</td>
+                                <td>5% on first $500K + 10% on remainder</td>
+                                <td><span class="dp-badge badge-red">Yes</span></td>
+                            </tr>
+                            <tr>
+                                <td>$1M – $1.49M</td>
+                                <td>20%</td>
+                                <td><span class="dp-badge badge-green">No</span></td>
+                            </tr>
+                            <tr>
+                                <td>$1.5M+</td>
+                                <td>20% minimum</td>
+                                <td><span class="dp-badge badge-green">No</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cmhc-side reveal">
+                    <div class="section-eyebrow">
+                        <div class="eyebrow-line"></div>
+                        <span class="eyebrow-text">CMHC Insurance</span>
+                    </div>
+                    <h2 class="section-title">What is CMHC <em>insurance?</em></h2>
+                    <p>If your down payment is less than 20%, your mortgage must be insured through CMHC (or Sagen / Canada Guaranty). The premium is added to your mortgage and paid off monthly. The benefit: insured mortgages often carry lower interest rates because lenders take on less risk.</p>
+
+                    <table class="cmhc-table">
+                        <thead>
+                            <tr>
+                                <th>Down Payment</th>
+                                <th>LTV Ratio</th>
+                                <th>Premium Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>5%</td>
+                                <td>95%</td>
+                                <td>4.00%</td>
+                            </tr>
+                            <tr>
+                                <td>10%</td>
+                                <td>90%</td>
+                                <td>3.10%</td>
+                            </tr>
+                            <tr>
+                                <td>15%</td>
+                                <td>85%</td>
+                                <td>2.80%</td>
+                            </tr>
+                            <tr>
+                                <td>20%+</td>
+                                <td>80% or less</td>
+                                <td>None</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="cmhc-note">
+                        <strong>Example:</strong> On a $500,000 home with 5% down ($25,000), your mortgage is $475,000. The CMHC premium (4%) adds $19,000 — bringing your insured mortgage to $494,000. This premium is paid over your amortization period, not upfront.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── STRESS TEST + FIXED vs VARIABLE ── -->
+    <section class="dark-band">
+        <div class="container">
+            <div class="dark-band-grid">
+                <div class="reveal">
+                    <div class="section-eyebrow">
+                        <div class="eyebrow-line"></div>
+                        <span class="eyebrow-text">Mortgage Stress Test</span>
+                    </div>
+                    <h2 class="section-title">What is the <em>stress test?</em></h2>
+                    <p>The federal mortgage stress test ensures you can still afford your mortgage if interest rates rise. It applies to all federally regulated lenders — whether your down payment is 5% or 25%.</p>
+                    <p>You must qualify at the higher of: your contract rate + 2%, or the benchmark rate of 5.25% — whichever is greater. Good news: switching lenders at renewal (without refinancing) no longer requires a stress test re-qualification.</p>
+
+                    <div class="stress-steps">
+                        <div class="stress-step">
+                            <div class="step-num">1</div>
+                            <div class="step-body">
+                                <div class="step-title">Find your qualifying rate</div>
+                                <div class="step-desc">Take your actual contract rate and add 2%. Compare that to 5.25% — whichever is higher is your qualifying rate.</div>
+                            </div>
+                        </div>
+                        <div class="stress-step">
+                            <div class="step-num">2</div>
+                            <div class="step-body">
+                                <div class="step-title">GDS &amp; TDS ratios checked</div>
+                                <div class="step-desc">Your Gross Debt Service (housing costs / income) should be under 39%. Total Debt Service (all debts / income) should be under 44%.</div>
+                            </div>
+                        </div>
+                        <div class="stress-step">
+                            <div class="step-num">3</div>
+                            <div class="step-body">
+                                <div class="step-title">Credit score minimum</div>
+                                <div class="step-desc">A minimum credit score of 680 is required to qualify for CMHC-insured mortgages. Conventional lenders may accept lower scores with 20%+ down.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <div class="section-eyebrow">
+                        <div class="eyebrow-line"></div>
+                        <span class="eyebrow-text">Fixed vs Variable</span>
+                    </div>
+                    <h2 class="section-title">Which rate type is <em>right for you?</em></h2>
+                    <p>There's no universal answer — the right choice depends on your financial situation, risk tolerance, and how long you plan to stay in the property. Here's what each option offers:</p>
+
+                    <div class="rate-cards">
+                        <div class="rate-card">
+                            <div class="rate-card-label">Fixed Rate</div>
+                            <div class="rate-card-title">Stability &amp; Certainty</div>
+                            <ul>
+                                <li>Payment stays the same throughout the term</li>
+                                <li>Easier to budget and plan</li>
+                                <li>Typically higher rate than variable</li>
+                                <li>Best for risk-averse buyers</li>
+                                <li>Ideal in rising rate environments</li>
+                            </ul>
+                        </div>
+                        <div class="rate-card">
+                            <div class="rate-card-label">Variable Rate</div>
+                            <div class="rate-card-title">Flexibility &amp; Potential Savings</div>
+                            <ul>
+                                <li>Rate moves with Bank of Canada prime</li>
+                                <li>Often lower to start</li>
+                                <li>Payment may fluctuate</li>
+                                <li>Lower break penalty if needed</li>
+                                <li>Best when rates are declining</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cmhc-note" style="background:rgba(255,255,255,0.05); border-left-color:var(--gold); color:rgba(255,255,255,0.6); margin-top:1.5rem;">
+                        <strong style="color:var(--gold);">Broker's note:</strong> As of early 2026, the Bank of Canada rate cycle has shifted. Talk to a mortgage professional before locking in — the right term length matters as much as fixed vs. variable.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FIRST-TIME BUYER PROGRAMS ── -->
+    <section class="section programs-section">
+        <div class="container">
+            <div class="reveal" style="text-align:center; max-width:680px; margin:0 auto 0.5rem;">
+                <div class="section-eyebrow" style="justify-content:center;">
+                    <div class="eyebrow-line"></div>
+                    <span class="eyebrow-text">First-Time Buyer Programs</span>
+                    <div class="eyebrow-line"></div>
+                </div>
+                <h2 class="section-title">Programs that can save you <em>thousands</em></h2>
+                <p style="color:#444; font-size:0.97rem; line-height:1.75;">Alberta doesn't have a provincial land transfer tax — already a major advantage over Ontario or BC. On top of that, several federal programs are available to first-time buyers that can meaningfully reduce your upfront costs.</p>
+            </div>
+
+            <div class="programs-grid reveal">
+                <div class="program-card">
+                    <div class="program-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA002A" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <div class="program-amount">Up to $40,000</div>
+                    <div class="program-title">First Home Savings Account (FHSA)</div>
+                    <div class="program-desc">A tax-advantaged account combining RRSP and TFSA benefits. Contributions are tax-deductible and withdrawals for a qualifying home purchase are completely tax-free.</div>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#003DA5" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                    </div>
+                    <div class="program-amount">Up to $60,000 / person</div>
+                    <div class="program-title">Home Buyers' Plan (HBP)</div>
+                    <div class="program-desc">Withdraw up to $60,000 ($120,000 per couple) tax-free from your RRSP to fund your down payment. Repayable over 15 years. Can be combined with the FHSA.</div>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A572" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                    </div>
+                    <div class="program-amount">Up to $1,500 back</div>
+                    <div class="program-title">First-Time Home Buyers' Tax Credit</div>
+                    <div class="program-desc">A non-refundable federal tax credit on up to $10,000 of your qualifying home purchase. Simple to claim on your tax return — recovers up to $1,500 in the year you buy.</div>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA002A" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </div>
+                    <div class="program-amount">5% rebate</div>
+                    <div class="program-title">GST Relief on New Builds</div>
+                    <div class="program-desc">First-time buyers purchasing new or substantially renovated homes up to $1M may qualify for a full GST rebate — saving up to $50,000 on eligible new construction purchases.</div>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#003DA5" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="program-amount">Lower monthly payments</div>
+                    <div class="program-title">30-Year Amortization</div>
+                    <div class="program-desc">First-time buyers (and all buyers of new builds) can now access 30-year insured amortizations — reducing monthly payments and improving qualification flexibility.</div>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A572" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="program-amount">$2,000 down</div>
+                    <div class="program-title">Attainable Homes Calgary</div>
+                    <div class="program-desc">A Calgary-specific program that helps buyers purchase with just $2,000 down. AHC loans the rest of the down payment interest-free, in exchange for a share of appreciation.</div>
+                </div>
+            </div>
+
+            <div class="ab-advantage reveal">
+                <div class="ab-advantage-icon">AB</div>
+                <div class="ab-advantage-body">
+                    <h3>Alberta's Hidden Advantage: No Land Transfer Tax</h3>
+                    <p>Unlike Ontario or BC — where land transfer taxes can exceed $15,000 on a $700K home — Alberta charges only minor land title registration fees (typically $50–$200). This means more of your money goes toward your home, not government fees. It's one of the most buyer-friendly provinces in Canada for closing costs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── MORTGAGE CALCULATOR ── -->
+    <section class="section calc-section" id="calculator">
+        <div class="container">
+            <div class="calc-wrapper">
+                <div class="calc-intro reveal">
+                    <div class="section-eyebrow">
+                        <div class="eyebrow-line"></div>
+                        <span class="eyebrow-text">Mortgage Calculator</span>
+                    </div>
+                    <h2 class="section-title">Estimate your <em>monthly payment</em></h2>
+                    <p>Use this calculator to get a ballpark sense of your monthly mortgage payment based on home price, down payment, interest rate, and amortization period.</p>
+                    <p>The calculator will also flag if CMHC insurance applies and estimate the premium added to your mortgage — giving you a more complete picture of your total borrowing cost.</p>
+                    <p>Ready to get an accurate number? A pre-approval from a lender will give you the exact figures based on your income, credit score, and current rates.</p>
+                    <div class="calc-disclaimer">
+                        This calculator is for informational purposes only. It does not constitute financial or mortgage advice. Actual payments will vary based on lender, rate type, payment frequency, and other factors. Always consult a licensed mortgage professional before making any decisions.
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <div class="calc-card">
+                        <div class="calc-title">Monthly Mortgage Estimator</div>
+
+                        <div class="calc-field">
+                            <div class="calc-label">
+                                Home Price
+                                <span id="lbl-price">$650,000</span>
+                            </div>
+                            <input type="range" class="calc-slider" id="sl-price" min="200000" max="2000000" step="5000" value="650000">
+                        </div>
+
+                        <div class="calc-field">
+                            <div class="calc-label">
+                                Down Payment
+                                <span id="lbl-dp">$130,000 (20%)</span>
+                            </div>
+                            <input type="range" class="calc-slider" id="sl-dp" min="5" max="50" step="1" value="20">
+                        </div>
+
+                        <div class="calc-field">
+                            <div class="calc-label">
+                                Interest Rate
+                                <span id="lbl-rate">4.70%</span>
+                            </div>
+                            <input type="range" class="calc-slider" id="sl-rate" min="1" max="10" step="0.05" value="4.70">
+                        </div>
+
+                        <div class="calc-field">
+                            <div class="calc-label">Amortization Period</div>
+                            <select class="calc-select" id="sel-amort">
+                                <option value="15">15 Years</option>
+                                <option value="20">20 Years</option>
+                                <option value="25" selected>25 Years</option>
+                                <option value="30">30 Years</option>
+                            </select>
+                        </div>
+
+                        <div class="cmhc-warning" id="cmhc-warning">
+                            <strong>CMHC insurance applies</strong> — your down payment is under 20%. The premium (<span id="cmhc-pct">4.00%</span>) will be added to your mortgage amount.
+                        </div>
+
+                        <div class="calc-divider"></div>
+
+                        <div class="calc-results">
+                            <div class="calc-result">
+                                <div class="calc-result-label">Monthly Payment</div>
+                                <div class="calc-result-value highlight" id="res-monthly">—</div>
+                                <div class="calc-result-sub">Principal + interest</div>
+                            </div>
+                            <div class="calc-result">
+                                <div class="calc-result-label">Mortgage Amount</div>
+                                <div class="calc-result-value" id="res-mortgage">—</div>
+                                <div class="calc-result-sub">Incl. CMHC if applicable</div>
+                            </div>
+                            <div class="calc-result">
+                                <div class="calc-result-label">Total Interest Paid</div>
+                                <div class="calc-result-value" id="res-interest">—</div>
+                                <div class="calc-result-sub">Over full amortization</div>
+                            </div>
+                            <div class="calc-result">
+                                <div class="calc-result-label">CMHC Premium</div>
+                                <div class="calc-result-value" id="res-cmhc">$0</div>
+                                <div class="calc-result-sub">Added to mortgage</div>
+                            </div>
+                        </div>
+
+                        <a href="https://duikerproperties.com/contact" class="calc-btn">Get a Real Pre-Approval →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── PRE-APPROVAL + REFINANCING ── -->
+    <section class="section preapproval-section">
+        <div class="container">
+            <div class="pa-grid">
+                <div class="pa-body reveal">
+                    <div class="section-eyebrow">
+                        <div class="eyebrow-line"></div>
+                        <span class="eyebrow-text">Pre-Approval Process</span>
+                    </div>
+                    <h2 class="section-title">Why get pre-approved <em>first?</em></h2>
+                    <p>Getting pre-approved before you start house hunting isn't just smart — it's essential in a competitive Calgary market. Pre-approval tells you exactly what you can afford, locks in your rate for up to 120 days, and signals to sellers that you're a serious buyer.</p>
+                    <p>Here's what lenders will review when assessing your application:</p>
+
+                    <div class="pa-checklist">
+                        <div class="pa-item">
+                            <div class="pa-check">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#003DA5" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Proof of income (T4s, NOAs, pay stubs)</span>
+                        </div>
+                        <div class="pa-item">
+                            <div class="pa-check">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#003DA5" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Credit score (minimum 680 for insured mortgages)</span>
+                        </div>
+                        <div class="pa-item">
+                            <div class="pa-check">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#003DA5" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Down payment source and documentation</span>
+                        </div>
+                        <div class="pa-item">
+                            <div class="pa-check">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#003DA5" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Employment history (2+ years preferred)</span>
+                        </div>
+                        <div class="pa-item">
+                            <div class="pa-check">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#003DA5" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Existing debts and monthly obligations</span>
+                        </div>
+                        <div class="pa-item">
+                            <div class="pa-check">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#003DA5" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>GDS / TDS ratio assessment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <div class="section-eyebrow">
+                        <div class="eyebrow-line"></div>
+                        <span class="eyebrow-text">Refinancing &amp; Renewals</span>
+                    </div>
+                    <h2 class="section-title">Already in a mortgage? Here's <em>what to know.</em></h2>
+                    <p>Whether your term is coming up or you're looking to access equity, there are several options available to existing homeowners in Alberta.</p>
+
+                    <div class="refi-grid">
+                        <div class="refi-card">
+                            <div class="refi-card-title">Mortgage Renewal</div>
+                            <div class="refi-card-desc">When your term ends, you renegotiate your rate and terms. Since 2024, switching lenders at renewal no longer requires passing the stress test — giving you more freedom to shop around.</div>
+                        </div>
+                        <div class="refi-card">
+                            <div class="refi-card-title">Refinancing</div>
+                            <div class="refi-card-desc">Access your home's equity before your term ends — for renovations, debt consolidation, or investment. Refinancing does require the stress test and may involve a break penalty.</div>
+                        </div>
+                        <div class="refi-card">
+                            <div class="refi-card-title">HELOC</div>
+                            <div class="refi-card-desc">A Home Equity Line of Credit lets you borrow against your equity on a revolving basis, up to 80% of your home's value. Flexible draws and repayments — interest only on what you use.</div>
+                        </div>
+                        <div class="refi-card">
+                            <div class="refi-card-title">Investment Properties</div>
+                            <div class="refi-card-desc">Investment properties require a minimum 20% down from your own savings — no gifted or borrowed funds allowed. Rental income can factor into qualification calculations.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── QUOTE ── -->
+    <section class="section bio-section">
+        <div class="container">
+            <div class="bio-card reveal">
+                <div class="bio-quote-mark">"</div>
+                <p class="bio-text">
+                    Mortgages don't have to be confusing. My role is to help you understand exactly where you stand — what you can qualify for, which programs apply to you, and how to structure your purchase so it actually makes sense for your life. That clarity is what good real estate advice looks like.
+                </p>
+                <div class="bio-attribution">
+                    <div class="bio-attr-line"></div>
+                    <span class="bio-attr-name">Kyle Duiker · Broker Delegate, Royal LePage Solutions</span>
+                    <div class="bio-attr-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-section">
+        <div class="container reveal">
+            <h2>Ready to figure out your <em>mortgage?</em></h2>
+            <p>
+                Whether you're buying your first home, refinancing, or just want to understand your options, I'm happy to walk you through it. No pressure — just clear, honest advice from a Calgary Broker.
+            </p>
+            <div class="cta-buttons">
+                <a href="https://duikerproperties.com/contact" class="btn-primary">Book a Conversation</a>
+                <a href="tel:4037973384" class="btn-outline">
+                    <svg style="display:inline;vertical-align:middle;margin-right:6px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1.04 3.42 2 2 0 0 1 3 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    (403) 797-3384
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Header JS -->
+    <script src="https://kyleduiker.github.io/duikerproperties-homepage/assets/js/header.js"></script>
+
+    <!-- Scroll Reveal -->
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transitionDelay = (i * 0.05) + 's';
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        reveals.forEach(el => observer.observe(el));
+    </script>
+
+    <!-- Mortgage Calculator JS -->
+    <script>
+        const slPrice  = document.getElementById('sl-price');
+        const slDp     = document.getElementById('sl-dp');
+        const slRate   = document.getElementById('sl-rate');
+        const selAmort = document.getElementById('sel-amort');
+
+        const lblPrice = document.getElementById('lbl-price');
+        const lblDp    = document.getElementById('lbl-dp');
+        const lblRate  = document.getElementById('lbl-rate');
+
+        const resMonthly  = document.getElementById('res-monthly');
+        const resMortgage = document.getElementById('res-mortgage');
+        const resInterest = document.getElementById('res-interest');
+        const resCmhc     = document.getElementById('res-cmhc');
+        const cmhcWarning = document.getElementById('cmhc-warning');
+        const cmhcPct     = document.getElementById('cmhc-pct');
+
+        function fmt(n) {
+            return '$' + Math.round(n).toLocaleString('en-CA');
+        }
+
+        function getCmhcRate(dpPct) {
+            if (dpPct >= 20) return 0;
+            if (dpPct >= 15) return 0.028;
+            if (dpPct >= 10) return 0.031;
+            return 0.040;
+        }
+
+        function calcMortgage() {
+            const price    = parseFloat(slPrice.value);
+            const dpPct    = parseFloat(slDp.value);
+            const annRate  = parseFloat(slRate.value) / 100;
+            const years    = parseInt(selAmort.value);
+
+            const dpAmount    = price * (dpPct / 100);
+            const baseMortgage = price - dpAmount;
+            const cmhcRate    = getCmhcRate(dpPct);
+            const cmhcAmount  = baseMortgage * cmhcRate;
+            const totalMortgage = baseMortgage + cmhcAmount;
+
+            // Monthly payment (Canadian mortgage: semi-annual compounding)
+            const effectiveRate = Math.pow(1 + annRate / 2, 2) - 1;
+            const monthlyRate   = Math.pow(1 + effectiveRate, 1/12) - 1;
+            const n             = years * 12;
+            const monthly       = totalMortgage * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
+            const totalPaid     = monthly * n;
+            const totalInterest = totalPaid - totalMortgage;
+
+            // Update labels
+            lblPrice.textContent = fmt(price);
+            lblDp.textContent    = fmt(dpAmount) + ' (' + dpPct + '%)';
+            lblRate.textContent  = parseFloat(slRate.value).toFixed(2) + '%';
+
+            // Update results
+            resMonthly.textContent  = fmt(monthly) + '/mo';
+            resMortgage.textContent = fmt(totalMortgage);
+            resInterest.textContent = fmt(totalInterest);
+            resCmhc.textContent     = cmhcAmount > 0 ? fmt(cmhcAmount) : '$0';
+
+            // CMHC warning
+            if (dpPct < 20) {
+                cmhcWarning.classList.add('visible');
+                cmhcPct.textContent = (cmhcRate * 100).toFixed(2) + '%';
+            } else {
+                cmhcWarning.classList.remove('visible');
+            }
+
+            // 30-yr only available for first-time / new builds — flag if selected with < 20% dp
+            // (just a reminder note — already in the UI copy)
+        }
+
+        [slPrice, slDp, slRate, selAmort].forEach(el => el.addEventListener('input', calcMortgage));
+        calcMortgage();
+    </script>
+
+</body>
+</html>
