@@ -1,7 +1,7 @@
-console.log("DP HEADER JS LOADED v1025 - SMOOTH LOAD");
+console.log("DP HEADER JS LOADED v1026 - SMOOTH LOAD");
 
 (function () {
-  const VERSION = "1025";
+  const VERSION = "1026";
   const LOGO_URL =
     "https://guide.duikerproperties.com/photos/brand/Powered%20by%20%281000%20x%20400%20px%29%20%281%29.png?v=" + VERSION;
 
@@ -303,4 +303,35 @@ console.log("DP HEADER JS LOADED v1025 - SMOOTH LOAD");
   } else {
     run();
   }
+})();
+
+// ── Listing links: open in same tab ──────────────────────────────────────────
+(function () {
+  function fixListingTargets() {
+    // Remove target="_blank" from all listing anchor tags
+    document.querySelectorAll("#listings a[target='_blank']").forEach(function (link) {
+      link.removeAttribute("target");
+    });
+
+    // Fix card-level clicks (data-link attribute on .listing-grid-cell)
+    document.querySelectorAll(".listing-grid-cell[data-link]").forEach(function (card) {
+      if (card.dataset.dpSameTabBound === "1") return;
+      card.dataset.dpSameTabBound = "1";
+      card.style.cursor = "pointer";
+      card.addEventListener("click", function (e) {
+        // Don't intercept Save / Similar Properties action buttons
+        if (e.target.closest("[data-action]")) return;
+        window.location.href = card.getAttribute("data-link");
+      });
+    });
+  }
+
+  // Run after DOM ready and again after a short delay to catch lazy-rendered listings
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", fixListingTargets);
+  } else {
+    fixListingTargets();
+  }
+  setTimeout(fixListingTargets, 1000);
+  setTimeout(fixListingTargets, 2500);
 })();
