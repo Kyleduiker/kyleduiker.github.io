@@ -266,17 +266,22 @@
                 fullscreenControl: true
             });
             var infoWindow = new google.maps.InfoWindow();
-            var pinIcon = {path:google.maps.SymbolPath.CIRCLE,fillColor:'#EA002A',fillOpacity:1,strokeColor:'#ffffff',strokeWeight:2,scale:8};
+            var houseIcon = {
+                url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="32" height="36" viewBox="0 0 32 36"><filter id="s" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="rgba(0,0,0,0.35)"/></filter><g filter="url(#s)"><polygon points="16,3 1,16 5,16 5,30 27,30 27,16 31,16" fill="#EA002A" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/><rect x="12" y="20" width="8" height="10" fill="#ffffff" opacity="0.9"/><rect x="19" y="17" width="5" height="5" fill="#ffffff" opacity="0.7"/></g></svg>'),
+                scaledSize: new google.maps.Size(32, 36),
+                anchor: new google.maps.Point(16, 34)
+            };
             communities.forEach(function(c) {
-                var marker = new google.maps.Marker({position:{lat:c.lat,lng:c.lng},map:map,title:c.name,icon:pinIcon,animation:google.maps.Animation.DROP});
+                var marker = new google.maps.Marker({position:{lat:c.lat,lng:c.lng},map:map,title:c.name,icon:houseIcon,animation:google.maps.Animation.DROP});
                 marker.addListener('click', function() {
-                    infoWindow.setContent('<div style="font-family:DM Sans,sans-serif;min-width:200px;padding:4px"><div style="font-family:Georgia,serif;font-size:1.05rem;font-weight:600;color:#1a1a1a;margin-bottom:0.4rem">'+c.name+'</div><div style="font-size:0.8rem;color:#666;line-height:1.5;margin-bottom:0.75rem">'+c.desc+'</div><a href="'+c.url+'" style="display:inline-block;padding:0.4rem 1rem;background:#EA002A;color:white;text-decoration:none;font-size:0.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px">View Community</a></div>');
+                    infoWindow.setContent('<div style="font-family:DM Sans,sans-serif;min-width:220px;padding:4px"><div style="font-family:Georgia,serif;font-size:1.05rem;font-weight:600;color:#1a1a1a;margin-bottom:0.4rem">'+c.name+'</div><div style="font-size:0.8rem;color:#666;line-height:1.5;margin-bottom:0.85rem">'+c.desc+'</div><div style="display:flex;gap:0.5rem;flex-wrap:wrap;"><a href="https://www.duikerproperties.com/idx" style="display:inline-block;padding:0.4rem 0.9rem;background:#EA002A;color:white;text-decoration:none;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px">View Listings</a><a href="'+c.url+'" style="display:inline-block;padding:0.4rem 0.9rem;background:transparent;color:#1a1a1a;text-decoration:none;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px;border:1.5px solid #e5e0d8">Learn More</a></div></div>');
                     infoWindow.open(map,marker);
                 });
             });
         }
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmMDCK4HXKxrpLs6FXM2xB3nhcRTzfKnA&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmMDCK4HXKxrpLs6FXM2xB3nhcRTzfKnA
+&callback=initMap"></script>
     <script>
         var reveals = document.querySelectorAll('.reveal');
         var observer = new IntersectionObserver(function(entries) {
