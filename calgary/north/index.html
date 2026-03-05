@@ -4,92 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calgary North Real Estate | Duiker Properties</title>
-    <meta name="description" content="Explore real estate in Calgary North — growing communities, family amenities.">
+    <meta name="description" content="Explore real estate in Calgary North — growing communities, family amenities, and strong new development. Kyle Duiker, Royal LePage Solutions.">
     <link rel="stylesheet" href="https://kyleduiker.github.io/duikerproperties-homepage/assets/css/header.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-        :root{--red:#EA002A;--blue:#003DA5;--gold:#C5A572;--gold-lt:#ddc89a;--dark:#0d0d0d;--off-white:#f5f2ed;--cream:#faf8f4;--text:#1a1a1a;--muted:#777;--border:#e5e0d8;}
-        body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.6;}
-        #header-container{position:relative;z-index:1000;width:100%;}
-        .hero{background:var(--dark);color:white;min-height:70vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding-top:80px;text-align:center;}
-        .hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,0.015) 60px,rgba(255,255,255,0.015) 61px);pointer-events:none;}
-        .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--red),var(--blue));}
-        .hero-inner{position:relative;z-index:2;max-width:780px;padding:4rem 2rem;}
-        .hero-eyebrow{display:flex;align-items:center;justify-content:center;gap:0.75rem;margin-bottom:1.75rem;}
-        .eyebrow-line{width:40px;height:1px;background:var(--gold);}
-        .eyebrow-text{font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500;}
-        .hero-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:300;line-height:1.1;color:white;margin-bottom:1.5rem;animation:fadeUp 0.7s 0.1s ease both;}
-        .hero-headline em{font-style:italic;color:var(--gold-lt);}
-        .hero-subhead{font-size:1.05rem;color:rgba(255,255,255,0.65);line-height:1.8;max-width:580px;margin:0 auto 2.5rem;animation:fadeUp 0.7s 0.2s ease both;}
-        .hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.7s 0.3s ease both;}
-        .btn-primary{display:inline-block;padding:1rem 2.5rem;background:var(--red);color:white;text-decoration:none;font-size:0.85rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border-radius:4px;transition:all 0.25s ease;box-shadow:0 4px 20px rgba(234,0,42,0.3);}
-        .btn-primary:hover{background:#c80020;transform:translateY(-2px);}
-        .btn-outline{display:inline-block;padding:1rem 2.5rem;background:transparent;color:white;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;border-radius:4px;border:1px solid rgba(255,255,255,0.2);transition:all 0.25s ease;}
-        .btn-outline:hover{border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.05);transform:translateY(-2px);}
-        .section{padding:5rem 0;}
-        .container{max-width:1100px;margin:0 auto;padding:0 2rem;}
-        .section-eyebrow{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;}
-        .section-eyebrow-centered{justify-content:center;}
-        .section-eyebrow .eyebrow-line{background:var(--gold);}
-        .section-eyebrow .eyebrow-text{color:var(--gold);font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;font-weight:500;}
-        .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:300;line-height:1.2;color:var(--text);margin-bottom:1rem;}
-        .section-title em{font-style:italic;color:var(--red);}
-        .about-section{background:white;}
-        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-        .about-body p{color:#444;line-height:1.85;font-size:0.97rem;margin-bottom:1.25rem;}
-        .feature-list{margin-top:2rem;display:flex;flex-direction:column;gap:0.75rem;}
-        .feature-item{display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;font-weight:500;color:var(--text);}
-        .feature-dot{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0;}
-        .highlight-card{background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:2.5rem;position:relative;}
-        .highlight-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--red),var(--blue));border-radius:16px 16px 0 0;}
-        .highlight-card h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;margin-bottom:1.25rem;color:var(--text);}
-        .highlight-card ul{list-style:none;display:flex;flex-direction:column;gap:0.65rem;}
-        .highlight-card ul li{font-size:0.88rem;color:#555;padding-left:1rem;position:relative;line-height:1.6;}
-        .highlight-card ul li::before{content:'→';position:absolute;left:0;color:var(--red);font-size:0.8rem;}
-        .map-section{background:var(--off-white);padding:5rem 0;}
-        .map-header{text-align:center;margin-bottom:2.5rem;}
-        .map-header .section-eyebrow{justify-content:center;}
-        .map-header p{color:var(--muted);font-size:0.9rem;margin-top:0.5rem;}
-        .map-wrapper{border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 8px 40px rgba(0,0,0,0.1);}
-        #community-map{width:100%;height:560px;}
-        .communities-section{background:white;}
-        .communities-header{text-align:center;margin-bottom:3rem;}
-        .communities-header .section-eyebrow{justify-content:center;}
-        .community-count{display:inline-block;font-size:0.78rem;color:var(--muted);letter-spacing:1px;margin-top:0.5rem;}
-        .community-links-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;}
-        .community-link-card{background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:1.1rem 1rem;text-decoration:none;color:var(--text);transition:all 0.2s ease;display:flex;flex-direction:column;gap:0.2rem;}
-        .community-link-card:hover{border-color:var(--red);transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.07);}
-        .community-link-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--text);}
-        .community-link-desc{font-size:0.72rem;color:var(--muted);line-height:1.45;}
-        .community-link-arrow{font-size:0.7rem;color:var(--red);margin-top:0.3rem;font-weight:600;}
-        .links-section{background:var(--off-white);}
-        .links-header{text-align:center;margin-bottom:3rem;}
-        .links-header .section-eyebrow{justify-content:center;}
-        .quadrant-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
-        .quadrant-card{background:white;border:1px solid var(--border);border-radius:10px;padding:1.5rem 1.25rem;text-align:center;text-decoration:none;color:var(--text);transition:all 0.25s ease;display:flex;flex-direction:column;align-items:center;gap:0.5rem;}
-        .quadrant-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.08);}
-        .quadrant-card.hub{border-color:var(--gold);background:linear-gradient(135deg,#fff 0%,var(--cream) 100%);}
-        .quadrant-card-label{font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
-        .quadrant-card-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--text);}
-        .quadrant-card-arrow{font-size:0.8rem;color:var(--red);margin-top:0.25rem;}
-        .cta-section{background:var(--blue);padding:5rem 0;text-align:center;position:relative;overflow:hidden;}
-        .cta-section::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,0.02) 60px,rgba(255,255,255,0.02) 61px);pointer-events:none;}
-        .cta-section .container{position:relative;z-index:1;}
-        .cta-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:white;margin-bottom:1rem;}
-        .cta-section h2 em{font-style:italic;color:var(--gold-lt);}
-        .cta-section p{color:rgba(255,255,255,0.7);font-size:1rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.75;}
-        .cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-        .cta-section .btn-primary{background:var(--red);box-shadow:0 4px 20px rgba(0,0,0,0.3);}
-        .cta-section .btn-outline{border-color:rgba(255,255,255,0.25);}
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root { --red:#EA002A;--blue:#003DA5;--gold:#C5A572;--gold-lt:#ddc89a;--dark:#0d0d0d;--off-white:#f5f2ed;--cream:#faf8f4;--text:#1a1a1a;--muted:#777;--border:#e5e0d8; }
+        body { font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.6; }
+        #header-container { position:relative;z-index:1000;width:100%; }
+        .hero { background:var(--dark);color:white;min-height:70vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding-top:80px;text-align:center; }
+        .hero::before { content:'';position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,0.015) 60px,rgba(255,255,255,0.015) 61px);pointer-events:none; }
+        .hero::after { content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--red),var(--blue)); }
+        .hero-inner { position:relative;z-index:2;max-width:780px;padding:4rem 2rem; }
+        .hero-eyebrow { display:flex;align-items:center;justify-content:center;gap:0.75rem;margin-bottom:1.75rem; }
+        .eyebrow-line { width:40px;height:1px;background:var(--gold); }
+        .eyebrow-text { font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500; }
+        .hero-headline { font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:300;line-height:1.1;color:white;margin-bottom:1.5rem;animation:fadeUp 0.7s 0.1s ease both; }
+        .hero-headline em { font-style:italic;color:var(--gold-lt); }
+        .hero-subhead { font-size:1.05rem;color:rgba(255,255,255,0.65);line-height:1.8;max-width:580px;margin:0 auto 2.5rem;animation:fadeUp 0.7s 0.2s ease both; }
+        .hero-cta { display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.7s 0.3s ease both; }
+        .btn-primary { display:inline-block;padding:1rem 2.5rem;background:var(--red);color:white;text-decoration:none;font-size:0.85rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border-radius:4px;transition:all 0.25s ease;box-shadow:0 4px 20px rgba(234,0,42,0.3); }
+        .btn-primary:hover { background:#c80020;transform:translateY(-2px);box-shadow:0 8px 30px rgba(234,0,42,0.45); }
+        .btn-outline { display:inline-block;padding:1rem 2.5rem;background:transparent;color:white;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;border-radius:4px;border:1px solid rgba(255,255,255,0.2);transition:all 0.25s ease; }
+        .btn-outline:hover { border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.05);transform:translateY(-2px); }
+        .section { padding:5rem 0; }
+        .container { max-width:1100px;margin:0 auto;padding:0 2rem; }
+        .section-eyebrow { display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem; }
+        .section-eyebrow-centered { justify-content:center; }
+        .section-eyebrow .eyebrow-line { background:var(--gold); }
+        .section-eyebrow .eyebrow-text { color:var(--gold);font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;font-weight:500; }
+        .section-title { font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:300;line-height:1.2;color:var(--text);margin-bottom:1rem; }
+        .section-title em { font-style:italic;color:var(--red); }
+        .about-section { background:white; }
+        .about-grid { display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start; }
+        .about-body p { color:#444;line-height:1.85;font-size:0.97rem;margin-bottom:1.25rem; }
+        .feature-list { margin-top:2rem;display:flex;flex-direction:column;gap:0.75rem; }
+        .feature-item { display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;font-weight:500;color:var(--text); }
+        .feature-dot { width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0; }
+        .highlight-card { background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:2.5rem;position:relative; }
+        .highlight-card::before { content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--red),var(--blue));border-radius:16px 16px 0 0; }
+        .highlight-card h3 { font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;margin-bottom:1.25rem;color:var(--text); }
+        .highlight-card ul { list-style:none;display:flex;flex-direction:column;gap:0.65rem; }
+        .highlight-card ul li { font-size:0.88rem;color:#555;padding-left:1rem;position:relative;line-height:1.6; }
+        .highlight-card ul li::before { content:'→';position:absolute;left:0;color:var(--red);font-size:0.8rem; }
+        .map-section { background:var(--off-white);padding:5rem 0; }
+        .map-header { text-align:center;margin-bottom:2.5rem; }
+        .map-header .section-eyebrow { justify-content:center; }
+        .map-header p { color:var(--muted);font-size:0.9rem;margin-top:0.5rem; }
+        .map-wrapper { border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 8px 40px rgba(0,0,0,0.1); }
+        #community-map { width:100%;height:560px; }
+        .communities-section { background:white; }
+        .communities-header { text-align:center;margin-bottom:3rem; }
+        .communities-header .section-eyebrow { justify-content:center; }
+        .community-count { display:inline-block;font-size:0.78rem;color:var(--muted);letter-spacing:1px;margin-top:0.5rem; }
+        .community-links-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem; }
+        .community-link-card { background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:1.1rem 1rem;text-decoration:none;color:var(--text);transition:all 0.2s ease;display:flex;flex-direction:column;gap:0.2rem; }
+        .community-link-card:hover { border-color:var(--red);transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.07); }
+        .community-link-name { font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--text); }
+        .community-link-desc { font-size:0.72rem;color:var(--muted);line-height:1.45; }
+        .community-link-arrow { font-size:0.7rem;color:var(--red);margin-top:0.3rem;font-weight:600; }
+        .links-section { background:var(--off-white); }
+        .links-header { text-align:center;margin-bottom:3rem; }
+        .links-header .section-eyebrow { justify-content:center; }
+        .quadrant-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:1rem; }
+        .quadrant-card { background:white;border:1px solid var(--border);border-radius:10px;padding:1.5rem 1.25rem;text-align:center;text-decoration:none;color:var(--text);transition:all 0.25s ease;display:flex;flex-direction:column;align-items:center;gap:0.5rem; }
+        .quadrant-card:hover { border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+        .quadrant-card.hub { border-color:var(--gold);background:linear-gradient(135deg,#fff 0%,var(--cream) 100%); }
+        .quadrant-card-label { font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted); }
+        .quadrant-card-title { font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--text); }
+        .quadrant-card-arrow { font-size:0.8rem;color:var(--red);margin-top:0.25rem; }
+        .cta-section { background:var(--blue);padding:5rem 0;text-align:center;position:relative;overflow:hidden; }
+        .cta-section::before { content:'';position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,0.02) 60px,rgba(255,255,255,0.02) 61px);pointer-events:none; }
+        .cta-section .container { position:relative;z-index:1; }
+        .cta-section h2 { font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:white;margin-bottom:1rem; }
+        .cta-section h2 em { font-style:italic;color:var(--gold-lt); }
+        .cta-section p { color:rgba(255,255,255,0.7);font-size:1rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.75; }
+        .cta-buttons { display:flex;gap:1rem;justify-content:center;flex-wrap:wrap; }
+        .cta-section .btn-primary { background:var(--red);box-shadow:0 4px 20px rgba(0,0,0,0.3); }
+        .cta-section .btn-outline { border-color:rgba(255,255,255,0.25); }
         @media(max-width:1000px){.community-links-grid{grid-template-columns:repeat(3,1fr);}}
         @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:3rem;}.quadrant-grid{grid-template-columns:repeat(2,1fr);}.community-links-grid{grid-template-columns:repeat(2,1fr);}#community-map{height:420px;}}
         @media(max-width:600px){.hero-cta,.cta-buttons{flex-direction:column;align-items:center;}.quadrant-grid,.community-links-grid{grid-template-columns:1fr;}#community-map{height:320px;}}
         @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
         .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
         .reveal.visible{opacity:1;transform:translateY(0);}
-</style>
+
+    </style>
 </head>
 <body>
     <div id="header-container"></div>
@@ -110,22 +112,26 @@
                 <div class="about-body reveal">
                     <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Calgary North</span></div>
                     <h2 class="section-title">Space, Value, <em>Community Growth</em></h2>
-                    <p>North Calgary offers a broad range of housing options from well-priced townhomes to detached family homes in newer developments.</p>
-                    <p>Access to Nose Hill Park, strong school options, and improving transit make North Calgary a compelling choice for families and first-time buyers.</p>
-                    <div class="feature-list">                        <div class="feature-item"><div class="feature-dot"></div>Newer communities with modern amenities</div>
-                        <div class="feature-item"><div class="feature-dot"></div>Proximity to Nose Hill Park</div>
+                    <p>North Calgary offers a broad range of housing options from well-priced townhomes to detached family homes in newer developments. The area has seen significant growth in retail and recreation infrastructure.</p>
+                    <p>Access to Nose Hill Park, strong school options, and improving transit make North Calgary a compelling choice for families and first-time buyers looking for space without a premium price tag.</p>
+                    <div class="feature-list">
+                        <div class="feature-item"><div class="feature-dot"></div>Newer communities with modern amenities</div>
+                        <div class="feature-item"><div class="feature-dot"></div>Proximity to Nose Hill Park — one of Calgary's largest natural spaces</div>
                         <div class="feature-item"><div class="feature-dot"></div>Growing commercial and retail corridors</div>
-                        <div class="feature-item"><div class="feature-dot"></div>Competitive pricing relative to south Calgary</div></div>
+                        <div class="feature-item"><div class="feature-dot"></div>Competitive pricing relative to south Calgary</div>
+                    </div>
                 </div>
                 <div class="reveal">
                     <div class="highlight-card">
                         <h3>Neighbourhoods to Know</h3>
-                        <ul>                    <li>Panorama Hills — large, established, family-centred</li>
+                        <ul>
+                    <li>Panorama Hills — large, established, family-centred</li>
                     <li>Evanston — newer, community-focused design</li>
                     <li>Nolan Hill — contemporary homes, strong growth</li>
                     <li>Livingston — master-planned, amenity-rich</li>
                     <li>Harvest Hills — established north community</li>
-                    <li>Coventry Hills — family homes, good school proximity</li></ul>
+                    <li>Coventry Hills — family homes, good school proximity</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -153,34 +159,34 @@
                 <span class="community-count">28 communities</span>
             </div>
             <div class="community-links-grid reveal">
-                <a href="https://guide.duikerproperties.com/calgary/north/beddington-heights/" class="community-link-card"><span class="community-link-name">Beddington Heights</span><span class="community-link-desc">Established community with mature infrastructure</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/country-hills/" class="community-link-card"><span class="community-link-name">Country Hills</span><span class="community-link-desc">Well-rounded north community with full amenities</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/country-hills-village/" class="community-link-card"><span class="community-link-name">Country Hills Village</span><span class="community-link-desc">Quieter pocket within the Country Hills area</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/coventry-hills/" class="community-link-card"><span class="community-link-name">Coventry Hills</span><span class="community-link-desc">Family homes with good school proximity</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/edgemont/" class="community-link-card"><span class="community-link-name">Edgemont</span><span class="community-link-desc">Elevated views and mature community character</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/evanston/" class="community-link-card"><span class="community-link-name">Evanston</span><span class="community-link-desc">Thoughtfully designed newer community</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/glacier-ridge/" class="community-link-card"><span class="community-link-name">Glacier Ridge</span><span class="community-link-desc">New community on Calgary's north edge</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/greenview/" class="community-link-card"><span class="community-link-name">Greenview</span><span class="community-link-desc">Established north community close to the city</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/harvest-hills/" class="community-link-card"><span class="community-link-name">Harvest Hills</span><span class="community-link-desc">Established community with easy ring road access</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/hidden-valley/" class="community-link-card"><span class="community-link-name">Hidden Valley</span><span class="community-link-desc">Quiet north community with natural surroundings</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/highwood/" class="community-link-card"><span class="community-link-name">Highwood</span><span class="community-link-desc">Mature north community near Nose Hill</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/huntington-hills/" class="community-link-card"><span class="community-link-name">Huntington Hills</span><span class="community-link-desc">Long-standing family community in the north</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/kincora/" class="community-link-card"><span class="community-link-name">Kincora</span><span class="community-link-desc">Newer development with strong community amenities</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/livingston/" class="community-link-card"><span class="community-link-name">Livingston</span><span class="community-link-desc">Master-planned community with future HOA</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/macewan-glen/" class="community-link-card"><span class="community-link-name">MacEwan Glen</span><span class="community-link-desc">Established community with mature landscaping</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/nolan-hill/" class="community-link-card"><span class="community-link-name">Nolan Hill</span><span class="community-link-desc">Contemporary homes with rapid growth</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/north-haven/" class="community-link-card"><span class="community-link-name">North Haven</span><span class="community-link-desc">Well-established family neighbourhood</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/panorama-hills/" class="community-link-card"><span class="community-link-name">Panorama Hills</span><span class="community-link-desc">Large, amenity-rich family community</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/ranchlands/" class="community-link-card"><span class="community-link-name">Ranchlands</span><span class="community-link-desc">Mature community with established character</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/rocky-ridge/" class="community-link-card"><span class="community-link-name">Rocky Ridge</span><span class="community-link-desc">Scenic community with mountain views</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/royal-oak/" class="community-link-card"><span class="community-link-name">Royal Oak</span><span class="community-link-desc">Established and amenity-rich suburb</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/royal-vista/" class="community-link-card"><span class="community-link-name">Royal Vista</span><span class="community-link-desc">Newer community adjacent to Royal Oak</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/sage-hill/" class="community-link-card"><span class="community-link-name">Sage Hill</span><span class="community-link-desc">Newer suburban community on the north edge</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/sandstone-valley/" class="community-link-card"><span class="community-link-name">Sandstone Valley</span><span class="community-link-desc">Established community near Nose Hill Park</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/scenic-acres/" class="community-link-card"><span class="community-link-name">Scenic Acres</span><span class="community-link-desc">Mature community with great north-city views</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/silver-springs/" class="community-link-card"><span class="community-link-name">Silver Springs</span><span class="community-link-desc">Established community beside the Bow River</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/symons-valley-ranch/" class="community-link-card"><span class="community-link-name">Symons Valley Ranch</span><span class="community-link-desc">Rural-feel acreage community north of the city</span><span class="community-link-arrow">View →</span></a>
-                <a href="https://guide.duikerproperties.com/calgary/north/thorncliffe/" class="community-link-card"><span class="community-link-name">Thorncliffe</span><span class="community-link-desc">Long-standing family community in the north</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/beddington-heights/" class="community-link-card"><span class="community-link-name">Beddington Heights</span><span class="community-link-desc">Established community with mature infrastructure</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/country-hills/" class="community-link-card"><span class="community-link-name">Country Hills</span><span class="community-link-desc">Well-rounded north community with full amenities</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/country-hills-village/" class="community-link-card"><span class="community-link-name">Country Hills Village</span><span class="community-link-desc">Quieter pocket within the Country Hills area</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/coventry-hills/" class="community-link-card"><span class="community-link-name">Coventry Hills</span><span class="community-link-desc">Family homes with good school proximity</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/edgemont/" class="community-link-card"><span class="community-link-name">Edgemont</span><span class="community-link-desc">Elevated views and mature community character</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/evanston/" class="community-link-card"><span class="community-link-name">Evanston</span><span class="community-link-desc">Thoughtfully designed newer community</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/glacier-ridge/" class="community-link-card"><span class="community-link-name">Glacier Ridge</span><span class="community-link-desc">New community on Calgary's north edge</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/greenview/" class="community-link-card"><span class="community-link-name">Greenview</span><span class="community-link-desc">Established north community close to the city</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/harvest-hills/" class="community-link-card"><span class="community-link-name">Harvest Hills</span><span class="community-link-desc">Established community with easy ring road access</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/hidden-valley/" class="community-link-card"><span class="community-link-name">Hidden Valley</span><span class="community-link-desc">Quiet north community with natural surroundings</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/highwood/" class="community-link-card"><span class="community-link-name">Highwood</span><span class="community-link-desc">Mature north community near Nose Hill</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/huntington-hills/" class="community-link-card"><span class="community-link-name">Huntington Hills</span><span class="community-link-desc">Long-standing family community in the north</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/kincora/" class="community-link-card"><span class="community-link-name">Kincora</span><span class="community-link-desc">Newer development with strong community amenities</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/livingston/" class="community-link-card"><span class="community-link-name">Livingston</span><span class="community-link-desc">Master-planned community with future HOA</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/macewan-glen/" class="community-link-card"><span class="community-link-name">MacEwan Glen</span><span class="community-link-desc">Established community with mature landscaping</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/nolan-hill/" class="community-link-card"><span class="community-link-name">Nolan Hill</span><span class="community-link-desc">Contemporary homes with rapid growth</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/north-haven/" class="community-link-card"><span class="community-link-name">North Haven</span><span class="community-link-desc">Well-established family neighbourhood</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/panorama-hills/" class="community-link-card"><span class="community-link-name">Panorama Hills</span><span class="community-link-desc">Large, amenity-rich family community</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/ranchlands/" class="community-link-card"><span class="community-link-name">Ranchlands</span><span class="community-link-desc">Mature community with established character</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/rocky-ridge/" class="community-link-card"><span class="community-link-name">Rocky Ridge</span><span class="community-link-desc">Scenic community with mountain views</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/royal-oak/" class="community-link-card"><span class="community-link-name">Royal Oak</span><span class="community-link-desc">Established and amenity-rich suburb</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/royal-vista/" class="community-link-card"><span class="community-link-name">Royal Vista</span><span class="community-link-desc">Newer community adjacent to Royal Oak</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/sage-hill/" class="community-link-card"><span class="community-link-name">Sage Hill</span><span class="community-link-desc">Newer suburban community on the north edge</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/sandstone-valley/" class="community-link-card"><span class="community-link-name">Sandstone Valley</span><span class="community-link-desc">Established community near Nose Hill Park</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/scenic-acres/" class="community-link-card"><span class="community-link-name">Scenic Acres</span><span class="community-link-desc">Mature community with great north-city views</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/silver-springs/" class="community-link-card"><span class="community-link-name">Silver Springs</span><span class="community-link-desc">Established community beside the Bow River</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/symons-valley-ranch/" class="community-link-card"><span class="community-link-name">Symons Valley Ranch</span><span class="community-link-desc">Rural-feel acreage community north of the city</span><span class="community-link-arrow">View →</span></a>
+                <a href="/calgary/communities/thorncliffe/" class="community-link-card"><span class="community-link-name">Thorncliffe</span><span class="community-link-desc">Long-standing family community in the north</span><span class="community-link-arrow">View →</span></a>
             </div>
         </div>
     </section>
@@ -191,6 +197,7 @@
                 <h2 class="section-title" style="text-align:center;">Browse Calgary <em>By Quadrant</em></h2>
             </div>
             <div class="quadrant-grid reveal">
+
                 <a href="/calgary/" class="quadrant-card hub"><span class="quadrant-card-label">All Calgary</span><span class="quadrant-card-title">Calgary</span><span class="quadrant-card-arrow">Explore →</span></a>
                 <a href="/calgary/city-center/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">City Centre</span><span class="quadrant-card-arrow">Explore →</span></a>
                 <a href="/calgary/east/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">East</span><span class="quadrant-card-arrow">Explore →</span></a>
@@ -198,7 +205,8 @@
                 <a href="/calgary/north-east/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">Northeast</span><span class="quadrant-card-arrow">Explore →</span></a>
                 <a href="/calgary/north-west/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">Northwest</span><span class="quadrant-card-arrow">Explore →</span></a>
                 <a href="/calgary/south/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">South</span><span class="quadrant-card-arrow">Explore →</span></a>
-                <a href="/calgary/south-east/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">Southeast</span><span class="quadrant-card-arrow">Explore →</span></a></div>
+                <a href="/calgary/south-east/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">Southeast</span><span class="quadrant-card-arrow">Explore →</span></a>
+            </div>
         </div>
     </section>
     <section class="cta-section">
@@ -215,34 +223,34 @@
 
     <script>
         var communities = [
-  {name:"Beddington Heights",desc:"Established community with mature infrastructure",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Beddington+Heights&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Abeddington+heights%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/beddington-heights/",lat:51.0447,lng:-114.0719},
-  {name:"Country Hills",desc:"Well-rounded north community with full amenities",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Country+Hills&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Acountry+hills%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/country-hills/",lat:51.0447,lng:-114.0719},
-  {name:"Country Hills Village",desc:"Quieter pocket within the Country Hills area",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Country+Hills+Village&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Acountry+hills+village%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/country-hills-village/",lat:51.0447,lng:-114.0719},
-  {name:"Coventry Hills",desc:"Family homes with good school proximity",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Coventry+Hills&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Acoventry+hills%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/coventry-hills/",lat:51.0447,lng:-114.0719},
-  {name:"Edgemont",desc:"Elevated views and mature community character",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Edgemont&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aedgemont%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/edgemont/",lat:51.0447,lng:-114.0719},
-  {name:"Evanston",desc:"Thoughtfully designed newer community",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Evanston&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aevanston%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/evanston/",lat:51.0447,lng:-114.0719},
-  {name:"Glacier Ridge",desc:"New community on Calgary\'s north edge",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Glacier+Ridge&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aglacier+ridge%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/glacier-ridge/",lat:51.0447,lng:-114.0719},
-  {name:"Greenview",desc:"Established north community close to the city",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Greenview&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Agreenview%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/greenview/",lat:51.0447,lng:-114.0719},
-  {name:"Harvest Hills",desc:"Established community with easy ring road access",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Harvest+Hills&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aharvest+hills%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/harvest-hills/",lat:51.0447,lng:-114.0719},
-  {name:"Hidden Valley",desc:"Quiet north community with natural surroundings",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Hidden+Valley&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Ahidden+valley%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/hidden-valley/",lat:51.0447,lng:-114.0719},
-  {name:"Highwood",desc:"Mature north community near Nose Hill",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Highwood&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Ahighwood%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/highwood/",lat:51.0447,lng:-114.0719},
-  {name:"Huntington Hills",desc:"Long-standing family community in the north",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Huntington+Hills&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Ahuntington+hills%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/huntington-hills/",lat:51.0447,lng:-114.0719},
-  {name:"Kincora",desc:"Newer development with strong community amenities",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Kincora&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Akincora%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/kincora/",lat:51.0447,lng:-114.0719},
-  {name:"Livingston",desc:"Master-planned community with future HOA",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Livingston&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Alivingston%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/livingston/",lat:51.0447,lng:-114.0719},
-  {name:"MacEwan Glen",desc:"Established community with mature landscaping",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=MacEwan+Glen&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Amacewan+glen%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/macewan-glen/",lat:51.0447,lng:-114.0719},
-  {name:"Nolan Hill",desc:"Contemporary homes with rapid growth",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Nolan+Hill&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Anolan+hill%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/nolan-hill/",lat:51.0447,lng:-114.0719},
-  {name:"North Haven",desc:"Well-established family neighbourhood",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=North+Haven&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Anorth+haven%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/north-haven/",lat:51.0447,lng:-114.0719},
-  {name:"Panorama Hills",desc:"Large, amenity-rich family community",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Panorama+Hills&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Apanorama+hills%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/panorama-hills/",lat:51.0447,lng:-114.0719},
-  {name:"Ranchlands",desc:"Mature community with established character",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Ranchlands&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aranchlands%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/ranchlands/",lat:51.0447,lng:-114.0719},
-  {name:"Rocky Ridge",desc:"Scenic community with mountain views",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Rocky+Ridge&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Arocky+ridge%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/rocky-ridge/",lat:51.0447,lng:-114.0719},
-  {name:"Royal Oak",desc:"Established and amenity-rich suburb",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Royal+Oak&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aroyal+oak%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/royal-oak/",lat:51.0447,lng:-114.0719},
-  {name:"Royal Vista",desc:"Newer community adjacent to Royal Oak",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Royal+Vista&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aroyal+vista%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/royal-vista/",lat:51.0447,lng:-114.0719},
-  {name:"Sage Hill",desc:"Newer suburban community on the north edge",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Sage+Hill&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Asage+hill%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/sage-hill/",lat:51.0447,lng:-114.0719},
-  {name:"Sandstone Valley",desc:"Established community near Nose Hill Park",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Sandstone+Valley&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Asandstone+valley%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/sandstone-valley/",lat:51.0447,lng:-114.0719},
-  {name:"Scenic Acres",desc:"Mature community with great north-city views",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Scenic+Acres&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Ascenic+acres%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/scenic-acres/",lat:51.0447,lng:-114.0719},
-  {name:"Silver Springs",desc:"Established community beside the Bow River",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Silver+Springs&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Asilver+springs%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/silver-springs/",lat:51.0447,lng:-114.0719},
-  {name:"Symons Valley Ranch",desc:"Rural-feel acreage community north of the city",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Symons+Valley+Ranch&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Asymons+valley+ranch%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/symons-valley-ranch/",lat:51.0447,lng:-114.0719},
-  {name:"Thorncliffe",desc:"Long-standing family community in the north",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Thorncliffe&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Athorncliffe%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/thorncliffe/",lat:51.0447,lng:-114.0719},
+  {name:"Beddington Heights",desc:"Established community with mature infrastructure",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Beddington+Heights&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Abeddington+heights%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/beddington-heights/",lat:51.1234,lng:-114.0756},
+  {name:"Country Hills",desc:"Well-rounded north community with full amenities",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Country+Hills&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Acountry+hills%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/country-hills/",lat:51.1523,lng:-114.0867},
+  {name:"Country Hills Village",desc:"Quieter pocket within the Country Hills area",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Country+Hills+Village&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Acountry+hills+village%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/country-hills-village/",lat:51.1589,lng:-114.0756},
+  {name:"Coventry Hills",desc:"Family homes with good school proximity",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Coventry+Hills&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Acoventry+hills%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/coventry-hills/",lat:51.1634,lng:-114.0578},
+  {name:"Edgemont",desc:"Elevated views and mature community character",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Edgemont&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aedgemont%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/edgemont/",lat:51.1312,lng:-114.1423},
+  {name:"Evanston",desc:"Thoughtfully designed newer community",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Evanston&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aevanston%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/evanston/",lat:51.1756,lng:-114.0867},
+  {name:"Glacier Ridge",desc:"New community on Calgary's north edge",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Glacier+Ridge&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aglacier+ridge%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/glacier-ridge/",lat:51.1934,lng:-114.1234},
+  {name:"Greenview",desc:"Established north community close to the city",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Greenview&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Agreenview%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/greenview/",lat:51.1045,lng:-114.0578},
+  {name:"Harvest Hills",desc:"Established community with easy ring road access",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Harvest+Hills&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aharvest+hills%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/harvest-hills/",lat:51.1467,lng:-114.0578},
+  {name:"Hidden Valley",desc:"Quiet north community with natural surroundings",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Hidden+Valley&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Ahidden+valley%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/hidden-valley/",lat:51.1578,lng:-114.1045},
+  {name:"Highwood",desc:"Mature north community near Nose Hill",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Highwood&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Ahighwood%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/highwood/",lat:51.1045,lng:-114.0867},
+  {name:"Huntington Hills",desc:"Long-standing family community in the north",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Huntington+Hills&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Ahuntington+hills%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/huntington-hills/",lat:51.1156,lng:-114.0756},
+  {name:"Kincora",desc:"Newer development with strong community amenities",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Kincora&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Akincora%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/kincora/",lat:51.1712,lng:-114.1156},
+  {name:"Livingston",desc:"Master-planned community with future HOA",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Livingston&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Alivingston%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/livingston/",lat:51.1934,lng:-114.0578},
+  {name:"MacEwan Glen",desc:"Established community with mature landscaping",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=MacEwan+Glen&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Amacewan+glen%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/macewan-glen/",lat:51.1389,lng:-114.1267},
+  {name:"Nolan Hill",desc:"Contemporary homes with rapid growth",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Nolan+Hill&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Anolan+hill%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/nolan-hill/",lat:51.1801,lng:-114.1156},
+  {name:"North Haven",desc:"Well-established family neighbourhood",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=North+Haven&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Anorth+haven%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/north-haven/",lat:51.1089,lng:-114.0756},
+  {name:"Panorama Hills",desc:"Large, amenity-rich family community",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Panorama+Hills&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Apanorama+hills%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/panorama-hills/",lat:51.1578,lng:-114.0312},
+  {name:"Ranchlands",desc:"Mature community with established character",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Ranchlands&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aranchlands%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north-west/ranchlands/",lat:51.1156,lng:-114.1578},
+  {name:"Rocky Ridge",desc:"Scenic community with mountain views",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Rocky+Ridge&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Arocky+ridge%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/rocky-ridge/",lat:51.1456,lng:-114.1867},
+  {name:"Royal Oak",desc:"Established and amenity-rich suburb",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Royal+Oak&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aroyal+oak%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/royal-oak/",lat:51.1389,lng:-114.1756},
+  {name:"Royal Vista",desc:"Newer community adjacent to Royal Oak",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Royal+Vista&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aroyal+vista%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/royal-vista/",lat:51.1312,lng:-114.1867},
+  {name:"Sage Hill",desc:"Newer suburban community on the north edge",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Sage+Hill&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Asage+hill%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/sage-hill/",lat:51.1867,lng:-114.1312},
+  {name:"Sandstone Valley",desc:"Established community near Nose Hill Park",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Sandstone+Valley&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Asandstone+valley%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/sandstone-valley/",lat:51.1267,lng:-114.0978},
+  {name:"Scenic Acres",desc:"Mature community with great north-city views",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Scenic+Acres&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Ascenic+acres%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north-west/scenic-acres/",lat:51.1234,lng:-114.1756},
+  {name:"Silver Springs",desc:"Established community beside the Bow River",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Silver+Springs&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Asilver+springs%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north-west/silver-springs/",lat:51.1089,lng:-114.1578},
+  {name:"Symons Valley Ranch",desc:"Rural-feel acreage community north of the city",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Symons+Valley+Ranch&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Asymons+valley+ranch%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/symons-valley-ranch/",lat:51.2045,lng:-114.1578},
+  {name:"Thorncliffe",desc:"Long-standing family community in the north",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Thorncliffe&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Athorncliffe%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/north/thorncliffe/",lat:51.1045,lng:-114.0623},
         ];
         function initMap() {
             var map = new google.maps.Map(document.getElementById('community-map'), {
@@ -258,13 +266,13 @@
             communities.forEach(function(c) {
                 var marker = new google.maps.Marker({position:{lat:c.lat,lng:c.lng},map:map,title:c.name,icon:pinIcon,animation:google.maps.Animation.DROP});
                 marker.addListener('click', function() {
-                    infoWindow.setContent('<div style="font-family:DM Sans,sans-serif;min-width:220px;padding:4px"><div style="font-family:Georgia,serif;font-size:1.05rem;font-weight:600;color:#1a1a1a;margin-bottom:0.4rem">'+c.name+'</div><div style="font-size:0.8rem;color:#666;line-height:1.5;margin-bottom:0.85rem">'+c.desc+'</div><div style="display:flex;gap:0.5rem;flex-wrap:wrap;"><a href="'+c.idxUrl+'" style="display:inline-block;padding:0.4rem 0.9rem;background:#EA002A;color:white;text-decoration:none;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px">View Listings</a><a href="'+c.url+'" style="display:inline-block;padding:0.4rem 0.9rem;background:transparent;color:#1a1a1a;text-decoration:none;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px;border:1.5px solid #e5e0d8">Learn More</a></div></div>');
+                    infoWindow.setContent('<div style="font-family:DM Sans,sans-serif;min-width:220px;padding:4px"><div style="font-family:Georgia,serif;font-size:1.05rem;font-weight:600;color:#1a1a1a;margin-bottom:0.4rem">'+c.name+'</div><div style="font-size:0.8rem;color:#666;line-height:1.5;margin-bottom:0.85rem">'+c.desc+'</div><div style="display:flex;gap:0.5rem;flex-wrap:wrap;"><a href="'+ c.idxUrl +'" style="display:inline-block;padding:0.4rem 0.9rem;background:#EA002A;color:white;text-decoration:none;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px">View Listings</a><a href="'+c.url+'" style="display:inline-block;padding:0.4rem 0.9rem;background:transparent;color:#1a1a1a;text-decoration:none;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px;border:1.5px solid #e5e0d8">Learn More</a></div></div>');
                     infoWindow.open(map,marker);
                 });
             });
         }
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmMDCK4HXKxrpLs6FXM2xB3nhcRTzfKnA&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"></script>
     <script>
         var reveals = document.querySelectorAll('.reveal');
         var observer = new IntersectionObserver(function(entries) {
