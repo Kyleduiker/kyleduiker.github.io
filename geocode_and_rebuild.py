@@ -593,15 +593,26 @@ def build_page(p):
 </html>"""
 
 # ── OUTPUT ────────────────────────────────────────────────────────────────────
-out_dir = "calgary-pages-geocoded"
-os.makedirs(out_dir, exist_ok=True)
+# Map each page to its folder in the repo structure
+OUTPUT_MAP = {
+    "calgary.html":         "calgary/index.html",
+    "calgary-city-center.html": "calgary/city-center/index.html",
+    "calgary-east.html":    "calgary/east/index.html",
+    "calgary-west.html":    "calgary/west/index.html",
+    "calgary-north.html":   "calgary/north/index.html",
+    "calgary-north-east.html": "calgary/north-east/index.html",
+    "calgary-north-west.html": "calgary/north-west/index.html",
+    "calgary-south.html":   "calgary/south/index.html",
+    "calgary-south-east.html": "calgary/south-east/index.html",
+}
 
 for p in pages:
     html = build_page(p)
-    fpath = os.path.join(out_dir, p["filename"])
+    fpath = OUTPUT_MAP[p["filename"]]
+    os.makedirs(os.path.dirname(fpath), exist_ok=True)
     with open(fpath, "w", encoding="utf-8") as f:
         f.write(html)
     count = len(geocoded.get(p["comm_key"], []))
-    print(f"Written: {p['filename']} ({count} communities)")
+    print(f"Written: {fpath} ({count} communities)")
 
-print(f"\nAll done! Files are in ./{out_dir}/")
+print("\nAll done!")
