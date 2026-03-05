@@ -1,10 +1,13 @@
 name: Geocode Communities & Build Pages
 
 on:
-  workflow_dispatch:  # Run manually from GitHub Actions tab
+  workflow_dispatch:
   push:
     paths:
-      - 'geocode_and_rebuild.py'  # Also auto-run when script is updated
+      - 'geocode_and_rebuild.py'
+
+permissions:
+  contents: write
 
 jobs:
   build:
