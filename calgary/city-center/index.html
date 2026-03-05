@@ -4,94 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calgary City Centre Real Estate | Duiker Properties</title>
-    <meta name="description" content="Explore real estate in Calgary's City Centre. Condos, lofts, and urban homes in Beltline, Eau Claire, Kensington, Inglewood and beyond. Kyle Duiker, Royal LePage Solutions.">
+    <meta name="description" content="Explore real estate in Calgary's City Centre.">
     <link rel="stylesheet" href="https://kyleduiker.github.io/duikerproperties-homepage/assets/css/header.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root { --red:#EA002A;--blue:#003DA5;--gold:#C5A572;--gold-lt:#ddc89a;--dark:#0d0d0d;--off-white:#f5f2ed;--cream:#faf8f4;--text:#1a1a1a;--muted:#777;--border:#e5e0d8; }
-        body { font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.6; }
-        #header-container { position:relative;z-index:1000;width:100%; }
-        .hero { background:var(--dark);color:white;min-height:70vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding-top:80px;text-align:center; }
-        .hero::before { content:'';position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,0.015) 60px,rgba(255,255,255,0.015) 61px);pointer-events:none; }
-        .hero::after { content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--red),var(--blue)); }
-        .hero-inner { position:relative;z-index:2;max-width:780px;padding:4rem 2rem; }
-        .hero-eyebrow { display:flex;align-items:center;justify-content:center;gap:0.75rem;margin-bottom:1.75rem; }
-        .eyebrow-line { width:40px;height:1px;background:var(--gold); }
-        .eyebrow-text { font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500; }
-        .hero-headline { font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:300;line-height:1.1;color:white;margin-bottom:1.5rem;animation:fadeUp 0.7s 0.1s ease both; }
-        .hero-headline em { font-style:italic;color:var(--gold-lt); }
-        .hero-subhead { font-size:1.05rem;color:rgba(255,255,255,0.65);line-height:1.8;max-width:580px;margin:0 auto 2.5rem;animation:fadeUp 0.7s 0.2s ease both; }
-        .hero-cta { display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.7s 0.3s ease both; }
-        .btn-primary { display:inline-block;padding:1rem 2.5rem;background:var(--red);color:white;text-decoration:none;font-size:0.85rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border-radius:4px;transition:all 0.25s ease;box-shadow:0 4px 20px rgba(234,0,42,0.3); }
-        .btn-primary:hover { background:#c80020;transform:translateY(-2px);box-shadow:0 8px 30px rgba(234,0,42,0.45); }
-        .btn-outline { display:inline-block;padding:1rem 2.5rem;background:transparent;color:white;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;border-radius:4px;border:1px solid rgba(255,255,255,0.2);transition:all 0.25s ease; }
-        .btn-outline:hover { border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.05);transform:translateY(-2px); }
-        .section { padding:5rem 0; }
-        .container { max-width:1100px;margin:0 auto;padding:0 2rem; }
-        .section-eyebrow { display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem; }
-        .section-eyebrow-centered { justify-content:center; }
-        .section-eyebrow .eyebrow-line { background:var(--gold); }
-        .section-eyebrow .eyebrow-text { color:var(--gold);font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;font-weight:500; }
-        .section-title { font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:300;line-height:1.2;color:var(--text);margin-bottom:1rem; }
-        .section-title em { font-style:italic;color:var(--red); }
-        .about-section { background:white; }
-        .about-grid { display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start; }
-        .about-body p { color:#444;line-height:1.85;font-size:0.97rem;margin-bottom:1.25rem; }
-        .feature-list { margin-top:2rem;display:flex;flex-direction:column;gap:0.75rem; }
-        .feature-item { display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;font-weight:500;color:var(--text); }
-        .feature-dot { width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0; }
-        .highlight-card { background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:2.5rem;position:relative; }
-        .highlight-card::before { content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--red),var(--blue));border-radius:16px 16px 0 0; }
-        .highlight-card h3 { font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;margin-bottom:1.25rem;color:var(--text); }
-        .highlight-card ul { list-style:none;display:flex;flex-direction:column;gap:0.65rem; }
-        .highlight-card ul li { font-size:0.88rem;color:#555;padding-left:1rem;position:relative;line-height:1.6; }
-        .highlight-card ul li::before { content:'→';position:absolute;left:0;color:var(--red);font-size:0.8rem; }
-        .map-section { background:var(--off-white);padding:5rem 0; }
-        .map-header { text-align:center;margin-bottom:2.5rem; }
-        .map-header .section-eyebrow { justify-content:center; }
-        .map-header p { color:var(--muted);font-size:0.9rem;margin-top:0.5rem; }
-        .map-wrapper { border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 8px 40px rgba(0,0,0,0.1); }
-        #community-map { width:100%;height:560px; }
-        .communities-section { background:white; }
-        .communities-header { text-align:center;margin-bottom:3rem; }
-        .communities-header .section-eyebrow { justify-content:center; }
-        .community-count { display:inline-block;font-size:0.78rem;color:var(--muted);letter-spacing:1px;margin-top:0.5rem; }
-        .community-links-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem; }
-        .community-link-card { background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:1.1rem 1rem;text-decoration:none;color:var(--text);transition:all 0.2s ease;display:flex;flex-direction:column;gap:0.2rem; }
-        .community-link-card:hover { border-color:var(--red);transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.07); }
-        .community-link-name { font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--text); }
-        .community-link-desc { font-size:0.72rem;color:var(--muted);line-height:1.45; }
-        .community-link-arrow { font-size:0.7rem;color:var(--red);margin-top:0.3rem;font-weight:600; }
-        .links-section { background:var(--off-white); }
-        .links-header { text-align:center;margin-bottom:3rem; }
-        .links-header .section-eyebrow { justify-content:center; }
-        .quadrant-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:1rem; }
-        .quadrant-card { background:white;border:1px solid var(--border);border-radius:10px;padding:1.5rem 1.25rem;text-align:center;text-decoration:none;color:var(--text);transition:all 0.25s ease;display:flex;flex-direction:column;align-items:center;gap:0.5rem; }
-        .quadrant-card:hover { border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.08); }
-        .quadrant-card.hub { border-color:var(--gold);background:linear-gradient(135deg,#fff 0%,var(--cream) 100%); }
-        .quadrant-card-label { font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted); }
-        .quadrant-card-title { font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--text); }
-        .quadrant-card-arrow { font-size:0.8rem;color:var(--red);margin-top:0.25rem; }
-        .cta-section { background:var(--blue);padding:5rem 0;text-align:center;position:relative;overflow:hidden; }
-        .cta-section::before { content:'';position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,0.02) 60px,rgba(255,255,255,0.02) 61px);pointer-events:none; }
-        .cta-section .container { position:relative;z-index:1; }
-        .cta-section h2 { font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:white;margin-bottom:1rem; }
-        .cta-section h2 em { font-style:italic;color:var(--gold-lt); }
-        .cta-section p { color:rgba(255,255,255,0.7);font-size:1rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.75; }
-        .cta-buttons { display:flex;gap:1rem;justify-content:center;flex-wrap:wrap; }
-        .cta-section .btn-primary { background:var(--red);box-shadow:0 4px 20px rgba(0,0,0,0.3); }
-        .cta-section .btn-outline { border-color:rgba(255,255,255,0.25); }
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+        :root{--red:#EA002A;--blue:#003DA5;--gold:#C5A572;--gold-lt:#ddc89a;--dark:#0d0d0d;--off-white:#f5f2ed;--cream:#faf8f4;--text:#1a1a1a;--muted:#777;--border:#e5e0d8;}
+        body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.6;}
+        #header-container{position:relative;z-index:1000;width:100%;}
+        .hero{background:var(--dark);color:white;min-height:70vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding-top:80px;text-align:center;}
+        .hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,0.015) 60px,rgba(255,255,255,0.015) 61px);pointer-events:none;}
+        .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--red),var(--blue));}
+        .hero-inner{position:relative;z-index:2;max-width:780px;padding:4rem 2rem;}
+        .hero-eyebrow{display:flex;align-items:center;justify-content:center;gap:0.75rem;margin-bottom:1.75rem;}
+        .eyebrow-line{width:40px;height:1px;background:var(--gold);}
+        .eyebrow-text{font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500;}
+        .hero-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:300;line-height:1.1;color:white;margin-bottom:1.5rem;animation:fadeUp 0.7s 0.1s ease both;}
+        .hero-headline em{font-style:italic;color:var(--gold-lt);}
+        .hero-subhead{font-size:1.05rem;color:rgba(255,255,255,0.65);line-height:1.8;max-width:580px;margin:0 auto 2.5rem;animation:fadeUp 0.7s 0.2s ease both;}
+        .hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.7s 0.3s ease both;}
+        .btn-primary{display:inline-block;padding:1rem 2.5rem;background:var(--red);color:white;text-decoration:none;font-size:0.85rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border-radius:4px;transition:all 0.25s ease;box-shadow:0 4px 20px rgba(234,0,42,0.3);}
+        .btn-primary:hover{background:#c80020;transform:translateY(-2px);}
+        .btn-outline{display:inline-block;padding:1rem 2.5rem;background:transparent;color:white;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;border-radius:4px;border:1px solid rgba(255,255,255,0.2);transition:all 0.25s ease;}
+        .btn-outline:hover{border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.05);transform:translateY(-2px);}
+        .section{padding:5rem 0;}
+        .container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+        .section-eyebrow{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;}
+        .section-eyebrow-centered{justify-content:center;}
+        .section-eyebrow .eyebrow-line{background:var(--gold);}
+        .section-eyebrow .eyebrow-text{color:var(--gold);font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;font-weight:500;}
+        .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:300;line-height:1.2;color:var(--text);margin-bottom:1rem;}
+        .section-title em{font-style:italic;color:var(--red);}
+        .about-section{background:white;}
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+        .about-body p{color:#444;line-height:1.85;font-size:0.97rem;margin-bottom:1.25rem;}
+        .feature-list{margin-top:2rem;display:flex;flex-direction:column;gap:0.75rem;}
+        .feature-item{display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;font-weight:500;color:var(--text);}
+        .feature-dot{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0;}
+        .highlight-card{background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:2.5rem;position:relative;}
+        .highlight-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--red),var(--blue));border-radius:16px 16px 0 0;}
+        .highlight-card h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;margin-bottom:1.25rem;color:var(--text);}
+        .highlight-card ul{list-style:none;display:flex;flex-direction:column;gap:0.65rem;}
+        .highlight-card ul li{font-size:0.88rem;color:#555;padding-left:1rem;position:relative;line-height:1.6;}
+        .highlight-card ul li::before{content:'→';position:absolute;left:0;color:var(--red);font-size:0.8rem;}
+        .map-section{background:var(--off-white);padding:5rem 0;}
+        .map-header{text-align:center;margin-bottom:2.5rem;}
+        .map-header .section-eyebrow{justify-content:center;}
+        .map-header p{color:var(--muted);font-size:0.9rem;margin-top:0.5rem;}
+        .map-wrapper{border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 8px 40px rgba(0,0,0,0.1);}
+        #community-map{width:100%;height:560px;}
+        .communities-section{background:white;}
+        .communities-header{text-align:center;margin-bottom:3rem;}
+        .communities-header .section-eyebrow{justify-content:center;}
+        .community-count{display:inline-block;font-size:0.78rem;color:var(--muted);letter-spacing:1px;margin-top:0.5rem;}
+        .community-links-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;}
+        .community-link-card{background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:1.1rem 1rem;text-decoration:none;color:var(--text);transition:all 0.2s ease;display:flex;flex-direction:column;gap:0.2rem;}
+        .community-link-card:hover{border-color:var(--red);transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.07);}
+        .community-link-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--text);}
+        .community-link-desc{font-size:0.72rem;color:var(--muted);line-height:1.45;}
+        .community-link-arrow{font-size:0.7rem;color:var(--red);margin-top:0.3rem;font-weight:600;}
+        .links-section{background:var(--off-white);}
+        .links-header{text-align:center;margin-bottom:3rem;}
+        .links-header .section-eyebrow{justify-content:center;}
+        .quadrant-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+        .quadrant-card{background:white;border:1px solid var(--border);border-radius:10px;padding:1.5rem 1.25rem;text-align:center;text-decoration:none;color:var(--text);transition:all 0.25s ease;display:flex;flex-direction:column;align-items:center;gap:0.5rem;}
+        .quadrant-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.08);}
+        .quadrant-card.hub{border-color:var(--gold);background:linear-gradient(135deg,#fff 0%,var(--cream) 100%);}
+        .quadrant-card-label{font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+        .quadrant-card-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--text);}
+        .quadrant-card-arrow{font-size:0.8rem;color:var(--red);margin-top:0.25rem;}
+        .cta-section{background:var(--blue);padding:5rem 0;text-align:center;position:relative;overflow:hidden;}
+        .cta-section::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,0.02) 60px,rgba(255,255,255,0.02) 61px);pointer-events:none;}
+        .cta-section .container{position:relative;z-index:1;}
+        .cta-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:white;margin-bottom:1rem;}
+        .cta-section h2 em{font-style:italic;color:var(--gold-lt);}
+        .cta-section p{color:rgba(255,255,255,0.7);font-size:1rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.75;}
+        .cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+        .cta-section .btn-primary{background:var(--red);box-shadow:0 4px 20px rgba(0,0,0,0.3);}
+        .cta-section .btn-outline{border-color:rgba(255,255,255,0.25);}
         @media(max-width:1000px){.community-links-grid{grid-template-columns:repeat(3,1fr);}}
         @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:3rem;}.quadrant-grid{grid-template-columns:repeat(2,1fr);}.community-links-grid{grid-template-columns:repeat(2,1fr);}#community-map{height:420px;}}
         @media(max-width:600px){.hero-cta,.cta-buttons{flex-direction:column;align-items:center;}.quadrant-grid,.community-links-grid{grid-template-columns:1fr;}#community-map{height:320px;}}
         @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
         .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
         .reveal.visible{opacity:1;transform:translateY(0);}
-
-    </style>
+</style>
 </head>
 <body>
     <div id="header-container"></div>
@@ -99,7 +97,7 @@
         <div class="hero-inner">
             <div class="hero-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Calgary City Centre</span><div class="eyebrow-line"></div></div>
             <h1 class="hero-headline">Live at the Heart of<br><em>Calgary</em></h1>
-            <p class="hero-subhead">Calgary's City Centre offers a walkable, vibrant urban lifestyle with easy access to restaurants, arts, parks along the Bow, and the city's professional core. It's where Calgary comes alive.</p>
+            <p class="hero-subhead">Calgary's City Centre offers a walkable, vibrant urban lifestyle with easy access to restaurants, arts, parks along the Bow, and the city's professional core.</p>
             <div class="hero-cta">
                 <a href="https://www.duikerproperties.com/idx" class="btn-primary">Browse Homes</a>
                 <a href="https://duikerproperties.com/contact" class="btn-outline">Talk to Kyle</a>
@@ -114,24 +112,20 @@
                     <h2 class="section-title">Urban Living, <em>Downtown Energy</em></h2>
                     <p>The City Centre quadrant encompasses Calgary's downtown core and surrounding inner-city neighbourhoods — from Beltline's condo towers to the charming streets of Kensington and Inglewood.</p>
                     <p>Condos, lofts, and townhomes are the primary property types here, appealing to young professionals, downsizers, and investors looking for central location and walkability.</p>
-                    <div class="feature-list">
-                        <div class="feature-item"><div class="feature-dot"></div>Walkable to offices, restaurants, and the Bow River Pathway</div>
+                    <div class="feature-list">                        <div class="feature-item"><div class="feature-dot"></div>Walkable to offices, restaurants, and the Bow River Pathway</div>
                         <div class="feature-item"><div class="feature-dot"></div>Condo and loft-style living options</div>
                         <div class="feature-item"><div class="feature-dot"></div>Close to cultural venues and entertainment</div>
-                        <div class="feature-item"><div class="feature-dot"></div>Strong rental demand for investors</div>
-                    </div>
+                        <div class="feature-item"><div class="feature-dot"></div>Strong rental demand for investors</div></div>
                 </div>
                 <div class="reveal">
                     <div class="highlight-card">
                         <h3>Neighbourhoods to Know</h3>
-                        <ul>
-                    <li>Beltline — high-density condo living, vibrant streets</li>
+                        <ul>                    <li>Beltline — high-density condo living, vibrant streets</li>
                     <li>Kensington — boutique shops, cafes, community feel</li>
                     <li>Eau Claire — riverside living, peace in the city</li>
                     <li>Inglewood — Calgary's oldest neighbourhood, artsy vibe</li>
                     <li>East Village — revitalized, contemporary urban hub</li>
-                    <li>Bridgeland — charming, walkable, local favourites</li>
-                        </ul>
+                    <li>Bridgeland — charming, walkable, local favourites</li></ul>
                     </div>
                 </div>
             </div>
@@ -159,36 +153,36 @@
                 <span class="community-count">30 communities</span>
             </div>
             <div class="community-links-grid reveal">
-                <a href="/calgary/communities/beltline/" class="community-link-card"><span class="community-link-name">Beltline</span><span class="community-link-desc">Urban condos, vibrant streets, and walkable city living</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/bridgeland/" class="community-link-card"><span class="community-link-name">Bridgeland</span><span class="community-link-desc">Charming inner-city neighbourhood with local cafes and city views</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/chinatown/" class="community-link-card"><span class="community-link-name">Chinatown</span><span class="community-link-desc">Historic cultural district steps from downtown</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/crescent-heights/" class="community-link-card"><span class="community-link-name">Crescent Heights</span><span class="community-link-desc">Hilltop community with panoramic downtown views</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/downtown-core/" class="community-link-card"><span class="community-link-name">Downtown Core</span><span class="community-link-desc">Calgary's central business and entertainment hub</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/east-village/" class="community-link-card"><span class="community-link-name">East Village</span><span class="community-link-desc">Revitalized urban district with modern condos and culture</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/downtown-west-end/" class="community-link-card"><span class="community-link-name">Downtown West End</span><span class="community-link-desc">Quiet residential west side of the downtown core</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/eau-claire/" class="community-link-card"><span class="community-link-name">Eau Claire</span><span class="community-link-desc">Riverside living with Bow River pathway access</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/erlton/" class="community-link-card"><span class="community-link-name">Erlton</span><span class="community-link-desc">Small inner-city community near the Stampede grounds</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/hillhurst/" class="community-link-card"><span class="community-link-name">Hillhurst</span><span class="community-link-desc">Character homes and walkable streets in the inner city</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/hounsfield-heights/" class="community-link-card"><span class="community-link-name">Hounsfield Heights / Briar Hill</span><span class="community-link-desc">Elevated community with established character homes</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/inglewood/" class="community-link-card"><span class="community-link-name">Inglewood</span><span class="community-link-desc">Calgary's oldest neighbourhood — artsy, eclectic, and walkable</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/killarney-glengarry/" class="community-link-card"><span class="community-link-name">Killarney / Glengarry</span><span class="community-link-desc">Established inner-city community with infill growth</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/lower-mount-royal/" class="community-link-card"><span class="community-link-name">Lower Mount Royal</span><span class="community-link-desc">Prestigious inner-city living near 17th Ave</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/montgomery/" class="community-link-card"><span class="community-link-name">Montgomery</span><span class="community-link-desc">Riverside community with a village feel</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/parkdale/" class="community-link-card"><span class="community-link-name">Parkdale</span><span class="community-link-desc">Mature inner-city neighbourhood near Foothills Hospital</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/point-mckay/" class="community-link-card"><span class="community-link-name">Point McKay</span><span class="community-link-desc">Riverfront community with a resort-like setting</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/queens-park-village/" class="community-link-card"><span class="community-link-name">Queens Park Village</span><span class="community-link-desc">Quiet pocket community in the inner city</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/renfrew/" class="community-link-card"><span class="community-link-name">Renfrew</span><span class="community-link-desc">Established neighbourhood with a mix of housing styles</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/rosedale/" class="community-link-card"><span class="community-link-name">Rosedale</span><span class="community-link-desc">Tree-lined streets and character homes near SAIT</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/rosemont/" class="community-link-card"><span class="community-link-name">Rosemont</span><span class="community-link-desc">Mature inner-city community with strong community spirit</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/roxboro/" class="community-link-card"><span class="community-link-name">Roxboro</span><span class="community-link-desc">Prestigious riverside community with luxury homes</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/scarboro-sunalta-west/" class="community-link-card"><span class="community-link-name">Scarboro / Sunalta West</span><span class="community-link-desc">Quiet inner-city with easy downtown access</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/st-andrews-heights/" class="community-link-card"><span class="community-link-name">St. Andrews Heights</span><span class="community-link-desc">Elevated community near Foothills Medical Centre</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/sunnyside/" class="community-link-card"><span class="community-link-name">Sunnyside</span><span class="community-link-desc">Vibrant pocket community next to Kensington village</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/sunalta/" class="community-link-card"><span class="community-link-name">Sunalta</span><span class="community-link-desc">Affordable inner-city with CTrain access</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/tuxedo-park/" class="community-link-card"><span class="community-link-name">Tuxedo Park</span><span class="community-link-desc">Mature north inner-city with character bungalows</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/upper-mount-royal/" class="community-link-card"><span class="community-link-name">Upper Mount Royal</span><span class="community-link-desc">One of Calgary's most prestigious established neighbourhoods</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/west-hillhurst/" class="community-link-card"><span class="community-link-name">West Hillhurst</span><span class="community-link-desc">Family-friendly inner west with strong community identity</span><span class="community-link-arrow">View →</span></a>
-                <a href="/calgary/communities/winston-heights/" class="community-link-card"><span class="community-link-name">Winston Heights / Mountview</span><span class="community-link-desc">Established community with great downtown proximity</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/beltline/" class="community-link-card"><span class="community-link-name">Beltline</span><span class="community-link-desc">Urban condos, vibrant streets, and walkable city living</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/bridgeland/" class="community-link-card"><span class="community-link-name">Bridgeland</span><span class="community-link-desc">Charming inner-city neighbourhood with local cafes and city views</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/chinatown/" class="community-link-card"><span class="community-link-name">Chinatown</span><span class="community-link-desc">Historic cultural district steps from downtown</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/crescent-heights/" class="community-link-card"><span class="community-link-name">Crescent Heights</span><span class="community-link-desc">Hilltop community with panoramic downtown views</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/downtown-core/" class="community-link-card"><span class="community-link-name">Downtown Core</span><span class="community-link-desc">Calgary's central business and entertainment hub</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/east-village/" class="community-link-card"><span class="community-link-name">East Village</span><span class="community-link-desc">Revitalized urban district with modern condos and culture</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/downtown-west-end/" class="community-link-card"><span class="community-link-name">Downtown West End</span><span class="community-link-desc">Quiet residential west side of the downtown core</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/eau-claire/" class="community-link-card"><span class="community-link-name">Eau Claire</span><span class="community-link-desc">Riverside living with Bow River pathway access</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/erlton/" class="community-link-card"><span class="community-link-name">Erlton</span><span class="community-link-desc">Small inner-city community near the Stampede grounds</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/hillhurst/" class="community-link-card"><span class="community-link-name">Hillhurst</span><span class="community-link-desc">Character homes and walkable streets in the inner city</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/hounsfield-heights/" class="community-link-card"><span class="community-link-name">Hounsfield Heights / Briar Hill</span><span class="community-link-desc">Elevated community with established character homes</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/inglewood/" class="community-link-card"><span class="community-link-name">Inglewood</span><span class="community-link-desc">Calgary's oldest neighbourhood — artsy, eclectic, and walkable</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/killarney-glengarry/" class="community-link-card"><span class="community-link-name">Killarney / Glengarry</span><span class="community-link-desc">Established inner-city community with infill growth</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/lower-mount-royal/" class="community-link-card"><span class="community-link-name">Lower Mount Royal</span><span class="community-link-desc">Prestigious inner-city living near 17th Ave</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/montgomery/" class="community-link-card"><span class="community-link-name">Montgomery</span><span class="community-link-desc">Riverside community with a village feel</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/parkdale/" class="community-link-card"><span class="community-link-name">Parkdale</span><span class="community-link-desc">Mature inner-city neighbourhood near Foothills Hospital</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/point-mckay/" class="community-link-card"><span class="community-link-name">Point McKay</span><span class="community-link-desc">Riverfront community with a resort-like setting</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/queens-park-village/" class="community-link-card"><span class="community-link-name">Queens Park Village</span><span class="community-link-desc">Quiet pocket community in the inner city</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/renfrew/" class="community-link-card"><span class="community-link-name">Renfrew</span><span class="community-link-desc">Established neighbourhood with a mix of housing styles</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/rosedale/" class="community-link-card"><span class="community-link-name">Rosedale</span><span class="community-link-desc">Tree-lined streets and character homes near SAIT</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/rosemont/" class="community-link-card"><span class="community-link-name">Rosemont</span><span class="community-link-desc">Mature inner-city community with strong community spirit</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/roxboro/" class="community-link-card"><span class="community-link-name">Roxboro</span><span class="community-link-desc">Prestigious riverside community with luxury homes</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/scarboro-sunalta-west/" class="community-link-card"><span class="community-link-name">Scarboro / Sunalta West</span><span class="community-link-desc">Quiet inner-city with easy downtown access</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/st-andrews-heights/" class="community-link-card"><span class="community-link-name">St. Andrews Heights</span><span class="community-link-desc">Elevated community near Foothills Medical Centre</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/sunnyside/" class="community-link-card"><span class="community-link-name">Sunnyside</span><span class="community-link-desc">Vibrant pocket community next to Kensington village</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/sunalta/" class="community-link-card"><span class="community-link-name">Sunalta</span><span class="community-link-desc">Affordable inner-city with CTrain access</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/tuxedo-park/" class="community-link-card"><span class="community-link-name">Tuxedo Park</span><span class="community-link-desc">Mature north inner-city with character bungalows</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/upper-mount-royal/" class="community-link-card"><span class="community-link-name">Upper Mount Royal</span><span class="community-link-desc">One of Calgary's most prestigious established neighbourhoods</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/west-hillhurst/" class="community-link-card"><span class="community-link-name">West Hillhurst</span><span class="community-link-desc">Family-friendly inner west with strong community identity</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/city-center/winston-heights/" class="community-link-card"><span class="community-link-name">Winston Heights / Mountview</span><span class="community-link-desc">Established community with great downtown proximity</span><span class="community-link-arrow">View →</span></a>
             </div>
         </div>
     </section>
@@ -199,7 +193,6 @@
                 <h2 class="section-title" style="text-align:center;">Browse Calgary <em>By Quadrant</em></h2>
             </div>
             <div class="quadrant-grid reveal">
-
                 <a href="/calgary/" class="quadrant-card hub"><span class="quadrant-card-label">All Calgary</span><span class="quadrant-card-title">Calgary</span><span class="quadrant-card-arrow">Explore →</span></a>
                 <a href="/calgary/east/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">East</span><span class="quadrant-card-arrow">Explore →</span></a>
                 <a href="/calgary/west/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">West</span><span class="quadrant-card-arrow">Explore →</span></a>
@@ -207,8 +200,7 @@
                 <a href="/calgary/north-east/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">Northeast</span><span class="quadrant-card-arrow">Explore →</span></a>
                 <a href="/calgary/north-west/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">Northwest</span><span class="quadrant-card-arrow">Explore →</span></a>
                 <a href="/calgary/south/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">South</span><span class="quadrant-card-arrow">Explore →</span></a>
-                <a href="/calgary/south-east/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">Southeast</span><span class="quadrant-card-arrow">Explore →</span></a>
-            </div>
+                <a href="/calgary/south-east/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">Southeast</span><span class="quadrant-card-arrow">Explore →</span></a></div>
         </div>
     </section>
     <section class="cta-section">
@@ -225,36 +217,36 @@
 
     <script>
         var communities = [
-  {name:"Beltline",desc:"Urban condos, vibrant streets, and walkable city living",url:"/calgary/communities/beltline/",lat:51.0373,lng:-114.0719},
-  {name:"Bridgeland",desc:"Charming inner-city neighbourhood with local cafes and city views",url:"/calgary/communities/bridgeland/",lat:51.0534,lng:-114.0512},
-  {name:"Chinatown",desc:"Historic cultural district steps from downtown",url:"/calgary/communities/chinatown/",lat:51.0489,lng:-114.0678},
-  {name:"Crescent Heights",desc:"Hilltop community with panoramic downtown views",url:"/calgary/communities/crescent-heights/",lat:51.0601,lng:-114.0634},
-  {name:"Downtown Core",desc:"Calgary's central business and entertainment hub",url:"/calgary/communities/downtown-core/",lat:51.0456,lng:-114.0719},
-  {name:"East Village",desc:"Revitalized urban district with modern condos and culture",url:"/calgary/communities/east-village/",lat:51.0456,lng:-114.0589},
-  {name:"Downtown West End",desc:"Quiet residential west side of the downtown core",url:"/calgary/communities/downtown-west-end/",lat:51.0467,lng:-114.0812},
-  {name:"Eau Claire",desc:"Riverside living with Bow River pathway access",url:"/calgary/communities/eau-claire/",lat:51.0512,lng:-114.0756},
-  {name:"Erlton",desc:"Small inner-city community near the Stampede grounds",url:"/calgary/communities/erlton/",lat:51.0267,lng:-114.0634},
-  {name:"Hillhurst",desc:"Character homes and walkable streets in the inner city",url:"/calgary/communities/hillhurst/",lat:51.0578,lng:-114.0867},
-  {name:"Hounsfield Heights / Briar Hill",desc:"Elevated community with established character homes",url:"/calgary/communities/hounsfield-heights/",lat:51.0623,lng:-114.0934},
-  {name:"Inglewood",desc:"Calgary's oldest neighbourhood — artsy, eclectic, and walkable",url:"/calgary/communities/inglewood/",lat:51.0389,lng:-114.0423},
-  {name:"Killarney / Glengarry",desc:"Established inner-city community with infill growth",url:"/calgary/communities/killarney-glengarry/",lat:51.0234,lng:-114.1034},
-  {name:"Lower Mount Royal",desc:"Prestigious inner-city living near 17th Ave",url:"/calgary/communities/lower-mount-royal/",lat:51.0312,lng:-114.0867},
-  {name:"Montgomery",desc:"Riverside community with a village feel",url:"/calgary/communities/montgomery/",lat:51.0689,lng:-114.1523},
-  {name:"Parkdale",desc:"Mature inner-city neighbourhood near Foothills Hospital",url:"/calgary/communities/parkdale/",lat:51.0634,lng:-114.1123},
-  {name:"Point McKay",desc:"Riverfront community with a resort-like setting",url:"/calgary/communities/point-mckay/",lat:51.0623,lng:-114.1367},
-  {name:"Queens Park Village",desc:"Quiet pocket community in the inner city",url:"/calgary/communities/queens-park-village/",lat:51.0556,lng:-114.0623},
-  {name:"Renfrew",desc:"Established neighbourhood with a mix of housing styles",url:"/calgary/communities/renfrew/",lat:51.0534,lng:-114.0423},
-  {name:"Rosedale",desc:"Tree-lined streets and character homes near SAIT",url:"/calgary/communities/rosedale/",lat:51.0667,lng:-114.0756},
-  {name:"Rosemont",desc:"Mature inner-city community with strong community spirit",url:"/calgary/communities/rosemont/",lat:51.0712,lng:-114.0689},
-  {name:"Roxboro",desc:"Prestigious riverside community with luxury homes",url:"/calgary/communities/roxboro/",lat:51.0289,lng:-114.0756},
-  {name:"Scarboro / Sunalta West",desc:"Quiet inner-city with easy downtown access",url:"/calgary/communities/scarboro-sunalta-west/",lat:51.0334,lng:-114.0934},
-  {name:"St. Andrews Heights",desc:"Elevated community near Foothills Medical Centre",url:"/calgary/communities/st-andrews-heights/",lat:51.0667,lng:-114.1234},
-  {name:"Sunnyside",desc:"Vibrant pocket community next to Kensington village",url:"/calgary/communities/sunnyside/",lat:51.0556,lng:-114.0867},
-  {name:"Sunalta",desc:"Affordable inner-city with CTrain access",url:"/calgary/communities/sunalta/",lat:51.0356,lng:-114.0934},
-  {name:"Tuxedo Park",desc:"Mature north inner-city with character bungalows",url:"/calgary/communities/tuxedo-park/",lat:51.0712,lng:-114.0578},
-  {name:"Upper Mount Royal",desc:"One of Calgary's most prestigious established neighbourhoods",url:"/calgary/communities/upper-mount-royal/",lat:51.0267,lng:-114.0934},
-  {name:"West Hillhurst",desc:"Family-friendly inner west with strong community identity",url:"/calgary/communities/west-hillhurst/",lat:51.0578,lng:-114.0978},
-  {name:"Winston Heights / Mountview",desc:"Established community with great downtown proximity",url:"/calgary/communities/winston-heights/",lat:51.0623,lng:-114.0378},
+  {name:"Beltline",desc:"Urban condos, vibrant streets, and walkable city living",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Beltline&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Abeltline%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/beltline/",lat:51.0447,lng:-114.0719},
+  {name:"Bridgeland",desc:"Charming inner-city neighbourhood with local cafes and city views",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Bridgeland&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Abridgeland%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/bridgeland/",lat:51.0447,lng:-114.0719},
+  {name:"Chinatown",desc:"Historic cultural district steps from downtown",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Chinatown&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Achinatown%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/chinatown/",lat:51.0447,lng:-114.0719},
+  {name:"Crescent Heights",desc:"Hilltop community with panoramic downtown views",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Crescent+Heights&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Acrescent+heights%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/crescent-heights/",lat:51.0447,lng:-114.0719},
+  {name:"Downtown Core",desc:"Calgary\'s central business and entertainment hub",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Downtown+Core&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Adowntown+core%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/downtown-core/",lat:51.0447,lng:-114.0719},
+  {name:"East Village",desc:"Revitalized urban district with modern condos and culture",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=East+Village&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aeast+village%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/east-village/",lat:51.0447,lng:-114.0719},
+  {name:"Downtown West End",desc:"Quiet residential west side of the downtown core",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Downtown+West+End&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Adowntown+west+end%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/downtown-west-end/",lat:51.0447,lng:-114.0719},
+  {name:"Eau Claire",desc:"Riverside living with Bow River pathway access",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Eau+Claire&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aeau+claire%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/eau-claire/",lat:51.0447,lng:-114.0719},
+  {name:"Erlton",desc:"Small inner-city community near the Stampede grounds",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Erlton&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aerlton%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/erlton/",lat:51.0447,lng:-114.0719},
+  {name:"Hillhurst",desc:"Character homes and walkable streets in the inner city",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Hillhurst&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Ahillhurst%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/hillhurst/",lat:51.0447,lng:-114.0719},
+  {name:"Hounsfield Heights / Briar Hill",desc:"Elevated community with established character homes",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Hounsfield+Heights+%2F+Briar+Hill&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Ahounsfield+heights+%2F+briar+hill%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/hounsfield-heights/",lat:51.0447,lng:-114.0719},
+  {name:"Inglewood",desc:"Calgary\'s oldest neighbourhood — artsy, eclectic, and walkable",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Inglewood&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Ainglewood%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/inglewood/",lat:51.0447,lng:-114.0719},
+  {name:"Killarney / Glengarry",desc:"Established inner-city community with infill growth",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Killarney+%2F+Glengarry&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Akillarney+%2F+glengarry%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/killarney-glengarry/",lat:51.0447,lng:-114.0719},
+  {name:"Lower Mount Royal",desc:"Prestigious inner-city living near 17th Ave",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Lower+Mount+Royal&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Alower+mount+royal%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/lower-mount-royal/",lat:51.0447,lng:-114.0719},
+  {name:"Montgomery",desc:"Riverside community with a village feel",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Montgomery&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Amontgomery%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/montgomery/",lat:51.0447,lng:-114.0719},
+  {name:"Parkdale",desc:"Mature inner-city neighbourhood near Foothills Hospital",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Parkdale&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aparkdale%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/parkdale/",lat:51.0447,lng:-114.0719},
+  {name:"Point McKay",desc:"Riverfront community with a resort-like setting",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Point+McKay&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Apoint+mckay%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/point-mckay/",lat:51.0447,lng:-114.0719},
+  {name:"Queens Park Village",desc:"Quiet pocket community in the inner city",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Queens+Park+Village&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aqueens+park+village%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/queens-park-village/",lat:51.0447,lng:-114.0719},
+  {name:"Renfrew",desc:"Established neighbourhood with a mix of housing styles",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Renfrew&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Arenfrew%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/renfrew/",lat:51.0447,lng:-114.0719},
+  {name:"Rosedale",desc:"Tree-lined streets and character homes near SAIT",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Rosedale&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Arosedale%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/rosedale/",lat:51.0447,lng:-114.0719},
+  {name:"Rosemont",desc:"Mature inner-city community with strong community spirit",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Rosemont&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Arosemont%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/rosemont/",lat:51.0447,lng:-114.0719},
+  {name:"Roxboro",desc:"Prestigious riverside community with luxury homes",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Roxboro&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aroxboro%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/roxboro/",lat:51.0447,lng:-114.0719},
+  {name:"Scarboro / Sunalta West",desc:"Quiet inner-city with easy downtown access",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Scarboro+%2F+Sunalta+West&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Ascarboro+%2F+sunalta+west%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/scarboro-sunalta-west/",lat:51.0447,lng:-114.0719},
+  {name:"St. Andrews Heights",desc:"Elevated community near Foothills Medical Centre",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=St.+Andrews+Heights&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Ast.+andrews+heights%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/st-andrews-heights/",lat:51.0447,lng:-114.0719},
+  {name:"Sunnyside",desc:"Vibrant pocket community next to Kensington village",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Sunnyside&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Asunnyside%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/sunnyside/",lat:51.0447,lng:-114.0719},
+  {name:"Sunalta",desc:"Affordable inner-city with CTrain access",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Sunalta&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Asunalta%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/sunalta/",lat:51.0447,lng:-114.0719},
+  {name:"Tuxedo Park",desc:"Mature north inner-city with character bungalows",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Tuxedo+Park&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Atuxedo+park%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/tuxedo-park/",lat:51.0447,lng:-114.0719},
+  {name:"Upper Mount Royal",desc:"One of Calgary\'s most prestigious established neighbourhoods",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Upper+Mount+Royal&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aupper+mount+royal%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/upper-mount-royal/",lat:51.0447,lng:-114.0719},
+  {name:"West Hillhurst",desc:"Family-friendly inner west with strong community identity",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=West+Hillhurst&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Awest+hillhurst%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/west-hillhurst/",lat:51.0447,lng:-114.0719},
+  {name:"Winston Heights / Mountview",desc:"Established community with great downtown proximity",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Winston+Heights+%2F+Mountview&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Awinston+heights+%2F+mountview%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/city-center/winston-heights/",lat:51.0447,lng:-114.0719},
         ];
         function initMap() {
             var map = new google.maps.Map(document.getElementById('community-map'), {
@@ -266,22 +258,17 @@
                 fullscreenControl: true
             });
             var infoWindow = new google.maps.InfoWindow();
-            var houseIcon = {
-                url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="32" height="36" viewBox="0 0 32 36"><filter id="s" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="rgba(0,0,0,0.35)"/></filter><g filter="url(#s)"><polygon points="16,3 1,16 5,16 5,30 27,30 27,16 31,16" fill="#EA002A" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/><rect x="12" y="20" width="8" height="10" fill="#ffffff" opacity="0.9"/><rect x="19" y="17" width="5" height="5" fill="#ffffff" opacity="0.7"/></g></svg>'),
-                scaledSize: new google.maps.Size(32, 36),
-                anchor: new google.maps.Point(16, 34)
-            };
+            var pinIcon = {path:google.maps.SymbolPath.CIRCLE,fillColor:'#EA002A',fillOpacity:1,strokeColor:'#ffffff',strokeWeight:2,scale:8};
             communities.forEach(function(c) {
-                var marker = new google.maps.Marker({position:{lat:c.lat,lng:c.lng},map:map,title:c.name,icon:houseIcon,animation:google.maps.Animation.DROP});
+                var marker = new google.maps.Marker({position:{lat:c.lat,lng:c.lng},map:map,title:c.name,icon:pinIcon,animation:google.maps.Animation.DROP});
                 marker.addListener('click', function() {
-                    infoWindow.setContent('<div style="font-family:DM Sans,sans-serif;min-width:220px;padding:4px"><div style="font-family:Georgia,serif;font-size:1.05rem;font-weight:600;color:#1a1a1a;margin-bottom:0.4rem">'+c.name+'</div><div style="font-size:0.8rem;color:#666;line-height:1.5;margin-bottom:0.85rem">'+c.desc+'</div><div style="display:flex;gap:0.5rem;flex-wrap:wrap;"><a href="https://www.duikerproperties.com/idx" style="display:inline-block;padding:0.4rem 0.9rem;background:#EA002A;color:white;text-decoration:none;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px">View Listings</a><a href="'+c.url+'" style="display:inline-block;padding:0.4rem 0.9rem;background:transparent;color:#1a1a1a;text-decoration:none;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px;border:1.5px solid #e5e0d8">Learn More</a></div></div>');
+                    infoWindow.setContent('<div style="font-family:DM Sans,sans-serif;min-width:220px;padding:4px"><div style="font-family:Georgia,serif;font-size:1.05rem;font-weight:600;color:#1a1a1a;margin-bottom:0.4rem">'+c.name+'</div><div style="font-size:0.8rem;color:#666;line-height:1.5;margin-bottom:0.85rem">'+c.desc+'</div><div style="display:flex;gap:0.5rem;flex-wrap:wrap;"><a href="'+c.idxUrl+'" style="display:inline-block;padding:0.4rem 0.9rem;background:#EA002A;color:white;text-decoration:none;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px">View Listings</a><a href="'+c.url+'" style="display:inline-block;padding:0.4rem 0.9rem;background:transparent;color:#1a1a1a;text-decoration:none;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px;border:1.5px solid #e5e0d8">Learn More</a></div></div>');
                     infoWindow.open(map,marker);
                 });
             });
         }
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmMDCK4HXKxrpLs6FXM2xB3nhcRTzfKnA
-&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmMDCK4HXKxrpLs6FXM2xB3nhcRTzfKnA&callback=initMap"></script>
     <script>
         var reveals = document.querySelectorAll('.reveal');
         var observer = new IntersectionObserver(function(entries) {

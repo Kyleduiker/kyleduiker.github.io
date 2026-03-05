@@ -4,531 +4,277 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calgary West Real Estate | Duiker Properties</title>
-    <meta name="description" content="Calgary West real estate — mature neighbourhoods, foothills views, and proximity to the mountains. Kyle Duiker, Royal LePage Solutions.">
-
-    <!-- Duiker Properties Header -->
+    <meta name="description" content="Calgary West real estate — mature neighbourhoods, foothills views.">
     <link rel="stylesheet" href="https://kyleduiker.github.io/duikerproperties-homepage/assets/css/header.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
     <style>
-
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-        :root {
-            --red:      #EA002A;
-            --blue:     #003DA5;
-            --gold:     #C5A572;
-            --gold-lt:  #ddc89a;
-            --dark:     #0d0d0d;
-            --off-white:#f5f2ed;
-            --cream:    #faf8f4;
-            --text:     #1a1a1a;
-            --muted:    #777;
-            --border:   #e5e0d8;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--cream);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        #header-container {
-            position: relative;
-            z-index: 1000;
-            width: 100%;
-        }
-
-        /* HERO */
-        .hero {
-            background: var(--dark);
-            color: white;
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            padding-top: 80px;
-            text-align: center;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: repeating-linear-gradient(-55deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px);
-            pointer-events: none;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 4px;
-            background: linear-gradient(to right, var(--red), var(--blue));
-        }
-        .hero-inner {
-            position: relative;
-            z-index: 2;
-            max-width: 780px;
-            padding: 4rem 2rem;
-        }
-        .hero-eyebrow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 1.75rem;
-        }
-        .eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
-        .eyebrow-text {
-            font-size: 0.7rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--gold);
-            font-weight: 500;
-        }
-        .hero-headline {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.6rem, 5.5vw, 4.2rem);
-            font-weight: 300;
-            line-height: 1.1;
-            color: white;
-            margin-bottom: 1.5rem;
-            animation: fadeUp 0.7s 0.1s ease both;
-        }
-        .hero-headline em { font-style: italic; color: var(--gold-lt); }
-        .hero-subhead {
-            font-size: 1.05rem;
-            color: rgba(255,255,255,0.65);
-            line-height: 1.8;
-            max-width: 580px;
-            margin: 0 auto 2.5rem;
-            animation: fadeUp 0.7s 0.2s ease both;
-        }
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeUp 0.7s 0.3s ease both;
-        }
-
-        /* BUTTONS */
-        .btn-primary {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--red);
-            color: white;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            border-radius: 4px;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 20px rgba(234,0,42,0.3);
-        }
-        .btn-primary:hover {
-            background: #c80020;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(234,0,42,0.45);
-        }
-        .btn-outline {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: transparent;
-            color: white;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            border-radius: 4px;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.25s ease;
-        }
-        .btn-outline:hover {
-            border-color: rgba(255,255,255,0.5);
-            background: rgba(255,255,255,0.05);
-            transform: translateY(-2px);
-        }
-
-        /* SECTIONS */
-        .section { padding: 5rem 0; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-        .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 2rem; }
-
-        .section-eyebrow {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-        .section-eyebrow-centered { justify-content: center; }
-        .section-eyebrow .eyebrow-line { background: var(--gold); }
-        .section-eyebrow .eyebrow-text {
-            color: var(--gold);
-            font-size: 0.7rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 500;
-        }
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            font-weight: 300;
-            line-height: 1.2;
-            color: var(--text);
-            margin-bottom: 1rem;
-        }
-        .section-title em { font-style: italic; color: var(--red); }
-
-        /* ABOUT SECTION */
-        .about-section { background: white; }
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: start;
-        }
-        .about-body p {
-            color: #444;
-            line-height: 1.85;
-            font-size: 0.97rem;
-            margin-bottom: 1.25rem;
-        }
-        .feature-list {
-            margin-top: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text);
-        }
-        .feature-dot {
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            background: var(--red);
-            flex-shrink: 0;
-        }
-        .highlight-card {
-            background: var(--cream);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2.5rem;
-            position: relative;
-        }
-        .highlight-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(to right, var(--red), var(--blue));
-            border-radius: 16px 16px 0 0;
-        }
-        .highlight-card h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            font-weight: 400;
-            margin-bottom: 1.25rem;
-            color: var(--text);
-        }
-        .highlight-card ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.65rem;
-        }
-        .highlight-card ul li {
-            font-size: 0.88rem;
-            color: #555;
-            padding-left: 1rem;
-            position: relative;
-            line-height: 1.6;
-        }
-        .highlight-card ul li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--red);
-            font-size: 0.8rem;
-        }
-
-        /* QUADRANT LINKS SECTION */
-        .links-section { background: var(--off-white); }
-        .links-header { text-align: center; margin-bottom: 3rem; }
-        .links-header .section-eyebrow { justify-content: center; }
-        .quadrant-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-        }
-        .quadrant-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 1.5rem 1.25rem;
-            text-align: center;
-            text-decoration: none;
-            color: var(--text);
-            transition: all 0.25s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .quadrant-card:hover {
-            border-color: var(--red);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-        }
-        .quadrant-card.hub {
-            border-color: var(--gold);
-            background: linear-gradient(135deg, #fff 0%, var(--cream) 100%);
-        }
-        .quadrant-card.hub:hover { border-color: var(--red); }
-        .quadrant-card-label {
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
-        .quadrant-card-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--text);
-        }
-        .quadrant-card-arrow {
-            font-size: 0.8rem;
-            color: var(--red);
-            margin-top: 0.25rem;
-        }
-
-        /* CTA SECTION */
-        .cta-section {
-            background: var(--blue);
-            padding: 5rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: repeating-linear-gradient(-55deg, transparent, transparent 60px, rgba(255,255,255,0.02) 60px, rgba(255,255,255,0.02) 61px);
-            pointer-events: none;
-        }
-        .cta-section .container { position: relative; z-index: 1; }
-        .cta-section h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            font-weight: 300;
-            color: white;
-            margin-bottom: 1rem;
-        }
-        .cta-section h2 em { font-style: italic; color: var(--gold-lt); }
-        .cta-section p {
-            color: rgba(255,255,255,0.7);
-            font-size: 1rem;
-            max-width: 520px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.75;
-        }
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .cta-section .btn-primary { background: var(--red); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
-        .cta-section .btn-outline { border-color: rgba(255,255,255,0.25); }
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-            .quadrant-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .hero-cta, .cta-buttons { flex-direction: column; align-items: center; }
-            .quadrant-grid { grid-template-columns: 1fr; }
-        }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-    </style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+        :root{--red:#EA002A;--blue:#003DA5;--gold:#C5A572;--gold-lt:#ddc89a;--dark:#0d0d0d;--off-white:#f5f2ed;--cream:#faf8f4;--text:#1a1a1a;--muted:#777;--border:#e5e0d8;}
+        body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.6;}
+        #header-container{position:relative;z-index:1000;width:100%;}
+        .hero{background:var(--dark);color:white;min-height:70vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding-top:80px;text-align:center;}
+        .hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,0.015) 60px,rgba(255,255,255,0.015) 61px);pointer-events:none;}
+        .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--red),var(--blue));}
+        .hero-inner{position:relative;z-index:2;max-width:780px;padding:4rem 2rem;}
+        .hero-eyebrow{display:flex;align-items:center;justify-content:center;gap:0.75rem;margin-bottom:1.75rem;}
+        .eyebrow-line{width:40px;height:1px;background:var(--gold);}
+        .eyebrow-text{font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500;}
+        .hero-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:300;line-height:1.1;color:white;margin-bottom:1.5rem;animation:fadeUp 0.7s 0.1s ease both;}
+        .hero-headline em{font-style:italic;color:var(--gold-lt);}
+        .hero-subhead{font-size:1.05rem;color:rgba(255,255,255,0.65);line-height:1.8;max-width:580px;margin:0 auto 2.5rem;animation:fadeUp 0.7s 0.2s ease both;}
+        .hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.7s 0.3s ease both;}
+        .btn-primary{display:inline-block;padding:1rem 2.5rem;background:var(--red);color:white;text-decoration:none;font-size:0.85rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border-radius:4px;transition:all 0.25s ease;box-shadow:0 4px 20px rgba(234,0,42,0.3);}
+        .btn-primary:hover{background:#c80020;transform:translateY(-2px);}
+        .btn-outline{display:inline-block;padding:1rem 2.5rem;background:transparent;color:white;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;border-radius:4px;border:1px solid rgba(255,255,255,0.2);transition:all 0.25s ease;}
+        .btn-outline:hover{border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.05);transform:translateY(-2px);}
+        .section{padding:5rem 0;}
+        .container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+        .section-eyebrow{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;}
+        .section-eyebrow-centered{justify-content:center;}
+        .section-eyebrow .eyebrow-line{background:var(--gold);}
+        .section-eyebrow .eyebrow-text{color:var(--gold);font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;font-weight:500;}
+        .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:300;line-height:1.2;color:var(--text);margin-bottom:1rem;}
+        .section-title em{font-style:italic;color:var(--red);}
+        .about-section{background:white;}
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+        .about-body p{color:#444;line-height:1.85;font-size:0.97rem;margin-bottom:1.25rem;}
+        .feature-list{margin-top:2rem;display:flex;flex-direction:column;gap:0.75rem;}
+        .feature-item{display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;font-weight:500;color:var(--text);}
+        .feature-dot{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0;}
+        .highlight-card{background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:2.5rem;position:relative;}
+        .highlight-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--red),var(--blue));border-radius:16px 16px 0 0;}
+        .highlight-card h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;margin-bottom:1.25rem;color:var(--text);}
+        .highlight-card ul{list-style:none;display:flex;flex-direction:column;gap:0.65rem;}
+        .highlight-card ul li{font-size:0.88rem;color:#555;padding-left:1rem;position:relative;line-height:1.6;}
+        .highlight-card ul li::before{content:'→';position:absolute;left:0;color:var(--red);font-size:0.8rem;}
+        .map-section{background:var(--off-white);padding:5rem 0;}
+        .map-header{text-align:center;margin-bottom:2.5rem;}
+        .map-header .section-eyebrow{justify-content:center;}
+        .map-header p{color:var(--muted);font-size:0.9rem;margin-top:0.5rem;}
+        .map-wrapper{border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 8px 40px rgba(0,0,0,0.1);}
+        #community-map{width:100%;height:560px;}
+        .communities-section{background:white;}
+        .communities-header{text-align:center;margin-bottom:3rem;}
+        .communities-header .section-eyebrow{justify-content:center;}
+        .community-count{display:inline-block;font-size:0.78rem;color:var(--muted);letter-spacing:1px;margin-top:0.5rem;}
+        .community-links-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;}
+        .community-link-card{background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:1.1rem 1rem;text-decoration:none;color:var(--text);transition:all 0.2s ease;display:flex;flex-direction:column;gap:0.2rem;}
+        .community-link-card:hover{border-color:var(--red);transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.07);}
+        .community-link-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--text);}
+        .community-link-desc{font-size:0.72rem;color:var(--muted);line-height:1.45;}
+        .community-link-arrow{font-size:0.7rem;color:var(--red);margin-top:0.3rem;font-weight:600;}
+        .links-section{background:var(--off-white);}
+        .links-header{text-align:center;margin-bottom:3rem;}
+        .links-header .section-eyebrow{justify-content:center;}
+        .quadrant-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+        .quadrant-card{background:white;border:1px solid var(--border);border-radius:10px;padding:1.5rem 1.25rem;text-align:center;text-decoration:none;color:var(--text);transition:all 0.25s ease;display:flex;flex-direction:column;align-items:center;gap:0.5rem;}
+        .quadrant-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.08);}
+        .quadrant-card.hub{border-color:var(--gold);background:linear-gradient(135deg,#fff 0%,var(--cream) 100%);}
+        .quadrant-card-label{font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+        .quadrant-card-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--text);}
+        .quadrant-card-arrow{font-size:0.8rem;color:var(--red);margin-top:0.25rem;}
+        .cta-section{background:var(--blue);padding:5rem 0;text-align:center;position:relative;overflow:hidden;}
+        .cta-section::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,0.02) 60px,rgba(255,255,255,0.02) 61px);pointer-events:none;}
+        .cta-section .container{position:relative;z-index:1;}
+        .cta-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:white;margin-bottom:1rem;}
+        .cta-section h2 em{font-style:italic;color:var(--gold-lt);}
+        .cta-section p{color:rgba(255,255,255,0.7);font-size:1rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.75;}
+        .cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+        .cta-section .btn-primary{background:var(--red);box-shadow:0 4px 20px rgba(0,0,0,0.3);}
+        .cta-section .btn-outline{border-color:rgba(255,255,255,0.25);}
+        @media(max-width:1000px){.community-links-grid{grid-template-columns:repeat(3,1fr);}}
+        @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:3rem;}.quadrant-grid{grid-template-columns:repeat(2,1fr);}.community-links-grid{grid-template-columns:repeat(2,1fr);}#community-map{height:420px;}}
+        @media(max-width:600px){.hero-cta,.cta-buttons{flex-direction:column;align-items:center;}.quadrant-grid,.community-links-grid{grid-template-columns:1fr;}#community-map{height:320px;}}
+        @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+        .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+        .reveal.visible{opacity:1;transform:translateY(0);}
+</style>
 </head>
 <body>
-
-    <!-- Duiker Properties Header -->
     <div id="header-container"></div>
-
-    <!-- HERO -->
     <section class="hero">
         <div class="hero-inner">
-            <div class="hero-eyebrow">
-                <div class="eyebrow-line"></div>
-                <span class="eyebrow-text">Calgary West</span>
-                <div class="eyebrow-line"></div>
-            </div>
-            <h1 class="hero-headline">
-                Mountains Close,<br><em>City at Your Door</em>
-            </h1>
-            <p class="hero-subhead">
-                Calgary West sits at the edge of the foothills, offering mature neighbourhoods, strong schools, and some of the most scenic commutes in any major Canadian city. The mountains feel closer here.
-            </p>
+            <div class="hero-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Calgary West</span><div class="eyebrow-line"></div></div>
+            <h1 class="hero-headline">Mountains Close,<br><em>City at Your Door</em></h1>
+            <p class="hero-subhead">Calgary West sits at the edge of the foothills, offering mature neighbourhoods, strong schools, and some of the most scenic commutes in any major Canadian city.</p>
             <div class="hero-cta">
                 <a href="https://www.duikerproperties.com/idx" class="btn-primary">Browse Homes</a>
                 <a href="https://duikerproperties.com/contact" class="btn-outline">Talk to Kyle</a>
             </div>
         </div>
     </section>
-
-    <!-- ABOUT SECTION -->
     <section class="section about-section">
         <div class="container">
             <div class="about-grid">
                 <div class="about-body reveal">
-                    <div class="section-eyebrow">
-                        <div class="eyebrow-line"></div>
-                        <span class="eyebrow-text">Calgary West</span>
-                    </div>
+                    <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Calgary West</span></div>
                     <h2 class="section-title">Mature Communities, <em>Foothills Character</em></h2>
-                    <p>West Calgary is defined by its well-established neighbourhoods, generous lot sizes, and easy access to both the city centre and the Rocky Mountains. Communities here have a settled, leafy feel.</p>
+                    <p>West Calgary is defined by its well-established neighbourhoods, generous lot sizes, and easy access to both the city centre and the Rocky Mountains.</p>
                     <p>Buyers are drawn to Calgary West for its school options, transit corridors, and the outdoor lifestyle that comes with proximity to Nose Hill Park, Edworthy Park, and the Bow River pathway system.</p>
-                    <div class="feature-list">
-                        <div class="feature-item"><div class="feature-dot"></div>Close proximity to Kananaskis and Banff</div>
+                    <div class="feature-list">                        <div class="feature-item"><div class="feature-dot"></div>Close proximity to Kananaskis and Banff</div>
                         <div class="feature-item"><div class="feature-dot"></div>Mature neighbourhoods with established trees</div>
                         <div class="feature-item"><div class="feature-dot"></div>Access to strong school communities</div>
-                        <div class="feature-item"><div class="feature-dot"></div>Mix of single-family homes and condos</div>
-                    </div>
+                        <div class="feature-item"><div class="feature-dot"></div>Mix of single-family homes and condos</div></div>
                 </div>
                 <div class="reveal">
                     <div class="highlight-card">
                         <h3>Neighbourhoods to Know</h3>
-                        <ul>
-                    <li>Signal Hill — established, family-friendly, great views</li>
+                        <ul>                    <li>Signal Hill — established, family-friendly, great views</li>
                     <li>Cougar Ridge — newer development, mountain proximity</li>
                     <li>West Springs — upscale, growing community hub</li>
                     <li>Strathcona Park — mature, quiet, central west</li>
                     <li>Aspen Woods — premium homes, top school catchments</li>
-                    <li>Springbank Hill — semi-rural feel, luxury properties</li>
-                        </ul>
+                    <li>Springbank Hill — semi-rural feel, luxury properties</li></ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- QUADRANT LINKS SECTION -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-header reveal">
+                <div class="section-eyebrow section-eyebrow-centered"><div class="eyebrow-line"></div><span class="eyebrow-text">Community Map</span><div class="eyebrow-line"></div></div>
+                <h2 class="section-title" style="text-align:center;">Explore <em>Calgary West</em></h2>
+                <p>Click any pin to learn about that community</p>
+            </div>
+            <div class="map-wrapper reveal">
+                <div id="community-map"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section communities-section">
+        <div class="container">
+            <div class="communities-header reveal">
+                <div class="section-eyebrow section-eyebrow-centered"><div class="eyebrow-line"></div><span class="eyebrow-text">Explore Communities</span><div class="eyebrow-line"></div></div>
+                <h2 class="section-title" style="text-align:center;">Neighbourhoods in <em>Calgary West</em></h2>
+                <span class="community-count">27 communities</span>
+            </div>
+            <div class="community-links-grid reveal">
+                <a href="https://guide.duikerproperties.com/calgary/west/aspen-woods/" class="community-link-card"><span class="community-link-name">Aspen Woods</span><span class="community-link-desc">Premium homes with top school catchments</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/christie-park/" class="community-link-card"><span class="community-link-name">Christie Park</span><span class="community-link-desc">Established west community with good city access</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/coach-hill/" class="community-link-card"><span class="community-link-name">Coach Hill</span><span class="community-link-desc">Mature community with generous lots and views</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/cougar-ridge/" class="community-link-card"><span class="community-link-name">Cougar Ridge</span><span class="community-link-desc">Newer development with mountain proximity</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/crestmont/" class="community-link-card"><span class="community-link-name">Crestmont</span><span class="community-link-desc">Small community with a semi-rural feel</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/discovery-ridge/" class="community-link-card"><span class="community-link-name">Discovery Ridge</span><span class="community-link-desc">Nature-adjacent community beside Griffith Woods</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/glamorgan/" class="community-link-card"><span class="community-link-name">Glamorgan</span><span class="community-link-desc">Established south-west community near MRU</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/glenbrook/" class="community-link-card"><span class="community-link-name">Glenbrook</span><span class="community-link-desc">Mature community with solid single-family stock</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/glendale/" class="community-link-card"><span class="community-link-name">Glendale</span><span class="community-link-desc">Affordable west community with established character</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/lakeview/" class="community-link-card"><span class="community-link-name">Lakeview</span><span class="community-link-desc">Mature community near Glenmore Reservoir</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/lincoln-park/" class="community-link-card"><span class="community-link-name">Lincoln Park</span><span class="community-link-desc">West community near CFB Calgary</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/meadowlark-park/" class="community-link-card"><span class="community-link-name">Meadowlark Park</span><span class="community-link-desc">Quiet residential with mature trees</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/north-glenmore-park/" class="community-link-card"><span class="community-link-name">North Glenmore Park</span><span class="community-link-desc">Established community beside the reservoir</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/oakridge/" class="community-link-card"><span class="community-link-name">Oakridge</span><span class="community-link-desc">Mature trees and solid single-family stock</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/patterson/" class="community-link-card"><span class="community-link-name">Patterson</span><span class="community-link-desc">Hillside views and established west-side character</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/rosscarrock/" class="community-link-card"><span class="community-link-name">Rosscarrock</span><span class="community-link-desc">Affordable inner-west with good transit access</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/rutland-park/" class="community-link-card"><span class="community-link-name">Rutland Park</span><span class="community-link-desc">Quiet, mature community near MRU</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/scarboro/" class="community-link-card"><span class="community-link-name">Scarboro</span><span class="community-link-desc">Prestigious inner-city adjacent to the west</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/signal-hill/" class="community-link-card"><span class="community-link-name">Signal Hill</span><span class="community-link-desc">Established family community with great views</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/springbank-hill/" class="community-link-card"><span class="community-link-name">Springbank Hill</span><span class="community-link-desc">Semi-rural feel with luxury properties</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/spruce-cliff/" class="community-link-card"><span class="community-link-name">Spruce Cliff</span><span class="community-link-desc">Riverside community with Edworthy Park access</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/strathcona-park/" class="community-link-card"><span class="community-link-name">Strathcona Park</span><span class="community-link-desc">Quiet, central with excellent west-side access</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/valley-ridge/" class="community-link-card"><span class="community-link-name">Valley Ridge</span><span class="community-link-desc">Scenic community beside the Bow River valley</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/west-springs/" class="community-link-card"><span class="community-link-name">West Springs</span><span class="community-link-desc">Upscale neighbourhood with a growing hub</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/westgate/" class="community-link-card"><span class="community-link-name">Westgate</span><span class="community-link-desc">Established community with CTrain proximity</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/wildwood/" class="community-link-card"><span class="community-link-name">Wildwood</span><span class="community-link-desc">Mature community with Edworthy Park access</span><span class="community-link-arrow">View →</span></a>
+                <a href="https://guide.duikerproperties.com/calgary/west/woodlands/" class="community-link-card"><span class="community-link-name">Woodlands</span><span class="community-link-desc">Established south-west community near Fish Creek</span><span class="community-link-arrow">View →</span></a>
+            </div>
+        </div>
+    </section>
     <section class="section links-section">
         <div class="container">
             <div class="links-header reveal">
-                <div class="section-eyebrow section-eyebrow-centered">
-                    <div class="eyebrow-line"></div>
-                    <span class="eyebrow-text">Explore Other Areas</span>
-                    <div class="eyebrow-line"></div>
-                </div>
+                <div class="section-eyebrow section-eyebrow-centered"><div class="eyebrow-line"></div><span class="eyebrow-text">Explore Other Areas</span><div class="eyebrow-line"></div></div>
                 <h2 class="section-title" style="text-align:center;">Browse Calgary <em>By Quadrant</em></h2>
             </div>
             <div class="quadrant-grid reveal">
-
-                <a href="/calgary/" class="quadrant-card hub">
-                    <span class="quadrant-card-label">All Calgary</span>
-                    <span class="quadrant-card-title">Calgary</span>
-                    <span class="quadrant-card-arrow">Explore →</span>
-                </a>
-                <a href="/calgary/city-center/" class="quadrant-card">
-                    <span class="quadrant-card-label">Quadrant</span>
-                    <span class="quadrant-card-title">City Centre</span>
-                    <span class="quadrant-card-arrow">Explore →</span>
-                </a>
-                <a href="/calgary/east/" class="quadrant-card">
-                    <span class="quadrant-card-label">Quadrant</span>
-                    <span class="quadrant-card-title">East</span>
-                    <span class="quadrant-card-arrow">Explore →</span>
-                </a>
-                <a href="/calgary/north/" class="quadrant-card">
-                    <span class="quadrant-card-label">Quadrant</span>
-                    <span class="quadrant-card-title">North</span>
-                    <span class="quadrant-card-arrow">Explore →</span>
-                </a>
-                <a href="/calgary/north-east/" class="quadrant-card">
-                    <span class="quadrant-card-label">Quadrant</span>
-                    <span class="quadrant-card-title">Northeast</span>
-                    <span class="quadrant-card-arrow">Explore →</span>
-                </a>
-                <a href="/calgary/north-west/" class="quadrant-card">
-                    <span class="quadrant-card-label">Quadrant</span>
-                    <span class="quadrant-card-title">Northwest</span>
-                    <span class="quadrant-card-arrow">Explore →</span>
-                </a>
-                <a href="/calgary/south/" class="quadrant-card">
-                    <span class="quadrant-card-label">Quadrant</span>
-                    <span class="quadrant-card-title">South</span>
-                    <span class="quadrant-card-arrow">Explore →</span>
-                </a>
-                <a href="/calgary/southeast/" class="quadrant-card">
-                    <span class="quadrant-card-label">Quadrant</span>
-                    <span class="quadrant-card-title">Southeast</span>
-                    <span class="quadrant-card-arrow">Explore →</span>
-                </a>
-            </div>
+                <a href="/calgary/" class="quadrant-card hub"><span class="quadrant-card-label">All Calgary</span><span class="quadrant-card-title">Calgary</span><span class="quadrant-card-arrow">Explore →</span></a>
+                <a href="/calgary/city-center/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">City Centre</span><span class="quadrant-card-arrow">Explore →</span></a>
+                <a href="/calgary/east/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">East</span><span class="quadrant-card-arrow">Explore →</span></a>
+                <a href="/calgary/north/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">North</span><span class="quadrant-card-arrow">Explore →</span></a>
+                <a href="/calgary/north-east/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">Northeast</span><span class="quadrant-card-arrow">Explore →</span></a>
+                <a href="/calgary/north-west/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">Northwest</span><span class="quadrant-card-arrow">Explore →</span></a>
+                <a href="/calgary/south/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">South</span><span class="quadrant-card-arrow">Explore →</span></a>
+                <a href="/calgary/south-east/" class="quadrant-card"><span class="quadrant-card-label">Quadrant</span><span class="quadrant-card-title">Southeast</span><span class="quadrant-card-arrow">Explore →</span></a></div>
         </div>
     </section>
-
-    <!-- CTA SECTION -->
     <section class="cta-section">
         <div class="container reveal">
             <h2>Explore Homes in <em>Calgary West</em></h2>
-            <p>West Calgary offers a lifestyle that's hard to match — mature, scenic, and well-connected. Let's find the right community for you.</p>
+            <p>West Calgary offers a lifestyle that's hard to match — mature, scenic, and well-connected.</p>
             <div class="cta-buttons">
                 <a href="https://www.duikerproperties.com/idx" class="btn-primary">Browse Homes</a>
-                <a href="tel:4037973384" class="btn-outline">
-                    <svg style="display:inline;vertical-align:middle;margin-right:6px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1.04 3.42 2 2 0 0 1 3 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    (403) 797-3384
-                </a>
+                <a href="tel:4037973384" class="btn-outline"><svg style="display:inline;vertical-align:middle;margin-right:6px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1.04 3.42 2 2 0 0 1 3 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(403) 797-3384</a>
             </div>
         </div>
     </section>
-
-    <!-- Header JS -->
-    
     <script src="https://kyleduiker.github.io/duikerproperties-homepage/assets/js/header.js"></script>
+
     <script>
-        const reveals = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => {
+        var communities = [
+  {name:"Aspen Woods",desc:"Premium homes with top school catchments",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Aspen+Woods&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aaspen+woods%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/aspen-woods/",lat:51.0447,lng:-114.0719},
+  {name:"Christie Park",desc:"Established west community with good city access",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Christie+Park&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Achristie+park%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/christie-park/",lat:51.0447,lng:-114.0719},
+  {name:"Coach Hill",desc:"Mature community with generous lots and views",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Coach+Hill&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Acoach+hill%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/coach-hill/",lat:51.0447,lng:-114.0719},
+  {name:"Cougar Ridge",desc:"Newer development with mountain proximity",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Cougar+Ridge&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Acougar+ridge%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/cougar-ridge/",lat:51.0447,lng:-114.0719},
+  {name:"Crestmont",desc:"Small community with a semi-rural feel",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Crestmont&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Acrestmont%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/crestmont/",lat:51.0447,lng:-114.0719},
+  {name:"Discovery Ridge",desc:"Nature-adjacent community beside Griffith Woods",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Discovery+Ridge&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Adiscovery+ridge%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/discovery-ridge/",lat:51.0447,lng:-114.0719},
+  {name:"Glamorgan",desc:"Established south-west community near MRU",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Glamorgan&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aglamorgan%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/glamorgan/",lat:51.0447,lng:-114.0719},
+  {name:"Glenbrook",desc:"Mature community with solid single-family stock",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Glenbrook&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aglenbrook%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/glenbrook/",lat:51.0447,lng:-114.0719},
+  {name:"Glendale",desc:"Affordable west community with established character",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Glendale&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aglendale%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/glendale/",lat:51.0447,lng:-114.0719},
+  {name:"Lakeview",desc:"Mature community near Glenmore Reservoir",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Lakeview&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Alakeview%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/lakeview/",lat:51.0447,lng:-114.0719},
+  {name:"Lincoln Park",desc:"West community near CFB Calgary",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Lincoln+Park&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Alincoln+park%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/lincoln-park/",lat:51.0447,lng:-114.0719},
+  {name:"Meadowlark Park",desc:"Quiet residential with mature trees",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Meadowlark+Park&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Ameadowlark+park%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/meadowlark-park/",lat:51.0447,lng:-114.0719},
+  {name:"North Glenmore Park",desc:"Established community beside the reservoir",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=North+Glenmore+Park&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Anorth+glenmore+park%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/north-glenmore-park/",lat:51.0447,lng:-114.0719},
+  {name:"Oakridge",desc:"Mature trees and solid single-family stock",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Oakridge&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aoakridge%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/oakridge/",lat:51.0447,lng:-114.0719},
+  {name:"Patterson",desc:"Hillside views and established west-side character",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Patterson&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Apatterson%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/patterson/",lat:51.0447,lng:-114.0719},
+  {name:"Rosscarrock",desc:"Affordable inner-west with good transit access",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Rosscarrock&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Arosscarrock%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/rosscarrock/",lat:51.0447,lng:-114.0719},
+  {name:"Rutland Park",desc:"Quiet, mature community near MRU",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Rutland+Park&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Arutland+park%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/rutland-park/",lat:51.0447,lng:-114.0719},
+  {name:"Scarboro",desc:"Prestigious inner-city adjacent to the west",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Scarboro&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Ascarboro%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/scarboro/",lat:51.0447,lng:-114.0719},
+  {name:"Signal Hill",desc:"Established family community with great views",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Signal+Hill&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Asignal+hill%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/signal-hill/",lat:51.0447,lng:-114.0719},
+  {name:"Springbank Hill",desc:"Semi-rural feel with luxury properties",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Springbank+Hill&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aspringbank+hill%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/springbank-hill/",lat:51.0447,lng:-114.0719},
+  {name:"Spruce Cliff",desc:"Riverside community with Edworthy Park access",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Spruce+Cliff&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aspruce+cliff%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/spruce-cliff/",lat:51.0447,lng:-114.0719},
+  {name:"Strathcona Park",desc:"Quiet, central with excellent west-side access",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Strathcona+Park&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Astrathcona+park%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/strathcona-park/",lat:51.0447,lng:-114.0719},
+  {name:"Valley Ridge",desc:"Scenic community beside the Bow River valley",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Valley+Ridge&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Avalley+ridge%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/valley-ridge/",lat:51.0447,lng:-114.0719},
+  {name:"West Springs",desc:"Upscale neighbourhood with a growing hub",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=West+Springs&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Awest+springs%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/west-springs/",lat:51.0447,lng:-114.0719},
+  {name:"Westgate",desc:"Established community with CTrain proximity",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Westgate&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Awestgate%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/westgate/",lat:51.0447,lng:-114.0719},
+  {name:"Wildwood",desc:"Mature community with Edworthy Park access",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Wildwood&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Awildwood%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/wildwood/",lat:51.0447,lng:-114.0719},
+  {name:"Woodlands",desc:"Established south-west community near Fish Creek",idxUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Woodlands&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=31&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Awoodlands%3Aab&sortby=listings.visits+DESC&rtype=grid",url:"https://guide.duikerproperties.com/calgary/west/woodlands/",lat:51.0447,lng:-114.0719},
+        ];
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('community-map'), {
+                zoom: 12,
+                center: {lat: 51.0267, lng: -114.1756},
+                mapTypeId: 'hybrid',
+                mapTypeControl: false,
+                streetViewControl: false,
+                fullscreenControl: true
+            });
+            var infoWindow = new google.maps.InfoWindow();
+            var pinIcon = {path:google.maps.SymbolPath.CIRCLE,fillColor:'#EA002A',fillOpacity:1,strokeColor:'#ffffff',strokeWeight:2,scale:8};
+            communities.forEach(function(c) {
+                var marker = new google.maps.Marker({position:{lat:c.lat,lng:c.lng},map:map,title:c.name,icon:pinIcon,animation:google.maps.Animation.DROP});
+                marker.addListener('click', function() {
+                    infoWindow.setContent('<div style="font-family:DM Sans,sans-serif;min-width:220px;padding:4px"><div style="font-family:Georgia,serif;font-size:1.05rem;font-weight:600;color:#1a1a1a;margin-bottom:0.4rem">'+c.name+'</div><div style="font-size:0.8rem;color:#666;line-height:1.5;margin-bottom:0.85rem">'+c.desc+'</div><div style="display:flex;gap:0.5rem;flex-wrap:wrap;"><a href="'+c.idxUrl+'" style="display:inline-block;padding:0.4rem 0.9rem;background:#EA002A;color:white;text-decoration:none;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px">View Listings</a><a href="'+c.url+'" style="display:inline-block;padding:0.4rem 0.9rem;background:transparent;color:#1a1a1a;text-decoration:none;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px;border:1.5px solid #e5e0d8">Learn More</a></div></div>');
+                    infoWindow.open(map,marker);
+                });
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmMDCK4HXKxrpLs6FXM2xB3nhcRTzfKnA&callback=initMap"></script>
+    <script>
+        var reveals = document.querySelectorAll('.reveal');
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry, i) {
                 if (entry.isIntersecting) {
                     entry.target.style.transitionDelay = (i * 0.05) + 's';
                     entry.target.classList.add('visible');
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 });
-        reveals.forEach(el => observer.observe(el));
+        }, {threshold: 0.1});
+        reveals.forEach(function(el) { observer.observe(el); });
     </script>
 </body>
 </html>
