@@ -1,0 +1,33 @@
+name: Geocode Communities & Build Pages
+
+on:
+  workflow_dispatch:  # Run manually from GitHub Actions tab
+  push:
+    paths:
+      - 'geocode_and_rebuild.py'  # Also auto-run when script is updated
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run geocode & build script
+        env:
+          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+        run: python geocode_and_rebuild.py
+
+      - name: Commit and push output files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add calgary-pages-geocoded/
+          git diff --staged --quiet || git commit -m "Auto-rebuild: geocoded community pages"
+          git push
