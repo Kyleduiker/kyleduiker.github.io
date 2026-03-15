@@ -92,7 +92,7 @@
         .reveal.visible{opacity:1;transform:translateY(0);}
 
     </style>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css"/>
     <style>
         #community-map { width:100%; height:560px; border-radius:0; }
         @media(max-width:768px){#community-map{height:420px}}
@@ -234,6 +234,9 @@
     <script src="https://kyleduiker.github.io/duikerproperties-homepage/assets/js/header.js"></script>
 
     <script>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
+    <script>
         var communities = [
   {name:"Auburn Bay",desc:"Established lake living with excellent resale history",url:"/calgary/communities/auburn-bay/",lat:50.89071378827738,lng:-113.96509268719602,listingUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Auburn+Bay&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=5&types%5B%5D=31&types%5B%5D=4&types%5B%5D=6&types%5B%5D=8&types%5B%5D=11&types%5B%5D=12&types%5B%5D=20&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aauburn+bay%3Aab&sortby=listings.visits+DESC&rtype=map"},
   {name:"Belmont",desc:"Newer SE community growing along the south edge",url:"/calgary/communities/belmont/",lat:50.8704214858849,lng:-114.06129613711197,listingUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Belmont&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=5&types%5B%5D=31&types%5B%5D=4&types%5B%5D=6&types%5B%5D=8&types%5B%5D=11&types%5B%5D=12&types%5B%5D=20&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Abelmont%3Aab&sortby=listings.visits+DESC&rtype=map"},
@@ -283,8 +286,7 @@
         }, {threshold: 0.1});
         reveals.forEach(function(el) { observer.observe(el); });
     </script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script>
+        <script>
 
         // Leaflet map
         var map = L.map('community-map', {
