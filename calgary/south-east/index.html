@@ -92,13 +92,6 @@
         .reveal.visible{opacity:1;transform:translateY(0);}
 
     </style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css"/>
-    <style>
-        #community-map { width:100%; height:560px; border-radius:0; }
-        @media(max-width:768px){#community-map{height:420px}}
-        @media(max-width:480px){#community-map{height:320px}}
-        .leaflet-popup-content-wrapper { border-radius: 4px; }
-    </style>
 </head>
 <body>
     <div id="header-container"></div>
@@ -234,9 +227,6 @@
     <script src="https://kyleduiker.github.io/duikerproperties-homepage/assets/js/header.js"></script>
 
     <script>
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
-    <script>
         var communities = [
   {name:"Auburn Bay",desc:"Established lake living with excellent resale history",url:"/calgary/communities/auburn-bay/",lat:50.89071378827738,lng:-113.96509268719602,listingUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Auburn+Bay&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=5&types%5B%5D=31&types%5B%5D=4&types%5B%5D=6&types%5B%5D=8&types%5B%5D=11&types%5B%5D=12&types%5B%5D=20&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Aauburn+bay%3Aab&sortby=listings.visits+DESC&rtype=map"},
   {name:"Belmont",desc:"Newer SE community growing along the south edge",url:"/calgary/communities/belmont/",lat:50.8704214858849,lng:-114.06129613711197,listingUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Belmont&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=5&types%5B%5D=31&types%5B%5D=4&types%5B%5D=6&types%5B%5D=8&types%5B%5D=11&types%5B%5D=12&types%5B%5D=20&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Abelmont%3Aab&sortby=listings.visits+DESC&rtype=map"},
@@ -272,7 +262,39 @@
   {name:"Wolf Willow",desc:"New SE community beside the Bow River",url:"/calgary/communities/wolf-willow/",lat:50.87328818026171,lng:-114.00395195639231,listingUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=Wolf+Willow&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=5&types%5B%5D=31&types%5B%5D=4&types%5B%5D=6&types%5B%5D=8&types%5B%5D=11&types%5B%5D=12&types%5B%5D=20&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&areas%5B%5D=neighbourhood%3Awolf+willow%3Aab&sortby=listings.visits+DESC&rtype=map"},
   {name:"Ricardo Ranch",desc:"Acreage community in far south Calgary",url:"/calgary/communities/ricardo-ranch/",lat:50.86018446444534,lng:-113.94895943511435,listingUrl:"https://www.duikerproperties.com/index.php?advanced=1&display=ricardo+ranch&min=0&max=100000000&beds=0&baths=0&types%5B%5D=1&types%5B%5D=2&types%5B%5D=3&types%5B%5D=5&types%5B%5D=31&types%5B%5D=4&types%5B%5D=6&types%5B%5D=8&types%5B%5D=11&types%5B%5D=12&types%5B%5D=20&minfootage=0&maxfootage=30000&minacres=0&maxacres=0&yearbuilt=0&maxyearbuilt=0&walkscore=0&keywords=&area_keyword=ricardo+ranch&sortby=listings.visits+DESC&rtype=map&polygons%5B%5D=-113.96268367767335%2C50.866021770471896%2C-113.95422935485841%2C50.86358401937743%2C-113.93989562988283%2C50.86298810527804%2C-113.93702030181886%2C50.86320480219542%2C-113.93526077270509%2C50.86339441117198%2C-113.93096923828126%2C50.86306936674008%2C-113.92933845520021%2C50.86171499054859%2C-113.92878055572511%2C50.86044184105647%2C-113.92890930175783%2C50.858003798201786%2C-113.94783496856691%2C50.856053272138496%2C-113.95397186279298%2C50.85830178805516%2C-113.95925045013429%2C50.85884358291%2C-113.96079540252687%2C50.86239218356206%2C-113.96517276763917%2C50.86277140735346%2C-113.96268367767335%2C50.866021770471896"},
         ];
-        
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('community-map'), {
+                zoom: 12,
+                center: {lat: 50.91, lng: -114.025},
+                styles: [
+                    {elementType:'geometry',stylers:[{color:'#f5f2ed'}]},
+                    {elementType:'labels.text.fill',stylers:[{color:'#1a1a1a'}]},
+                    {elementType:'labels.text.stroke',stylers:[{color:'#ffffff'}]},
+                    {featureType:'road',elementType:'geometry',stylers:[{color:'#ffffff'}]},
+                    {featureType:'road.arterial',elementType:'geometry',stylers:[{color:'#e5e0d8'}]},
+                    {featureType:'road.highway',elementType:'geometry',stylers:[{color:'#dadada'}]},
+                    {featureType:'water',elementType:'geometry',stylers:[{color:'#c9d8e8'}]},
+                    {featureType:'park',elementType:'geometry',stylers:[{color:'#dde8d0'}]},
+                    {featureType:'poi',stylers:[{visibility:'off'}]},
+                    {featureType:'transit',stylers:[{visibility:'off'}]}
+                ],
+                mapTypeId: 'hybrid',
+                mapTypeControl: false,
+                streetViewControl: false,
+                fullscreenControl: true
+            });
+            var infoWindow = new google.maps.InfoWindow();
+            var pinIcon = {path:google.maps.SymbolPath.CIRCLE,fillColor:'#EA002A',fillOpacity:1,strokeColor:'#ffffff',strokeWeight:2,scale:8};
+            communities.forEach(function(c) {
+                var marker = new google.maps.Marker({position:{lat:c.lat,lng:c.lng},map:map,title:c.name,icon:pinIcon,animation:google.maps.Animation.DROP});
+                marker.addListener('click', function() {
+                    infoWindow.setContent('<div style="font-family:DM Sans,sans-serif;min-width:220px;padding:4px"><div style="font-family:Georgia,serif;font-size:1.05rem;font-weight:600;color:#1a1a1a;margin-bottom:0.4rem">'+c.name+'</div><div style="font-size:0.8rem;color:#666;line-height:1.5;margin-bottom:0.75rem">'+c.desc+'</div><div style="display:flex;gap:8px;flex-wrap:wrap">'+(c.listingUrl ? '<a href="'+c.listingUrl+'" target="_blank" style="display:inline-block;padding:0.4rem 0.9rem;background:#EA002A;color:white;text-decoration:none;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px">View Listings</a>' : '')+'<a href="'+c.url+'" style="display:inline-block;padding:0.4rem 0.9rem;background:transparent;color:#EA002A;text-decoration:none;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px;border:1.5px solid #EA002A">Community Guide</a></div></div>');
+                    infoWindow.open(map,marker);
+                });
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmMDCK4HXKxrpLs6FXM2xB3nhcRTzfKnA&callback=initMap"></script>
     <script>
         var reveals = document.querySelectorAll('.reveal');
         var observer = new IntersectionObserver(function(entries) {
@@ -285,56 +307,6 @@
             });
         }, {threshold: 0.1});
         reveals.forEach(function(el) { observer.observe(el); });
-    </script>
-        <script>
-
-        // Leaflet map
-        var map = L.map('community-map', {
-            center: [50.91, -114.025],
-            zoom: 12,
-            zoomControl: true
-        });
-
-        // Satellite tile layer (ESRI World Imagery - free, no key needed)
-        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
-            maxZoom: 18
-        }).addTo(map);
-
-        // Label overlay so community names show on satellite
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
-            subdomains: 'abcd',
-            maxZoom: 18,
-            opacity: 0.8
-        }).addTo(map);
-
-        // Custom red circle marker
-        function makeIcon() {
-            return L.divIcon({
-                className: '',
-                html: '<div style="width:16px;height:16px;background:#EA002A;border:2.5px solid #fff;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.4)"></div>',
-                iconSize: [16, 16],
-                iconAnchor: [8, 8],
-                popupAnchor: [0, -10]
-            });
-        }
-
-        communities.forEach(function(c) {
-            var marker = L.marker([c.lat, c.lng], {icon: makeIcon(), title: c.name});
-            var listingBtn = c.listingUrl
-                ? '<a href="' + c.listingUrl + '" target="_blank" style="display:inline-block;padding:0.4rem 0.9rem;background:#EA002A;color:white;text-decoration:none;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px">View Listings</a>'
-                : '';
-            var guideBtn = '<a href="' + c.url + '" style="display:inline-block;padding:0.4rem 0.9rem;background:transparent;color:#EA002A;text-decoration:none;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px;border:1.5px solid #EA002A">Community Guide</a>';
-            var popup = '<div style="font-family:DM Sans,sans-serif;min-width:220px;padding:4px">'
-                + '<div style="font-family:Georgia,serif;font-size:1.05rem;font-weight:600;color:#1a1a1a;margin-bottom:0.4rem">' + c.name + '</div>'
-                + '<div style="font-size:0.8rem;color:#666;line-height:1.5;margin-bottom:0.75rem">' + c.desc + '</div>'
-                + '<div style="display:flex;gap:8px;flex-wrap:wrap">' + listingBtn + guideBtn + '</div>'
-                + '</div>';
-            marker.bindPopup(popup, {maxWidth: 280});
-            marker.addTo(map);
-        });
-
     </script>
 </body>
 </html>
