@@ -101,9 +101,16 @@
     </div>
 </section>
 
-<!-- FILTER BAR -->
-<div class="filter-bar">
-    <span class="filter-label">Filter by quadrant:</span>
+
+
+<!-- MAP -->
+<section class="map-section">
+    <div class="map-header reveal">
+        <div class="section-eyebrow" style="justify-content:center"><div class="eyebrow-line"></div><span class="eyebrow-text">Community Map</span><div class="eyebrow-line"></div></div>
+        <h2 class="section-title">Find Your <em>Neighbourhood</em></h2>
+        <p>Click any pin to view listings and the community guide</p>
+<div class="filter-bar" style="justify-content:center;border:none;background:transparent;padding:1.5rem 2rem 0;">
+    <span class="filter-label">Filter:</span>
     <button class="filter-btn active" onclick="filterQuadrant('all',this)">All Calgary</button>
     <button class="filter-btn" onclick="filterQuadrant('City Centre',this)">City Centre</button>
     <button class="filter-btn" onclick="filterQuadrant('Calgary Southeast',this)">Southeast</button>
@@ -114,13 +121,6 @@
     <button class="filter-btn" onclick="filterQuadrant('Calgary East',this)">East</button>
     <button class="filter-btn" onclick="filterQuadrant('Calgary West',this)">West</button>
 </div>
-
-<!-- MAP -->
-<section class="map-section">
-    <div class="map-header reveal">
-        <div class="section-eyebrow" style="justify-content:center"><div class="eyebrow-line"></div><span class="eyebrow-text">Community Map</span><div class="eyebrow-line"></div></div>
-        <h2 class="section-title">Find Your <em>Neighbourhood</em></h2>
-        <p>Click any pin to view listings and the community guide</p>
     </div>
     <div class="map-wrapper">
         <div id="community-map"></div>
@@ -492,7 +492,7 @@
 
             marker.addListener('click', function() {
                 var listingBtn = c.listingUrl
-                    ? '<a href="' + c.listingUrl + '" target="_blank" style="display:inline-block;padding:0.35rem 0.85rem;background:#EA002A;color:white;text-decoration:none;font-size:0.7rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px">View Listings</a>'
+                    ? '<a href="' + c.listingUrl + '" style="display:inline-block;padding:0.35rem 0.85rem;background:#EA002A;color:white;text-decoration:none;font-size:0.7rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px">View Listings</a>'
                     : '';
                 var guideBtn = c.guideUrl
                     ? '<a href="' + c.guideUrl + '" style="display:inline-block;padding:0.35rem 0.85rem;background:transparent;color:#EA002A;text-decoration:none;font-size:0.7rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px;border:1.5px solid #EA002A">Community Guide</a>'
