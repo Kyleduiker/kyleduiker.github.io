@@ -1,0 +1,259 @@
+console.log("DP FOOTER JS LOADED v1000");
+
+(function () {
+  const VERSION = "1000";
+
+  function buildFooterHTML() {
+    const year = new Date().getFullYear();
+    return `
+      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+
+      <style>
+        /* ── Duiker Properties Footer ─────────────────────────────────────── */
+        .dp-footer {
+          background-color: #000000;
+          color: #b1b1b1;
+          font-family: Raleway, Arial, sans-serif;
+          font-size: 0.85rem;
+          font-weight: 300;
+          line-height: 1.65;
+        }
+        .dp-footer .dp-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 24px;
+        }
+        .dp-footer-top {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 60px;
+          padding: 48px 0 36px;
+        }
+        .dp-footer-left h2 {
+          font-family: Raleway, Arial, sans-serif;
+          font-size: 1rem;
+          font-weight: 600;
+          color: #ffffff;
+          margin: 0 0 6px;
+          letter-spacing: 0.02em;
+        }
+        .dp-footer-left h3 {
+          font-family: Raleway, Arial, sans-serif;
+          font-size: 0.85rem;
+          font-weight: 600;
+          color: #ffffff;
+          margin: 18px 0 4px;
+          letter-spacing: 0.02em;
+        }
+        .dp-footer-left address {
+          font-style: normal;
+          font-weight: 300;
+          color: #b1b1b1;
+          margin: 0 0 4px;
+          line-height: 1.6;
+        }
+        .dp-footer-left p {
+          color: #b1b1b1;
+          font-weight: 300;
+          margin: 4px 0;
+        }
+        .dp-footer-left a {
+          color: #C5A572;
+          text-decoration: none;
+          font-weight: 300;
+        }
+        .dp-footer-left a:hover { color: #ffffff; }
+        .dp-footer-left small {
+          font-size: 0.78rem;
+          font-weight: 300;
+          color: #909090;
+        }
+        .dp-footer-left strong a {
+          color: #C5A572;
+          font-weight: 600;
+        }
+        .dp-footer-social {
+          display: flex;
+          gap: 10px;
+          margin-top: 16px;
+        }
+        .dp-footer-social a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 34px;
+          height: 34px;
+          border: 1px solid rgba(255,255,255,0.22);
+          border-radius: 4px;
+          color: #b1b1b1;
+          text-decoration: none;
+          transition: border-color 0.2s, color 0.2s;
+        }
+        .dp-footer-social a:hover {
+          border-color: #C5A572;
+          color: #C5A572;
+        }
+        .dp-footer-social svg {
+          width: 15px;
+          height: 15px;
+          fill: currentColor;
+          display: block;
+        }
+        .dp-footer-right h2 {
+          font-family: Raleway, Arial, sans-serif;
+          font-size: 1rem;
+          font-weight: 600;
+          color: #ffffff;
+          margin: 0 0 10px;
+          letter-spacing: 0.02em;
+        }
+        .dp-footer-right p {
+          color: #b1b1b1;
+          font-size: 0.78rem;
+          font-weight: 300;
+          line-height: 1.75;
+          margin: 0;
+        }
+        .dp-footer-right a {
+          color: #C5A572;
+          text-decoration: none;
+        }
+        .dp-footer-right a:hover { color: #ffffff; }
+        .dp-footer-bottom {
+          border-top: 1px solid rgba(255,255,255,0.10);
+          padding: 14px 0;
+        }
+        .dp-footer-bottom ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+        .dp-footer-bottom ul li a {
+          display: block;
+          padding: 4px 12px;
+          font-size: 0.78rem;
+          font-weight: 300;
+          color: #707070;
+          text-decoration: none;
+          border-right: 1px solid rgba(255,255,255,0.12);
+          transition: color 0.2s;
+        }
+        .dp-footer-bottom ul li:first-child a { padding-left: 0; }
+        .dp-footer-bottom ul li:last-child a  { border-right: none; }
+        .dp-footer-bottom ul li a:hover { color: #C5A572; }
+        @media (max-width: 768px) {
+          .dp-footer-top {
+            grid-template-columns: 1fr;
+            gap: 32px;
+            padding: 36px 0 24px;
+          }
+          .dp-footer-bottom ul {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          .dp-footer-bottom ul li a {
+            border-right: none;
+            padding: 4px 0;
+          }
+        }
+      </style>
+
+      <footer class="dp-footer">
+        <div class="dp-container">
+
+          <div class="dp-footer-top">
+
+            <div class="dp-footer-left">
+              <h2>Royal LePage Solutions – South</h2>
+              <address>205-264 MIDPARK WAY SE<br>Calgary, AB T2X 1J6</address>
+              <p><a href="tel:4037973384">403-797-3384</a></p>
+
+              <h3>Royal LePage Solutions – North</h3>
+              <address>1509 19 ST NW<br>Calgary, AB T2N 2K2</address>
+
+              <h3>Royal LePage Solutions – Okotoks</h3>
+              <address>106-52 McRae Street P.O. Box 984<br>Okotoks, AB T1S 2H4</address>
+
+              <h3>Royal LePage Solutions – North</h3>
+              <address>1509 19 ST NW<br>Calgary, AB T2N 2K2</address>
+
+              <p style="margin-top:14px;">Additional:</p>
+              <address>264 MIDPARK WAY SE<br>Calgary, AB T2X 1J6</address>
+
+              <p style="margin-top:12px;">
+                <small>Should you require assistance in navigating our website or searching for real estate,
+                please contact our offices at <strong><a href="tel:4032525900">403-252-5900</a></strong>.</small>
+              </p>
+
+              <div class="dp-footer-social">
+                <a href="https://www.youtube.com/channel/UCqzjEAl5HiftS-vFxDt0M0g" target="_blank" rel="noopener" aria-label="YouTube">
+                  <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/RLPSolutions" target="_blank" rel="noopener" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://x.com/RLPSolutions" target="_blank" rel="noopener" aria-label="X / Twitter">
+                  <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/royallepagesolutions/" target="_blank" rel="noopener" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="dp-footer-right">
+              <h2>MLS® Disclaimer</h2>
+              <p>
+                The property information on this website is derived from Royal LePage listings and the Canadian Real Estate Association's Data Distribution Facility (DDF®). DDF® references real estate listings held by brokerage firms other than Royal LePage and its franchisees. The above information is from sources believed reliable, however, no responsibility is assumed for the accuracy of this information. Contact information is provided to facilitate inquiries from consumers interested in real estate services. Please do not contact the website owner with unsolicited commercial offers.
+                <br><br>
+                The MLS® mark and associated logos identify professional services rendered by REALTOR® members of CREA to effect the purchase, sale and lease of real estate as part of a cooperative selling system.
+                <br><br>
+                The trademarks REALTOR®, REALTORS® and the REALTOR® logo are controlled by The Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA. The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by CREA and identify the quality of services provided by real estate professionals who are members of CREA.
+                <br><br>
+                All offices are independently owned and operated, except those marked as indicated. View important disclosures and notices about Royal LePage® trademarks at <a href="https://rlp.ca/notices" target="_blank" rel="nofollow">rlp.ca/notices</a>. © ${year} Bridgemarq Real Estate Services®. All rights reserved.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="dp-footer-bottom">
+            <ul>
+              <li><a href="https://duikerproperties.com">© ${year} Duiker Properties</a></li>
+              <li><a href="/terms/">Terms of Use</a></li>
+              <li><a href="/privacy/">Privacy Policy</a></li>
+              <li><a href="/accessibility/">Accessibility</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </footer>
+    `;
+  }
+
+  function ensureInjected() {
+    if (document.getElementById("dp-footer-el")) return;
+
+    const mount = document.getElementById("footer");
+    if (!mount) return;
+
+    mount.id = "dp-footer-el";
+    mount.innerHTML = buildFooterHTML();
+
+    console.log("[DP Footer] Injected OK - v" + VERSION);
+  }
+
+  function run() {
+    ensureInjected();
+    setTimeout(ensureInjected, 500);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", run);
+  } else {
+    run();
+  }
+
+})();
