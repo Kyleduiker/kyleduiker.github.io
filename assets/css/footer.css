@@ -1,0 +1,185 @@
+/* =========================================================
+   Duiker Properties Footer - v1000
+   Matches header.css pattern and design system
+   ========================================================= */
+
+/* ── Footer base ── */
+.dp-footer {
+  background-color: #000000;
+  color: #b1b1b1;
+  font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dp-footer .dp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Two-column top ── */
+.dp-footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 48px 0 36px;
+}
+
+/* ── Left column: offices ── */
+.dp-footer-left h2 {
+  font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 6px;
+  letter-spacing: 0.02em;
+}
+
+.dp-footer-left h3 {
+  font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 18px 0 4px;
+  letter-spacing: 0.02em;
+}
+
+.dp-footer-left address {
+  font-style: normal;
+  font-weight: 300;
+  color: #b1b1b1;
+  margin: 0 0 4px;
+  line-height: 1.6;
+}
+
+.dp-footer-left p {
+  color: #b1b1b1;
+  font-weight: 300;
+  margin: 4px 0;
+}
+
+.dp-footer-left a {
+  color: #C5A572;
+  text-decoration: none;
+  font-weight: 300;
+  transition: color 0.2s ease;
+}
+.dp-footer-left a:hover { color: #ffffff; }
+
+.dp-footer-left small {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: #909090;
+}
+
+.dp-footer-left strong a {
+  color: #C5A572;
+  font-weight: 600;
+}
+
+/* ── Social icons ── */
+.dp-footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.dp-footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 4px;
+  color: #b1b1b1;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.dp-footer-social a:hover {
+  border-color: #C5A572;
+  color: #C5A572;
+}
+.dp-footer-social svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+  display: block;
+}
+
+/* ── Right column: MLS disclaimer ── */
+.dp-footer-right h2 {
+  font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
+}
+
+.dp-footer-right p {
+  color: #b1b1b1;
+  font-size: 0.78rem;
+  font-weight: 300;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.dp-footer-right a {
+  color: #C5A572;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.dp-footer-right a:hover { color: #ffffff; }
+
+/* ── Bottom bar ── */
+.dp-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.10);
+  padding: 14px 0;
+}
+
+.dp-footer-bottom ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.dp-footer-bottom ul li a {
+  display: block;
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: #707070;
+  text-decoration: none;
+  border-right: 1px solid rgba(255,255,255,0.12);
+  transition: color 0.2s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.dp-footer-bottom ul li:first-child a { padding-left: 0; }
+.dp-footer-bottom ul li:last-child a  { border-right: none; }
+.dp-footer-bottom ul li a:hover { color: #C5A572; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .dp-footer-top {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 36px 0 24px;
+  }
+  .dp-footer-bottom ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .dp-footer-bottom ul li a {
+    border-right: none;
+    padding: 4px 0;
+  }
+}
