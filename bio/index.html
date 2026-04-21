@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyle Duiker | Royal LePage Solutions | Calgary REALTOR®</title>
-    <meta name="description" content="Kyle Duiker – REALTOR® specializing in Southeast Calgary lake communities. Mahogany, Auburn Bay, Seton & more.">
+    <title>Kyle Duiker | Calgary Real Estate Broker | Duiker Properties</title>
+    <meta name="description" content="Kyle Duiker is a Calgary real estate Broker with over a decade of experience. Licensed since 2010, Broker since 2021 — combining strong negotiation skills with clear communication.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -15,6 +15,7 @@
             --red:    #EA002A;
             --blue:   #003DA5;
             --gold:   #C5A572;
+            --gold-lt:#ddc89a;
             --dark:   #0a0a0a;
             --mid:    #1a1a1a;
             --card:   #161616;
@@ -31,10 +32,9 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            padding: 3rem 1rem 4rem;
+            padding: 3rem 1rem 5rem;
         }
 
-        /* Subtle background grain + radial glow */
         body::before {
             content: '';
             position: fixed;
@@ -56,7 +56,7 @@
         /* ── Profile Header ── */
         .profile {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             animation: fadeUp 0.6s ease both;
         }
 
@@ -92,11 +92,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: 20% 20%;
         }
 
-        /* Fallback initials if image fails */
         .avatar-initials {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 2.2rem;
             font-weight: 600;
             color: var(--gold);
@@ -108,35 +108,79 @@
         }
 
         .profile-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.75rem;
-            font-weight: 600;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
             color: #fff;
             margin-bottom: 0.25rem;
-            letter-spacing: 0.5px;
         }
 
         .profile-title {
-            font-size: 0.78rem;
+            font-size: 0.72rem;
             font-weight: 500;
-            letter-spacing: 2.5px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--gold);
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
         }
 
         .profile-brokerage {
-            font-size: 0.85rem;
+            font-size: 0.83rem;
             color: var(--muted);
             margin-bottom: 1rem;
         }
 
+        /* Headline from about page */
+        .profile-headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem;
+            font-weight: 300;
+            color: #fff;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .profile-headline em {
+            font-style: italic;
+            color: var(--gold-lt);
+        }
+
         .profile-bio {
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             color: #bbb;
-            line-height: 1.7;
-            max-width: 340px;
-            margin: 0 auto 1.2rem;
+            line-height: 1.75;
+            max-width: 380px;
+            margin: 0 auto 1.25rem;
+        }
+
+        /* Stat pills */
+        .profile-stats {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.25rem;
+        }
+
+        .stat-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.3rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 99px;
+            color: var(--muted);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .stat-pill-dot {
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
         }
 
         .profile-tags {
@@ -147,10 +191,10 @@
         }
 
         .tag {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             letter-spacing: 1px;
             text-transform: uppercase;
-            padding: 0.3rem 0.75rem;
+            padding: 0.28rem 0.7rem;
             border: 1px solid var(--border);
             border-radius: 99px;
             color: var(--muted);
@@ -167,13 +211,163 @@
             opacity: 0;
         }
         .divider-line { flex: 1; height: 1px; background: var(--border); }
-        .divider-text { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+        .divider-text {
+            font-size: 0.68rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        /* ── Section Label ── */
+        .section-label {
+            font-size: 0.66rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin: 1.5rem 0 0.75rem;
+            padding-left: 2px;
+            animation: fadeUp 0.5s ease both;
+            opacity: 0;
+        }
+
+        /* ── Trait Grid ── */
+        .trait-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem;
+            margin-bottom: 0.25rem;
+            animation: fadeUp 0.5s 0.35s ease both;
+            opacity: 0;
+        }
+
+        .trait-chip {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.75rem 0.9rem;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: #ddd;
+            transition: border-color 0.2s ease;
+        }
+
+        .trait-chip:hover { border-color: rgba(197,165,114,0.35); }
+
+        .trait-dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: var(--red);
+            flex-shrink: 0;
+        }
+
+        /* ── Timeline Card ── */
+        .timeline-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.4rem 1.5rem;
+            animation: fadeUp 0.5s 0.4s ease both;
+            opacity: 0;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 1.75rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 6px; bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, var(--red), var(--blue), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-item:last-child { margin-bottom: 0; }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.15rem; top: 5px;
+            width: 9px; height: 9px;
+            border-radius: 50%;
+            background: var(--red);
+            border: 2px solid var(--card);
+            box-shadow: 0 0 0 2px var(--red);
+        }
+
+        .timeline-year {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .timeline-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.2rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.8rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* ── Quote Card ── */
+        .quote-card {
+            background: rgba(197,165,114,0.05);
+            border: 1px solid rgba(197,165,114,0.15);
+            border-radius: 14px;
+            padding: 1.5rem;
+            text-align: center;
+            animation: fadeUp 0.5s 0.45s ease both;
+            opacity: 0;
+        }
+
+        .quote-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            color: rgba(197,165,114,0.25);
+            line-height: 0.6;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .quote-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #ccc;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .quote-attr {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
 
         /* ── Link Cards ── */
         .links-stack {
             display: flex;
             flex-direction: column;
-            gap: 0.85rem;
+            gap: 0.75rem;
         }
 
         .link-card {
@@ -190,9 +384,9 @@
             position: relative;
             overflow: hidden;
             animation: fadeUp 0.5s ease both;
+            opacity: 0;
         }
 
-        /* Accent left bar */
         .link-card::before {
             content: '';
             position: absolute;
@@ -211,36 +405,28 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.4);
         }
 
-        .link-card:hover::before {
-            transform: scaleY(1);
-        }
+        .link-card:hover::before { transform: scaleY(1); }
 
         .link-icon {
-            width: 44px;
-            height: 44px;
+            width: 44px; height: 44px;
             border-radius: 10px;
             background: var(--icon-bg, rgba(234,0,42,0.12));
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             flex-shrink: 0;
         }
 
-        .link-icon svg {
-            width: 22px;
-            height: 22px;
-        }
+        .link-icon svg { width: 20px; height: 20px; }
 
         .link-text { flex: 1; }
         .link-label {
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--muted);
             margin-bottom: 0.1rem;
         }
         .link-title {
-            font-size: 0.97rem;
+            font-size: 0.95rem;
             font-weight: 500;
             color: #fff;
         }
@@ -250,21 +436,51 @@
             flex-shrink: 0;
             transition: transform 0.25s ease, color 0.25s ease;
         }
-
         .link-card:hover .link-arrow {
             transform: translateX(3px);
             color: var(--text);
         }
 
-        /* Section label */
-        .section-label {
-            font-size: 0.68rem;
-            letter-spacing: 2.5px;
+        /* ── Broker Credentials ── */
+        .credentials-card {
+            background: rgba(197,165,114,0.06);
+            border: 1px solid rgba(197,165,114,0.18);
+            border-radius: 14px;
+            padding: 1.25rem 1.4rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            animation: fadeUp 0.5s 0.7s ease both;
+            opacity: 0;
+        }
+
+        .cred-icon {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            background: rgba(197,165,114,0.12);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cred-label {
+            font-size: 0.66rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.2rem;
+        }
+
+        .cred-title {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 0.15rem;
+        }
+
+        .cred-desc {
+            font-size: 0.78rem;
             color: var(--muted);
-            margin: 1.75rem 0 0.9rem;
-            padding-left: 2px;
-            animation: fadeUp 0.5s ease both;
+            line-height: 1.5;
         }
 
         /* ── Contact Strip ── */
@@ -272,7 +488,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 0.75rem;
-            margin-top: 0.85rem;
+            margin-top: 1.75rem;
         }
 
         .contact-btn {
@@ -280,14 +496,14 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            padding: 0.9rem 1rem;
+            padding: 0.95rem 1rem;
             border-radius: 12px;
             text-decoration: none;
             font-size: 0.88rem;
             font-weight: 500;
-            letter-spacing: 0.5px;
             transition: all 0.25s ease;
-            animation: fadeUp 0.5s ease both;
+            animation: fadeUp 0.5s 0.8s ease both;
+            opacity: 0;
         }
 
         .contact-btn-primary {
@@ -317,7 +533,7 @@
             margin-top: 2.5rem;
             font-size: 0.75rem;
             color: #444;
-            animation: fadeUp 0.5s 0.8s ease both;
+            animation: fadeUp 0.5s 0.9s ease both;
             opacity: 0;
         }
 
@@ -333,32 +549,23 @@
             border: 1px solid rgba(234,0,42,0.2);
             border-radius: 99px;
             color: #555;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        .rl-dot {
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: var(--red);
-        }
+        .rl-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); }
 
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(16px); }
             to   { opacity: 1; transform: translateY(0); }
         }
 
-        /* Stagger the cards */
-        .link-card:nth-child(1) { animation-delay: 0.3s; opacity: 0; }
-        .link-card:nth-child(2) { animation-delay: 0.4s; opacity: 0; }
-        .link-card:nth-child(3) { animation-delay: 0.5s; opacity: 0; }
-        .link-card:nth-child(4) { animation-delay: 0.6s; opacity: 0; }
-        .link-card:nth-child(5) { animation-delay: 0.7s; opacity: 0; }
-        .section-label:nth-of-type(2) { animation-delay: 0.55s; opacity: 0; }
-        .section-label:nth-of-type(3) { animation-delay: 0.65s; opacity: 0; }
-        .contact-btn { animation-delay: 0.75s; opacity: 0; }
-
+        .links-stack .link-card:nth-child(1) { animation-delay: 0.5s; }
+        .links-stack .link-card:nth-child(2) { animation-delay: 0.58s; }
+        .links-stack .link-card:nth-child(3) { animation-delay: 0.66s; }
+        .links-stack .link-card:nth-child(4) { animation-delay: 0.74s; }
+        .links-stack .link-card:nth-child(5) { animation-delay: 0.82s; }
     </style>
 </head>
 <body>
@@ -370,9 +577,8 @@
         <div class="avatar-wrap">
             <div class="avatar-ring"></div>
             <div class="avatar-inner">
-                <!-- Replace src with your actual photo URL -->
-                <img 
-                    src="https://raw.githubusercontent.com/Kyleduiker/duikerproperties-homepage/main/photos/brand/Gemini_Generated_Image_gn2sr4gn2sr4gn2s.png"
+                <img
+                    src="https://raw.githubusercontent.com/Kyleduiker/duikerproperties-homepage/main/photos/brand/2026Awards-51.jpg"
                     alt="Kyle Duiker"
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                 >
@@ -384,8 +590,18 @@
         <p class="profile-title">REALTOR® &amp; Broker Delegate</p>
         <p class="profile-brokerage">Royal LePage Solutions · Calgary, AB</p>
 
+        <p class="profile-headline">
+            Why hire a REALTOR®<br>when you can hire <em>a Broker?</em>
+        </p>
+
+        <div class="profile-stats">
+            <span class="stat-pill"><span class="stat-pill-dot"></span>15+ Years Experience</span>
+            <span class="stat-pill"><span class="stat-pill-dot"></span>Broker Since 2021</span>
+            <span class="stat-pill"><span class="stat-pill-dot"></span>Calgary Based</span>
+        </div>
+
         <p class="profile-bio">
-            Specializing in Southeast Calgary's premier lake communities — Mahogany, Auburn Bay, Cranston, Seton &amp; Chestermere. Honest advice, local expertise, results you can count on.
+            Buying or selling a home is one of the most important financial decisions you'll make. Working with a licensed Broker means deeper experience, stronger negotiation skills, and a higher level of oversight — at every step.
         </p>
 
         <div class="profile-tags">
@@ -399,12 +615,58 @@
 
     <div class="divider">
         <div class="divider-line"></div>
+        <span class="divider-text">My Approach</span>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- Traits -->
+    <div class="trait-grid">
+        <div class="trait-chip"><div class="trait-dot"></div>Professional &amp; Calm</div>
+        <div class="trait-chip"><div class="trait-dot"></div>Clear &amp; Easy to Understand</div>
+        <div class="trait-chip"><div class="trait-dot"></div>Organized &amp; Detail-Driven</div>
+        <div class="trait-chip"><div class="trait-dot"></div>Supportive Start to Finish</div>
+    </div>
+
+    <!-- Timeline -->
+    <p class="section-label">Background</p>
+    <div class="timeline-card">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">2010</div>
+                <div class="timeline-title">Licensed REALTOR®</div>
+                <div class="timeline-desc">Began his real estate career in Calgary, building a client base across the city's diverse neighbourhoods and price points.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2021</div>
+                <div class="timeline-title">Earned Broker's License</div>
+                <div class="timeline-desc">Achieved broker designation — a higher level of licensing requiring additional education, experience, and accountability.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">Present</div>
+                <div class="timeline-title">Broker Delegate &amp; Training Coordinator</div>
+                <div class="timeline-desc">Works directly with clients while training and guiding other REALTORS® at Royal LePage Solutions — a dual perspective that benefits every transaction.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bio Quote -->
+    <p class="section-label">In Brief</p>
+    <div class="quote-card">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">
+            Kyle Duiker is a Calgary real estate Broker with over a decade of experience helping clients buy and sell homes. Licensed since 2010 and a Broker since 2021, Kyle brings a calm, strategic approach — combining strong negotiation skills with clear communication and modern tools. His focus is on making every transaction structured, transparent, and stress-free.
+        </p>
+        <div class="quote-attr">Kyle Duiker · Royal LePage Solutions</div>
+    </div>
+
+    <div class="divider" style="margin-top:1.75rem;">
+        <div class="divider-line"></div>
         <span class="divider-text">Explore</span>
         <div class="divider-line"></div>
     </div>
 
-    <!-- Primary Links -->
-    <p class="section-label">Featured</p>
+    <!-- Links -->
+    <p class="section-label">Get Started</p>
     <div class="links-stack">
 
         <a href="https://duikerproperties.com" class="link-card" style="--accent:#EA002A; --icon-bg:rgba(234,0,42,0.12);">
@@ -415,12 +677,10 @@
                 </svg>
             </div>
             <div class="link-text">
-                <div class="link-label">Website</div>
+                <div class="link-label">Main Website</div>
                 <div class="link-title">DuikerProperties.com</div>
             </div>
-            <div class="link-arrow">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-            </div>
+            <div class="link-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
         </a>
 
         <a href="https://duikerproperties.com/search" class="link-card" style="--accent:#003DA5; --icon-bg:rgba(0,61,165,0.12);">
@@ -434,36 +694,12 @@
                 <div class="link-label">Browse Listings</div>
                 <div class="link-title">Search Calgary Homes</div>
             </div>
-            <div class="link-arrow">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-            </div>
+            <div class="link-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
         </a>
 
-        <a href="https://duikerproperties.com/mahogany" class="link-card" style="--accent:#C5A572; --icon-bg:rgba(197,165,114,0.12);">
+        <a href="https://duikerproperties.com/home-evaluation" class="link-card" style="--accent:#C5A572; --icon-bg:rgba(197,165,114,0.12);">
             <div class="link-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#C5A572" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                    <circle cx="12" cy="10" r="3"/>
-                </svg>
-            </div>
-            <div class="link-text">
-                <div class="link-label">Community Guide</div>
-                <div class="link-title">Mahogany Lake Community</div>
-            </div>
-            <div class="link-arrow">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-            </div>
-        </a>
-
-    </div>
-
-    <!-- Resources -->
-    <p class="section-label">Resources</p>
-    <div class="links-stack">
-
-        <a href="https://duikerproperties.com/home-evaluation" class="link-card" style="--accent:#EA002A; --icon-bg:rgba(234,0,42,0.10);">
-            <div class="link-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#EA002A" stroke-width="2">
                     <line x1="18" y1="20" x2="18" y2="10"/>
                     <line x1="12" y1="20" x2="12" y2="4"/>
                     <line x1="6" y1="20" x2="6" y2="14"/>
@@ -473,9 +709,21 @@
                 <div class="link-label">Free Tool</div>
                 <div class="link-title">What's My Home Worth?</div>
             </div>
-            <div class="link-arrow">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            <div class="link-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
+        </a>
+
+        <a href="https://duikerproperties.com/about" class="link-card" style="--accent:#EA002A; --icon-bg:rgba(234,0,42,0.10);">
+            <div class="link-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#EA002A" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
             </div>
+            <div class="link-text">
+                <div class="link-label">Full Story</div>
+                <div class="link-title">About Kyle Duiker</div>
+            </div>
+            <div class="link-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
         </a>
 
         <a href="https://duikerproperties.com/newsletter" class="link-card" style="--accent:#003DA5; --icon-bg:rgba(0,61,165,0.10);">
@@ -489,23 +737,35 @@
                 <div class="link-label">Stay Informed</div>
                 <div class="link-title">Subscribe to My Newsletter</div>
             </div>
-            <div class="link-arrow">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-            </div>
+            <div class="link-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
         </a>
 
     </div>
 
-    <!-- Contact Buttons -->
-    <div class="contact-strip" style="margin-top:1.75rem;">
+    <!-- Broker Credentials -->
+    <div class="credentials-card" style="margin-top:1.75rem;">
+        <div class="cred-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C5A572" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+        </div>
+        <div>
+            <div class="cred-label">Credentials</div>
+            <div class="cred-title">Licensed Broker · Broker Delegate · Training Coordinator</div>
+            <div class="cred-desc">Royal LePage Solutions · Licensed since 2010 · Broker since 2021</div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-strip">
         <a href="tel:4037973384" class="contact-btn contact-btn-primary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1.04 3.42 2 2 0 0 1 3 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
             </svg>
             Call Me
         </a>
         <a href="https://duikerproperties.com/contact" class="contact-btn contact-btn-secondary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
             </svg>
             Message
@@ -514,7 +774,7 @@
 
     <!-- Footer -->
     <div class="footer">
-        <div>© 2025 Duiker Properties · <a href="https://duikerproperties.com">duikerproperties.com</a></div>
+        <div>© 2026 Duiker Properties · <a href="https://duikerproperties.com">duikerproperties.com</a></div>
         <div class="rl-badge">
             <span class="rl-dot"></span>
             Royal LePage Solutions
