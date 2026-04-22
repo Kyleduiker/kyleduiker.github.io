@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moving Out of Calgary? | Relocation Referrals | Duiker Properties</title>
-    <meta name="description" content="Kyle Duiker personally connects you with a trusted, vetted agent anywhere in Canada. Broker-level oversight. Royal LePage national network. No guesswork — just a solid introduction.">
+    <title>Moving Outside Calgary? | National Relocation Network | Duiker Properties</title>
+    <meta name="description" content="Kyle Duiker connects you with vetted, trusted agents anywhere in Canada through the Royal LePage national network. One trusted connection — anywhere in Canada.">
 
     <!-- Duiker Properties Header -->
-    <link rel="stylesheet" href="https://kyleduiker.github.io/duikerproperties-homepage/assets/css/header.css">
+    <link rel="stylesheet" href="https://guide.duikerproperties.com/assets/css/header.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -45,60 +45,47 @@
         .hero {
             background: var(--dark);
             color: white;
-            min-height: 86vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            min-height: 88vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: stretch;
             position: relative;
             overflow: hidden;
             padding-top: 80px;
-            text-align: center;
         }
 
         .hero::before {
             content: '';
             position: absolute;
             inset: 0;
-            background:
-                repeating-linear-gradient(
-                    -55deg,
-                    transparent,
-                    transparent 60px,
-                    rgba(255,255,255,0.015) 60px,
-                    rgba(255,255,255,0.015) 61px
-                );
+            background: repeating-linear-gradient(
+                -55deg,
+                transparent,
+                transparent 60px,
+                rgba(255,255,255,0.015) 60px,
+                rgba(255,255,255,0.015) 61px
+            );
             pointer-events: none;
         }
 
-        /* Accent lines */
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 4px;
-            background: linear-gradient(to right, var(--red), var(--blue));
-        }
-
-        .hero-inner {
+        .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 780px;
-            padding: 4rem 2rem;
+            padding: 5rem 5rem 5rem 6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .hero-eyebrow {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 0.75rem;
             margin-bottom: 1.75rem;
             animation: fadeUp 0.7s ease both;
         }
 
-        .eyebrow-line {
-            width: 40px; height: 1px;
-            background: var(--gold);
-        }
+        .eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
 
         .eyebrow-text {
             font-size: 0.7rem;
@@ -110,36 +97,61 @@
 
         .hero-headline {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.8rem, 6vw, 4.8rem);
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
             font-weight: 300;
-            line-height: 1.1;
+            line-height: 1.15;
             color: white;
             margin-bottom: 1.5rem;
             animation: fadeUp 0.7s 0.1s ease both;
             opacity: 0;
         }
 
-        .hero-headline em {
-            font-style: italic;
-            color: var(--gold-lt);
-        }
+        .hero-headline em { font-style: italic; color: var(--gold-lt); }
 
         .hero-subhead {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: rgba(255,255,255,0.65);
-            line-height: 1.8;
-            max-width: 580px;
-            margin: 0 auto 3rem;
+            line-height: 1.75;
+            max-width: 420px;
+            margin-bottom: 2.5rem;
             animation: fadeUp 0.7s 0.2s ease both;
             opacity: 0;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            animation: fadeUp 0.7s 0.3s ease both;
+            opacity: 0;
+        }
+
+        .stat {
+            border-left: 2px solid var(--gold);
+            padding-left: 1rem;
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: white;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+            margin-top: 0.25rem;
         }
 
         .hero-cta {
             display: flex;
             gap: 1rem;
-            justify-content: center;
             flex-wrap: wrap;
-            animation: fadeUp 0.7s 0.3s ease both;
+            animation: fadeUp 0.7s 0.4s ease both;
             opacity: 0;
         }
 
@@ -185,19 +197,75 @@
             transform: translateY(-2px);
         }
 
-        /* ─── SECTION BASE ─── */
-        .section {
-            padding: 5rem 0;
+        .hero-image-side {
+            position: relative;
+            overflow: hidden;
         }
+
+        .hero-image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 20% 20%;
+            filter: grayscale(20%);
+        }
+
+        .hero-image-side::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, var(--dark) 0%, transparent 30%),
+                        linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%);
+        }
+
+        .hero-image-side::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; height: 4px;
+            background: linear-gradient(to right, var(--red), var(--blue));
+            z-index: 3;
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: 3rem; right: 3rem;
+            z-index: 4;
+            background: rgba(13,13,13,0.9);
+            border: 1px solid rgba(197,165,114,0.3);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 0.7s 0.5s ease both;
+            opacity: 0;
+        }
+
+        .hero-badge-title {
+            font-size: 0.65rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+        }
+
+        .hero-badge-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: white;
+            font-weight: 400;
+        }
+
+        .hero-badge-role {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 0.2rem;
+        }
+
+        /* ─── SECTION BASE ─── */
+        .section { padding: 5rem 0; }
 
         .container {
             max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .container-narrow {
-            max-width: 760px;
             margin: 0 auto;
             padding: 0 2rem;
         }
@@ -207,10 +275,6 @@
             align-items: center;
             gap: 0.75rem;
             margin-bottom: 1.5rem;
-        }
-
-        .section-eyebrow-centered {
-            justify-content: center;
         }
 
         .section-eyebrow .eyebrow-line { background: var(--gold); }
@@ -234,18 +298,16 @@
         .section-title em { font-style: italic; color: var(--red); }
 
         /* ─── PROBLEM SECTION ─── */
-        .problem-section {
-            background: white;
-        }
+        .problem-section { background: white; }
 
-        .problem-grid {
+        .two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 5rem;
             align-items: start;
         }
 
-        .problem-body p {
+        .body-copy p {
             color: #444;
             line-height: 1.85;
             font-size: 0.97rem;
@@ -253,7 +315,7 @@
         }
 
         .risk-list {
-            margin-top: 2rem;
+            margin-top: 0.5rem;
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
@@ -268,9 +330,9 @@
             border-radius: 8px;
             border: 1px solid var(--border);
             border-left: 3px solid var(--red);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.65;
         }
 
         .risk-icon {
@@ -280,24 +342,8 @@
             color: var(--red);
         }
 
-        /* ─── SOLUTION SECTION ─── */
-        .solution-section {
-            background: var(--off-white);
-        }
-
-        .solution-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: start;
-        }
-
-        .solution-body p {
-            color: #444;
-            line-height: 1.85;
-            font-size: 0.97rem;
-            margin-bottom: 1.25rem;
-        }
+        /* ─── NETWORK SECTION ─── */
+        .network-section { background: var(--off-white); }
 
         .network-cards {
             display: flex;
@@ -313,23 +359,42 @@
             display: flex;
             align-items: flex-start;
             gap: 1.25rem;
-            transition: border-color 0.2s ease;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .network-card:hover { border-color: var(--gold); }
+        .network-card::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 3px;
+            background: var(--accent, var(--red));
+            transform: scaleY(0);
+            transition: transform 0.25s ease;
+        }
+
+        .network-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+
+        .network-card:hover::before { transform: scaleY(1); }
 
         .network-badge {
-            width: 44px; height: 44px;
-            border-radius: 8px;
+            width: 48px; height: 48px;
+            border-radius: 10px;
             display: flex; align-items: center; justify-content: center;
             flex-shrink: 0;
-            font-size: 1.3rem;
+            font-size: 0.75rem;
             font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        .badge-red { background: rgba(234,0,42,0.1); color: var(--red); }
-        .badge-blue { background: rgba(0,61,165,0.1); color: var(--blue); }
-        .badge-gold { background: rgba(197,165,114,0.15); color: var(--gold); }
+        .badge-red  { background: rgba(234,0,42,0.1);  color: var(--red); }
+        .badge-blue { background: rgba(0,61,165,0.1);  color: var(--blue); }
+        .badge-gold { background: rgba(197,165,114,0.15); color: #9a7c50; }
 
         .network-card-title {
             font-size: 0.92rem;
@@ -339,12 +404,12 @@
         }
 
         .network-card-desc {
-            font-size: 0.83rem;
+            font-size: 0.84rem;
             color: var(--muted);
-            line-height: 1.6;
+            line-height: 1.65;
         }
 
-        /* ─── PROCESS SECTION ─── */
+        /* ─── PROCESS SECTION (dark band) ─── */
         .process-section {
             background: var(--dark);
             color: white;
@@ -353,101 +418,204 @@
 
         .process-section .section-title { color: white; }
         .process-section .section-eyebrow .eyebrow-text { color: var(--gold); }
-        .process-section .section-eyebrow .eyebrow-line { background: var(--gold); }
+        .process-section .section-eyebrow .eyebrow-line  { background: var(--gold); }
 
-        .process-header {
-            text-align: center;
-            margin-bottom: 4rem;
+        .process-section p {
+            color: rgba(255,255,255,0.65);
+            line-height: 1.85;
+            font-size: 0.97rem;
+            margin-bottom: 1.25rem;
         }
 
-        .process-header .section-eyebrow { justify-content: center; }
-
-        .process-header p {
-            color: rgba(255,255,255,0.55);
-            font-size: 1rem;
-            max-width: 520px;
-            margin: 0.75rem auto 0;
-            line-height: 1.75;
-        }
-
-        .process-grid {
+        .process-band-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            position: relative;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
         }
 
-        /* Connecting line */
-        .process-grid::before {
-            content: '';
-            position: absolute;
-            top: 32px;
-            left: calc(12.5% + 20px);
-            right: calc(12.5% + 20px);
-            height: 1px;
-            background: linear-gradient(to right, var(--red), var(--blue));
-            pointer-events: none;
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
         .process-step {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
             background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 12px;
-            padding: 2rem 1.5rem;
-            text-align: center;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: 1.25rem;
             transition: all 0.25s ease;
-            position: relative;
         }
 
         .process-step:hover {
             background: rgba(255,255,255,0.07);
             border-color: rgba(197,165,114,0.25);
-            transform: translateY(-4px);
         }
 
-        .step-number {
-            width: 48px; height: 48px;
-            border-radius: 50%;
-            background: var(--red);
-            color: white;
+        .step-num {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            font-weight: 600;
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 1.25rem;
-            position: relative;
-            z-index: 2;
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--gold);
+            line-height: 1;
+            min-width: 2rem;
+            flex-shrink: 0;
         }
 
-        .step-number.step-2 { background: #7a1020; }
-        .step-number.step-3 { background: #00267a; }
-        .step-number.step-4 { background: var(--blue); }
+        .step-body { flex: 1; }
 
         .step-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
+            font-size: 0.88rem;
             font-weight: 600;
             color: white;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.3rem;
         }
 
         .step-desc {
-            font-size: 0.83rem;
-            color: rgba(255,255,255,0.45);
-            line-height: 1.7;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.6;
         }
 
-        /* ─── TRUST SECTION ─── */
-        .trust-section {
+        /* Differentiator cards on right side */
+        .diff-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .diff-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: 1.4rem;
+            transition: all 0.25s ease;
+        }
+
+        .diff-card:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(197,165,114,0.3);
+        }
+
+        .diff-icon {
+            width: 36px; height: 36px;
+            border-radius: 8px;
+            background: rgba(234,0,42,0.15);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .diff-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+
+        .diff-desc {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.4);
+            line-height: 1.5;
+        }
+
+        /* ─── TYPES OF MOVES ─── */
+        .moves-section { background: white; }
+
+        .moves-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .move-card {
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .move-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--red), var(--blue));
+        }
+
+        .move-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
             background: white;
         }
 
-        .trust-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
+        .move-icon {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            background: rgba(0,61,165,0.08);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1rem;
         }
+
+        .move-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .move-desc {
+            font-size: 0.88rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        /* National reach banner */
+        .national-banner {
+            margin-top: 3rem;
+            background: linear-gradient(135deg, var(--dark) 0%, #1a1a2e 100%);
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .national-banner-icon {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            color: var(--gold-lt);
+            font-style: italic;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .national-banner-body h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .national-banner-body p {
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.7;
+        }
+
+        /* ─── TRUST / KYLE SECTION ─── */
+        .trust-section { background: var(--off-white); }
 
         .trust-body p {
             color: #444;
@@ -460,17 +628,24 @@
             margin-top: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.6rem;
         }
 
         .trust-point {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            font-size: 0.9rem;
+            padding: 0.85rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.88rem;
             font-weight: 500;
             color: var(--text);
+            transition: border-color 0.2s ease;
         }
+
+        .trust-point:hover { border-color: var(--gold); }
 
         .trust-dot {
             width: 8px; height: 8px;
@@ -480,7 +655,7 @@
         }
 
         .trust-card {
-            background: var(--cream);
+            background: white;
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 2.5rem;
@@ -500,15 +675,16 @@
             width: 80px; height: 80px;
             border-radius: 50%;
             object-fit: cover;
-            object-position: center top;
-            border: 3px solid white;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            object-position: 20% 20%;
+            border: 3px solid var(--cream);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
             margin-bottom: 1.25rem;
+            display: block;
         }
 
         .trust-quote {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-style: italic;
             color: var(--text);
             line-height: 1.8;
@@ -520,40 +696,21 @@
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--muted);
+            line-height: 1.7;
         }
 
-        .trust-attr strong {
-            color: var(--text);
-            font-weight: 600;
-        }
+        .trust-attr strong { color: var(--text); font-weight: 600; }
 
         /* ─── FAQ SECTION ─── */
-        .faq-section {
-            background: var(--off-white);
-        }
-
-        .faq-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .faq-header .section-eyebrow { justify-content: center; }
+        .faq-section { background: var(--cream); }
 
         .faq-list {
             max-width: 720px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 0;
         }
 
-        .faq-item {
-            border-bottom: 1px solid var(--border);
-        }
-
-        .faq-item:first-child {
-            border-top: 1px solid var(--border);
-        }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-item:first-child { border-top: 1px solid var(--border); }
 
         .faq-question {
             width: 100%;
@@ -584,30 +741,23 @@
             transition: all 0.25s ease;
         }
 
-        .faq-icon svg {
-            transition: transform 0.25s ease;
-        }
+        .faq-icon svg { transition: transform 0.25s ease; }
 
         .faq-item.open .faq-icon {
             border-color: var(--red);
             background: rgba(234,0,42,0.05);
         }
 
-        .faq-item.open .faq-icon svg {
-            transform: rotate(45deg);
-        }
-
+        .faq-item.open .faq-icon svg { transform: rotate(45deg); }
         .faq-item.open .faq-question { color: var(--red); }
 
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.35s ease, padding 0.35s ease;
+            transition: max-height 0.35s ease;
         }
 
-        .faq-answer.open {
-            max-height: 300px;
-        }
+        .faq-answer.open { max-height: 300px; }
 
         .faq-answer p {
             font-size: 0.92rem;
@@ -616,35 +766,72 @@
             padding-bottom: 1.5rem;
         }
 
+        /* ─── BIO QUOTE ─── */
+        .bio-section { background: white; }
+
+        .bio-card {
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem 3.5rem;
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .bio-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--red), var(--blue));
+            border-radius: 16px 16px 0 0;
+        }
+
+        .bio-quote-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            color: var(--border);
+            line-height: 0.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .bio-attribution {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .bio-attr-line { width: 40px; height: 1px; background: var(--border); }
+
+        .bio-attr-name {
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
         /* ─── CTA SECTION ─── */
         .cta-section {
             background: var(--blue);
             padding: 5rem 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                repeating-linear-gradient(
-                    -55deg,
-                    transparent,
-                    transparent 60px,
-                    rgba(255,255,255,0.02) 60px,
-                    rgba(255,255,255,0.02) 61px
-                );
-            pointer-events: none;
-        }
-
-        .cta-section .container { position: relative; z-index: 1; }
 
         .cta-section h2 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 300;
             color: white;
             margin-bottom: 1rem;
@@ -672,30 +859,28 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
-        .cta-section .btn-outline {
-            border-color: rgba(255,255,255,0.25);
-        }
+        .cta-section .btn-outline { border-color: rgba(255,255,255,0.25); }
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 900px) {
-            .problem-grid,
-            .solution-grid,
-            .trust-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .process-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .process-grid::before { display: none; }
+            .hero { grid-template-columns: 1fr; min-height: auto; }
+            .hero-content { padding: 3rem 2rem; }
+            .hero-image-side { height: 350px; }
+            .hero-badge { bottom: 1.5rem; right: 1.5rem; }
+            .two-col,
+            .process-band-grid,
+            .trust-section .two-col { grid-template-columns: 1fr; gap: 3rem; }
+            .moves-grid { grid-template-columns: 1fr 1fr; }
+            .diff-cards { grid-template-columns: 1fr; }
+            .national-banner { flex-direction: column; gap: 1.5rem; padding: 2rem; }
+            .bio-card { padding: 2rem 1.5rem; }
         }
 
         @media (max-width: 600px) {
-            .hero-cta,
+            .hero-stats { gap: 1.5rem; }
+            .hero-cta { flex-direction: column; }
             .cta-buttons { flex-direction: column; align-items: center; }
-            .process-grid { grid-template-columns: 1fr; }
+            .moves-grid { grid-template-columns: 1fr; }
         }
 
         @keyframes fadeUp {
@@ -703,12 +888,12 @@
             to   { opacity: 1; transform: translateY(0); }
         }
 
-        /* Scroll-reveal */
         .reveal {
             opacity: 0;
             transform: translateY(24px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
+
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
@@ -717,38 +902,64 @@
 </head>
 <body>
 
-    <!-- Duiker Properties Header -->
     <div id="header-container"></div>
 
     <!-- ── HERO ── -->
     <section class="hero">
-        <div class="hero-inner">
+        <div class="hero-content">
             <div class="hero-eyebrow">
                 <div class="eyebrow-line"></div>
-                <span class="eyebrow-text">Relocation Referrals</span>
-                <div class="eyebrow-line"></div>
+                <span class="eyebrow-text">Relocation Network</span>
             </div>
 
             <h1 class="hero-headline">
-                Moving Outside Calgary?<br><em>I've Got You Covered.</em>
+                Moving Outside Calgary?<br><em>I've Got You Covered</em><br>Across Canada.
             </h1>
 
             <p class="hero-subhead">
-                When you're leaving the city, you deserve more than a name pulled from a search engine. I personally connect you with a trusted, vetted agent — wherever you're headed — and stay involved until you're across the finish line.
+                You don't just get me — you get my entire network across Canada. Through Royal LePage's 20,000+ agent network, I match you with the right local expert and stay involved until you're across the finish line.
             </p>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">20K+</div>
+                    <div class="stat-label">Agents Nationwide</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$0</div>
+                    <div class="stat-label">Cost to You</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">A–Z</div>
+                    <div class="stat-label">Fully Managed</div>
+                </div>
+            </div>
 
             <div class="hero-cta">
                 <a href="https://duikerproperties.com/contact" class="btn-primary">Start My Relocation Plan</a>
                 <a href="tel:4037973384" class="btn-outline">Book a Relocation Call</a>
             </div>
         </div>
+
+        <div class="hero-image-side">
+            <img
+                src="https://raw.githubusercontent.com/Kyleduiker/duikerproperties-homepage/main/photos/brand/2026Awards-51.jpg"
+                alt="Kyle Duiker — Calgary Real Estate Broker"
+                onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#0f3460)';"
+            >
+            <div class="hero-badge">
+                <div class="hero-badge-title">Royal LePage Solutions</div>
+                <div class="hero-badge-name">Kyle Duiker</div>
+                <div class="hero-badge-role">Broker Delegate · Calgary, AB</div>
+            </div>
+        </div>
     </section>
 
-    <!-- ── PROBLEM ── -->
+    <!-- ── THE PROBLEM ── -->
     <section class="section problem-section">
         <div class="container">
-            <div class="problem-grid">
-                <div class="reveal">
+            <div class="two-col">
+                <div class="body-copy reveal">
                     <div class="section-eyebrow">
                         <div class="eyebrow-line"></div>
                         <span class="eyebrow-text">The Problem</span>
@@ -756,68 +967,66 @@
                     <h2 class="section-title">Choosing the wrong agent in a new city is a <em>real risk</em></h2>
                     <p>Most people relocating out of Calgary do the same thing: they search online, skim a few profiles, check the star ratings, and hope for the best.</p>
                     <p>But reviews don't tell the full story. They don't tell you how an agent handles a difficult negotiation, whether they communicate clearly under pressure, or whether they'll actually pick up the phone when it matters.</p>
-                    <p>A bad referral doesn't just cost you time — it can cost you money, create unnecessary stress, and leave you without a trusted advocate at a critical moment.</p>
+                    <p>A bad introduction doesn't just cost you time — it can cost you money, create unnecessary stress, and leave you without a trusted advocate at a critical moment.</p>
                 </div>
 
-                <div class="reveal">
-                    <div class="risk-list">
-                        <div class="risk-item">
-                            <svg class="risk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                            <span>Online reviews reflect satisfaction — not competence under pressure or in a challenging negotiation.</span>
-                        </div>
-                        <div class="risk-item">
-                            <svg class="risk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                            <span>Without a personal introduction, you're starting from scratch — no context, no accountability, no advocate.</span>
-                        </div>
-                        <div class="risk-item">
-                            <svg class="risk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                            <span>Real estate markets vary significantly by city. What works in Calgary doesn't always translate elsewhere.</span>
-                        </div>
-                        <div class="risk-item">
-                            <svg class="risk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                            <span>Once you've left Calgary, there's no one managing the relationship or ensuring the service level stays where it should be.</span>
-                        </div>
+                <div class="risk-list reveal">
+                    <div class="risk-item">
+                        <svg class="risk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        <span>Online reviews reflect satisfaction — not competence under pressure or in a challenging negotiation.</span>
+                    </div>
+                    <div class="risk-item">
+                        <svg class="risk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        <span>Without a personal introduction, you're starting from scratch — no context, no accountability, no advocate.</span>
+                    </div>
+                    <div class="risk-item">
+                        <svg class="risk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        <span>Real estate markets vary significantly by city. What works in Calgary doesn't always translate elsewhere.</span>
+                    </div>
+                    <div class="risk-item">
+                        <svg class="risk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        <span>Once you've left Calgary, there's no one managing the relationship or ensuring the service level stays where it should be.</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── SOLUTION ── -->
-    <section class="section solution-section">
+    <!-- ── THE NETWORK ── -->
+    <section class="section network-section">
         <div class="container">
-            <div class="solution-grid">
-                <div class="reveal">
+            <div class="two-col">
+                <div class="body-copy reveal">
                     <div class="section-eyebrow">
                         <div class="eyebrow-line"></div>
-                        <span class="eyebrow-text">The Solution</span>
+                        <span class="eyebrow-text">The Network</span>
                     </div>
-                    <h2 class="section-title">A personal introduction backed by <em>real networks</em></h2>
-                    <p>When you're relocating, I don't hand you a name and wish you luck. I use my professional networks to identify an agent who fits your specific situation — their market, your timeline, your expectations.</p>
-                    <p>You have one point of contact: me. I coordinate the introduction, provide context to the receiving agent, and stay available throughout the process.</p>
+                    <h2 class="section-title">One trusted connection — <em>anywhere in Canada</em></h2>
+                    <p>I don't send you to an agent — I match you with the right one. Through the Royal LePage national network of 20,000+ professionals and the Sell It global sales community, I have direct access to vetted, high-performing agents in virtually every Canadian market.</p>
                     <p>This isn't a directory referral. It's a relationship-driven introduction from one professional to another — with your best interests at the centre of it.</p>
+                    <p>Urban centres, smaller communities, other provinces — wherever you're headed, the network reaches there. And so does my involvement.</p>
                 </div>
 
                 <div class="network-cards reveal">
-                    <div class="network-card">
+                    <div class="network-card" style="--accent: var(--red);">
                         <div class="network-badge badge-red">RL</div>
                         <div>
                             <div class="network-card-title">Royal LePage National Network</div>
-                            <div class="network-card-desc">One of Canada's largest and most established real estate networks. When you need an agent in another Canadian city, I can tap into a verified pool of professionals with a shared accountability standard.</div>
+                            <div class="network-card-desc">20,000+ agents across Canada — one of the country's largest and most established networks. Shared accountability standards, internal communication tools, and a structured referral system with documented follow-up requirements.</div>
                         </div>
                     </div>
-                    <div class="network-card">
+                    <div class="network-card" style="--accent: var(--blue);">
                         <div class="network-badge badge-blue">SI</div>
                         <div>
                             <div class="network-card-title">Sell It Global Sales Community</div>
-                            <div class="network-card-desc">A curated professional community of high-performing agents across North America and beyond. When the move takes you further afield, this network extends my reach and my ability to make a strong introduction.</div>
+                            <div class="network-card-desc">A curated community of high-performing agents across North America and beyond. When the move takes you further afield, this network extends my reach and my ability to make a strong, informed introduction.</div>
                         </div>
                     </div>
-                    <div class="network-card">
+                    <div class="network-card" style="--accent: var(--gold);">
                         <div class="network-badge badge-gold">↗</div>
                         <div>
-                            <div class="network-card-title">One Point of Contact</div>
-                            <div class="network-card-desc">You don't need to manage multiple conversations. I handle the coordination, set expectations with the receiving agent, and stay involved so you're never without oversight.</div>
+                            <div class="network-card-title">Structured. Accountable. Documented.</div>
+                            <div class="network-card-desc">Referrals aren't casual. The receiving agent is required to make contact immediately, provide progress updates, and maintain the service standard I've set. You're never left wondering what's happening.</div>
                         </div>
                     </div>
                 </div>
@@ -825,48 +1034,176 @@
         </div>
     </section>
 
-    <!-- ── PROCESS ── -->
+    <!-- ── HOW IT WORKS + DIFFERENTIATORS (dark band) ── -->
     <section class="process-section">
         <div class="container">
-            <div class="process-header reveal">
-                <div class="section-eyebrow section-eyebrow-centered">
-                    <div class="eyebrow-line"></div>
-                    <span class="eyebrow-text">How It Works</span>
-                    <div class="eyebrow-line"></div>
-                </div>
-                <h2 class="section-title" style="color:white;">Four steps. No guesswork.</h2>
-                <p>A straightforward process designed to get you connected to the right agent — quickly and with confidence.</p>
-            </div>
+            <div class="process-band-grid">
+                <div class="reveal">
+                    <div class="section-eyebrow">
+                        <div class="eyebrow-line"></div>
+                        <span class="eyebrow-text">How It Works</span>
+                    </div>
+                    <h2 class="section-title">Five steps.<br><em>No guesswork.</em></h2>
+                    <p>A straightforward process designed to get you connected to the right agent — quickly, and with confidence. I handle the coordination so you don't have to.</p>
 
-            <div class="process-grid">
-                <div class="process-step reveal">
-                    <div class="step-number">1</div>
-                    <div class="step-title">Tell Me Where You're Moving</div>
-                    <div class="step-desc">Share your destination, timeline, and what you're looking for. The more context I have, the better the match.</div>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-num">1</div>
+                            <div class="step-body">
+                                <div class="step-title">Tell me where you're moving</div>
+                                <div class="step-desc">Share your destination, timeline, and goals. The more context I have, the better the match.</div>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-num">2</div>
+                            <div class="step-body">
+                                <div class="step-title">I identify the right local expert</div>
+                                <div class="step-desc">I search my networks for someone active in your specific market, with a track record that fits your type of transaction.</div>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-num">3</div>
+                            <div class="step-body">
+                                <div class="step-title">I make a warm introduction</div>
+                                <div class="step-desc">I connect you directly and give the receiving agent context so they start informed and ready to serve you well from day one.</div>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-num">4</div>
+                            <div class="step-body">
+                                <div class="step-title">Ongoing communication is required</div>
+                                <div class="step-desc">The receiving agent must contact you immediately and provide regular progress updates. This is built into the process — not optional.</div>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-num">5</div>
+                            <div class="step-body">
+                                <div class="step-title">I stay available until closing</div>
+                                <div class="step-desc">My role doesn't end at the handoff. If anything isn't working as expected, you come back to me and I address it directly.</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="process-step reveal">
-                    <div class="step-number step-2">2</div>
-                    <div class="step-title">I Identify the Right Agent</div>
-                    <div class="step-desc">I search my networks for an agent who is the right fit for your market, your situation, and your expectations — not just whoever is available.</div>
-                </div>
-                <div class="process-step reveal">
-                    <div class="step-number step-3">3</div>
-                    <div class="step-title">I Make a Personal Introduction</div>
-                    <div class="step-desc">I connect you directly and provide context to the receiving agent so they start informed and ready to serve you well.</div>
-                </div>
-                <div class="process-step reveal">
-                    <div class="step-number step-4">4</div>
-                    <div class="step-title">I Stay Involved Until Closing</div>
-                    <div class="step-desc">My role doesn't end at the introduction. I remain available throughout the process to ensure the level of service meets the standard I've set.</div>
+
+                <div class="reveal">
+                    <div class="section-eyebrow">
+                        <div class="eyebrow-line"></div>
+                        <span class="eyebrow-text">What Makes This Different</span>
+                    </div>
+                    <h2 class="section-title">This isn't a directory.<br><em>It's a relationship.</em></h2>
+                    <p>Most relocation services hand you a list of names. This is different. Every introduction comes with my personal reputation behind it — and a structure that ensures accountability at every stage.</p>
+
+                    <div class="diff-cards" style="margin-top:1.5rem;">
+                        <div class="diff-card">
+                            <div class="diff-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EA002A" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </div>
+                            <div class="diff-title">Personal Vetting</div>
+                            <div class="diff-desc">Every agent is selected for your situation — not whoever is available.</div>
+                        </div>
+                        <div class="diff-card">
+                            <div class="diff-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C5A572" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div class="diff-title">Broker Oversight</div>
+                            <div class="diff-desc">A licensed Broker is involved — not just a referral form and a wish of luck.</div>
+                        </div>
+                        <div class="diff-card">
+                            <div class="diff-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#003DA5" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                            </div>
+                            <div class="diff-title">Documented Process</div>
+                            <div class="diff-desc">Referrals are tracked and time-bound with built-in accountability checkpoints.</div>
+                        </div>
+                        <div class="diff-card">
+                            <div class="diff-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EA002A" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1.04 3.42 2 2 0 0 1 3 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </div>
+                            <div class="diff-title">One Point of Contact</div>
+                            <div class="diff-desc">You always have someone you trust on your side — start to finish.</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:1.5rem; padding:1.25rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0;">
+                        <p style="font-size:0.85rem; color:rgba(255,255,255,0.55); line-height:1.7; margin:0;"><strong style="color:var(--gold);">No cost to you.</strong> There is no additional charge for this service. The referral fee, if any, is handled between brokerages — it is never added to your transaction or your commission rate.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── TRUST ── -->
+    <!-- ── TYPES OF MOVES ── -->
+    <section class="section moves-section">
+        <div class="container">
+            <div class="reveal" style="text-align:center; max-width:680px; margin:0 auto 0.5rem;">
+                <div class="section-eyebrow" style="justify-content:center;">
+                    <div class="eyebrow-line"></div>
+                    <span class="eyebrow-text">Who This Is For</span>
+                    <div class="eyebrow-line"></div>
+                </div>
+                <h2 class="section-title">Every type of move — <em>handled</em></h2>
+                <p style="color:#444; font-size:0.97rem; line-height:1.75;">Whether you're leaving for good or buying somewhere new, the network works the same way. Tell me your situation and I'll find the right fit.</p>
+            </div>
+
+            <div class="moves-grid reveal">
+                <div class="move-card">
+                    <div class="move-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#003DA5" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div class="move-title">Moving to Another Province</div>
+                    <div class="move-desc">Leaving Alberta for BC, Ontario, the Maritimes or anywhere else. I connect you with a local expert who knows the destination market inside and out.</div>
+                </div>
+                <div class="move-card">
+                    <div class="move-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA002A" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <div class="move-title">Moving Into Calgary</div>
+                    <div class="move-desc">Someone you know is relocating to Calgary from elsewhere in Canada. I'm their local expert — and I can connect them with trusted resources before they arrive.</div>
+                </div>
+                <div class="move-card">
+                    <div class="move-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A572" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
+                    <div class="move-title">Investment Property Elsewhere</div>
+                    <div class="move-desc">Buying a rental or investment property in another city? I can identify a local agent who specializes in investment purchases and understands the local rental market.</div>
+                </div>
+                <div class="move-card">
+                    <div class="move-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#003DA5" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="move-title">Relocating Family or Friends</div>
+                    <div class="move-desc">Helping someone you care about find an agent in a city you don't know. Send them my way — I'll make sure they land in the right hands.</div>
+                </div>
+                <div class="move-card">
+                    <div class="move-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA002A" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <div class="move-title">International Moves</div>
+                    <div class="move-desc">Heading outside Canada? International referrals are handled case-by-case through the Sell It global community. Coverage varies — reach out and let's discuss your destination.</div>
+                </div>
+                <div class="move-card">
+                    <div class="move-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A572" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <div class="move-title">Smaller Communities</div>
+                    <div class="move-desc">Not just major cities — the Royal LePage network covers towns and communities across Canada. Wherever you're headed, I can likely find the right local connection.</div>
+                </div>
+            </div>
+
+            <div class="national-banner reveal">
+                <div class="national-banner-icon">CA</div>
+                <div class="national-banner-body">
+                    <h3>Connected Coast to Coast — 20,000+ REALTORS® Nationwide</h3>
+                    <p>Royal LePage is one of Canada's largest real estate networks, with professionals in urban centres and smaller communities from Victoria to Halifax. When you're leaving Calgary, you're not leaving behind your trusted advisor — you're gaining access to a national network through one point of contact you already know.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── TRUST — KYLE ── -->
     <section class="section trust-section">
         <div class="container">
-            <div class="trust-grid">
+            <div class="two-col">
                 <div class="trust-body reveal">
                     <div class="section-eyebrow">
                         <div class="eyebrow-line"></div>
@@ -874,15 +1211,15 @@
                     </div>
                     <h2 class="section-title">A Calgary Broker who thinks <em>long-term</em></h2>
                     <p>My approach to real estate has always been relationship-first. I'm not trying to close a single transaction — I'm building the kind of trust that means clients come back, and send people they care about.</p>
-                    <p>As a Broker and Training Coordinator at Royal LePage Solutions, I work with contracts and agents every day. That operational depth means I know what good service looks like — and what to ask when I'm vetting a referral partner on your behalf.</p>
-                    <p>The referral process is an extension of what I already do: putting my reputation on the line to ensure my clients are looked after properly.</p>
+                    <p>As a Broker and Training Coordinator at Royal LePage Solutions, I work with contracts and agents every day. That operational depth means I know what good service looks like — and what to look for when I'm vetting a referral partner on your behalf.</p>
+                    <p>The relocation process is an extension of what I already do: putting my reputation on the line to ensure my clients are looked after properly.</p>
 
                     <div class="trust-points">
-                        <div class="trust-point"><div class="trust-dot"></div>Licensed Calgary Broker since 2021</div>
-                        <div class="trust-point"><div class="trust-dot"></div>REALTOR® since 2010 — 15+ years of experience</div>
-                        <div class="trust-point"><div class="trust-dot"></div>Nationally and globally connected through trusted networks</div>
-                        <div class="trust-point"><div class="trust-dot"></div>Training Coordinator — I know what good service looks like</div>
-                        <div class="trust-point"><div class="trust-dot"></div>One point of contact, start to finish</div>
+                        <div class="trust-point"><div class="trust-dot"></div>Licensed Calgary Broker since 2021 — REALTOR® since 2010</div>
+                        <div class="trust-point"><div class="trust-dot"></div>Access to 20,000+ agents through Royal LePage national network</div>
+                        <div class="trust-point"><div class="trust-dot"></div>Training Coordinator — I know what professional service looks like</div>
+                        <div class="trust-point"><div class="trust-dot"></div>Globally connected through the Sell It professional community</div>
+                        <div class="trust-point"><div class="trust-dot"></div>One point of contact, start to finish — no handoff and disappear</div>
                     </div>
                 </div>
 
@@ -892,7 +1229,7 @@
                             src="https://raw.githubusercontent.com/Kyleduiker/duikerproperties-homepage/main/photos/brand/2026Awards-51.jpg"
                             alt="Kyle Duiker"
                             class="trust-photo"
-                            onerror="this.style.display='none'"
+                            onerror="this.style.display='none';"
                         >
                         <p class="trust-quote">
                             "My goal isn't a one-time transaction. It's building the kind of relationship where clients trust me to look after them — even when that means connecting them with someone else."
@@ -910,34 +1247,30 @@
     <!-- ── FAQ ── -->
     <section class="section faq-section">
         <div class="container">
-            <div class="faq-header reveal">
-                <div class="section-eyebrow section-eyebrow-centered">
+            <div class="reveal" style="text-align:center; max-width:680px; margin:0 auto 3rem;">
+                <div class="section-eyebrow" style="justify-content:center;">
                     <div class="eyebrow-line"></div>
                     <span class="eyebrow-text">Common Questions</span>
                     <div class="eyebrow-line"></div>
                 </div>
-                <h2 class="section-title" style="text-align:center;">Straightforward answers to <em>fair questions</em></h2>
+                <h2 class="section-title">Straightforward answers to <em>fair questions</em></h2>
             </div>
 
             <div class="faq-list reveal">
                 <div class="faq-item">
                     <button class="faq-question">
                         Does this cost me anything?
-                        <div class="faq-icon">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                        </div>
+                        <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
                     </button>
                     <div class="faq-answer">
-                        <p>No. There is no additional cost to you for the referral. You pay the same commission structure you would with any agent. The referral fee, if any, is handled between brokerages — not added to your transaction.</p>
+                        <p>No. There is no additional cost to you for this service. You pay the same commission structure you would with any agent. The referral fee, if any, is handled between brokerages — it is never added to your transaction.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
                         How do you choose the agent?
-                        <div class="faq-icon">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                        </div>
+                        <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
                     </button>
                     <div class="faq-answer">
                         <p>I look for agents who are active in your specific market, have a track record that matches your type of transaction, and who communicate the way I expect professionals to communicate. I draw from the Royal LePage national network and the Sell It community, and I prioritize fit over convenience.</p>
@@ -947,37 +1280,58 @@
                 <div class="faq-item">
                     <button class="faq-question">
                         Do you receive a referral fee?
-                        <div class="faq-icon">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                        </div>
+                        <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
                     </button>
                     <div class="faq-answer">
-                        <p>Yes, in most cases a referral fee is paid by the receiving brokerage upon successful closing. This is standard practice in real estate and does not affect your commission rate or the service you receive. I'll always be transparent about this if you ask.</p>
+                        <p>Yes, in most cases a referral fee is paid by the receiving brokerage upon successful closing. This is standard practice in real estate and does not affect your commission rate or the service you receive. I'm always transparent about this if you ask.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
                         What if I'm moving internationally?
-                        <div class="faq-icon">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                        </div>
+                        <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
                     </button>
                     <div class="faq-answer">
-                        <p>International referrals are handled on a case-by-case basis through the Sell It global professional community. Coverage varies by region, but in many cases I can facilitate a connection or help you identify the right path forward. Reach out and let's discuss your specific destination.</p>
+                        <p>International connections are handled case-by-case through the Sell It global professional community. Coverage varies by region, but in many cases I can facilitate a connection or help you identify the right path forward. Reach out and let's talk through your specific destination.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
                         Will you stay involved after the introduction?
-                        <div class="faq-icon">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                        </div>
+                        <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
                     </button>
                     <div class="faq-answer">
-                        <p>Yes. My involvement doesn't end at the handoff. I remain available as a resource and stay in communication through the process. If anything isn't working as expected, you can always come back to me and I'll address it directly.</p>
+                        <p>Yes. My involvement doesn't end at the handoff. I remain available as a resource and stay in communication throughout the process. The receiving agent is required to provide ongoing updates — and if anything isn't working, you come back to me and I address it directly.</p>
                     </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What if I'm not ready to move yet?
+                        <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>That's fine — the earlier we talk, the better. Knowing your timeline and destination early means I can find the right fit without rushing. Even if your move is months away, starting the conversation now means you'll have a plan in place when you need it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── QUOTE ── -->
+    <section class="section bio-section">
+        <div class="container">
+            <div class="bio-card reveal">
+                <div class="bio-quote-mark">"</div>
+                <p class="bio-text">
+                    When a client tells me they're leaving Calgary, my job doesn't end — it shifts. I make sure they land in the right hands, with someone I'd trust to look after my own family. That's the standard I hold every introduction to.
+                </p>
+                <div class="bio-attribution">
+                    <div class="bio-attr-line"></div>
+                    <span class="bio-attr-name">Kyle Duiker · Broker Delegate, Royal LePage Solutions</span>
+                    <div class="bio-attr-line"></div>
                 </div>
             </div>
         </div>
@@ -986,12 +1340,12 @@
     <!-- ── CTA ── -->
     <section class="cta-section">
         <div class="container reveal">
-            <h2>Let's Plan <em>Your Move</em></h2>
+            <h2>Let's plan <em>your move</em></h2>
             <p>
-                Whether you're months away from leaving or ready to move now, reach out and let's talk through your situation. I'll make sure you have the right person in your corner — wherever you're headed.
+                Whether you're months away from leaving or ready to go now, reach out and let's talk. I'll make sure you have the right person in your corner — wherever you're headed.
             </p>
             <div class="cta-buttons">
-                <a href="https://duikerproperties.com/contact" class="btn-primary">Let's Plan Your Move</a>
+                <a href="https://duikerproperties.com/contact" class="btn-primary">Start My Relocation Plan</a>
                 <a href="tel:4037973384" class="btn-outline">
                     <svg style="display:inline;vertical-align:middle;margin-right:6px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1.04 3.42 2 2 0 0 1 3 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                     (403) 797-3384
@@ -1000,8 +1354,10 @@
         </div>
     </section>
 
-    <!-- Header JS -->
-    <script src="https://kyleduiker.github.io/duikerproperties-homepage/assets/js/header.js"></script>
+    <!-- Footer + Header via guide site assets -->
+    <div id="footer"></div>
+    <script src="https://guide.duikerproperties.com/assets/js/footer.js"></script>
+    <script src="https://guide.duikerproperties.com/assets/js/header.js"></script>
 
     <!-- Scroll Reveal -->
     <script>
@@ -1015,23 +1371,20 @@
                 }
             });
         }, { threshold: 0.1 });
-
         reveals.forEach(el => observer.observe(el));
 
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(btn => {
             btn.addEventListener('click', () => {
-                const item = btn.parentElement;
+                const item   = btn.parentElement;
                 const answer = item.querySelector('.faq-answer');
                 const isOpen = item.classList.contains('open');
 
-                // Close all
                 document.querySelectorAll('.faq-item').forEach(i => {
                     i.classList.remove('open');
                     i.querySelector('.faq-answer').classList.remove('open');
                 });
 
-                // Toggle clicked
                 if (!isOpen) {
                     item.classList.add('open');
                     answer.classList.add('open');
@@ -1039,5 +1392,6 @@
             });
         });
     </script>
+
 </body>
 </html>
