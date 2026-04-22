@@ -7,7 +7,7 @@
     <meta name="description" content="Your complete Alberta mortgage guide — down payments, CMHC insurance, the stress test, first-time buyer programs, fixed vs variable rates, and more. From Kyle Duiker, Calgary Broker.">
 
     <!-- Duiker Properties Header -->
-    <link rel="stylesheet" href="https://kyleduiker.github.io/duikerproperties-homepage/assets/css/header.css">
+    <link rel="stylesheet" href="https://guide.duikerproperties.com/assets/css/header.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -819,7 +819,6 @@
         }
 
         .cmhc-warning.visible { display: block; }
-
         .cmhc-warning strong { color: var(--gold); }
 
         /* ─── PRE-APPROVAL SECTION ─── */
@@ -1560,8 +1559,10 @@
         </div>
     </section>
 
-    <!-- Header JS -->
-    <script src="https://kyleduiker.github.io/duikerproperties-homepage/assets/js/header.js"></script>
+    <!-- Footer + Header via guide site assets -->
+    <div id="footer"></div>
+    <script src="https://guide.duikerproperties.com/assets/js/footer.js"></script>
+    <script src="https://guide.duikerproperties.com/assets/js/header.js"></script>
 
     <!-- Scroll Reveal -->
     <script>
@@ -1613,10 +1614,10 @@
             const annRate  = parseFloat(slRate.value) / 100;
             const years    = parseInt(selAmort.value);
 
-            const dpAmount    = price * (dpPct / 100);
+            const dpAmount     = price * (dpPct / 100);
             const baseMortgage = price - dpAmount;
-            const cmhcRate    = getCmhcRate(dpPct);
-            const cmhcAmount  = baseMortgage * cmhcRate;
+            const cmhcRate     = getCmhcRate(dpPct);
+            const cmhcAmount   = baseMortgage * cmhcRate;
             const totalMortgage = baseMortgage + cmhcAmount;
 
             // Monthly payment (Canadian mortgage: semi-annual compounding)
@@ -1645,9 +1646,6 @@
             } else {
                 cmhcWarning.classList.remove('visible');
             }
-
-            // 30-yr only available for first-time / new builds — flag if selected with < 20% dp
-            // (just a reminder note — already in the UI copy)
         }
 
         [slPrice, slDp, slRate, selAmort].forEach(el => el.addEventListener('input', calcMortgage));
